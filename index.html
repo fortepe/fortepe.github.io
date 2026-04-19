@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Forte Project Engineering — Ingeniería eléctrica e infraestructura crítica</title>
   <meta name="description" content="Forte Project Engineering es un equipo especializado con más de 25 años de experiencia en infraestructura crítica, sistemas eléctricos e infraestructura ferroviaria. Integración directa, sin dependencia residual." />
+  <link rel="canonical" href="https://fortepe.com/" />
+  <link rel="icon" type="image/svg+xml" href="FortePE_LOGO.svg" />
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fortepe.com/" />
+  <meta property="og:title" content="Forte Project Engineering" />
+  <meta property="og:description" content="Ingeniería eléctrica disponible cuando la necesita. Integrada a su equipo, sin fricción." />
+  <meta property="og:site_name" content="Forte Project Engineering" />
+  <meta property="og:locale" content="es_CL" />
+  <meta name="twitter:card" content="summary" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
@@ -48,14 +58,16 @@
     .nav {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 16px 24px;
+      padding: 10px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
       flex-wrap: wrap;
     }
-    .nav img { height: 40px; width: auto; }
+    .nav img { height: 72px; width: auto; display: block; }
+    @media (max-width: 900px) { .nav img { height: 60px; } }
+    @media (max-width: 600px) { .nav img { height: 52px; } }
     .nav ul {
       list-style: none;
       display: flex;
