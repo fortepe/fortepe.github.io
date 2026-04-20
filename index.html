@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Forte Project Engineering</title>
-  <meta name="description" content="Forte Project Engineering — equipo especializado con más de 25 años de experiencia en infraestructura crítica, sistemas eléctricos e infraestructura ferroviaria. Integración directa, sin dependencia residual." />
+  <meta name="description" content="Forte Project Engineering. Equipo especializado con más de 25 años de experiencia en infraestructura crítica, sistemas eléctricos e infraestructura ferroviaria. Integración directa, sin dependencia residual." />
   <link rel="canonical" href="https://fortepe.com/" />
   <link rel="icon" type="image/svg+xml" href="FortePE_LOGO.svg" />
   <!-- Open Graph / social sharing -->
@@ -110,8 +110,9 @@
     }
     .lang-toggle:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
 
-    /* SCROLL MARGIN so anchor links don't hide under the sticky header */
-    section[id], #top { scroll-margin-top: calc(var(--header-height) + 24px); }
+    /* SCROLL MARGIN so anchor links land flush just below the sticky header.
+       Set equal to header height so the section top sits cleanly under the header with no extra whitespace. */
+    section[id], #top { scroll-margin-top: var(--header-height); }
 
     /* HERO */
     .hero {
@@ -148,6 +149,7 @@
       line-height: 1.2;
       margin: 0 0 18px;
       letter-spacing: -0.01em;
+      text-wrap: balance;
     }
     .hero h1 .accent { color: var(--teal); }
     .hero .lede {
@@ -173,7 +175,9 @@
     }
 
     /* SECTIONS */
-    section { padding: 96px 24px; }
+    section { padding: 72px 24px; }
+    /* Tighter top on Services so the section is visible in one view when navigated to */
+    .intervention { padding-top: 56px; padding-bottom: 72px; }
     .section-inner { max-width: var(--max-width); margin: 0 auto; }
     .eyebrow {
       color: var(--teal);
@@ -189,6 +193,7 @@
       margin: 0 0 18px;
       color: var(--navy);
       letter-spacing: -0.01em;
+      text-wrap: balance;
     }
     .lead {
       color: var(--gray);
@@ -451,17 +456,24 @@
       transform: translateY(-1px);
     }
     .contact-footer {
-      margin-top: 36px;
-      padding-top: 24px;
+      margin-top: 40px;
+      padding-top: 28px;
       border-top: 1px solid rgba(255,255,255,0.12);
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 16px;
+      align-items: center;
       color: #C9D1DB;
-      font-size: 0.92rem;
+      font-size: 0.95rem;
     }
-    .contact-footer a { color: #fff; font-weight: 500; }
+    .contact-footer a {
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+    }
+    .contact-footer a:hover { color: var(--teal); }
     .contact-footer .addr { font-style: italic; color: #9BA5B3; }
 
     /* FOOTER */
@@ -501,7 +513,7 @@
       <div class="nav-right">
         <ul>
           <li><a href="#about"><span class="es">Nosotros</span><span class="en">About</span></a></li>
-          <li><a href="#modelo"><span class="es">Modelo</span><span class="en">Model</span></a></li>
+          <li><a href="#modelo"><span class="es">Enfoque</span><span class="en">Approach</span></a></li>
           <li><a href="#sectores"><span class="es">Sectores</span><span class="en">Sectors</span></a></li>
           <li><a href="#intervencion"><span class="es">Intervención</span><span class="en">Services</span></a></li>
           <li><a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
@@ -517,19 +529,19 @@
     <div class="hero-inner">
       <div class="accent-bar"></div>
       <h1>
-        <span class="es">Ingeniería eléctrica disponible cuando la necesita.<br/><span class="accent">Integrada a su equipo, sin fricción.</span></span>
-        <span class="en">Electrical engineering, available when you need it.<br/><span class="accent">Integrated into your team, without friction.</span></span>
+        <span class="es">Ingeniería eléctrica disponible cuando la&nbsp;necesita.<br/><span class="accent">Integrada a su equipo, sin fricción.</span></span>
+        <span class="en">Electrical engineering, available when you need&nbsp;it.<br/><span class="accent">Integrated into your team, without friction.</span></span>
       </h1>
       <p class="lede">
         <span class="es">Control técnico independiente para infraestructura ferroviaria, sistemas eléctricos y sistemas críticos en operación.</span>
         <span class="en">Independent technical control for railway infrastructure, electrical systems, and critical operational systems.</span>
       </p>
       <div class="hero-tags">
+        <span class="tag"><span class="es">Infraestructura Ferroviaria</span><span class="en">Railway Infrastructure</span></span>
         <span class="tag"><span class="es">Energía</span><span class="en">Energy</span></span>
         <span class="tag">BESS</span>
+        <span class="tag">Data Centers</span>
         <span class="tag"><span class="es">Renovables</span><span class="en">Renewables</span></span>
-        <span class="tag"><span class="es">Minería</span><span class="en">Mining</span></span>
-        <span class="tag"><span class="es">Infraestructura Ferroviaria</span><span class="en">Railway Infrastructure</span></span>
         <span class="tag"><span class="es">Integración de Proyecto</span><span class="en">Project Integration</span></span>
         <span class="tag"><span class="es">Control de Ejecución</span><span class="en">Execution Control</span></span>
       </div>
@@ -583,11 +595,11 @@
       <p class="eyebrow"><span class="es">Modelo de Trabajo</span><span class="en">Working Model</span></p>
       <h2>
         <span class="es">Activación, integración y desactivación sin fricción.</span>
-        <span class="en">Activation, integration, and deactivation — without friction.</span>
+        <span class="en">Activation, integration, and deactivation, without friction.</span>
       </h2>
       <p class="lead">
-        <span class="es">Aportamos criterio técnico continuo en las etapas donde la energía y la integración definen el desarrollo del proyecto — y nos retiramos cuando el trabajo está hecho.</span>
-        <span class="en">We bring continuous technical judgment in the stages where power and integration define the project's development — and step away when the work is done.</span>
+        <span class="es">Aportamos criterio técnico continuo en las etapas donde la energía y la integración definen el desarrollo del proyecto, y nos retiramos cuando el trabajo está hecho.</span>
+        <span class="en">We bring continuous technical judgment in the stages where power and integration define the project's development, and step away when the work is done.</span>
       </p>
       <div class="model-grid">
         <div class="model-card">
@@ -631,7 +643,14 @@
       </p>
       <div class="sectors-grid">
         <div class="sector">
-          <h3><span class="es">Energía &amp; BESS</span><span class="en">Energy &amp; BESS</span></h3>
+          <h3><span class="es">Infraestructura Ferroviaria</span><span class="en">Railway Infrastructure</span></h3>
+          <p>
+            <span class="es">Electrificación, sistemas de potencia, integración de sistemas, SCADA y puesta en servicio bajo estándares de la industria ferroviaria británica.</span>
+            <span class="en">Electrification, power systems, systems integration, SCADA, and commissioning under UK railway industry standards.</span>
+          </p>
+        </div>
+        <div class="sector">
+          <h3><span class="es">Energía y BESS</span><span class="en">Energy &amp; BESS</span></h3>
           <p>
             <span class="es">Sistemas de generación, almacenamiento y conexión a red, incluyendo proyectos de baterías y renovables.</span>
             <span class="en">Generation, storage, and grid-connection systems, including battery and renewable projects.</span>
@@ -640,22 +659,8 @@
         <div class="sector">
           <h3>Data Centers</h3>
           <p>
-            <span class="es">Alineación entre terreno, capacidad de red y plazos — desde evaluación eléctrica de sitio hasta readiness operacional.</span>
-            <span class="en">Alignment between site, grid capacity, and timelines — from electrical site assessment through operational readiness.</span>
-          </p>
-        </div>
-        <div class="sector">
-          <h3><span class="es">Infraestructura Ferroviaria</span><span class="en">Railway Infrastructure</span></h3>
-          <p>
-            <span class="es">Electrificación, sistemas de potencia, integración de sistemas, SCADA y puesta en servicio bajo estándares de la industria ferroviaria británica.</span>
-            <span class="en">Electrification, power systems, systems integration, SCADA, and commissioning under UK railway industry standards.</span>
-          </p>
-        </div>
-        <div class="sector">
-          <h3><span class="es">Minería &amp; Renovables</span><span class="en">Mining &amp; Renewables</span></h3>
-          <p>
-            <span class="es">Infraestructura eléctrica y sistemas críticos para proyectos industriales y de generación renovable.</span>
-            <span class="en">Electrical infrastructure and critical systems for industrial and renewable-generation projects.</span>
+            <span class="es">Alineación entre terreno, capacidad de red y plazos: desde evaluación eléctrica de sitio hasta readiness operacional.</span>
+            <span class="en">Alignment between site, grid capacity, and timelines: from electrical site assessment through operational readiness.</span>
           </p>
         </div>
       </div>
@@ -681,8 +686,8 @@
             <span class="en">Real validation of constraints before committing capital to unviable sites. Grid capacity, connection points, timelines.</span>
           </p>
           <span class="phase">
-            <span class="es">— Etapa temprana</span>
-            <span class="en">— Early stage</span>
+            <span class="es">Etapa temprana</span>
+            <span class="en">Early stage</span>
           </span>
         </div>
         <div class="intervention-card">
@@ -692,8 +697,8 @@
             <span class="en">Optimal connection route, critical-equipment criteria, and executable parameters aligned with real conditions.</span>
           </p>
           <span class="phase">
-            <span class="es">— Definición del proyecto</span>
-            <span class="en">— Project definition</span>
+            <span class="es">Definición del proyecto</span>
+            <span class="en">Project definition</span>
           </span>
         </div>
         <div class="intervention-card">
@@ -703,8 +708,8 @@
             <span class="en">Technical interface with utilities, distribution, transmission, and authorities (Enel, CGE, CEN, SEC, among others).</span>
           </p>
           <span class="phase">
-            <span class="es">— Coordinación y permisos</span>
-            <span class="en">— Coordination &amp; permitting</span>
+            <span class="es">Coordinación y permisos</span>
+            <span class="en">Coordination &amp; permitting</span>
           </span>
         </div>
         <div class="intervention-card">
@@ -714,13 +719,13 @@
             <span class="en">Technical and logistical support for execution, from definition through on-site implementation as the project requires.</span>
           </p>
           <span class="phase">
-            <span class="es">— Readiness operacional</span>
-            <span class="en">— Operational readiness</span>
+            <span class="es">Readiness operacional</span>
+            <span class="en">Operational readiness</span>
           </span>
         </div>
       </div>
 
-      <div class="two-col" style="margin-top:64px;">
+      <div class="two-col" style="margin-top:40px;">
         <div>
           <h3><span class="es">Donde intervenimos</span><span class="en">Where we intervene</span></h3>
           <ul class="plus-list">
@@ -769,11 +774,6 @@
           </div>
         </div>
       </div>
-      <div class="contact-cta">
-        <a class="btn-primary" href="mailto:info@fortepe.com">
-          <span class="es">Escríbanos</span><span class="en">Get in touch</span>
-        </a>
-      </div>
       <div class="contact-footer">
         <div>
           <a href="mailto:info@fortepe.com">info@fortepe.com</a>
@@ -803,11 +803,11 @@
         if (lang === 'en') {
           document.title = 'Forte Project Engineering';
           var md = document.querySelector('meta[name="description"]');
-          if (md) md.setAttribute('content', 'Forte Project Engineering — a specialized team with over 25 years of experience in critical infrastructure, electrical systems, and railway infrastructure. Direct integration, no residual dependency.');
+          if (md) md.setAttribute('content', 'Forte Project Engineering. A specialized team with over 25 years of experience in critical infrastructure, electrical systems, and railway infrastructure. Direct integration, no residual dependency.');
         } else {
           document.title = 'Forte Project Engineering';
           var md2 = document.querySelector('meta[name="description"]');
-          if (md2) md2.setAttribute('content', 'Forte Project Engineering — equipo especializado con más de 25 años de experiencia en infraestructura crítica, sistemas eléctricos e infraestructura ferroviaria. Integración directa, sin dependencia residual.');
+          if (md2) md2.setAttribute('content', 'Forte Project Engineering. Equipo especializado con más de 25 años de experiencia en infraestructura crítica, sistemas eléctricos e infraestructura ferroviaria. Integración directa, sin dependencia residual.');
         }
       }
 
