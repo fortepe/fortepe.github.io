@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-HTML
-HTML
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -568,6 +566,71 @@ HTML
     .contact-footer a:hover { color: var(--teal); }
     .contact-footer .addr { font-style: italic; color: #9BA5B3; }
 
+    /* TEAM */
+    .team { background: #fff; padding: 88px 24px 80px; }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .team-member {
+      border-top: 1px solid var(--navy);
+      padding-top: 24px;
+    }
+    .team-member .member-name {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin: 0 0 4px;
+    }
+    .team-member .member-role {
+      color: var(--teal);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin: 0 0 20px;
+    }
+    .team-member .member-bio {
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+    .expertise-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .expertise-col h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin: 0 0 12px;
+    }
+    .expertise-tags {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .expertise-tag {
+      font-size: 0.82rem;
+      color: var(--gray);
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: var(--bg-soft);
+      line-height: 1.3;
+    }
+    @media (max-width: 900px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .expertise-cols { grid-template-columns: 1fr; }
+    }
+
     /* FOOTER */
     footer {
       background: var(--navy-dark);
@@ -608,6 +671,7 @@ HTML
           <li><a href="#modelo"><span class="es">Enfoque</span><span class="en">Approach</span></a></li>
           <li><a href="#sectores"><span class="es">Sectores</span><span class="en">Sectors</span></a></li>
           <li><a href="#intervencion"><span class="es">Intervención</span><span class="en">Services</span></a></li>
+          <li><a href="#equipo"><span class="es">Equipo</span><span class="en">Team</span></a></li>
           <li><a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
         </ul>
         <button class="lang-toggle" id="langToggle" aria-label="Toggle language" type="button">
@@ -842,6 +906,51 @@ HTML
     </div>
   </section>
 
+  <section id="equipo" class="team">
+    <div class="section-inner">
+      <p class="eyebrow"><span class="es">Equipo de Liderazgo</span><span class="en">Leadership Team</span></p>
+      <h2><span class="es">Experiencia técnica y estratégica integrada.</span><span class="en">Integrated technical and strategic expertise.</span></h2>
+      <p class="lead">
+        <span class="es">Un equipo pequeño con capacidad de entrega de gran escala, formado bajo estándares del Reino Unido y con presencia permanente en Santiago.</span>
+        <span class="en">A small team with large-scale delivery capability, trained under UK standards and with permanent presence in Santiago.</span>
+      </p>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-name">Derek Riddell</div>
+          <div class="member-role">Founder &amp; Technical Authority</div>
+          <p class="member-bio">Electrical engineer with over 25 years of hands-on experience in complex electrical and railway infrastructure, including roles as CRE, CEM, and DPE on major UK programmes. Technical authority on power systems, electrification, systems integration, and BESS across the full project lifecycle.</p>
+        </div>
+        <div class="team-member">
+          <div class="member-name">Susana Campos Coello</div>
+          <div class="member-role">Operations &amp; Development Lead</div>
+          <p class="member-bio">Architect with over 15 years of experience spanning critical infrastructure, regulatory frameworks, and institutional advisory across Latin America. Background in complex project governance under international standards, with a focus on owner-side technical oversight and strategic development.</p>
+        </div>
+      </div>
+      <div class="expertise-cols" style="margin-top:48px;">
+        <div class="expertise-col">
+          <h4><span class="es">Capacidades Técnicas</span><span class="en">Technical</span></h4>
+          <div class="expertise-tags">
+            <span class="expertise-tag">Railway Electrification &amp; Power Systems</span>
+            <span class="expertise-tag">Systems Integration &amp; SCADA</span>
+            <span class="expertise-tag">Energy &amp; BESS</span>
+            <span class="expertise-tag">Owner's Engineering</span>
+            <span class="expertise-tag">Technical Project Management</span>
+          </div>
+        </div>
+        <div class="expertise-col">
+          <h4><span class="es">Capacidades Estratégicas</span><span class="en">Strategic</span></h4>
+          <div class="expertise-tags">
+            <span class="expertise-tag">Project Governance (UK &amp; EU standards)</span>
+            <span class="expertise-tag">Regulatory &amp; Permitting Advisory</span>
+            <span class="expertise-tag">Institutional &amp; Strategic Advisory</span>
+            <span class="expertise-tag">Asset &amp; Portfolio Management</span>
+            <span class="expertise-tag">Financial &amp; Contract Risk Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contacto" class="contact">
     <div class="section-inner">
       <p class="eyebrow"><span class="es">Contacto</span><span class="en">Contact</span></p>
@@ -856,7 +965,7 @@ HTML
           <div class="role">Founder &amp; Technical Authority</div>
         </div>
         <div class="contact-card">
-          <div class="name">Susana Campos</div>
+          <div class="name">Susana Campos Coello</div>
           <div class="role">Operations &amp; Development Lead</div>
         </div>
       </div>
