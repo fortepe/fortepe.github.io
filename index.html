@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forte Project Engineering | Expertos en proyectos ferroviarios y eléctricos</title>
 
   <script type="application/ld+json">
   {
@@ -43,7 +44,6 @@
   }
   </script>
 
-  <title>Forte Project Engineering | Expertos en proyectos ferroviarios y eléctricos</title>
   <meta name="description" content="Forte Project Engineering. Expertos en proyectos ferroviarios y eléctricos con base en Chile y cobertura en Latinoamérica." />
   
   <link rel="icon" type="image/svg+xml" href="logo-mark-white-bg_1.svg" />
@@ -181,6 +181,17 @@
         radial-gradient(circle at 10% 110%, rgba(0,168,135,0.08), transparent 40%);
       pointer-events: none;
     }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 8%;
+      top: 18%;
+      width: 34%;
+      height: 58%;
+      background: url("technical-lines.svg") center/contain no-repeat;
+      opacity: 0.16;
+      pointer-events: none;
+    }
     .hero-inner {
       position: relative;
       max-width: var(--max-width);
@@ -210,16 +221,21 @@
       font-size: clamp(2rem, 3.8vw, 3.1rem);
       font-weight: 500;
       line-height: 1.18;
-      margin: 0 0 20px;
+      margin: 0 0 24px;
       letter-spacing: -0.015em;
-      text-wrap: balance;
+      max-width: 780px;
     }
-    .hero h1 .accent { color: var(--teal); }
+    .hero h1 .accent {
+      color: var(--teal);
+      display: block;
+      margin-top: 14px;
+      max-width: 640px;
+    }
     .hero .lede {
-      font-size: clamp(1rem, 1.4vw, 1.1rem);
-      color: #C9D1DB;
-      max-width: 720px;
-      margin: 0 0 32px;
+      font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+      color: rgba(201, 209, 219, 0.7);
+      max-width: 680px;
+      margin: 8px 0 32px;
     }
     .hero-tags {
       display: flex;
@@ -686,12 +702,12 @@
       <div class="hero-coord">33°25′S · 70°34′W</div>
       <div class="accent-bar"></div>
       <h1>
-        <span class="es">Ingeniería eléctrica disponible cuando la&nbsp;necesita.<br/><span class="accent">Integrada a su equipo, sin fricción.</span></span>
-        <span class="en">Electrical engineering, available when you need&nbsp;it.<br/><span class="accent">Integrated into your team, without friction.</span></span>
+        <span class="es">Control técnico independiente para<br/>infraestructura ferroviaria,<br/>sistemas de potencia y sistemas críticos en operación.<span class="accent">Nos incorporamos cuando se requiere.</span></span>
+        <span class="en">Independent technical control for<br/>railway infrastructure,<br/>power systems, and critical operational systems.<span class="accent">Integrated when it matters most.</span></span>
       </h1>
       <p class="lede">
-        <span class="es">Control técnico independiente para infraestructura ferroviaria, sistemas eléctricos y sistemas críticos en operación.</span>
-        <span class="en">Independent technical control for railway infrastructure, electrical systems, and critical operational systems.</span>
+        <span class="es">Acompañamos decisiones clave en diseño, ejecución y operación.</span>
+        <span class="en">Supporting key decisions across design, execution, and operation.</span>
       </p>
       <div class="hero-tags">
         <span class="tag"><span class="es">Infraestructura Ferroviaria</span><span class="en">Railway Infrastructure</span></span>
@@ -707,16 +723,16 @@
         <div class="about-copy">
           <p class="eyebrow"><span class="es">Nosotros</span><span class="en">About</span></p>
           <h2>
-            <span class="es">Un equipo especializado que se integra cuando el proyecto lo requiere.</span>
-            <span class="en">A specialized team that integrates when the project needs it.</span>
+            <span class="es">Experiencia técnica aplicada a proyectos complejos.</span>
+            <span class="en">Technical experience applied to complex projects.</span>
           </h2>
           <p>
-            <span class="es">Forte PE es un equipo especializado con más de 25 años de experiencia en infraestructura crítica y sistemas eléctricos.</span>
-            <span class="en">Forte PE is a specialized team with over 25 years of experience in critical infrastructure and electrical systems.</span>
+            <span class="es">Forte PE es un equipo especializado con más de 25 años de experiencia en infraestructura ferroviaria, sistemas de potencia y proyectos críticos en operación.</span>
+            <span class="en">Forte PE is a specialized team with over 25 years of experience in railway infrastructure, power systems, and critical operational projects.</span>
           </p>
           <p>
-            <span class="es">Operamos bajo un modelo de integración directa: nos incorporamos al equipo de proyecto en el momento preciso, cubrimos lo que se requiere, y nos retiramos sin dejar carga operativa.</span>
-            <span class="en">We operate under a direct-integration model: we join the project team at the right moment, cover what's required, and step out without leaving operational overhead.</span>
+            <span class="es">Desde Santiago, aportamos experiencia técnica y estratégica para acompañar decisiones clave en proyectos donde el diseño, la ejecución y la operación deben mantenerse alineados.</span>
+            <span class="en">From Santiago, we bring technical and strategic experience to support key decisions in projects where design, execution, and operation must remain aligned.</span>
           </p>
         </div>
         <div>
@@ -750,12 +766,12 @@
     <div class="section-inner">
       <p class="eyebrow"><span class="es">Modelo de Trabajo</span><span class="en">Working Model</span></p>
       <h2>
-        <span class="es">Activación, integración y desactivación sin fricción.</span>
-        <span class="en">Activation, integration, and deactivation, without friction.</span>
+        <span class="es">Activación, trabajo integrado y cierre claro.</span>
+        <span class="en">Activation, embedded work, and clear close-out.</span>
       </h2>
       <p class="lead">
-        <span class="es">Aportamos criterio técnico continuo en las etapas donde la energía y la integración definen el desarrollo del proyecto, y nos retiramos cuando el trabajo está hecho.</span>
-        <span class="en">We bring continuous technical judgment in the stages where power and integration define the project's development, and step away when the work is done.</span>
+        <span class="es">Nos incorporamos en etapas específicas del proyecto, cubrimos el vacío técnico que debe resolverse y dejamos capacidades, decisiones y entregables ordenados.</span>
+        <span class="en">We join at specific project stages, address the technical gap that needs to be solved, and leave behind clear decisions, capabilities, and deliverables.</span>
       </p>
       <div class="model-grid">
         <div class="model-card">
@@ -825,7 +841,7 @@
 
   <section id="intervencion" class="intervention">
     <div class="section-inner">
-      <p class="eyebrow"><span class="es">Áreas de intervención</span><span class="en">Areas of intervention</span></p>
+      <p class="eyebrow"><span class="es">Áreas de intervención técnica</span><span class="en">Technical areas of intervention</span></p>
       <h2>
         <span class="es">Desde la evaluación temprana hasta la implementación en terreno.</span>
         <span class="en">From early assessment to on-site implementation.</span>
@@ -871,8 +887,8 @@
         <div class="intervention-card">
           <h3><span class="es">Ejecución técnica</span><span class="en">Technical execution</span></h3>
           <p>
-            <span class="es">Soporte técnico y logístico para ejecución, desde definición hasta implementación en terreno según requerimiento del proyecto.</span>
-            <span class="en">Technical and logistical support for execution, from definition through on-site implementation as the project requires.</span>
+            <span class="es">Control técnico de la ejecución, desde la definición de criterios hasta la implementación en terreno según los requerimientos del proyecto.</span>
+            <span class="en">Technical control of execution, from criteria definition through on-site implementation according to project requirements.</span>
           </p>
           <span class="phase">
             <span class="es">Readiness operacional</span>
@@ -883,7 +899,7 @@
 
       <div class="two-col" style="margin-top:40px;">
         <div>
-          <h3><span class="es">Donde intervenimos</span><span class="en">Where we intervene</span></h3>
+          <h3><span class="es">Cómo aportamos valor</span><span class="en">How we create value</span></h3>
           <ul class="plus-list">
             <li><span class="es">Evaluación técnica de soluciones y supuestos de diseño</span><span class="en">Technical evaluation of design solutions and assumptions</span></li>
             <li><span class="es">Validación de propuestas y alcances de contratistas</span><span class="en">Validation of contractor proposals and scope</span></li>
@@ -908,24 +924,12 @@
 
   <section id="equipo" class="team">
     <div class="section-inner">
-      <p class="eyebrow"><span class="es">Equipo de Liderazgo</span><span class="en">Leadership Team</span></p>
+      <p class="eyebrow"><span class="es">Equipo</span><span class="en">Team</span></p>
       <h2><span class="es">Experiencia técnica y estratégica integrada.</span><span class="en">Integrated technical and strategic expertise.</span></h2>
       <p class="lead">
-        <span class="es">Un equipo pequeño con capacidad de entrega de gran escala y presencia permanente en Santiago.</span>
-        <span class="en">A small team with large-scale delivery capability and permanent presence in Santiago.</span>
+        <span class="es">Décadas de experiencia aplicada en infraestructura compleja, operando desde Santiago con alcance en toda América Latina, aportando capacidad técnica y estratégica de alto nivel en cada etapa del proyecto.</span>
+        <span class="en">Decades of applied experience in complex infrastructure, operating from Santiago with reach across Latin America, bringing senior technical and strategic capability to every stage of the project.</span>
       </p>
-      <div class="team-grid">
-        <div class="team-member">
-          <div class="member-name">Derek Riddell</div>
-          <div class="member-role">Founder &amp; Technical Authority</div>
-          <p class="member-bio">Electrical engineer with over 25 years of hands-on experience in complex electrical and railway infrastructure. Technical authority on power systems, electrification, systems integration, and BESS across the full project lifecycle.</p>
-        </div>
-        <div class="team-member">
-          <div class="member-name">Susana Campos Coello</div>
-          <div class="member-role">Operations &amp; Development Lead</div>
-          <p class="member-bio">Architect with over 15 years of experience spanning critical infrastructure, regulatory frameworks, and institutional advisory across Latin America. Background in complex project governance under international standards, with a focus on owner-side technical oversight and strategic development.</p>
-        </div>
-      </div>
       <div class="expertise-cols" style="margin-top:48px;">
         <div class="expertise-col">
           <h4><span class="es">Capacidades Técnicas</span><span class="en">Technical</span></h4>
@@ -956,19 +960,9 @@
       <p class="eyebrow"><span class="es">Contacto</span><span class="en">Contact</span></p>
       <h2><span class="es">Hablemos de su proyecto.</span><span class="en">Let's talk about your project.</span></h2>
       <p class="lead">
-        <span class="es">Si su proyecto atraviesa una etapa donde la ingeniería eléctrica o la integración técnica definen el siguiente paso, estamos disponibles para aportar criterio aplicado.</span>
-        <span class="en">If your project is at a stage where electrical engineering or technical integration define the next step, we're available to bring applied judgment.</span>
+        <span class="es">Si su proyecto requiere claridad técnica para avanzar, estamos disponibles para revisar el contexto, identificar riesgos y definir los próximos pasos.</span>
+        <span class="en">If your project requires technical clarity to move forward, we are available to review the context, identify risks, and define the next steps.</span>
       </p>
-      <div class="contacts">
-        <div class="contact-card">
-          <div class="name">Derek Riddell</div>
-          <div class="role">Founder &amp; Technical Authority</div>
-        </div>
-        <div class="contact-card">
-          <div class="name">Susana Campos Coello</div>
-          <div class="role">Operations &amp; Development Lead</div>
-        </div>
-      </div>
       <div class="contact-footer">
         <div>
           <a href="mailto:info@fortepe.com">info@fortepe.com</a>

@@ -1,0 +1,62 @@
+<svg width="100%" viewBox="0 0 680 520" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Technical overlay for Forte PE hero</title>
+<desc>Abstract power systems schematic, decorative overlay for dark navy hero background</desc>
+<defs>
+  <linearGradient id="fadeV" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="white" stop-opacity="1"/>
+    <stop offset="70%" stop-color="white" stop-opacity="0.5"/>
+    <stop offset="90%" stop-color="white" stop-opacity="0.1"/>
+    <stop offset="100%" stop-color="white" stop-opacity="0"/>
+  </linearGradient>
+  <mask id="fm">
+    <rect width="100%" height="100%" fill="url(#fadeV)"/>
+  </mask>
+</defs>
+<g mask="url(#fm)" opacity="0.15">
+  <g transform="translate(60, 0)">
+    <line x1="180" y1="160" x2="600" y2="160" fill="none" stroke="#00A887" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="240" y1="255" x2="610" y2="255" fill="none" stroke="#C9D1DB" stroke-width="0.6" stroke-linecap="round"/>
+    <line x1="210" y1="340" x2="570" y2="340" fill="none" stroke="#C9D1DB" stroke-width="0.5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="300" y1="160" x2="300" y2="255" fill="none" stroke="#00A887" stroke-width="0.7" stroke-linecap="round"/>
+    <line x1="420" y1="160" x2="420" y2="255" fill="none" stroke="#C9D1DB" stroke-width="0.55" stroke-linecap="round" opacity="0.8"/>
+    <line x1="520" y1="160" x2="520" y2="255" fill="none" stroke="#00A887" stroke-width="0.7" stroke-linecap="round"/>
+    <line x1="280" y1="255" x2="280" y2="340" fill="none" stroke="#C9D1DB" stroke-width="0.5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="420" y1="255" x2="420" y2="340" fill="none" stroke="#C9D1DB" stroke-width="0.5" stroke-linecap="round" opacity="0.6"/>
+    <line x1="560" y1="255" x2="560" y2="340" fill="none" stroke="#00A887" stroke-width="0.6" stroke-linecap="round" opacity="0.75"/>
+    <line x1="420" y1="255" x2="480" y2="340" fill="none" stroke="#C9D1DB" stroke-width="0.5" stroke-linecap="round" opacity="0.6"/>
+    <line x1="520" y1="255" x2="560" y2="340" fill="none" stroke="#00A887" stroke-width="0.55" stroke-linecap="round" opacity="0.7"/>
+    <line x1="300" y1="78" x2="300" y2="160" fill="none" stroke="#00A887" stroke-width="0.7" stroke-linecap="round"/>
+    <line x1="420" y1="95" x2="420" y2="160" fill="none" stroke="#C9D1DB" stroke-width="0.5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="520" y1="82" x2="520" y2="160" fill="none" stroke="#00A887" stroke-width="0.65" stroke-linecap="round" opacity="0.9"/>
+    <line x1="590" y1="105" x2="590" y2="160" fill="none" stroke="#C9D1DB" stroke-width="0.45" stroke-linecap="round" opacity="0.55"/>
+    <line x1="280" y1="340" x2="280" y2="400" fill="none" stroke="#C9D1DB" stroke-width="0.45" stroke-linecap="round" opacity="0.5"/>
+    <line x1="420" y1="340" x2="420" y2="420" fill="none" stroke="#C9D1DB" stroke-width="0.45" stroke-linecap="round" opacity="0.45"/>
+    <line x1="560" y1="340" x2="560" y2="390" fill="none" stroke="#00A887" stroke-width="0.5" stroke-linecap="round" opacity="0.5"/>
+    <line x1="240" y1="400" x2="340" y2="400" fill="none" stroke="#C9D1DB" stroke-width="0.4" stroke-linecap="round" opacity="0.4"/>
+    <line x1="390" y1="420" x2="480" y2="420" fill="none" stroke="#C9D1DB" stroke-width="0.4" stroke-linecap="round" opacity="0.35"/>
+    <line x1="295" y1="78" x2="305" y2="78" fill="none" stroke="#00A887" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="515" y1="82" x2="525" y2="82" fill="none" stroke="#00A887" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="415" y1="95" x2="425" y2="95" fill="none" stroke="#C9D1DB" stroke-width="0.6" stroke-linecap="round" opacity="0.7"/>
+    <line x1="585" y1="105" x2="595" y2="105" fill="none" stroke="#C9D1DB" stroke-width="0.55" stroke-linecap="round" opacity="0.5"/>
+    <rect x="408" y="152" width="24" height="16" rx="1" fill="none" stroke="#00A887" stroke-width="0.7" opacity="0.9"/>
+    <rect x="508" y="152" width="24" height="16" rx="1" fill="none" stroke="#00A887" stroke-width="0.7" opacity="0.85"/>
+    <rect x="268" y="247" width="24" height="16" rx="1" fill="none" stroke="#C9D1DB" stroke-width="0.6" opacity="0.65"/>
+    <rect x="548" y="247" width="24" height="16" rx="1" fill="none" stroke="#C9D1DB" stroke-width="0.55" opacity="0.6"/>
+    <circle cx="300" cy="160" r="2.2" fill="#00A887" opacity="0.9"/>
+    <circle cx="520" cy="160" r="2.5" fill="#00A887"/>
+    <circle cx="520" cy="255" r="2.2" fill="#00A887" opacity="0.85"/>
+    <circle cx="560" cy="340" r="2" fill="#00A887" opacity="0.75"/>
+    <circle cx="420" cy="160" r="1.8" fill="#C9D1DB" opacity="0.7"/>
+    <circle cx="280" cy="255" r="1.6" fill="#C9D1DB" opacity="0.65"/>
+    <circle cx="420" cy="255" r="1.8" fill="#C9D1DB" opacity="0.65"/>
+    <circle cx="280" cy="340" r="1.5" fill="#C9D1DB" opacity="0.55"/>
+    <circle cx="420" cy="340" r="1.5" fill="#C9D1DB" opacity="0.5"/>
+    <path d="M 220 160 A 80 80 0 0 1 300 82" fill="none" stroke="#00A887" stroke-width="0.5" stroke-dasharray="3,5" opacity="0.5"/>
+    <path d="M 520 340 A 40 40 0 0 0 558 378" fill="none" stroke="#C9D1DB" stroke-width="0.45" stroke-dasharray="2,5" opacity="0.4"/>
+    <line x1="180" y1="120" x2="610" y2="120" fill="none" stroke="#C9D1DB" stroke-width="0.25" opacity="0.25"/>
+    <line x1="180" y1="210" x2="610" y2="210" fill="none" stroke="#C9D1DB" stroke-width="0.25" opacity="0.2"/>
+    <line x1="180" y1="300" x2="610" y2="300" fill="none" stroke="#C9D1DB" stroke-width="0.25" opacity="0.18"/>
+    <line x1="180" y1="380" x2="610" y2="380" fill="none" stroke="#C9D1DB" stroke-width="0.2" opacity="0.15"/>
+  </g>
+</g>
+</svg>
