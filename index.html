@@ -13,7 +13,7 @@
     "url": "https://fortepe.com/",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://fortepe.com/FortePE_LOGO.svg",
+      "url": "https://fortepe.com/FortePE_RGB.svg",
       "width": 400,
       "height": 120
     },
@@ -46,8 +46,8 @@
 
   <meta name="description" content="Forte Project Engineering. Expertos en proyectos ferroviarios y eléctricos con base en Chile y cobertura en Latinoamérica." />
   
-  <link rel="icon" type="image/svg+xml" href="logo-mark-white-bg_1.svg" />
-  <link rel="apple-touch-icon" href="logo-mark-white-bg_1.svg" />
+  <link rel="icon" type="image/svg+xml" href="Favicon_RGB.svg" />
+  <link rel="apple-touch-icon" href="Favicon_RGB.svg" />
 
   <link rel="canonical" href="https://fortepe.com/" />
   <meta name="geo.region" content="CL, SV, CO, PE, BZ, AR, BR, PA, CR, GT" />
@@ -58,41 +58,42 @@
   <meta property="og:url" content="https://fortepe.com/" />
   <meta property="og:title" content="Forte Project Engineering | Expertos en proyectos ferroviarios y eléctricos" />
   <meta property="og:description" content="Ingeniería especializada para proyectos críticos en Latinoamérica. Más de 25 años de experiencia internacional." />
-  <meta property="og:image" content="https://fortepe.com/logo-mark-white-bg_1.svg" />
+  <meta property="og:image" content="https://fortepe.com/FortePE_RGB.svg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Forte Project Engineering" />
   <meta property="og:locale" content="es_CL" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://fortepe.com/logo-mark-white-bg_1.svg" />
+  <meta name="twitter:image" content="https://fortepe.com/FortePE_RGB.svg" />
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     :root {
-      --navy: #1F2A44;
-      --navy-dark: #0F1A2E;
-      --teal: #00A887;
-      --teal-dark: #008A6E;
-      --gray: #5B6670;
-      --gray-light: #6B7280;
-      --border: #E5E7EB;
-      --bg: #ffffff;
+      --navy: #12324A;        /* Prussian Blue — identity color */
+      --navy-dark: #1C1F23;   /* Graphite — authority base */
+      --teal: #2F6F73;        /* Muted Teal — accent, 5% max */
+      --teal-dark: #245558;   /* Teal dark state */
+      --gray: #6F747A;        /* Steel Grey — secondary text */
+      --gray-light: #6F747A;
+      --border: #DADDE1;      /* Cool Stone — dividers & surfaces */
+      --bg: #F8F9FA;          /* Forte White — document base */
       --bg-soft: #F8F9FA;
-      --bg-softer: #F1F3F5;
+      --bg-softer: #DADDE1;   /* Cool Stone */
+      --surface-dark: #252A30; /* Dark Surface — panels in dark contexts */
       --max-width: 1120px;
       --header-height: 92px;
     }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--navy);
+      font-family: 'Helvetica Now', 'Helvetica Neue', Helvetica, 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--navy-dark);
       background: var(--bg);
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       font-size: 16px;
     }
     h1, h2, h3 {
-      font-family: 'Lora', Georgia, 'Times New Roman', serif;
+      font-family: 'Helvetica Now', 'Helvetica Neue', Helvetica, 'Inter', system-ui, sans-serif;
       font-weight: 500;
       letter-spacing: -0.005em;
     }
@@ -106,7 +107,7 @@
 
     /* HEADER */
     header {
-      background: #fff;
+      background: var(--bg);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
@@ -177,8 +178,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 85% 20%, rgba(0,168,135,0.14), transparent 45%),
-        radial-gradient(circle at 10% 110%, rgba(0,168,135,0.08), transparent 40%);
+        radial-gradient(circle at 85% 20%, rgba(47,111,115,0.12), transparent 45%),
+        radial-gradient(circle at 10% 110%, rgba(47,111,115,0.07), transparent 40%);
       pointer-events: none;
     }
     .hero::after {
@@ -196,13 +197,13 @@
       position: relative;
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 36px 24px 100px;
+      padding: 48px 24px 72px;
     }
     .hero-coord {
       position: absolute;
       top: 28px;
       right: 28px;
-      font-family: 'Inter', monospace;
+      font-family: 'Helvetica Now', 'Helvetica Neue', Helvetica, 'Inter', monospace;
       font-size: 0.72rem;
       letter-spacing: 0.14em;
       color: rgba(201, 209, 219, 0.55);
@@ -218,18 +219,17 @@
       border-radius: 2px;
     }
     .hero h1 {
-      font-size: clamp(2rem, 3.8vw, 3.1rem);
+      font-size: clamp(1.65rem, 2.6vw, 2.4rem);
       font-weight: 500;
-      line-height: 1.18;
+      line-height: 1.22;
       margin: 0 0 24px;
-      letter-spacing: -0.015em;
-      max-width: 780px;
+      letter-spacing: -0.012em;
+      max-width: 900px;
     }
     .hero h1 .accent {
       color: var(--teal);
       display: block;
-      margin-top: 14px;
-      max-width: 640px;
+      margin-top: 10px;
     }
     .hero .lede {
       font-size: clamp(0.95rem, 1.3vw, 1.05rem);
@@ -263,7 +263,7 @@
 
     /* EDITORIAL BAND — one anchored moment between sections */
     .editorial {
-      background: #fff;
+      background: var(--bg);
       padding: 88px 24px 96px;
       position: relative;
     }
@@ -280,14 +280,14 @@
     .editorial-quote {
       max-width: 900px;
       margin: 0 auto;
-      font-family: 'Lora', Georgia, serif;
-      font-style: italic;
-      font-weight: 400;
+      font-family: 'Helvetica Now', 'Helvetica Neue', Helvetica, 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 300;
       font-size: clamp(1.4rem, 2.6vw, 2.1rem);
       line-height: 1.35;
       color: var(--navy);
       text-align: center;
-      letter-spacing: -0.005em;
+      letter-spacing: +0.01em;
       text-wrap: balance;
     }
     .editorial-quote .accent { color: var(--teal); font-style: italic; }
@@ -316,10 +316,11 @@
       margin: 0 0 40px;
     }
     .italic-quote {
-      font-family: 'Lora', Georgia, serif;
-      font-style: italic;
-      font-weight: 400;
+      font-family: 'Helvetica Now', 'Helvetica Neue', Helvetica, 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 300;
       color: var(--gray);
+      letter-spacing: 0.02em;
     }
 
     /* ABOUT */
@@ -336,9 +337,9 @@
       margin-top: 12px;
     }
     .stat-card .num {
-      font-family: 'Lora', Georgia, serif;
+      font-family: 'Helvetica Now', 'Helvetica Neue', Helvetica, 'Inter', sans-serif;
       font-size: 2.8rem;
-      font-weight: 500;
+      font-weight: 300;
       color: var(--navy);
       line-height: 1;
       letter-spacing: -0.02em;
@@ -360,7 +361,7 @@
       margin-top: 8px;
     }
     .model-card {
-      background: #fff;
+      background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 4px;
       padding: 28px 26px 30px;
@@ -411,7 +412,7 @@
       padding: 24px 24px 26px;
       border: 1px solid var(--border);
       border-radius: 2px;
-      background: #fff;
+      background: var(--bg);
       border-top: 1px solid var(--teal);
       transition: border-color 0.2s ease, transform 0.2s ease;
     }
@@ -438,7 +439,7 @@
       margin-top: 8px;
     }
     .intervention-card {
-      background: #fff;
+      background: var(--bg);
       padding: 28px 28px 26px;
       border-top: 1px solid var(--navy);
     }
@@ -455,11 +456,13 @@
       font-size: 0.95rem;
     }
     .intervention-card .phase {
-      font-family: 'Lora', Georgia, serif;
-      font-style: italic;
+      font-family: 'Helvetica Now', 'Helvetica Neue', Helvetica, 'Inter', sans-serif;
+      font-style: normal;
       font-weight: 400;
       color: var(--teal);
-      font-size: 0.92rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
     /* TWO-COLUMN LIST */
@@ -510,7 +513,7 @@
     /* CONTACT */
     .contact {
       background: var(--navy);
-      color: #fff;
+      color: var(--bg);
     }
     .contact h2 { color: #fff; }
     .contact .lead { color: #C9D1DB; }
@@ -526,9 +529,9 @@
       border-top: 1px solid rgba(255,255,255,0.14);
     }
     .contact-card .name {
-      font-family: 'Lora', Georgia, serif;
+      font-family: 'Helvetica Now', 'Helvetica Neue', Helvetica, 'Inter', sans-serif;
       font-weight: 500;
-      color: #fff;
+      color: var(--bg);
       font-size: 1.25rem;
       letter-spacing: -0.005em;
     }
@@ -583,7 +586,7 @@
     .contact-footer .addr { font-style: italic; color: #9BA5B3; }
 
     /* TEAM */
-    .team { background: #fff; padding: 88px 24px 80px; }
+    .team { background: var(--bg); padding: 88px 24px 80px; }
     .team-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -595,7 +598,7 @@
       padding-top: 24px;
     }
     .team-member .member-name {
-      font-family: 'Lora', Georgia, serif;
+      font-family: 'Helvetica Now', 'Helvetica Neue', Helvetica, 'Inter', sans-serif;
       font-size: 1.2rem;
       font-weight: 500;
       color: var(--navy);
@@ -654,7 +657,7 @@
       padding: 24px 24px;
       text-align: center;
       font-size: 0.82rem;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.04em;
     }
 
     /* RESPONSIVE */
@@ -679,7 +682,7 @@
   <header>
     <nav class="nav" aria-label="Main">
       <a href="#top" aria-label="Forte Project Engineering">
-        <img src="FortePE_LOGO.svg" alt="Forte Project Engineering | Expertos en proyectos ferroviarios y eléctricos" />
+        <img src="FortePE_RGB.svg" alt="Forte Project Engineering | Expertos en proyectos ferroviarios y eléctricos" />
       </a>
       <div class="nav-right">
         <ul>
@@ -702,8 +705,8 @@
       <div class="hero-coord">33°25′S · 70°34′W</div>
       <div class="accent-bar"></div>
       <h1>
-        <span class="es">Control técnico independiente para<br/>infraestructura ferroviaria,<br/>sistemas de potencia y sistemas críticos en operación.<span class="accent">Nos incorporamos cuando se requiere.</span></span>
-        <span class="en">Independent technical control for<br/>railway infrastructure,<br/>power systems, and critical operational systems.<span class="accent">Integrated when it matters most.</span></span>
+        <span class="es">Control técnico independiente para infraestructura ferroviaria, sistemas de potencia y sistemas críticos en operación.<span class="accent">Nos incorporamos cuando se requiere.</span></span>
+        <span class="en">Independent technical control for railway infrastructure, power systems, and critical operational systems.<span class="accent">Integrated when it matters most.</span></span>
       </h1>
       <p class="lede">
         <span class="es">Acompañamos decisiones clave en diseño, ejecución y operación.</span>
