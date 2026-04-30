@@ -267,30 +267,32 @@
       padding: 88px 24px 96px;
       position: relative;
     }
-    .editorial::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 1px;
-      background: var(--teal);
-    }
-    .editorial-quote {
-      max-width: 900px;
+    .editorial-system {
+      max-width: 760px;
       margin: 0 auto;
-      font-family: 'Helvetica Now', 'Helvetica Neue', Helvetica, 'Inter', sans-serif;
-      font-style: normal;
-      font-weight: 300;
-      font-size: clamp(1.4rem, 2.6vw, 2.1rem);
-      line-height: 1.35;
-      color: var(--navy);
       text-align: center;
-      letter-spacing: +0.01em;
-      text-wrap: balance;
+      padding: 0;
     }
-    .editorial-quote .accent { color: var(--teal); font-style: italic; }
+    .editorial-system p {
+      margin: 0;
+      padding: 0;
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+    .editorial-system .strong {
+      font-weight: 600;
+      margin-top: 10px;
+      padding: 0;
+    }
+    .editorial-rule {
+      width: 56px;
+      height: 2px;
+      background: var(--teal);
+      margin: 22px auto;
+      padding: 0;
+    }
     .section-inner { max-width: var(--max-width); margin: 0 auto; }
     .eyebrow {
       color: var(--teal);
@@ -428,6 +430,58 @@
       margin: 0;
       color: var(--gray);
       font-size: 0.92rem;
+    }
+    
+    /* RAILWAY TECHNICAL IMAGE - Editorial layout */
+    .railway-technical {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 88px;
+      align-items: start;
+      margin-top: 72px;
+      padding: 36px;
+      background: var(--bg-softer);
+      border-top: 2px solid var(--teal);
+    }
+    .railway-technical-text h4 {
+      font-size: 1.18rem;
+      line-height: 1.3;
+      font-weight: 500;
+      margin: 0 0 22px;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .railway-capabilities {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .railway-capabilities li {
+      color: var(--navy-dark);
+      font-size: 0.96rem;
+      line-height: 1.75;
+    }
+    .railway-interface {
+      margin-top: 24px;
+      color: var(--gray);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      max-width: 420px;
+    }
+    .railway-technical-image {
+      padding-right: 10px;
+    }
+    .railway-technical-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .railway-technical {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 28px;
+      }
     }
 
     /* INTERVENTION */
@@ -759,10 +813,11 @@
   </section>
 
   <section class="editorial" aria-label="Quote">
-    <p class="editorial-quote">
-      <span class="es">El diseño establece la dirección. <span class="accent">La ejecución define el resultado.</span></span>
-      <span class="en">Design sets the direction. <span class="accent">Execution defines the outcome.</span></span>
-    </p>
+    <div class="editorial-system">
+      <p><span class="es">El diseño establece la dirección.</span><span class="en">Design sets the direction.</span></p>
+      <div class="editorial-rule"></div>
+      <p class="strong"><span class="es">La ejecución define el resultado.</span><span class="en">Execution defines the outcome.</span></p>
+    </div>
   </section>
 
   <section id="modelo" class="model">
@@ -837,6 +892,27 @@
             <span class="es">Alineación entre terreno, capacidad de red y plazos: desde evaluación eléctrica de sitio hasta readiness operacional.</span>
             <span class="en">Alignment between site, grid capacity, and timelines: from electrical site assessment through operational readiness.</span>
           </p>
+        </div>
+      </div>
+      
+      <div class="railway-technical">
+        <div class="railway-technical-text">
+          <h4>
+            <span class="es">Electrificación Ferroviaria (OLE)</span>
+            <span class="en">Railway Electrification (OLE)</span>
+          </h4>
+          <ul class="railway-capabilities">
+            <li><span class="es">Integración de sistemas de catenaria</span><span class="en">Catenary systems integration</span></li>
+            <li><span class="es">Revisión de diseño eléctrico</span><span class="en">Electrical design review</span></li>
+            <li><span class="es">Control técnico de ejecución en entornos operativos</span><span class="en">Technical execution control in operational environments</span></li>
+          </ul>
+          <p class="railway-interface">
+            <span class="es">Interfaces con utilities, distribución, transmisión y autoridades.</span>
+            <span class="en">Interfaces with utilities, distribution, transmission, and authorities.</span>
+          </p>
+        </div>
+        <div class="railway-technical-image">
+          <img src="forte_railway_technical.jpg" alt="Railway electrification overhead line equipment (OLE) system installation" loading="lazy" />
         </div>
       </div>
     </div>
