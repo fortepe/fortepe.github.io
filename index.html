@@ -6,8 +6,10 @@
 <title>Forte Project Engineering · Control técnico para infraestructura crítica</title>
 <meta name="description" content="Forte Project Engineering. Control técnico para proyectos ferroviarios, energéticos y de infraestructura crítica. Santiago, Chile · LATAM." />
 
-<link rel="icon" type="image/svg+xml" href="forte-primary.svg" />
-<link rel="apple-touch-icon" href="forte-primary.svg" />
+<link rel="icon" type="image/svg+xml" href="forte-favicon.svg" />
+<link rel="apple-touch-icon" href="forte-favicon.svg" />
+<link rel="preload" as="image" href="hero-worker.jpg" fetchpriority="high" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap&font-display=swap" crossorigin />
 <link rel="canonical" href="https://fortepe.com/" />
 
 <meta property="og:type" content="website" />
@@ -15,6 +17,7 @@
 <meta property="og:description" content="Acompañamos las decisiones que definen el resultado del proyecto. Ferroviario, energía e infraestructura crítica." />
 <meta property="og:image" content="forte-primary.svg" />
 <meta property="og:locale" content="es_CL" />
+<meta property="og:site_name" content="Forte Project Engineering" />
 
 <script type="application/ld+json">
 {
@@ -41,7 +44,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap&font-display=swap" rel="stylesheet">
 
 <style>
   /* ─── Brand tokens (from Forte Brand Kit v1.0) ─── */
@@ -1059,7 +1062,7 @@
 <header class="site-header">
   <nav class="nav" aria-label="Main">
     <a class="nav-logo" href="#top" aria-label="Forte Project Engineering">
-      <img src="forte-primary.svg" alt="Forte Project Engineering" />
+      <img src="forte-primary.svg" alt="Forte Project Engineering" width="160" height="52" fetchpriority="high" />
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about"><span class="es">Nosotros</span><span class="en">About</span></a></li>
@@ -1323,7 +1326,7 @@
         </p>
       </div>
       <div class="capability-photo">
-        <img src="ole-tensioning.jpg" alt="Catenary tensioning structures framing a train at a Chilean rail yard" loading="lazy" />
+        <img src="ole-tensioning.jpg" alt="Catenary tensioning structures framing a train at a Chilean rail yard" loading="lazy" decoding="async" width="900" height="900" />
       </div>
     </div>
   </div>
@@ -1332,7 +1335,7 @@
 <!-- ════════ FULL-BLEED PHOTO BREAK ════════ -->
 <section class="photo-break" aria-label="Project photography">
   <div class="image">
-    <img src="break-panoramic.jpg" alt="Aerial view of a trackside solar array powering a passenger train, set between vineyards, highway, and the Andes" loading="lazy" />
+    <img src="break-panoramic.jpg" alt="Aerial view of a trackside solar array powering a passenger train, set between vineyards, highway, and the Andes" loading="lazy" decoding="async" width="1530" height="510" />
     <span class="corner tl"></span>
     <span class="corner tr"></span>
     <span class="corner bl"></span>
@@ -1552,7 +1555,7 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="foot-left">
-      <img src="forte-reversed.svg" alt="Forte" />
+      <img src="forte-reversed.svg" alt="Forte" width="140" height="46" loading="lazy" decoding="async" />
       <span class="sep"></span>
       <span><span class="es">Control técnico para infraestructura crítica</span><span class="en">Technical control for critical infrastructure</span></span>
     </div>
@@ -1565,7 +1568,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script defer src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Language toggle (persists in localStorage)
