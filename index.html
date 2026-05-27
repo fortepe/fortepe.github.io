@@ -3,18 +3,21 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Forte Project Engineering · Control técnico para infraestructura crítica</title>
-<meta name="description" content="Forte Project Engineering. Control técnico para proyectos ferroviarios, energéticos y de infraestructura crítica. Santiago, Chile · LATAM." />
+<title>Forte Project Engineering · Asesoría técnica para infraestructura crítica</title>
+<meta name="description"
+  content="Forte Project Engineering. Asesoría técnica independiente para proyectos ferroviarios, energéticos y de infraestructura crítica. Santiago, Chile · LATAM."
+  data-es="Forte Project Engineering. Asesoría técnica independiente para proyectos ferroviarios, energéticos y de infraestructura crítica. Santiago, Chile · LATAM."
+  data-en="Forte Project Engineering. Independent technical advisory for rail, energy, and critical infrastructure projects. Santiago, Chile · LATAM." />
 
 <link rel="icon" type="image/svg+xml" href="forte-favicon.svg" />
 <link rel="apple-touch-icon" href="forte-favicon.svg" />
-<link rel="preload" as="image" href="hero-worker.jpg" fetchpriority="high" />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap&font-display=swap" crossorigin />
+<link rel="preload" as="image" href="ole-tensioning.jpg" fetchpriority="high" />
 <link rel="canonical" href="https://fortepe.com/" />
+<link rel="stylesheet" href="shared.css" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Forte Project Engineering · Control técnico para infraestructura crítica" />
-<meta property="og:description" content="Acompañamos las decisiones que definen el resultado del proyecto. Ferroviario, energía e infraestructura crítica." />
+<meta property="og:title" content="Forte Project Engineering · Asesoría técnica para infraestructura crítica" />
+<meta property="og:description" content="Asesoría técnica independiente para las etapas donde las decisiones definen el resultado del proyecto." />
 <meta property="og:image" content="forte-primary.svg" />
 <meta property="og:locale" content="es_CL" />
 <meta property="og:site_name" content="Forte Project Engineering" />
@@ -33,11 +36,7 @@
     "addressRegion": "Santiago",
     "addressCountry": "CL"
   },
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "email": "info@fortepe.com",
-    "contactType": "general"
-  }],
+  "contactPoint": [{"@type": "ContactPoint", "email": "info@fortepe.com", "contactType": "general"}],
   "areaServed": ["CL","CO","BR","PE","BZ","AR","PA","CR","GT","SV"]
 }
 </script>
@@ -47,243 +46,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap&font-display=swap" rel="stylesheet">
 
 <style>
-  /* ─── Brand tokens (from Forte Brand Kit v1.0) ─── */
-  :root {
-    --navy:    #12324A;
-    --navy-700:#0D2538;
-    --navy-50: #E8EDF1;
-    --teal:    #137F7C;
-    --teal-500:#1A9692;
-    --teal-50: #E0F1F0;
-    --gray:    #6F747A;
-    --gray-300:#C6C9CD;
-    --gray-100:#E9EBED;
-    --paper:   #F6F4F0;
-    --bone:    #F2EFE9;
-    --white:   #FFFFFF;
-    --ink:     #0B1820;
-
-    --sans: 'Inter','Calibri','Helvetica Neue',Arial,sans-serif;
-    --mono: 'JetBrains Mono','Consolas','Menlo',monospace;
-
-    --maxw: 1280px;
-    --pad: clamp(20px, 4vw, 56px);
-    --header-h: 76px;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    font-family: var(--sans);
-    color: var(--navy);
-    background: var(--white);
-    line-height: 1.55;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
-  img { max-width: 100%; display: block; }
-  a { color: inherit; text-decoration: none; }
-  ::selection { background: var(--teal); color: #fff; }
-
-  /* Language switching */
-  html[lang="es"] .en { display: none !important; }
-  html[lang="en"] .es { display: none !important; }
-
-  /* ─── Type ─── */
-  .eyebrow {
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin: 0;
-  }
-  .eyebrow.on-navy { color: var(--teal-500); }
-  .eyebrow .num { color: var(--gray); margin-right: 10px; }
-  .eyebrow.on-navy .num { color: rgba(224, 241, 240, 0.55); }
-
-  .label-mono {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gray);
-  }
-
-  h1, h2, h3, h4 {
-    font-family: var(--sans);
-    color: var(--navy);
-    margin: 0;
-    text-wrap: balance;
-  }
-  h2.section-title {
-    font-size: clamp(34px, 4.6vw, 64px);
-    line-height: 1.02;
-    font-weight: 700;
-    letter-spacing: -0.025em;
-  }
-  h3.subtitle {
-    font-size: clamp(20px, 1.8vw, 26px);
-    line-height: 1.2;
-    font-weight: 600;
-    letter-spacing: -0.012em;
-  }
-  .lede {
-    font-size: clamp(18px, 1.4vw, 22px);
-    line-height: 1.5;
-    font-weight: 400;
-    color: var(--navy);
-    max-width: 56ch;
-    margin: 0;
-  }
-  .body-copy {
-    color: var(--gray);
-    font-size: 16px;
-    line-height: 1.65;
-    max-width: 62ch;
-    margin: 0;
-  }
-  .body-copy + .body-copy { margin-top: 14px; }
-  .rule {
-    width: 64px; height: 2px; background: var(--teal);
-    border: 0; display: block;
-  }
-  .rule.gray { background: var(--gray-300); }
-
-  /* ─── Layout helpers ─── */
-  .container { max-width: var(--maxw); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
-  .section { padding: clamp(72px, 9vw, 120px) 0; }
-  .section.tight { padding: clamp(56px, 6vw, 80px) 0; }
-  .section.paper { background: var(--paper); }
-  .section.bone { background: var(--bone); }
-  .section.navy { background: var(--navy); color: #fff; }
-  .section.navy h2.section-title, .section.navy h3.subtitle, .section.navy h4 { color: #fff; }
-  .section.navy .body-copy { color: rgba(224, 241, 240, 0.75); }
-  .section.navy .lede { color: #fff; }
-
-  /* ─── Header ─── */
-  header.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: saturate(140%) blur(10px);
-    -webkit-backdrop-filter: saturate(140%) blur(10px);
-    border-bottom: 1px solid var(--gray-100);
-  }
-  .nav {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 14px var(--pad);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    position: relative;
-  }
-  .nav-logo { display: flex; align-items: center; }
-  .nav-logo img { height: 52px; width: auto; }
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: clamp(14px, 2vw, 28px);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .nav-links a {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--navy);
-    padding: 6px 0;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.18s ease, color 0.18s ease;
-  }
-  .nav-links a:hover { border-bottom-color: var(--teal); color: var(--teal); }
-  .nav-right { display: flex; align-items: center; gap: 18px; }
-  .lang-toggle {
-    background: transparent;
-    border: 1px solid var(--gray-300);
-    color: var(--navy);
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    padding: 7px 12px;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.18s ease;
-  }
-  .lang-toggle:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
-
-  @media (max-width: 880px) {
-    .nav-links {
-      position: absolute;
-      top: 100%; left: 0; right: 0;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0;
-      background: #fff;
-      border-bottom: 1px solid var(--gray-100);
-      padding: 8px 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      z-index: 40;
-    }
-    .nav-links.is-open {
-      max-height: 70vh;
-    }
-    .nav-links li {
-      border-top: 1px solid var(--gray-100);
-    }
-    .nav-links li:first-child { border-top: 0; }
-    .nav-links a {
-      display: block;
-      padding: 18px var(--pad);
-      font-size: 12px;
-    }
-    .nav-links a:hover { border-bottom: 0; background: var(--paper); }
-    .menu-btn { display: inline-flex; }
-  }
-  .menu-btn {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 38px; height: 38px;
-    background: transparent;
-    border: 1px solid var(--gray-300);
-    border-radius: 2px;
-    cursor: pointer;
-    padding: 0;
-    margin-left: 4px;
-  }
-  .menu-btn span {
-    display: block;
-    width: 16px;
-    height: 1.5px;
-    background: var(--navy);
-    position: relative;
-  }
-  .menu-btn span::before, .menu-btn span::after {
-    content: "";
-    position: absolute;
-    left: 0; width: 16px; height: 1.5px;
-    background: var(--navy);
-  }
-  .menu-btn span::before { top: -5px; }
-  .menu-btn span::after { top: 5px; }
-  .menu-btn[aria-expanded="true"] span { background: transparent; }
-  .menu-btn[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
-  .menu-btn[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
-
   /* ─── Hero ─── */
   .hero {
     background: var(--navy);
@@ -313,7 +75,7 @@
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.18em;
-    color: rgba(224, 241, 240, 0.55);
+    color: rgba(224, 241, 240, 0.45);
     text-transform: uppercase;
     z-index: 3;
   }
@@ -333,10 +95,11 @@
     background: var(--teal-500);
     box-shadow: 0 0 0 4px rgba(26,150,146,0.18);
     animation: pulse 2.4s ease-in-out infinite;
+    flex-shrink: 0;
   }
   @keyframes pulse {
     0%, 100% { box-shadow: 0 0 0 4px rgba(26,150,146,0.18); }
-    50%      { box-shadow: 0 0 0 8px rgba(26,150,146,0.05); }
+    50%       { box-shadow: 0 0 0 8px rgba(26,150,146,0.05); }
   }
   .hero h1 {
     font-size: clamp(40px, 5.4vw, 84px);
@@ -344,15 +107,14 @@
     font-weight: 700;
     letter-spacing: -0.03em;
     color: #fff;
-    margin: 0 0 32px;
+    margin: 0 0 28px;
     max-width: 14ch;
   }
   .hero h1 em {
     font-style: normal;
-    color: var(--teal-500);
     display: block;
     font-size: 0.62em;
-    line-height: 1.05;
+    line-height: 1.1;
     margin-top: 18px;
     font-weight: 500;
     letter-spacing: -0.02em;
@@ -362,25 +124,30 @@
     color: rgba(224, 241, 240, 0.78);
     font-size: clamp(16px, 1.3vw, 19px);
     max-width: 48ch;
-    margin: 0 0 40px;
+    margin: 0 0 32px;
   }
   .hero-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 0;
+    margin-top: 4px;
   }
   .hero-tags span {
     font-family: var(--mono);
     font-size: 11px;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    padding: 7px 14px;
-    border: 1px solid rgba(255,255,255,0.16);
-    border-radius: 2px;
-    color: rgba(224, 241, 240, 0.85);
+    color: rgba(224, 241, 240, 0.55);
+    display: inline-flex;
+    align-items: center;
   }
-
-  /* hero visual */
+  .hero-tags span + span::before {
+    content: "·";
+    margin: 0 12px;
+    color: var(--teal);
+    font-size: 14px;
+    line-height: 1;
+  }
   .hero-visual {
     position: relative;
     height: 70vh;
@@ -391,18 +158,15 @@
   .hero-visual .photo {
     position: absolute;
     inset: 0;
-    background: url("hero-worker.jpg") center 30%/cover no-repeat;
+    background: url("ole-tensioning.jpg") center 40%/cover no-repeat;
   }
   .hero-visual::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    /* subtle bottom fade only, for caption legibility */
-    background: linear-gradient(180deg, rgba(18,50,74,0) 70%, rgba(18,50,74,0.25) 100%);
+    background: linear-gradient(180deg, rgba(18,50,74,0.15) 0%, rgba(18,50,74,0.35) 100%);
   }
-
-  /* corner brackets — echo brand kit motif */
   .hero-visual .corner {
     position: absolute;
     width: 16px; height: 16px;
@@ -414,8 +178,6 @@
   .hero-visual .corner.tr { top: 12px; right: 12px; border-width: 1px 1px 0 0; }
   .hero-visual .corner.bl { bottom: 12px; left: 12px; border-width: 0 0 1px 1px; }
   .hero-visual .corner.br { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
-
-  /* converging-lines decorative */
   .hero-lines {
     position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
@@ -425,25 +187,10 @@
     opacity: 0.13;
   }
   .hero-lines svg { width: 100%; height: 100%; }
-
   @media (max-width: 980px) {
     .hero-inner { grid-template-columns: 1fr; }
     .hero-visual { border-left: 0; border-top: 2px solid var(--teal); height: 56vh; min-height: 360px; }
     .hero { min-height: auto; }
-  }
-
-  /* ─── Section header pattern ─── */
-  .sec-head {
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: clamp(20px, 4vw, 64px);
-    align-items: start;
-    margin-bottom: clamp(40px, 5vw, 64px);
-  }
-  .sec-head .eyebrow { padding-top: 6px; }
-  .sec-head h2 { margin: 0 0 16px; }
-  @media (max-width: 720px) {
-    .sec-head { grid-template-columns: 1fr; gap: 16px; }
   }
 
   /* ─── About ─── */
@@ -483,8 +230,7 @@
   }
   .stat-card .stat-tag {
     position: absolute;
-    top: 22px;
-    right: 22px;
+    top: 22px; right: 22px;
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.18em;
@@ -541,10 +287,7 @@
     min-height: 260px;
   }
   .model-step:last-child { border-right: 0; }
-  .model-step.primary {
-    background: var(--navy);
-    color: #fff;
-  }
+  .model-step.primary { background: var(--navy); color: #fff; }
   .model-step.primary h3 { color: #fff; }
   .model-step.primary p { color: rgba(224, 241, 240, 0.75); }
   .model-step .step-num {
@@ -612,15 +355,10 @@
     margin: 0;
     line-height: 1.2;
   }
-  .sector p {
-    color: var(--gray);
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 0;
-  }
+  .sector p { color: var(--gray); font-size: 15px; line-height: 1.6; margin: 0; }
   @media (max-width: 880px) { .sectors-grid { grid-template-columns: 1fr; } }
 
-  /* ─── Capability block (OLE / railway technical) ─── */
+  /* ─── Capability block ─── */
   .capability {
     margin-top: clamp(48px, 6vw, 80px);
     display: grid;
@@ -645,8 +383,7 @@
   }
   .capability-text ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
     display: grid;
     gap: 0;
   }
@@ -687,138 +424,134 @@
     inset: 0;
     width: 100%; height: 100%;
     object-fit: cover;
-  }
-  .capability-photo::after {
-    content: none;
+    object-position: center 20%;
   }
   @media (max-width: 880px) {
     .capability { grid-template-columns: 1fr; }
     .capability-photo { min-height: 320px; }
   }
 
-  /* ─── Intervention ─── */
-  .two-col {
+  /* ─── Services grid ─── */
+  .services-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(32px, 5vw, 64px);
-    margin-bottom: clamp(48px, 6vw, 72px);
-  }
-  .two-col h3.col-title {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin: 0 0 20px;
-  }
-  .col-list { list-style: none; margin: 0; padding: 0; }
-  .col-list li {
-    padding: 16px 0 16px 32px;
-    border-top: 1px solid var(--gray-100);
-    color: var(--navy);
-    font-size: 15.5px;
-    line-height: 1.55;
-    position: relative;
-  }
-  .col-list li:last-child { border-bottom: 1px solid var(--gray-100); }
-  .col-list.plus li::before {
-    content: "+";
-    position: absolute;
-    left: 0; top: 16px;
-    color: var(--teal);
-    font-family: var(--mono);
-    font-weight: 500;
-    font-size: 16px;
-  }
-  .col-list.check li::before {
-    content: "";
-    position: absolute;
-    left: 4px; top: 25px;
-    width: 6px; height: 6px;
-    background: var(--teal);
-  }
-  @media (max-width: 720px) {
-    .two-col { grid-template-columns: 1fr; gap: 28px; }
-  }
-
-  /* Work fronts */
-  .fronts-wrap {
-    background: var(--white);
-    border: 1px solid var(--gray-100);
-    padding: clamp(28px, 3vw, 40px);
-  }
-  .fronts-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 0;
+    border: 1px solid var(--gray-100);
+    margin-top: clamp(40px, 5vw, 56px);
   }
-  .front {
-    padding: clamp(24px, 2.6vw, 32px) clamp(20px, 2vw, 28px);
-    border-top: 1px solid var(--gray-100);
-    border-left: 1px solid var(--gray-100);
-    display: flex; flex-direction: column; gap: 14px;
-    position: relative;
+  .service-item {
+    padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 28px);
+    border-right: 1px solid var(--gray-100);
+    border-bottom: 1px solid var(--gray-100);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
-  .front:nth-child(1), .front:nth-child(2) { border-top: 0; }
-  .front:nth-child(odd) { border-left: 0; }
-  .front .front-num {
+  .service-item:nth-child(3n) { border-right: 0; }
+  .service-item:nth-last-child(-n+3) { border-bottom: 0; }
+  .service-item .si-num {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--teal);
   }
-  .front h3 {
-    font-size: 19px;
+  .service-item h3 {
+    font-size: 17px;
     font-weight: 600;
     letter-spacing: -0.01em;
     color: var(--navy);
     line-height: 1.25;
     margin: 0;
   }
-  .front p {
+  .service-item p {
     color: var(--gray);
-    font-size: 14.5px;
+    font-size: 14px;
     line-height: 1.6;
     margin: 0;
   }
-  .front .phase {
-    margin-top: auto;
-    padding-top: 14px;
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--navy);
-    border-top: 1px dashed var(--gray-300);
-  }
-  @media (max-width: 720px) {
-    .fronts-grid { grid-template-columns: 1fr; }
-    .front, .front:nth-child(1), .front:nth-child(2) { border-top: 1px solid var(--gray-100); border-left: 0; }
-    .front:first-child { border-top: 0; }
+  @media (max-width: 880px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .service-item { border-right: 0; }
+    .service-item:nth-last-child(-n+3) { border-bottom: 1px solid var(--gray-100); }
+    .service-item:last-child { border-bottom: 0; }
   }
 
-  /* ─── Full-bleed photo break ─── */
-  .photo-break {
-    position: relative;
-    overflow: hidden;
+  /* ─── Institutions band ─── */
+  .institutions-band {
     background: var(--navy);
+    padding: clamp(56px, 7vw, 96px) 0;
   }
-  .photo-break .image {
-    position: relative;
-    overflow: hidden;
-    line-height: 0;
+  .inst-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--pad);
   }
-  .photo-break .image img {
-    display: block;
-    width: 100%;
-    height: auto;
+  .inst-statement {
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.5;
+    color: rgba(224,241,240,0.85);
+    max-width: 60ch;
+    margin: 28px 0 48px;
   }
-  .photo-break .image::after {
-    content: none;
+  .inst-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
   }
-  /* corner markers — brand bracket motif, no text over the photo */
+  .inst-item {
+    padding: 28px 24px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .inst-item:last-child { border-right: 0; }
+  .inst-item .inst-icon {
+    width: 32px; height: 32px;
+    border: 1px solid rgba(19,127,124,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .inst-item .inst-icon svg { width: 16px; height: 16px; fill: none; stroke: var(--teal-500); stroke-width: 1.5; }
+  .inst-item .inst-type {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal-500);
+    margin: 0;
+  }
+  .inst-item h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .inst-item p {
+    font-size: 13px;
+    color: rgba(224,241,240,0.55);
+    line-height: 1.55;
+    margin: 0;
+  }
+  @media (max-width: 880px) {
+    .inst-grid { grid-template-columns: repeat(2, 1fr); }
+    .inst-item:nth-child(2n) { border-right: 0; }
+    .inst-item:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,0.08); }
+  }
+  @media (max-width: 560px) {
+    .inst-grid { grid-template-columns: 1fr; }
+    .inst-item { border-right: 0; border-top: 1px solid rgba(255,255,255,0.08); }
+    .inst-item:first-child { border-top: 0; }
+  }
+
+  /* ─── Photo break ─── */
+  .photo-break { position: relative; overflow: hidden; background: var(--navy); }
+  .photo-break .image { position: relative; overflow: hidden; line-height: 0; }
+  .photo-break .image img { display: block; width: 100%; height: auto; }
   .photo-break .image .corner {
     position: absolute;
     width: 18px; height: 18px;
@@ -830,12 +563,7 @@
   .photo-break .image .corner.tr { top: 18px; right: 18px; border-width: 1px 1px 0 0; }
   .photo-break .image .corner.bl { bottom: 18px; left: 18px; border-width: 0 0 1px 1px; }
   .photo-break .image .corner.br { bottom: 18px; right: 18px; border-width: 0 1px 1px 0; }
-  /* Caption strip BELOW the image */
-  .photo-break .caption-strip {
-    background: var(--navy);
-    color: #fff;
-    padding: 14px var(--pad);
-  }
+  .photo-break .caption-strip { background: var(--navy); color: #fff; padding: 14px var(--pad); }
   .photo-break .caption-inner {
     max-width: var(--maxw);
     margin: 0 auto;
@@ -863,7 +591,6 @@
     color: #fff;
     margin: 0;
   }
-  .photo-break .caption-inner h3 br { display: none; }
   .photo-break .caption-inner h3 em {
     font-style: normal;
     color: var(--teal-500);
@@ -873,12 +600,8 @@
     padding-left: 12px;
     border-left: 1px solid rgba(255,255,255,0.22);
   }
-  @media (max-width: 720px) {
-    .photo-break .caption-inner { gap: 12px; }
-    .photo-break .caption-inner h3 em { display: block; margin-left: 0; padding-left: 0; border-left: 0; margin-top: 4px; }
-  }
 
-  /* ─── Team / capabilities ─── */
+  /* ─── Team capabilities ─── */
   .capabilities-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -914,8 +637,29 @@
     font-size: 11px;
     letter-spacing: 0.16em;
     color: var(--gray);
+    flex-shrink: 0;
   }
   @media (max-width: 720px) { .capabilities-grid { grid-template-columns: 1fr; } }
+
+  /* ─── Network note ─── */
+  .network-note {
+    margin-top: clamp(40px, 5vw, 56px);
+    background: var(--paper);
+    border-left: 2px solid var(--teal);
+    padding: clamp(24px, 3vw, 36px) clamp(24px, 3vw, 36px);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+  }
+  .network-note p {
+    font-size: 16px;
+    color: var(--navy);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .network-note p span.gray { color: var(--gray); font-size: 14px; display: block; margin-top: 6px; }
+  @media (max-width: 720px) { .network-note { grid-template-columns: 1fr; } }
 
   /* ─── Contact ─── */
   .contact-grid {
@@ -925,7 +669,6 @@
     align-items: start;
     margin-top: clamp(40px, 4vw, 56px);
   }
-  .contact-grid h2.section-title { color: #fff; }
   .contact-grid .lede { color: rgba(224, 241, 240, 0.85); }
   .contact-card-block {
     background: rgba(255,255,255,0.04);
@@ -954,105 +697,13 @@
   }
   .contact-row .v a { color: #fff; border-bottom: 1px solid var(--teal-500); padding-bottom: 1px; }
   .contact-row .v a:hover { color: var(--teal-500); }
-
   .cta-row {
     margin-top: clamp(28px, 3vw, 40px);
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
   }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 22px;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    font-weight: 500;
-    border-radius: 2px;
-    transition: all 0.18s ease;
-    border: 1px solid transparent;
-  }
-  .btn-primary { background: var(--teal); color: #fff; }
-  .btn-primary:hover { background: var(--teal-500); }
-  .btn-ghost {
-    background: transparent;
-    color: #fff;
-    border-color: rgba(255,255,255,0.25);
-  }
-  .btn-ghost:hover { border-color: var(--teal-500); color: var(--teal-500); }
-  .btn .arrow { display: inline-block; transition: transform 0.18s ease; }
-  .btn:hover .arrow { transform: translateX(3px); }
   @media (max-width: 880px) { .contact-grid { grid-template-columns: 1fr; } }
-
-  /* ─── Footer ─── */
-  footer.site-footer {
-    background: var(--ink);
-    color: rgba(224, 241, 240, 0.55);
-    padding: 32px var(--pad);
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-  .footer-inner {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .foot-left, .foot-right {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
-  }
-  .foot-left img { height: 22px; }
-  .footer-inner .sep {
-    width: 1px; height: 14px;
-    background: rgba(224, 241, 240, 0.18);
-    display: inline-block;
-  }
-  .footer-inner .sep.dot {
-    width: 3px; height: 3px;
-    background: var(--teal-500);
-    border-radius: 50%;
-  }
-  .to-top {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px; height: 32px;
-    border: 1px solid rgba(224,241,240,0.18);
-    color: rgba(224,241,240,0.7);
-    font-family: var(--sans);
-    font-size: 14px;
-    transition: all 0.18s ease;
-    margin-left: 6px;
-  }
-  .to-top:hover { border-color: var(--teal-500); color: var(--teal-500); }
-  @media (max-width: 640px) {
-    .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
-  }
-
-  /* small utilities */
-  .anchor { scroll-margin-top: calc(var(--header-h) + 16px); }
-  .accent-bar {
-    display: inline-block;
-    width: 48px;
-    height: 2px;
-    background: var(--teal);
-    vertical-align: middle;
-    margin-right: 14px;
-  }
-  .grid-numbers {
-    counter-reset: g;
-  }
 </style>
 </head>
 
@@ -1061,27 +712,66 @@
 <!-- ════════ HEADER ════════ -->
 <header class="site-header">
   <nav class="nav" aria-label="Main">
-    <a class="nav-logo" href="#top" aria-label="Forte Project Engineering">
+    <a class="nav-logo" href="index.html" aria-label="Forte Project Engineering">
       <img src="forte-primary.svg" alt="Forte Project Engineering" width="160" height="52" fetchpriority="high" />
     </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about"><span class="es">Nosotros</span><span class="en">About</span></a></li>
-      <li><a href="#approach"><span class="es">Enfoque</span><span class="en">Approach</span></a></li>
-      <li><a href="#sectors"><span class="es">Sectores</span><span class="en">Sectors</span></a></li>
-      <li><a href="#services"><span class="es">Intervención</span><span class="en">Services</span></a></li>
-      <li><a href="#team"><span class="es">Equipo</span><span class="en">Team</span></a></li>
-      <li><a href="#contact"><span class="es">Contacto</span><span class="en">Contact</span></a></li>
-    </ul>
     <div class="nav-right">
       <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">
         <span class="es">EN</span><span class="en">ES</span>
       </button>
-      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span>
       </button>
     </div>
   </nav>
 </header>
+
+<!-- ════════ DRAWER NAV ════════ -->
+<div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+<nav class="drawer" id="drawer" aria-label="Site navigation">
+  <div class="drawer-head">
+    <img src="forte-reversed.svg" alt="Forte Project Engineering" width="120" height="40" />
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  </div>
+  <div class="drawer-nav">
+    <a href="index.html" data-page="index">
+      <span><span class="es">Inicio</span><span class="en">Home</span></span>
+      <span class="link-num">00</span>
+    </a>
+    <a href="index.html#about" data-page="index">
+      <span><span class="es">Nosotros</span><span class="en">About</span></span>
+      <span class="link-num">01</span>
+    </a>
+    <a href="index.html#services" data-page="index">
+      <span><span class="es">Servicios</span><span class="en">Services</span></span>
+      <span class="link-num">02</span>
+    </a>
+    <a href="index.html#sectors" data-page="index">
+      <span><span class="es">Sectores</span><span class="en">Sectors</span></span>
+      <span class="link-num">03</span>
+    </a>
+    <a href="index.html#team" data-page="index">
+      <span><span class="es">Equipo</span><span class="en">Team</span></span>
+      <span class="link-num">04</span>
+    </a>
+    <div class="drawer-divider"></div>
+    <a href="projects.html" data-page="projects">
+      <span><span class="es">Proyectos</span><span class="en">Projects</span></span>
+      <span class="link-num">→</span>
+    </a>
+    <a href="contact.html" data-page="contact">
+      <span><span class="es">Contacto</span><span class="en">Contact</span></span>
+      <span class="link-num">→</span>
+    </a>
+  </div>
+  <div class="drawer-foot">
+    <div class="df-label">Forte Project Engineering</div>
+    <div class="df-val">
+      Santiago · Chile<br/>
+      <a href="mailto:info@fortepe.com">info@fortepe.com</a>
+    </div>
+  </div>
+</nav>
 
 <!-- ════════ HERO ════════ -->
 <section class="hero anchor" id="top">
@@ -1104,25 +794,26 @@
         <span class="en">Available for new engagements · 2026</span>
       </div>
       <h1>
-        <span class="es">Control técnico. Donde más importa.</span>
-        <span class="en">Technical control. Where it matters most.</span>
+        <span class="es">Asesoría técnica independiente.</span>
+        <span class="en">Independent technical advisory.</span>
         <em>
-          <span class="es">Acompañamos las decisiones que definen el resultado del proyecto.</span>
-          <span class="en">Supporting the decisions that define a project's outcome.</span>
+          <span class="es">Desde la evaluación hasta el cierre. Donde las decisiones técnicas definen el resultado.</span>
+          <span class="en">From assessment through close-out. Where technical decisions define the outcome.</span>
         </em>
       </h1>
       <p class="lede">
-        <span class="es">Trabajamos en proyectos ferroviarios, energéticos y de infraestructura crítica. En diseño, ejecución y operación.</span>
-        <span class="en">We work on rail, energy, and critical infrastructure projects. Across design, execution, and operation.</span>
+        <span class="es">Trabajamos en proyectos ferroviarios, energéticos e infraestructura crítica en América Latina. Evaluación técnica, control de ejecución, coordinación institucional y revisión independiente.</span>
+        <span class="en">We work on rail, energy, and critical infrastructure projects across Latin America. Technical assessment, execution control, institutional coordination, and independent review.</span>
       </p>
       <div class="hero-tags">
         <span><span class="es">Ferroviario</span><span class="en">Rail</span></span>
         <span><span class="es">Energía</span><span class="en">Energy</span></span>
         <span><span class="es">Infraestructura crítica</span><span class="en">Critical infrastructure</span></span>
+        <span><span class="es">Sector público</span><span class="en">Public sector</span></span>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="photo" role="img" aria-label="Technician installing solar monitoring equipment on a catenary pole"></div>
+      <div class="photo" role="img" aria-label="OLE catenary tensioning structures at a rail yard with train in background"></div>
       <span class="corner tl"></span>
       <span class="corner tr"></span>
       <span class="corner bl"></span>
@@ -1138,8 +829,8 @@
       <p class="eyebrow"><span class="num">01</span><span class="es">Nosotros</span><span class="en">About</span></p>
       <div>
         <h2 class="section-title">
-          <span class="es">Experiencia técnica<br/>aplicada a proyectos complejos.</span>
-          <span class="en">Technical experience<br/>applied to complex projects.</span>
+          <span class="es">Capacidad técnica senior.<br/>Sin capas intermedias.</span>
+          <span class="en">Senior technical capability.<br/>No intermediate layers.</span>
         </h2>
       </div>
     </div>
@@ -1148,44 +839,41 @@
       <div>
         <hr class="rule" />
         <p class="lede" style="margin-top: 28px;">
-          <span class="es">Forte PE es un equipo especializado con más de 25 años de experiencia en infraestructura ferroviaria, sistemas de potencia y proyectos críticos en operación.</span>
-          <span class="en">Forte PE is a specialized team with over 25 years of experience in railway infrastructure, power systems, and critical operational projects.</span>
+          <span class="es">Forte PE es una firma boutique de asesoría técnica independiente. Combinamos más de 40 años de experiencia acumulada en ingeniería eléctrica, sistemas ferroviarios, energía y gestión de proyectos de infraestructura en América Latina, Europa y Norteamérica.</span>
+          <span class="en">Forte PE is an independent boutique technical advisory firm. We bring together over 40 years of combined experience in electrical engineering, railway systems, energy, and infrastructure project management across Latin America, Europe, and North America.</span>
         </p>
         <p class="body-copy" style="margin-top: 24px;">
-          <span class="es">Desde Santiago, aportamos experiencia técnica y estratégica para acompañar decisiones clave en proyectos donde el diseño, la ejecución y la operación deben mantenerse alineados.</span>
-          <span class="en">From Santiago, we bring technical and strategic experience to support key decisions in projects where design, execution, and operation must remain aligned.</span>
+          <span class="es">Trabajamos directamente con owners, ministerios, financistas y agencias públicas — aportando criterio técnico y capacidad de gestión en las etapas donde más se necesitan. Sin estructuras de consultoría que diluyen la responsabilidad.</span>
+          <span class="en">We work directly with owners, ministries, lenders, and public agencies — bringing technical judgement and project management capability to the stages where they are most needed. No consultancy layers that dilute accountability.</span>
         </p>
         <p class="body-copy">
-          <span class="es">Trabajamos como autoridad técnica para owners, financistas y agencias públicas en entornos de alta complejidad.</span>
-          <span class="en">We act as a technical authority for owners, lenders, and public agencies in high-complexity environments.</span>
+          <span class="es">Cuando la escala lo requiere, articulamos equipos con especialistas técnicos de confianza en las disciplinas que el proyecto necesita.</span>
+          <span class="en">When scale requires it, we assemble teams with trusted specialist professionals across the disciplines the project demands.</span>
         </p>
       </div>
       <div class="stat-stack">
         <div class="stat-card">
-          <div class="stat-tag">01 · Experiencia</div>
-          <div class="stat-num">+25</div>
+          <div class="stat-tag">01 · <span class="es">Experiencia combinada</span><span class="en">Combined experience</span></div>
+          <div class="stat-num">+40</div>
           <div class="stat-label">
-            <span class="es">años de experiencia en infraestructura crítica y sistemas eléctricos.</span>
-            <span class="en">years of experience in critical infrastructure and electrical systems.</span>
+            <span class="es">años de experiencia acumulada en infraestructura, sistemas eléctricos y energía.</span>
+            <span class="en">years of combined experience in infrastructure, electrical systems, and energy.</span>
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-tag">02 · Cobertura</div>
+          <div class="stat-tag">02 · <span class="es">Portafolio gestionado</span><span class="en">Portfolio managed</span></div>
+          <div class="stat-num small">+1 GW</div>
+          <div class="stat-label">
+            <span class="es">de proyectos de infraestructura energética gestionados a nivel de owner, con entregables directos a CEO y financistas institucionales.</span>
+            <span class="en">of energy infrastructure projects managed at owner level, with direct deliverables to CEOs and institutional lenders.</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-tag">03 · <span class="es">Cobertura</span><span class="en">Coverage</span></div>
           <div class="stat-num small">Chile · LATAM</div>
           <div class="stat-label">
-            <span class="es">Operación permanente en Santiago con presencia en proyectos en Colombia, Brasil, Perú, Argentina y Centroamérica.</span>
-            <span class="en">Permanent operation in Santiago with project presence across Colombia, Brazil, Peru, Argentina, and Central America.</span>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-tag">03 · <span class="es">Postura</span><span class="en">Stance</span></div>
-          <div class="stat-num small">
-            <span class="es">Especialista</span>
-            <span class="en">Specialist</span>
-          </div>
-          <div class="stat-label">
-            <span class="es">Profundidad técnica en sistemas ferroviarios, eléctricos y de infraestructura crítica.</span>
-            <span class="en">Technical depth across railway, electrical, and critical infrastructure systems.</span>
+            <span class="es">Operación permanente en Santiago. Compromisos activos en Chile, Centroamérica y el Caribe. Experiencia previa en Europa y Norteamérica.</span>
+            <span class="en">Permanent operation in Santiago. Active engagements in Chile, Central America, and the Caribbean. Prior experience across Europe and North America.</span>
           </div>
         </div>
       </div>
@@ -1194,7 +882,7 @@
 </section>
 
 <!-- ════════ EDITORIAL QUOTE ════════ -->
-<section class="editorial-band" aria-label="Editorial quote">
+<section class="editorial-band" aria-label="Principio operativo">
   <p>
     <span class="es">Respondemos al proyecto.</span>
     <span class="en">We answer to the project.</span>
@@ -1207,56 +895,53 @@
   <div class="attribution">Forte · <span class="es">Principio operativo</span><span class="en">Operating principle</span></div>
 </section>
 
-<!-- ════════ WORKING MODEL ════════ -->
-<section id="approach" class="section anchor">
+<!-- ════════ SERVICES ════════ -->
+<section id="services" class="section anchor">
   <div class="container">
     <div class="sec-head">
-      <p class="eyebrow"><span class="num">02</span><span class="es">Modelo de Trabajo</span><span class="en">Working Model</span></p>
+      <p class="eyebrow"><span class="num">02</span><span class="es">Servicios</span><span class="en">Services</span></p>
       <div>
         <h2 class="section-title">
-          <span class="es">Activación, trabajo integrado<br/>y cierre claro.</span>
-          <span class="en">Activation, embedded work,<br/>and clear close-out.</span>
+          <span class="es">Lo que hacemos.</span>
+          <span class="en">What we do.</span>
         </h2>
         <p class="body-copy" style="margin-top: 20px;">
-          <span class="es">Nos incorporamos en etapas específicas del proyecto, cubrimos el vacío técnico que debe resolverse y dejamos capacidades, decisiones y entregables ordenados.</span>
-          <span class="en">We join at specific project stages, address the technical gap that needs to be solved, and leave behind clear decisions, capabilities, and deliverables.</span>
+          <span class="es">Asesoría técnica independiente a lo largo del ciclo de vida del proyecto — desde la evaluación temprana hasta el cierre técnico. El formato de cada compromiso se define según lo que el proyecto necesita.</span>
+          <span class="en">Independent technical advisory across the full project lifecycle — from early-stage assessment through technical close-out. Each engagement format is defined by what the project requires.</span>
         </p>
       </div>
     </div>
 
-    <div class="model-grid">
-      <div class="model-step">
-        <span class="step-num">01 · <span class="es">Activación</span><span class="en">Activation</span></span>
-        <h3>
-          <span class="es">Modalidad Plug &amp; Play</span>
-          <span class="en">Plug &amp; Play mode</span>
-        </h3>
-        <p>
-          <span class="es">Sin procesos de incorporación complejos. Nos integramos cuando el proyecto lo requiere y empezamos a aportar valor desde el primer día.</span>
-          <span class="en">No complex onboarding. We join when the project needs us and start contributing from day one.</span>
-        </p>
+    <div class="services-grid">
+      <div class="service-item">
+        <span class="si-num">01</span>
+        <h3><span class="es">Evaluación técnica temprana</span><span class="en">Early-stage technical assessment</span></h3>
+        <p><span class="es">Validación de restricciones, supuestos de diseño, interfaces y viabilidad técnica antes de comprometer decisiones críticas del proyecto.</span><span class="en">Validation of constraints, design assumptions, interfaces, and technical feasibility before committing to critical project decisions.</span></p>
       </div>
-      <div class="model-step primary">
-        <span class="step-num">02 · <span class="es">Integración</span><span class="en">Integration</span></span>
-        <h3>
-          <span class="es">Dentro de su estructura</span>
-          <span class="en">Inside your structure</span>
-        </h3>
-        <p>
-          <span class="es">No añadimos capas. Nos incorporamos donde hay un vacío técnico que resolver y trabajamos como parte del equipo.</span>
-          <span class="en">We don't add layers. We step in where there's a technical gap to solve and work as part of the team.</span>
-        </p>
+      <div class="service-item">
+        <span class="si-num">02</span>
+        <h3><span class="es">Ingeniería del Owner</span><span class="en">Owner's engineering</span></h3>
+        <p><span class="es">Representación técnica del owner en diseño, ejecución y puesta en servicio. Revisión de contratistas, gestión de interfaces y control de desviaciones.</span><span class="en">Technical representation of the owner through design, execution, and commissioning. Contractor review, interface management, and deviation control.</span></p>
       </div>
-      <div class="model-step">
-        <span class="step-num">03 · <span class="es">Desactivación</span><span class="en">Deactivation</span></span>
-        <h3>
-          <span class="es">Sin dependencia residual</span>
-          <span class="en">No residual dependency</span>
-        </h3>
-        <p>
-          <span class="es">Entregamos el trabajo completo y salimos. El proyecto queda en mejores condiciones, con decisiones trazables.</span>
-          <span class="en">We deliver the work complete and step out. The project is left in better condition, with traceable decisions.</span>
-        </p>
+      <div class="service-item">
+        <span class="si-num">03</span>
+        <h3><span class="es">Revisión técnica independiente</span><span class="en">Independent technical review</span></h3>
+        <p><span class="es">Revisión objetiva de propuestas, diseños, criterios técnicos y supuestos de contratistas. Para owners, financistas y agencias públicas que necesitan una segunda opinión técnica.</span><span class="en">Objective review of contractor proposals, designs, technical criteria, and assumptions. For owners, lenders, and public agencies requiring an independent technical opinion.</span></p>
+      </div>
+      <div class="service-item">
+        <span class="si-num">04</span>
+        <h3><span class="es">Coordinación de proyectos complejos</span><span class="en">Complex project coordination</span></h3>
+        <p><span class="es">Gestión de interfaces entre disciplinas, contratos y actores institucionales. Seguimiento de entregables, control de riesgos y continuidad entre diseño, terreno y operación.</span><span class="en">Interface management across disciplines, contracts, and institutional stakeholders. Deliverable tracking, risk control, and continuity between design, site, and operation.</span></p>
+      </div>
+      <div class="service-item">
+        <span class="si-num">05</span>
+        <h3><span class="es">Asesoría a prestamistas y due diligence</span><span class="en">Lender's advisory &amp; due diligence</span></h3>
+        <p><span class="es">Evaluación técnica para financistas e instituciones multilaterales. Revisión de factibilidad, riesgos técnicos, supuestos del contratista y condiciones de implementación.</span><span class="en">Technical evaluation for lenders and multilateral institutions. Feasibility review, technical risk assessment, contractor assumptions, and implementation conditions.</span></p>
+      </div>
+      <div class="service-item">
+        <span class="si-num">06</span>
+        <h3><span class="es">Asesoría institucional y estratégica</span><span class="en">Institutional &amp; strategic advisory</span></h3>
+        <p><span class="es">Apoyo técnico a ministerios, operadores y agencias públicas en planificación de proyectos, evaluación de programas y coordinación con organismos regulatorios y multilaterales.</span><span class="en">Technical support for ministries, operators, and public agencies in project planning, programme evaluation, and coordination with regulatory and multilateral bodies.</span></p>
       </div>
     </div>
   </div>
@@ -1272,9 +957,9 @@
           <span class="es">Ferroviario. Energía.<br/>Infraestructura crítica.</span>
           <span class="en">Rail. Energy.<br/>Critical infrastructure.</span>
         </h2>
-        <p class="body-copy" style="margin-top: 20px; white-space: nowrap;">
-          <span class="es">Tres dominios donde la red eléctrica, la integración de sistemas y la ejecución definen el resultado.</span>
-          <span class="en">Three domains where the grid, systems integration, and execution define the outcome.</span>
+        <p class="body-copy" style="margin-top: 20px;">
+          <span class="es">Tres dominios donde la integración de sistemas, la red eléctrica y la ejecución definen el resultado — y donde el criterio técnico independiente protege al owner.</span>
+          <span class="en">Three domains where systems integration, the grid, and execution define the outcome — and where independent technical judgement protects the owner.</span>
         </p>
       </div>
     </div>
@@ -1284,24 +969,24 @@
         <span class="sector-num">01 / 03</span>
         <h3><span class="es">Ferroviario</span><span class="en">Rail</span></h3>
         <p>
-          <span class="es">Electrificación, sistemas de potencia, integración de sistemas, SCADA y puesta en servicio bajo estándares internacionales.</span>
-          <span class="en">Electrification, power systems, systems integration, SCADA, and commissioning under international standards.</span>
+          <span class="es">Electrificación y sistemas OLE, tracción eléctrica, integración de sistemas, SCADA y puesta en servicio. Experiencia en proyectos de electrificación de corredores, depósitos y sistemas suburbanos bajo estándares europeos e internacionales.</span>
+          <span class="en">Electrification and OLE systems, electric traction, systems integration, SCADA, and commissioning. Experience across corridor electrification, depots, and suburban rail systems under European and international standards.</span>
         </p>
       </article>
       <article class="sector">
         <span class="sector-num">02 / 03</span>
         <h3><span class="es">Energía</span><span class="en">Energy</span></h3>
         <p>
-          <span class="es">Generación, almacenamiento (BESS) y conexión a red, incluyendo proyectos de baterías y renovables.</span>
-          <span class="en">Generation, storage (BESS), and grid-connection systems, including battery and renewable projects.</span>
+          <span class="es">Solar, almacenamiento BESS, conexión a red, y evaluación de infraestructura eléctrica. Experiencia en portafolios de más de 1 GW, desde evaluación técnica temprana hasta preparación para financiamiento e implementación.</span>
+          <span class="en">Solar, BESS storage, grid connection, and electrical infrastructure assessment. Experience across portfolios exceeding 1 GW, from early technical assessment through financing readiness and implementation.</span>
         </p>
       </article>
       <article class="sector">
         <span class="sector-num">03 / 03</span>
-        <h3><span class="es">Infraestructura Crítica</span><span class="en">Critical Infrastructure</span></h3>
+        <h3><span class="es">Infraestructura crítica</span><span class="en">Critical infrastructure</span></h3>
         <p>
-          <span class="es">Data centers y sistemas estratégicos: alineación entre terreno, capacidad de red y plazos, desde evaluación eléctrica de sitio hasta preparación operacional.</span>
-          <span class="en">Data centers and strategic systems: alignment between site, grid capacity, and timelines, from electrical site assessment through operational readiness.</span>
+          <span class="es">Data centers, sistemas industriales y proyectos estratégicos: evaluación eléctrica de sitio, capacidad de red, restricciones de suministro y preparación operacional. Coordinación con utilities, distribuidoras y autoridades.</span>
+          <span class="en">Data centres, industrial systems, and strategic projects: electrical site assessment, grid capacity, supply constraints, and operational readiness. Coordination with utilities, distribution networks, and authorities.</span>
         </p>
       </article>
     </div>
@@ -1309,24 +994,25 @@
     <!-- OLE capability detail -->
     <div class="capability">
       <div class="capability-text">
-        <p class="eyebrow"><span class="es">Capacidad técnica</span><span class="en">Technical capability</span></p>
+        <p class="eyebrow"><span class="es">Capacidad técnica diferencial</span><span class="en">Specialist technical capability</span></p>
         <h4>
-          <span class="es">Electrificación Ferroviaria (OLE)</span>
-          <span class="en">Railway Electrification (OLE)</span>
+          <span class="es">Electrificación Ferroviaria (OLE) y Sistemas de Potencia</span>
+          <span class="en">Railway Electrification (OLE) &amp; Power Systems</span>
         </h4>
         <ul>
-          <li data-num="01"><span class="es">Integración de sistemas de catenaria</span><span class="en">Catenary systems integration</span></li>
-          <li data-num="02"><span class="es">Revisión de diseño eléctrico y validación de criterios</span><span class="en">Electrical design review and criteria validation</span></li>
-          <li data-num="03"><span class="es">Control técnico de ejecución en entornos operativos</span><span class="en">Technical execution control in operational environments</span></li>
-          <li data-num="04"><span class="es">Interfaces con utilities, distribución y transmisión</span><span class="en">Interfaces with utilities, distribution, and transmission</span></li>
+          <li data-num="01"><span class="es">Gobernanza técnica bajo marcos CEM / CRE / DPE — validación de diseño y aprobación de criterios</span><span class="en">Technical governance under CEM / CRE / DPE frameworks — design validation and criteria approval</span></li>
+          <li data-num="02"><span class="es">Integración de sistemas de catenaria, tracción y distribución de media tensión</span><span class="en">Catenary, traction, and medium voltage distribution systems integration</span></li>
+          <li data-num="03"><span class="es">Coordinación de protecciones, earthing y estrategias de energización por fases</span><span class="en">Protection coordination, earthing, and staged energisation strategies</span></li>
+          <li data-num="04"><span class="es">Control técnico de ejecución en entornos operativos con vía activa</span><span class="en">Technical execution control in live operational environments</span></li>
+          <li data-num="05"><span class="es">Interfaces con utilities, reguladores y organismos públicos</span><span class="en">Interfaces with utilities, regulators, and public agencies</span></li>
         </ul>
         <p class="interface-note">
-          <span class="es">Coordinación con autoridades, operadores y agencias regulatorias para alinear permisos, alcances e interfaces críticas.</span>
-          <span class="en">Coordination with authorities, operators, and regulatory agencies to align permits, scope, and critical interfaces.</span>
+          <span class="es">Experiencia en programas de electrificación ferroviaria en el Reino Unido bajo estándares Network Rail, con aplicación directa a proyectos de modernización en América Latina.</span>
+          <span class="en">Experience across UK railway electrification programmes under Network Rail standards, with direct application to modernisation projects in Latin America.</span>
         </p>
       </div>
       <div class="capability-photo">
-        <img src="ole-tensioning.jpg" alt="Catenary tensioning structures framing a train at a Chilean rail yard" loading="lazy" decoding="async" width="900" height="900" />
+        <img src="hero-worker.jpg" alt="Technician installing solar monitoring equipment on a catenary pole in live railway environment" loading="lazy" decoding="async" width="900" height="1200" />
       </div>
     </div>
   </div>
@@ -1335,7 +1021,7 @@
 <!-- ════════ FULL-BLEED PHOTO BREAK ════════ -->
 <section class="photo-break" aria-label="Project photography">
   <div class="image">
-    <img src="break-panoramic.jpg" alt="Aerial view of a trackside solar array powering a passenger train, set between vineyards, highway, and the Andes" loading="lazy" decoding="async" width="1530" height="510" />
+    <img src="break-panoramic.jpg" alt="Aerial view of solar array adjacent to an electrified railway corridor in South America" loading="lazy" decoding="async" width="1530" height="510" />
     <span class="corner tl"></span>
     <span class="corner tr"></span>
     <span class="corner bl"></span>
@@ -1344,109 +1030,17 @@
   <div class="caption-strip">
     <div class="caption-inner">
       <div class="mono-meta">
-        <span>33°25′S · 70°34′W</span>
-        <span><span class="es">Sector · Infraestructura ferroviaria</span><span class="en">Sector · Railway infrastructure</span></span>
+        <span><span class="es">Sector · Energía · Ferroviario</span><span class="en">Sector · Energy · Rail</span></span>
+        <span><span class="es">Chile · Sudamérica</span><span class="en">Chile · South America</span></span>
       </div>
-      <h3 style="font-size: 18px">
-        <span class="es">Trabajo en sitio,<br/>decisiones en terreno.</span>
-        <span class="en" style="font-size: 18px">On-site work,<br/>field-tested decisions.</span>
+      <h3>
+        <span class="es">Dos sectores.<br/>Un mismo corredor.</span>
+        <span class="en">Two sectors.<br/>One corridor.</span>
         <em>
-          <span class="es">No solo desde la oficina.</span>
-          <span class="en" style="font-size: 18px">Not from the office alone.</span>
+          <span class="es">Integración energética y ferroviaria en operación.</span>
+          <span class="en">Energy and rail integration in operation.</span>
         </em>
       </h3>
-    </div>
-  </div>
-</section>
-
-<!-- ════════ INTERVENTION ════════ -->
-<section id="services" class="section anchor">
-  <div class="container">
-    <div class="sec-head">
-      <p class="eyebrow"><span class="num">04</span><span class="es">Áreas de Intervención</span><span class="en">Areas of Intervention</span></p>
-      <div>
-        <h2 class="section-title">
-          <span class="es">Acompañamos las etapas donde las decisiones técnicas definen el resultado.</span>
-          <span class="en">We support the stages where technical decisions define the outcome.</span>
-        </h2>
-      </div>
-    </div>
-
-    <div class="two-col">
-      <div>
-        <h3 class="col-title"><span class="es">Cómo aportamos valor</span><span class="en">How we create value</span></h3>
-        <ul class="col-list plus">
-          <li><span class="es">Evaluación técnica de soluciones y supuestos de diseño</span><span class="en">Technical evaluation of design solutions and assumptions</span></li>
-          <li><span class="es">Validación de propuestas, alcances y criterios técnicos de contratistas</span><span class="en">Validation of contractor proposals, scope, and technical criteria</span></li>
-          <li><span class="es">Control técnico durante la ejecución y gestión de desviaciones</span><span class="en">Technical control during execution and deviation management</span></li>
-          <li><span class="es">Coordinación de interfaces entre sistemas, disciplinas y contratos</span><span class="en">Coordination of interfaces across systems, disciplines, and contracts</span></li>
-          <li><span class="es">Resolución técnica de condiciones no previstas durante el desarrollo del proyecto</span><span class="en">Technical resolution of unforeseen conditions during project development</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="col-title"><span class="es">Qué aseguramos</span><span class="en">What we ensure</span></h3>
-        <ul class="col-list check">
-          <li><span class="es">Coherencia entre diseño, construcción y operación</span><span class="en">Coherence between design, construction, and operation</span></li>
-          <li><span class="es">Decisiones ejecutables en condiciones reales</span><span class="en">Executable decisions under real conditions</span></li>
-          <li><span class="es">Identificación temprana de riesgos técnicos, contractuales y de interfaz</span><span class="en">Early identification of technical, contractual, and interface risks</span></li>
-          <li><span class="es">Continuidad entre disciplinas, contratistas y paquetes de trabajo</span><span class="en">Continuity across disciplines, contractors, and work packages</span></li>
-          <li><span class="es">Cierre técnico ordenado para implementación, operación o toma de decisión</span><span class="en">Structured technical close-out for implementation, operation, or decision-making</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="fronts-wrap">
-      <p class="eyebrow" style="margin-bottom: 24px;"><span class="es">Frentes de trabajo</span><span class="en">Work fronts</span></p>
-      <div class="fronts-grid">
-        <article class="front">
-          <span class="front-num">A · <span class="es">Etapa temprana</span><span class="en">Early stage</span></span>
-          <h3>
-            <span class="es">Evaluación técnica temprana</span>
-            <span class="en">Early technical assessment</span>
-          </h3>
-          <p>
-            <span class="es">Validación de restricciones, supuestos de diseño, interfaces, condiciones del sitio y riesgos antes de comprometer decisiones críticas del proyecto.</span>
-            <span class="en">Validation of constraints, design assumptions, interfaces, site conditions, and risks before committing to critical project decisions.</span>
-          </p>
-          <span class="phase"><span class="es">Fase · 01</span><span class="en">Phase · 01</span></span>
-        </article>
-        <article class="front">
-          <span class="front-num">B · <span class="es">Definición</span><span class="en">Definition</span></span>
-          <h3>
-            <span class="es">Definición técnica y estrategia de implementación</span>
-            <span class="en">Technical definition and implementation strategy</span>
-          </h3>
-          <p>
-            <span class="es">Definición de criterios técnicos, alternativas ejecutables, requerimientos de conexión, integración de sistemas y condiciones de implementación.</span>
-            <span class="en">Definition of technical criteria, executable alternatives, connection requirements, systems integration, and implementation conditions.</span>
-          </p>
-          <span class="phase"><span class="es">Fase · 02</span><span class="en">Phase · 02</span></span>
-        </article>
-        <article class="front">
-          <span class="front-num">C · <span class="es">Coordinación</span><span class="en">Coordination</span></span>
-          <h3>
-            <span class="es">Interfaces con contratistas, utilities y autoridades</span>
-            <span class="en">Interfaces with contractors, utilities, and authorities</span>
-          </h3>
-          <p>
-            <span class="es">Coordinación técnica con contratistas, operadores, utilities, distribuidoras, transmisión y autoridades para alinear permisos, alcances e interfaces críticas.</span>
-            <span class="en">Technical coordination with contractors, operators, utilities, distribution, transmission, and authorities to align permits, scope, and critical interfaces.</span>
-          </p>
-          <span class="phase"><span class="es">Fase · 03</span><span class="en">Phase · 03</span></span>
-        </article>
-        <article class="front">
-          <span class="front-num">D · <span class="es">Ejecución</span><span class="en">Execution</span></span>
-          <h3>
-            <span class="es">Control de ejecución y gestión de desviaciones</span>
-            <span class="en">Execution control and deviation management</span>
-          </h3>
-          <p>
-            <span class="es">Seguimiento técnico durante la ejecución, revisión de cambios, resolución de condiciones no previstas y control de coherencia entre diseño, terreno y operación.</span>
-            <span class="en">Technical monitoring during execution, change review, resolution of unforeseen conditions, and coherence control between design, site, and operation.</span>
-          </p>
-          <span class="phase"><span class="es">Fase · 04</span><span class="en">Phase · 04</span></span>
-        </article>
-      </div>
     </div>
   </div>
 </section>
@@ -1455,39 +1049,101 @@
 <section id="team" class="section bone anchor">
   <div class="container">
     <div class="sec-head">
-      <p class="eyebrow"><span class="num">05</span><span class="es">Equipo</span><span class="en">Team</span></p>
+      <p class="eyebrow"><span class="num">04</span><span class="es">Equipo</span><span class="en">Team</span></p>
       <div>
         <h2 class="section-title">
-          <span class="es">Experiencia técnica y estratégica integrada.</span>
-          <span class="en">Integrated technical and strategic expertise.</span>
+          <span class="es">Capacidad técnica y de gestión integrada.</span>
+          <span class="en">Technical and management capability, integrated.</span>
         </h2>
         <p class="body-copy" style="margin-top: 20px;">
-          <span class="es">Décadas de experiencia aplicada en infraestructura compleja, operando desde Santiago con alcance en toda América Latina, aportando capacidad técnica y estratégica de alto nivel en cada etapa del proyecto.</span>
-          <span class="en">Decades of applied experience in complex infrastructure, operating from Santiago with reach across Latin America, bringing senior technical and strategic capability to every stage of the project.</span>
+          <span class="es">La firma reúne ingeniería eléctrica senior con experiencia probada en gestión de proyectos de infraestructura a gran escala. Dos perfiles complementarios que operan como una sola capacidad de asesoría.</span>
+          <span class="en">The firm combines senior electrical engineering with proven experience managing large-scale infrastructure projects. Two complementary profiles operating as a single advisory capability.</span>
         </p>
       </div>
     </div>
 
     <div class="capabilities-grid">
       <div class="capabilities-col">
-        <h4><span class="es">Capacidades Técnicas</span><span class="en">Technical capabilities</span></h4>
+        <h4><span class="es">Capacidades técnicas · Ingeniería</span><span class="en">Technical capabilities · Engineering</span></h4>
         <div class="cap-list">
-          <div class="cap"><span><span class="es">Electrificación Ferroviaria y Sistemas de Potencia</span><span class="en">Railway Electrification &amp; Power Systems</span></span><span class="ix">T·01</span></div>
-          <div class="cap"><span><span class="es">Integración de Sistemas y SCADA</span><span class="en">Systems Integration &amp; SCADA</span></span><span class="ix">T·02</span></div>
-          <div class="cap"><span><span class="es">Energía y BESS</span><span class="en">Energy &amp; BESS</span></span><span class="ix">T·03</span></div>
-          <div class="cap"><span><span class="es">Ingeniería de Owner</span><span class="en">Owner's Engineering</span></span><span class="ix">T·04</span></div>
-          <div class="cap"><span><span class="es">Gestión Técnica de Proyectos</span><span class="en">Technical Project Management</span></span><span class="ix">T·05</span></div>
+          <div class="cap"><span><span class="es">Electrificación ferroviaria y sistemas OLE</span><span class="en">Railway electrification &amp; OLE systems</span></span><span class="ix">T·01</span></div>
+          <div class="cap"><span><span class="es">Sistemas de potencia y tracción eléctrica</span><span class="en">Power systems &amp; electric traction</span></span><span class="ix">T·02</span></div>
+          <div class="cap"><span><span class="es">Integración de sistemas, SCADA y puesta en servicio</span><span class="en">Systems integration, SCADA &amp; commissioning</span></span><span class="ix">T·03</span></div>
+          <div class="cap"><span><span class="es">Energía y almacenamiento BESS</span><span class="en">Energy &amp; BESS storage</span></span><span class="ix">T·04</span></div>
+          <div class="cap"><span><span class="es">Gobernanza técnica CEM / CRE / DPE</span><span class="en">Engineering governance CEM / CRE / DPE</span></span><span class="ix">T·05</span></div>
+          <div class="cap"><span><span class="es">Evaluación eléctrica de sitio e infraestructura crítica</span><span class="en">Electrical site assessment &amp; critical infrastructure</span></span><span class="ix">T·06</span></div>
         </div>
       </div>
       <div class="capabilities-col">
-        <h4><span class="es">Capacidades Estratégicas</span><span class="en">Strategic capabilities</span></h4>
+        <h4><span class="es">Capacidades · Gestión y desarrollo</span><span class="en">Capabilities · Management &amp; development</span></h4>
         <div class="cap-list">
-          <div class="cap"><span><span class="es">Gobernanza de Proyectos · Estándares internacionales</span><span class="en">Project Governance · International standards</span></span><span class="ix">S·01</span></div>
-          <div class="cap"><span><span class="es">Asesoría Regulatoria y de Permisos</span><span class="en">Regulatory &amp; Permitting Advisory</span></span><span class="ix">S·02</span></div>
-          <div class="cap"><span><span class="es">Asesoría Institucional y Estratégica</span><span class="en">Institutional &amp; Strategic Advisory</span></span><span class="ix">S·03</span></div>
-          <div class="cap"><span><span class="es">Gestión de Activos y Portafolio</span><span class="en">Asset &amp; Portfolio Management</span></span><span class="ix">S·04</span></div>
-          <div class="cap"><span><span class="es">Gestión de Riesgo Financiero y Contractual</span><span class="en">Financial &amp; Contract Risk Management</span></span><span class="ix">S·05</span></div>
+          <div class="cap"><span><span class="es">Gestión de portafolios y proyectos complejos</span><span class="en">Portfolio &amp; complex project management</span></span><span class="ix">M·01</span></div>
+          <div class="cap"><span><span class="es">Coordinación de permisos, utilities y autoridades</span><span class="en">Permitting, utilities &amp; authority coordination</span></span><span class="ix">M·02</span></div>
+          <div class="cap"><span><span class="es">Due diligence técnico y preparación para financiamiento</span><span class="en">Technical due diligence &amp; financing readiness</span></span><span class="ix">M·03</span></div>
+          <div class="cap"><span><span class="es">Coordinación con organismos multilaterales y públicos</span><span class="en">Multilateral &amp; public sector coordination</span></span><span class="ix">M·04</span></div>
+          <div class="cap"><span><span class="es">Estructuración de propuestas y contratos técnicos</span><span class="en">Technical proposal &amp; contract structuring</span></span><span class="ix">M·05</span></div>
+          <div class="cap"><span><span class="es">Posicionamiento estratégico e institucional</span><span class="en">Strategic &amp; institutional positioning</span></span><span class="ix">M·06</span></div>
         </div>
+      </div>
+    </div>
+
+    <div class="network-note">
+      <p>
+        <span class="es"><strong>Red de especialistas.</strong> Cuando la escala o la disciplina lo requieren, articulamos equipos con ingenieros y especialistas técnicos de confianza en áreas como sistemas ferroviarios, energía, civil, ambiental y regulatorio.</span>
+        <span class="en"><strong>Specialist network.</strong> When scale or discipline requires it, we assemble teams with trusted engineers and technical specialists across railway systems, energy, civil, environmental, and regulatory disciplines.</span>
+        <span class="gray">
+          <span class="es">Boutique en estructura. Senior en capacidad.</span>
+          <span class="en">Boutique in structure. Senior in capability.</span>
+        </span>
+      </p>
+      <a class="btn btn-outline" href="team.html">
+        <span class="es">Credenciales del equipo</span><span class="en">Team credentials</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ INSTITUTIONS ════════ -->
+<section class="institutions-band" aria-label="Instituciones con las que trabajamos">
+  <div class="inst-inner">
+    <p class="eyebrow on-navy"><span class="es">Con quiénes trabajamos</span><span class="en">Who we work with</span></p>
+    <p class="inst-statement">
+      <span class="es">Hemos trabajado con ministerios de energía, operadores ferroviarios, financistas multilaterales, fondos de inversión en infraestructura y promotores privados en Chile, Centroamérica, el Caribe y Europa.</span>
+      <span class="en">We have worked with energy ministries, railway operators, multilateral lenders, infrastructure investment funds, and private developers across Chile, Central America, the Caribbean, and Europe.</span>
+    </p>
+    <div class="inst-grid">
+      <div class="inst-item">
+        <div class="inst-icon">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V9l7-6 7 6v12M9 21v-6h6v6"/></svg>
+        </div>
+        <p class="inst-type"><span class="es">Sector público</span><span class="en">Public sector</span></p>
+        <h4><span class="es">Ministerios y agencias</span><span class="en">Ministries &amp; agencies</span></h4>
+        <p><span class="es">Ministerios de energía, transporte y servicios públicos. Evaluación técnica, planificación estratégica y coordinación de programas.</span><span class="en">Energy, transport, and public utility ministries. Technical assessment, strategic planning, and programme coordination.</span></p>
+      </div>
+      <div class="inst-item">
+        <div class="inst-icon">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <p class="inst-type"><span class="es">Infraestructura</span><span class="en">Infrastructure</span></p>
+        <h4><span class="es">Operadores ferroviarios</span><span class="en">Rail operators</span></h4>
+        <p><span class="es">Operadores de sistemas ferroviarios suburbanos y de pasajeros. Owner's engineering, integración de sistemas y control técnico de ejecución.</span><span class="en">Suburban and passenger rail system operators. Owner's engineering, systems integration, and technical execution control.</span></p>
+      </div>
+      <div class="inst-item">
+        <div class="inst-icon">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8v1m0 8v1M9 12H5m14 0h-4"/></svg>
+        </div>
+        <p class="inst-type"><span class="es">Financiamiento</span><span class="en">Finance</span></p>
+        <h4><span class="es">Financistas e instituciones multilaterales</span><span class="en">Lenders &amp; multilateral institutions</span></h4>
+        <p><span class="es">Fondos de inversión, bancos de desarrollo y financistas institucionales. Due diligence técnico, evaluación de riesgos y preparación para financiamiento.</span><span class="en">Investment funds, development banks, and institutional lenders. Technical due diligence, risk assessment, and financing readiness.</span></p>
+      </div>
+      <div class="inst-item">
+        <div class="inst-icon">
+          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2M5 21H3M9 7h6M9 11h6M9 15h4"/></svg>
+        </div>
+        <p class="inst-type"><span class="es">Sector privado</span><span class="en">Private sector</span></p>
+        <h4><span class="es">Promotores y desarrolladores</span><span class="en">Developers &amp; project owners</span></h4>
+        <p><span class="es">Desarrolladores de energía renovable, data centers y proyectos de infraestructura privada. Evaluación técnica, coordinación y gestión de proyectos complejos.</span><span class="en">Renewable energy, data centre, and private infrastructure developers. Technical assessment, coordination, and complex project management.</span></p>
       </div>
     </div>
   </div>
@@ -1497,7 +1153,7 @@
 <section id="contact" class="section navy anchor">
   <div class="container">
     <div class="sec-head">
-      <p class="eyebrow on-navy"><span class="num">06</span><span class="es">Contacto</span><span class="en">Contact</span></p>
+      <p class="eyebrow on-navy"><span class="num">05</span><span class="es">Contacto</span><span class="en">Contact</span></p>
       <div>
         <h2 class="section-title" style="color:#fff;">
           <span class="es">Hablemos<br/>de su proyecto.</span>
@@ -1509,16 +1165,16 @@
     <div class="contact-grid">
       <div>
         <p class="lede">
-          <span class="es">Si su proyecto requiere claridad técnica para avanzar, estamos disponibles para revisar el contexto, identificar riesgos y definir los próximos pasos.</span>
-          <span class="en">If your project requires technical clarity to move forward, we are available to review the context, identify risks, and define the next steps.</span>
+          <span class="es">Si su proyecto requiere claridad técnica para avanzar — evaluación de factibilidad, revisión independiente, coordinación de ejecución o asesoría institucional — estamos disponibles para revisar el contexto y definir los próximos pasos.</span>
+          <span class="en">If your project requires technical clarity to move forward — feasibility assessment, independent review, execution coordination, or institutional advisory — we are available to review the context and define next steps.</span>
         </p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="/cdn-cgi/l/email-protection#e38a8d858ca3858c9197869386cd808c8e">
-            <span class="es">Escribir a Forte</span><span class="en">Email Forte</span>
+          <a class="btn btn-primary" href="contact.html">
+            <span class="es">Escribir a Forte</span><span class="en">Contact Forte</span>
             <span class="arrow">→</span>
           </a>
-          <a class="btn btn-ghost" href="#about">
-            <span class="es">Conocer más</span><span class="en">Learn more</span>
+          <a class="btn btn-ghost" href="projects.html">
+            <span class="es">Ver proyectos</span><span class="en">View projects</span>
           </a>
         </div>
       </div>
@@ -1527,7 +1183,7 @@
         <div style="margin-top: 16px;">
           <div class="contact-row">
             <span class="k">Email</span>
-            <span class="v"><a href="/cdn-cgi/l/email-protection#5c35323a331c3a332e28392c39723f3331"><span class="__cf_email__" data-cfemail="7f161119103f19100d0b1a0f1a511c1012">[email&#160;protected]</span></a></span>
+            <span class="v"><a href="mailto:info@fortepe.com">info@fortepe.com</a></span>
           </div>
           <div class="contact-row">
             <span class="k"><span class="es">Oficina</span><span class="en">Office</span></span>
@@ -1557,7 +1213,7 @@
     <div class="foot-left">
       <img src="forte-reversed.svg" alt="Forte" width="140" height="46" loading="lazy" decoding="async" />
       <span class="sep"></span>
-      <span><span class="es">Control técnico para infraestructura crítica</span><span class="en">Technical control for critical infrastructure</span></span>
+      <span><span class="es">Asesoría técnica independiente · infraestructura crítica</span><span class="en">Independent technical advisory · critical infrastructure</span></span>
     </div>
     <div class="foot-right">
       <span>Santiago · LATAM</span>
@@ -1568,59 +1224,6 @@
   </div>
 </footer>
 
-<script defer src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Language toggle (persists in localStorage)
-  (function () {
-    var html = document.documentElement;
-    var btn = document.getElementById('langToggle');
-
-    function applyLang(lang) {
-      html.setAttribute('lang', lang);
-      try { localStorage.setItem('fortepe_lang', lang); } catch (e) {}
-      if (lang === 'en') {
-        document.title = 'Forte Project Engineering · Technical control for critical infrastructure';
-        var md = document.querySelector('meta[name="description"]');
-        if (md) md.setAttribute('content', 'Forte Project Engineering. Technical control for rail, energy, and critical infrastructure projects. Santiago, Chile · LATAM.');
-      } else {
-        document.title = 'Forte Project Engineering · Control técnico para infraestructura crítica';
-        var md2 = document.querySelector('meta[name="description"]');
-        if (md2) md2.setAttribute('content', 'Forte Project Engineering. Control técnico para proyectos ferroviarios, energéticos y de infraestructura crítica. Santiago, Chile · LATAM.');
-      }
-    }
-
-    var saved;
-    try { saved = localStorage.getItem('fortepe_lang'); } catch (e) {}
-    var initial = saved || ((navigator.language || 'es').toLowerCase().indexOf('en') === 0 ? 'en' : 'es');
-    applyLang(initial);
-
-    btn.addEventListener('click', function () {
-      applyLang(html.getAttribute('lang') === 'es' ? 'en' : 'es');
-    });
-  })();
-
-  // Mobile menu toggle
-  (function () {
-    var btn = document.getElementById('menuBtn');
-    var nav = document.getElementById('navLinks');
-    if (!btn || !nav) return;
-    btn.addEventListener('click', function () {
-      var open = nav.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    });
-    // Close on link click
-    nav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        nav.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-label', 'Open menu');
-      });
-    });
-  })();
-</script>
-
-
+<script defer src="shared.js"></script>
 </body>
 </html>

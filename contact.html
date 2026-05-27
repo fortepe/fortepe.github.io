@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contacto · Forte Project Engineering</title>
+<meta name="description"
+  content="Contacte a Forte Project Engineering para proyectos de infraestructura ferroviaria, energía e infraestructura crítica. Santiago, Chile." data-es="Contacte a Forte Project Engineering para proyectos de infraestructura ferroviaria, energía e infraestructura crítica. Santiago, Chile." data-en="Contact Forte Project Engineering for railway, energy, and critical infrastructure advisory. Santiago, Chile."
+  data-es="Contacte a Forte Project Engineering para proyectos de infraestructura ferroviaria, energía e infraestructura crítica. Santiago, Chile."
+  data-en="Contact Forte Project Engineering for railway, energy, and critical infrastructure projects. Santiago, Chile." />
+
+<link rel="icon" type="image/svg+xml" href="forte-favicon.svg" />
+<link rel="apple-touch-icon" href="forte-favicon.svg" />
+<link rel="canonical" href="https://fortepe.com/contact.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Contacto · Forte Project Engineering" />
+<meta property="og:site_name" content="Forte Project Engineering" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap&font-display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css" />
+
+<style>
+  /* ─── Page header ─── */
+  .page-header {
+    background: var(--navy);
+    color: #fff;
+    padding: clamp(64px, 9vw, 120px) 0 clamp(56px, 7vw, 96px);
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+    position: relative;
+    z-index: 2;
+  }
+  .page-header h1 {
+    font-size: clamp(36px, 5vw, 72px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 0.98;
+    color: #fff;
+    margin: 24px 0 0;
+    max-width: 16ch;
+  }
+  .page-header .page-lede {
+    color: rgba(224,241,240,0.75);
+    font-size: clamp(16px, 1.3vw, 19px);
+    max-width: 52ch;
+    margin: 20px 0 0;
+    line-height: 1.55;
+  }
+  .page-header-lines {
+    position: absolute; inset: 0;
+    pointer-events: none; opacity: 0.10; z-index: 1;
+  }
+  .page-header-lines svg { width: 100%; height: 100%; }
+
+  /* ─── Contact layout ─── */
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(48px, 6vw, 96px);
+    align-items: start;
+  }
+  @media (max-width: 860px) {
+    .contact-layout { grid-template-columns: 1fr; }
+  }
+
+  /* ─── Form ─── */
+  .contact-form { display: flex; flex-direction: column; gap: 20px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-group label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--navy);
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    border-radius: 2px;
+    padding: 12px 16px;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    outline: none;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(19,127,124,0.1);
+  }
+  .form-group textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236F747A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+
+  .form-submit {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .form-note {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+  /* Override btn for form submit */
+  .btn-submit {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+  }
+  .btn-submit:hover { background: var(--navy-700); border-color: var(--navy-700); }
+
+  /* ─── Info panel ─── */
+  .contact-info { display: flex; flex-direction: column; gap: 32px; }
+  .info-block h3 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 16px;
+  }
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+    border-top: 1px solid var(--gray-100);
+    gap: 12px;
+  }
+  .info-row:last-child { border-bottom: 1px solid var(--gray-100); }
+  .info-row .k {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray);
+    flex-shrink: 0;
+  }
+  .info-row .v {
+    font-size: 15px;
+    color: var(--navy);
+    font-weight: 500;
+    text-align: right;
+  }
+  .info-row .v a { color: var(--teal); }
+  .info-row .v a:hover { color: var(--navy); }
+
+  .response-note {
+    background: var(--paper);
+    border-left: 2px solid var(--teal);
+    padding: 20px 24px;
+  }
+  .response-note p {
+    font-size: 14px;
+    color: var(--gray);
+    margin: 0;
+    line-height: 1.65;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- ════════ HEADER ════════ -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-logo" href="index.html" aria-label="Forte Project Engineering">
+      <img src="forte-primary.svg" alt="Forte Project Engineering" width="160" height="52" fetchpriority="high" />
+    </a>
+    <div class="nav-right">
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">
+        <span class="es">EN</span><span class="en">ES</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ════════ DRAWER NAV ════════ -->
+<div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+<nav class="drawer" id="drawer" aria-label="Site navigation">
+  <div class="drawer-head">
+    <img src="forte-reversed.svg" alt="Forte Project Engineering" width="120" height="40" />
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+  </div>
+  <div class="drawer-nav">
+    <a href="index.html" data-page="index">
+      <span><span class="es">Inicio</span><span class="en">Home</span></span>
+      <span class="link-num">00</span>
+    </a>
+    <a href="index.html#about" data-page="index">
+      <span><span class="es">Nosotros</span><span class="en">About</span></span>
+      <span class="link-num">01</span>
+    </a>
+    <a href="index.html#approach" data-page="index">
+      <span><span class="es">Enfoque</span><span class="en">Approach</span></span>
+      <span class="link-num">02</span>
+    </a>
+    <a href="index.html#sectors" data-page="index">
+      <span><span class="es">Sectores</span><span class="en">Sectors</span></span>
+      <span class="link-num">03</span>
+    </a>
+    <a href="index.html#services" data-page="index">
+      <span><span class="es">Intervención</span><span class="en">Services</span></span>
+      <span class="link-num">04</span>
+    </a>
+    <div class="drawer-divider"></div>
+    <a href="projects.html" data-page="projects">
+      <span><span class="es">Proyectos</span><span class="en">Projects</span></span>
+      <span class="link-num">→</span>
+    </a>
+    <a href="team.html" data-page="team">
+      <span><span class="es">Equipo</span><span class="en">Team</span></span>
+      <span class="link-num">→</span>
+    </a>
+    <a href="contact.html" data-page="contact">
+      <span><span class="es">Contacto</span><span class="en">Contact</span></span>
+      <span class="link-num">→</span>
+    </a>
+  </div>
+  <div class="drawer-foot">
+    <div class="df-label">Forte Project Engineering</div>
+    <div class="df-val">
+      Santiago · Chile<br/>
+      <a href="mailto:info@fortepe.com">info@fortepe.com</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════ PAGE HEADER ════════ -->
+<section class="page-header">
+  <div class="page-header-lines" aria-hidden="true">
+    <svg viewBox="0 0 1600 500" preserveAspectRatio="xMaxYMid slice">
+      <g stroke="#1A9692" stroke-width="1.2" fill="none">
+        <path d="M-100 500 Q 700 280 1700 80" />
+        <path d="M-100 500 Q 700 340 1700 220" />
+        <path d="M-100 500 Q 700 420 1700 380" />
+      </g>
+    </svg>
+  </div>
+  <div class="page-header-inner">
+    <p class="eyebrow on-navy"><span class="es">Contacto</span><span class="en">Contact</span></p>
+    <h1>
+      <span class="es">Hablemos de su proyecto.</span>
+      <span class="en">Let's talk about your project.</span>
+    </h1>
+    <p class="page-lede">
+      <span class="es">Si su proyecto requiere claridad técnica para avanzar, estamos disponibles para revisar el contexto, identificar riesgos y definir los próximos pasos.</span>
+      <span class="en">If your project requires technical clarity to move forward, we are available to review the context, identify risks, and define the next steps.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ════════ CONTACT ════════ -->
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Form -->
+      <!-- ─────────────────────────────────────────────────────
+           FORM: paste your Formspree form ID on the line below.
+           Get it free at formspree.io → New Form → copy the ID.
+           Replace YOUR_FORM_ID with it. That's the only change needed.
+           ───────────────────────────────────────────────────── -->
+      <form class="contact-form" action="https://formspree.io/f/mgoqrnvn" method="POST" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name"><span class="es">Nombre</span><span class="en">Name</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required
+              placeholder="" />
+          </div>
+          <div class="form-group">
+            <label for="org"><span class="es">Organización</span><span class="en">Organisation</span></label>
+            <input type="text" id="org" name="organisation" autocomplete="organization" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="sector"><span class="es">Motivo de contacto</span><span class="en">Reason for contact</span></label>
+          <select id="sector" name="sector">
+            <option value="" disabled selected></option>
+            <option value="rail"><span class="es">Proyecto ferroviario</span><span class="en">Rail project</span></option>
+            <option value="energy"><span class="es">Proyecto de energía</span><span class="en">Energy project</span></option>
+            <option value="critical"><span class="es">Infraestructura crítica</span><span class="en">Critical infrastructure</span></option>
+            <option value="profile"><span class="es">Solicitar dossier corporativo</span><span class="en">Request company dossier</span></option>
+            <option value="other"><span class="es">Otro</span><span class="en">Other</span></option>
+          </select>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message"><span class="es">Contexto del proyecto</span><span class="en">Project context</span></label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <div style="display:none" aria-hidden="true"><label>Do not fill this field<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label></div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-submit">
+            <span class="es">Enviar</span><span class="en">Send</span>
+            <span class="arrow">→</span>
+          </button>
+          <p class="form-note">
+            <span class="es">Respondemos en 24–48 horas hábiles.</span>
+            <span class="en">We respond within 24–48 business hours.</span>
+          </p>
+        </div>
+      </form>
+
+      <!-- Info panel -->
+      <div class="contact-info">
+        <div class="info-block">
+          <h3><span class="es">Coordenadas</span><span class="en">Coordinates</span></h3>
+          <div class="info-row">
+            <span class="k">Email</span>
+            <span class="v"><a href="mailto:info@fortepe.com">info@fortepe.com</a></span>
+          </div>
+          <div class="info-row">
+            <span class="k"><span class="es">Oficina</span><span class="en">Office</span></span>
+            <span class="v">Callao 2911, Las Condes</span>
+          </div>
+          <div class="info-row">
+            <span class="k"><span class="es">Ciudad</span><span class="en">City</span></span>
+            <span class="v">Santiago · Chile</span>
+          </div>
+          <div class="info-row">
+            <span class="k"><span class="es">Cobertura</span><span class="en">Coverage</span></span>
+            <span class="v">Chile · LATAM</span>
+          </div>
+          <div class="info-row">
+            <span class="k"><span class="es">Idiomas</span><span class="en">Languages</span></span>
+            <span class="v">ES · EN</span>
+          </div>
+        </div>
+
+        <div class="response-note">
+          <p>
+            <span class="es">Trabajamos con owners, financistas y agencias públicas. No respondemos a solicitudes de proveedores o servicios no relacionados con nuestros proyectos activos.</span>
+            <span class="en">We work with owners, lenders, and public agencies. We do not respond to vendor or service requests unrelated to our active projects.</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="foot-left">
+      <img src="forte-reversed.svg" alt="Forte" width="140" height="46" loading="lazy" decoding="async" />
+      <span class="sep"></span>
+      <span><span class="es">Asesoría técnica independiente · infraestructura crítica</span><span class="en">Independent technical advisory · critical infrastructure</span></span>
+    </div>
+    <div class="foot-right">
+      <span>Santiago · LATAM</span>
+      <span class="sep dot"></span>
+      <span>© <span id="year"></span> Forte Project Engineering</span>
+      <a class="to-top" href="#" aria-label="Back to top">↑</a>
+    </div>
+  </div>
+</footer>
+
+<script defer src="shared.js"></script>
+</body>
+</html>
