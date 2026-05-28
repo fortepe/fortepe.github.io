@@ -105,7 +105,7 @@
     50%       { box-shadow: 0 0 0 8px rgba(26,150,146,0.05); }
   }
   .hero h1 {
-    font-size: clamp(40px, 5.4vw, 84px);
+    font-size: clamp(36px, 4.2vw, 64px);
     line-height: 0.98;
     font-weight: 700;
     letter-spacing: -0.03em;
@@ -146,11 +146,16 @@
   }
   .hero-tags span + span::before {
     content: "·";
-    margin: 0 12px;
+    margin: 0 10px;
     color: var(--teal);
     font-size: 14px;
     line-height: 1;
+    display: inline;
   }
+  .hero-tags span .es,
+  .hero-tags span .en { display: inline !important; }
+  html[lang="es"] .hero-tags span .en { display: none !important; }
+  html[lang="en"] .hero-tags span .es { display: none !important; }
   .hero-visual {
     position: relative;
     height: 70vh;
@@ -711,13 +716,7 @@
       <a href="index.html" data-page="index"><span class="es">Inicio</span><span class="en">Home</span></a>
       <a href="projects.html" data-page="projects"><span class="es">Proyectos</span><span class="en">Projects</span></a>
       <a href="team.html" data-page="team"><span class="es">Equipo</span><span class="en">Team</span></a>
-      <a href="#contact" data-page="contact"><span class="es">Contacto</span><span class="en">Contact</span></a>
-    </div>
-    <div class="nav-links" aria-label="Desktop navigation">
-      <a href="index.html" data-page="index"><span class="es">Inicio</span><span class="en">Home</span></a>
-      <a href="projects.html" data-page="projects"><span class="es">Proyectos</span><span class="en">Projects</span></a>
-      <a href="team.html" data-page="team"><span class="es">Equipo</span><span class="en">Team</span></a>
-      <a href="#contact" data-page="contact"><span class="es">Contacto</span><span class="en">Contact</span></a>
+      <a href="contact.html" data-page="contact"><span class="es">Contacto</span><span class="en">Contact</span></a>
     </div>
     <div class="nav-right">
       <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">
@@ -737,38 +736,25 @@
     <img src="forte-reversed.svg" alt="Forte Project Engineering" width="120" height="40" />
     <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
   </div>
-  <div class="drawer-nav">
+    <div class="drawer-nav">
     <a href="index.html" data-page="index">
       <span><span class="es">Inicio</span><span class="en">Home</span></span>
-      <span class="link-num">00</span>
-    </a>
-    <a href="index.html#about" data-page="index">
-      <span><span class="es">Nosotros</span><span class="en">About</span></span>
       <span class="link-num">01</span>
     </a>
-    <a href="index.html#services" data-page="index">
-      <span><span class="es">Servicios</span><span class="en">Services</span></span>
-      <span class="link-num">02</span>
-    </a>
-    <a href="index.html#sectors" data-page="index">
-      <span><span class="es">Sectores</span><span class="en">Sectors</span></span>
-      <span class="link-num">03</span>
-    </a>
-    <a href="index.html#team" data-page="index">
-      <span><span class="es">Equipo</span><span class="en">Team</span></span>
-      <span class="link-num">04</span>
-    </a>
-    <div class="drawer-divider"></div>
     <a href="projects.html" data-page="projects">
       <span><span class="es">Proyectos</span><span class="en">Projects</span></span>
-      <span class="link-num">→</span>
+      <span class="link-num">02</span>
     </a>
-    <a href="#contact" data-page="contact">
+    <a href="team.html" data-page="team">
+      <span><span class="es">Equipo</span><span class="en">Team</span></span>
+      <span class="link-num">03</span>
+    </a>
+    <a href="contact.html" data-page="contact">
       <span><span class="es">Contacto</span><span class="en">Contact</span></span>
-      <span class="link-num">→</span>
+      <span class="link-num">04</span>
     </a>
   </div>
-  <div class="drawer-foot">
+<div class="drawer-foot">
     <div class="df-label">Forte Project Engineering</div>
     <div class="df-val">
       Santiago · Chile<br/>
