@@ -110,12 +110,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
     background: var(--white);
-  }
-  .project-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 40px -20px rgba(11,24,32,0.18);
   }
   .project-card .pc-meta {
     display: flex;
@@ -157,6 +152,7 @@
     font-size: 15px;
     line-height: 1.6;
     margin: 0;
+    flex: 1;
   }
   .project-card .pc-role {
     font-family: var(--mono);
@@ -168,27 +164,31 @@
     padding: 4px 10px;
     border-radius: 2px;
     display: inline-block;
+    align-self: flex-start;
   }
   .project-card .pc-scope {
     margin-top: auto;
     padding-top: 16px;
     border-top: 1px dashed var(--gray-300);
     display: flex;
-    gap: 10px;
+    gap: 0;
     flex-wrap: wrap;
+    align-items: center;
   }
   .project-card .pc-scope span {
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--navy);
-    background: var(--gray-100);
-    padding: 4px 10px;
-    border-radius: 2px;
+    color: var(--gray);
+  }
+  .project-card .pc-scope span + span::before {
+    content: "·";
+    margin: 0 10px;
+    color: var(--gray-300);
   }
 
-  /* ─── Track record block ─── */
+  /* ─── Track record ─── */
   .track-record-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -203,7 +203,8 @@
     flex-direction: column;
     gap: 12px;
   }
-  .tr-item:last-child { border-right: 0; }
+  .tr-item:nth-child(3n) { border-right: 0; }
+  .tr-item:nth-child(n+4) { border-top: 1px solid var(--gray-100); }
   .tr-item .tr-sector {
     font-family: var(--mono);
     font-size: 10px;
@@ -223,14 +224,15 @@
     color: var(--gray);
     line-height: 1.6;
     margin: 0;
+    flex: 1;
   }
   .tr-item .tr-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
-    margin-top: auto;
+    gap: 0;
     padding-top: 14px;
     border-top: 1px dashed var(--gray-300);
+    align-items: center;
   }
   .tr-item .tr-tags span {
     font-family: var(--mono);
@@ -238,9 +240,11 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--gray);
-    background: var(--gray-100);
-    padding: 3px 8px;
-    border-radius: 2px;
+  }
+  .tr-item .tr-tags span + span::before {
+    content: "·";
+    margin: 0 8px;
+    color: var(--gray-300);
   }
 
   .stats-row {
@@ -276,8 +280,8 @@
   @media (max-width: 860px) {
     .projects-grid { grid-template-columns: 1fr; }
     .track-record-grid { grid-template-columns: 1fr; }
-    .tr-item { border-right: 0; border-bottom: 1px solid var(--gray-100); }
-    .tr-item:last-child { border-bottom: 0; }
+    .tr-item { border-right: 0 !important; border-top: 1px solid var(--gray-100) !important; }
+    .tr-item:first-child { border-top: 0 !important; }
     .stats-row { grid-template-columns: repeat(2, 1fr); }
     .stat-item:nth-child(2) { border-right: 0; }
     .stat-item:nth-child(n+3) { border-top: 1px solid var(--gray-100); }
@@ -312,14 +316,10 @@
     <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
   </div>
   <div class="drawer-nav">
-    <a href="index.html" data-page="index"><span><span class="es">Inicio</span><span class="en">Home</span></span><span class="link-num">00</span></a>
-    <a href="index.html#about" data-page="index"><span><span class="es">Nosotros</span><span class="en">About</span></span><span class="link-num">01</span></a>
-    <a href="index.html#services" data-page="index"><span><span class="es">Servicios</span><span class="en">Services</span></span><span class="link-num">02</span></a>
-    <a href="index.html#sectors" data-page="index"><span><span class="es">Sectores</span><span class="en">Sectors</span></span><span class="link-num">03</span></a>
-    <div class="drawer-divider"></div>
-    <a href="projects.html" data-page="projects"><span><span class="es">Proyectos</span><span class="en">Projects</span></span><span class="link-num">→</span></a>
-    <a href="team.html" data-page="team"><span><span class="es">Equipo</span><span class="en">Team</span></span><span class="link-num">→</span></a>
-    <a href="contact.html" data-page="contact"><span><span class="es">Contacto</span><span class="en">Contact</span></span><span class="link-num">→</span></a>
+    <a href="index.html" data-page="index"><span><span class="es">Inicio</span><span class="en">Home</span></span><span class="link-num">01</span></a>
+    <a href="projects.html" data-page="projects"><span><span class="es">Proyectos</span><span class="en">Projects</span></span><span class="link-num">02</span></a>
+    <a href="team.html" data-page="team"><span><span class="es">Equipo</span><span class="en">Team</span></span><span class="link-num">03</span></a>
+    <a href="contact.html" data-page="contact"><span><span class="es">Contacto</span><span class="en">Contact</span></span><span class="link-num">04</span></a>
   </div>
   <div class="drawer-foot">
     <div class="df-label">Forte Project Engineering</div>
@@ -332,9 +332,7 @@
   <div class="page-header-lines" aria-hidden="true">
     <svg viewBox="0 0 1600 500" preserveAspectRatio="xMaxYMid slice">
       <g stroke="#1A9692" stroke-width="1.2" fill="none">
-        <path d="M-100 500 Q 700 280 1700 80" />
-        <path d="M-100 500 Q 700 340 1700 220" />
-        <path d="M-100 500 Q 700 420 1700 380" />
+        <path d="M-100 500 Q 700 280 1700 80" /><path d="M-100 500 Q 700 340 1700 220" /><path d="M-100 500 Q 700 420 1700 380" />
       </g>
     </svg>
   </div>
@@ -345,8 +343,8 @@
       <span class="en">Active engagements and accumulated experience.</span>
     </h1>
     <p class="page-lede">
-      <span class="es">Proyectos actuales de Forte PE junto al historial técnico y de gestión del equipo, desarrollado en mandatos institucionales previos en Chile, América Latina, Europa y Norteamérica.</span>
-      <span class="en">Current Forte PE projects alongside the team's technical and management track record, built across prior institutional mandates in Chile, Latin America, Europe, and North America.</span>
+      <span class="es">Proyectos actuales de Forte PE junto al historial técnico y de gestión del equipo, desarrollado en mandatos institucionales previos en Chile, LATAM, Europa y Norteamérica.</span>
+      <span class="en">Current Forte PE projects alongside the team's technical and management track record, built across prior institutional mandates in Chile, LATAM, Europe, and North America.</span>
     </p>
   </div>
 </section>
@@ -369,21 +367,20 @@
 
     <div class="projects-grid">
 
-      <!-- Engagement 01. National energy ministry Central America -->
       <article class="project-card">
         <div class="pc-meta">
           <span class="pc-sector"><span class="es">Energía · Sector público</span><span class="en">Energy · Public sector</span></span>
-          <span class="pc-geo"><span class="es">Centroamérica · Caribe</span><span class="en">Central America · Caribbean</span></span>
-          <span class="pc-year">2025-2026</span>
+          <span class="pc-geo"><span class="es">Centroamérica</span><span class="en">Central America</span></span>
+          <span class="pc-year">2025–2026</span>
         </div>
         <span class="pc-role"><span class="es">Asesor técnico institucional</span><span class="en">Institutional technical advisor</span></span>
         <h3>
-          <span class="es">Asesoría técnica. Ministerio de energía nacional</span>
-          <span class="en">Technical advisory. national energy ministry</span>
+          <span class="es">Asesoría técnica a ministerio nacional de energía</span>
+          <span class="en">Technical advisory to national energy ministry</span>
         </h3>
         <p>
-          <span class="es">Evaluación técnica de infraestructura eléctrica, revisión de línea base sectorial, talleres de planificación estratégica y coordinación de entregables técnicos para un ministerio nacional de energía. Trabajo en misiones de terreno con equipos del gobierno y contraparte institucional directa.</span>
-          <span class="en">Electrical infrastructure assessment, sectoral baseline review, strategic planning workshops, and technical deliverable coordination for a national energy ministry. On-site missions with government teams and direct institutional interface.</span>
+          <span class="es">Evaluación de infraestructura eléctrica, revisión de línea base sectorial, talleres de planificación estratégica y coordinación de entregables técnicos. Misiones de terreno con equipos de gobierno e interfaz institucional directa.</span>
+          <span class="en">Electrical infrastructure assessment, sectoral baseline review, strategic planning workshops, and technical deliverable coordination. On-site missions with government teams and direct institutional interface.</span>
         </p>
         <div class="pc-scope">
           <span><span class="es">Asesoría técnica</span><span class="en">Technical advisory</span></span>
@@ -393,21 +390,20 @@
         </div>
       </article>
 
-      <!-- Engagement 02. OLE South America -->
       <article class="project-card">
         <div class="pc-meta">
           <span class="pc-sector"><span class="es">Ferroviario</span><span class="en">Rail</span></span>
           <span class="pc-geo"><span class="es">Sudamérica</span><span class="en">South America</span></span>
-          <span class="pc-year">2023-2025</span>
+          <span class="pc-year">2023–2025</span>
         </div>
         <span class="pc-role"><span class="es">Ingeniería del Owner</span><span class="en">Owner's engineering</span></span>
         <h3>
-          <span class="es">Control técnico OLE. corredor ferroviario suburbano</span>
-          <span class="en">OLE technical control. suburban rail corridor</span>
+          <span class="es">Control técnico OLE en corredor ferroviario suburbano</span>
+          <span class="en">OLE technical control on suburban rail corridor</span>
         </h3>
         <p>
           <span class="es">Control técnico del sistema OLE durante la fase de ejecución. Revisión de diseño, validación de criterios, gestión de interfaces con distribuidoras y coordinación técnica con el operador en condiciones de vía activa.</span>
-          <span class="en">Technical control of the OLE system during the execution phase. Design review, criteria validation, interface management with distribution utilities, and technical coordination with the operator under live-line conditions.</span>
+          <span class="en">Technical control of the OLE system during execution. Design review, criteria validation, interface management with distribution utilities, and technical coordination with the operator under live-line conditions.</span>
         </p>
         <div class="pc-scope">
           <span>OLE</span>
@@ -417,7 +413,6 @@
         </div>
       </article>
 
-      <!-- Engagement 03. BESS Central America -->
       <article class="project-card">
         <div class="pc-meta">
           <span class="pc-sector"><span class="es">Energía</span><span class="en">Energy</span></span>
@@ -426,8 +421,8 @@
         </div>
         <span class="pc-role"><span class="es">Evaluación técnica independiente</span><span class="en">Independent technical assessment</span></span>
         <h3>
-          <span class="es">Evaluación técnica. sistema BESS para integración a red</span>
-          <span class="en">Technical assessment. BESS grid integration</span>
+          <span class="es">Evaluación técnica de sistema BESS para integración a red</span>
+          <span class="en">Technical assessment of BESS system for grid integration</span>
         </h3>
         <p>
           <span class="es">Evaluación de criterios de diseño, supuestos de integración a red y condiciones de implementación para un proyecto de almacenamiento de energía en baterías conectado a la red de distribución.</span>
@@ -440,17 +435,16 @@
         </div>
       </article>
 
-      <!-- Engagement 04. Data Center evaluation -->
       <article class="project-card">
         <div class="pc-meta">
           <span class="pc-sector"><span class="es">Infraestructura crítica</span><span class="en">Critical infrastructure</span></span>
           <span class="pc-geo"><span class="es">Sudamérica</span><span class="en">South America</span></span>
-          <span class="pc-year">2025-2026</span>
+          <span class="pc-year">2025–2026</span>
         </div>
         <span class="pc-role"><span class="es">Evaluación eléctrica de sitio</span><span class="en">Electrical site assessment</span></span>
         <h3>
-          <span class="es">Evaluación eléctrica de sitio. infraestructura de data center</span>
-          <span class="en">Electrical site assessment. data centre infrastructure</span>
+          <span class="es">Evaluación eléctrica de sitio para infraestructura de data center</span>
+          <span class="en">Electrical site assessment for data centre infrastructure</span>
         </h3>
         <p>
           <span class="es">Análisis de capacidad de red, restricciones de suministro, interfaces con utilities y viabilidad técnica de conexión para una instalación de data center de alta densidad en área metropolitana.</span>
@@ -467,14 +461,14 @@
 
     <!-- ════ TEAM TRACK RECORD ════ -->
     <div class="track-label">
-      <span class="tl-text"><span class="es">Historial del equipo. mandatos institucionales previos</span><span class="en">Team track record. prior institutional mandates</span></span>
+      <span class="tl-text"><span class="es">Historial del equipo · mandatos institucionales previos</span><span class="en">Team track record · prior institutional mandates</span></span>
       <div class="tl-rule"></div>
     </div>
 
     <div class="track-note">
       <p>
-        <span class="es">La experiencia acumulada del equipo de Forte PE fue desarrollada en el marco de mandatos institucionales previos. Se presenta por sector y rol, sin identificar los empleadores anteriores.</span>
-        <span class="en">The Forte PE team's accumulated experience was developed under prior institutional mandates. Presented by sector and role, without identifying former employers.</span>
+        <span class="es">La experiencia acumulada del equipo fue desarrollada en mandatos institucionales previos. Se presenta por sector y rol, sin identificar empleadores anteriores.</span>
+        <span class="en">The team's accumulated experience was developed under prior institutional mandates. Presented by sector and role, without identifying former employers.</span>
       </p>
     </div>
 
@@ -502,16 +496,16 @@
       <div class="tr-item">
         <span class="tr-sector"><span class="es">Ferroviario · UK</span><span class="en">Rail · UK</span></span>
         <h4><span class="es">Electrificación ferroviaria y sistemas de potencia</span><span class="en">Railway electrification &amp; power systems</span></h4>
-        <p><span class="es">Programas de electrificación de corredores ferroviarios nacionales bajo estándares Network Rail. Roles formales de CEM, CRE y DPE. gobernanza técnica, validación de diseño, coordinación de protecciones y energización por fases.</span><span class="en">National rail corridor electrification programmes under Network Rail standards. Formal CEM, CRE, and DPE roles. technical governance, design validation, protection coordination, and staged energisation.</span></p>
+        <p><span class="es">Programas de electrificación de corredores nacionales bajo estándares Network Rail. Roles formales de CEM, CRE y DPE: gobernanza técnica, validación de diseño, coordinación de protecciones y energización por fases.</span><span class="en">National rail corridor electrification programmes under Network Rail standards. Formal CEM, CRE, and DPE roles: technical governance, design validation, protection coordination, and staged energisation.</span></p>
         <div class="tr-tags">
-          <span>OLE</span><span>CEM/CRE</span><span><span class="es">Traction power</span></span><span>SCADA</span><span>MIET</span>
+          <span>OLE</span><span>CEM/CRE/DPE</span><span>Traction power</span><span>SCADA</span><span>MIET</span>
         </div>
       </div>
 
       <div class="tr-item">
         <span class="tr-sector"><span class="es">Energía · Chile</span><span class="en">Energy · Chile</span></span>
         <h4><span class="es">Desarrollo y gestión de portafolios energéticos</span><span class="en">Energy portfolio development &amp; management</span></h4>
-        <p><span class="es">Liderazgo de portafolios de más de 800 MWp en proyectos PMGD, PMG y utility-scale. Coordinación de equipos multidisciplinarios, due diligence para financistas institucionales, y entregables directos a CEO y directorio.</span><span class="en">Leadership of portfolios exceeding 800 MWp across PMGD, PMG, and utility-scale projects. Multidisciplinary team coordination, due diligence for institutional lenders, and direct deliverables to CEO and board.</span></p>
+        <p><span class="es">Liderazgo de portafolios de más de 800 MWp en proyectos PMGD, PMG y utility-scale. Coordinación de equipos multidisciplinarios y due diligence para financistas institucionales.</span><span class="en">Leadership of portfolios exceeding 800 MWp across PMGD, PMG, and utility-scale projects. Multidisciplinary team coordination and due diligence for institutional lenders.</span></p>
         <div class="tr-tags">
           <span>Solar</span><span>PMGD/PMG</span><span>Due diligence</span><span>RTB</span><span><span class="es">Financiamiento</span><span class="en">Financing</span></span>
         </div>
@@ -519,7 +513,7 @@
 
       <div class="tr-item">
         <span class="tr-sector"><span class="es">Energía · EE.UU. · LATAM</span><span class="en">Energy · US · LATAM</span></span>
-        <h4><span class="es">Coordinación técnica y permisos. proyectos solares</span><span class="en">Technical coordination &amp; permitting. solar projects</span></h4>
+        <h4><span class="es">Coordinación técnica y permisos en proyectos solares</span><span class="en">Technical coordination &amp; permitting for solar projects</span></h4>
         <p><span class="es">Gestión de paquetes de interconexión, documentación eléctrica y permisos para proyectos solares comerciales en EE.UU. y Puerto Rico. Alta tasa de aprobación sin rediseños requeridos.</span><span class="en">Interconnection package management, electrical documentation, and permitting for commercial solar projects in the US and Puerto Rico. High approval rate with no redesigns required.</span></p>
         <div class="tr-tags">
           <span>Solar</span><span>Interconnection</span><span>SLD</span><span><span class="es">Permisos</span><span class="en">Permitting</span></span>
@@ -537,8 +531,8 @@
 
       <div class="tr-item">
         <span class="tr-sector"><span class="es">Infraestructura · Multilateral</span><span class="en">Infrastructure · Multilateral</span></span>
-        <h4><span class="es">Asesoría institucional y estratégica. sector público</span><span class="en">Institutional &amp; strategic advisory. public sector</span></h4>
-        <p><span class="es">Coordinación de entregables técnicos y talleres de planificación para organismos del sector público en América Central. Gestión de relaciones institucionales y coordinación con organismos regulatorios y multilaterales.</span><span class="en">Technical deliverable coordination and planning workshops for public sector organisations in Central America. Institutional relationship management and coordination with regulatory and multilateral bodies.</span></p>
+        <h4><span class="es">Asesoría institucional y estratégica al sector público</span><span class="en">Institutional &amp; strategic advisory to public sector</span></h4>
+        <p><span class="es">Coordinación de entregables técnicos y talleres de planificación para organismos del sector público en Centroamérica. Gestión de relaciones institucionales y coordinación con organismos regulatorios y multilaterales.</span><span class="en">Technical deliverable coordination and planning workshops for public sector organisations in Central America. Institutional relationship management and coordination with regulatory and multilateral bodies.</span></p>
         <div class="tr-tags">
           <span><span class="es">Sector público</span><span class="en">Public sector</span></span><span>Multilateral</span><span><span class="es">Planificación</span><span class="en">Planning</span></span>
         </div>
@@ -546,7 +540,7 @@
 
       <div class="tr-item">
         <span class="tr-sector"><span class="es">Energía · Inversión · LATAM</span><span class="en">Energy · Investment · LATAM</span></span>
-        <h4><span class="es">Due diligence técnico. transacciones de activos energéticos</span><span class="en">Technical due diligence. energy asset transactions</span></h4>
+        <h4><span class="es">Due diligence técnico en transacciones de activos energéticos</span><span class="en">Technical due diligence for energy asset transactions</span></h4>
         <p><span class="es">Liderazgo de due diligence técnico para la venta de portafolios de hasta 62 MWp. Resolución de hallazgos críticos legales, eléctricos y ambientales requeridos por financistas institucionales e inversores privados.</span><span class="en">Technical due diligence leadership for portfolio sales of up to 62 MWp. Resolution of critical legal, electrical, and environmental findings required by institutional lenders and private investors.</span></p>
         <div class="tr-tags">
           <span>Due diligence</span><span>M&amp;A</span><span><span class="es">Inversión</span><span class="en">Investment</span></span><span>RTB</span>

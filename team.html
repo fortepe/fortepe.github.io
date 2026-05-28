@@ -50,7 +50,7 @@
   /* ─── Firm credentials ─── */
   .firm-grid {
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: clamp(40px, 6vw, 80px);
     align-items: start;
     margin-bottom: clamp(56px, 7vw, 80px);
@@ -81,39 +81,33 @@
     display: block; font-size: 13px; color: var(--gray); margin-top: 2px;
   }
 
-  /* ─── Profile pair cards ─── */
+  /* ─── Profile blocks ─── */
   .profiles-pair {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    margin-bottom: clamp(40px, 5vw, 56px);
   }
   @media (max-width: 860px) { .profiles-pair { grid-template-columns: 1fr; } }
 
   .profile-block {
-    border: 1px solid var(--gray-100);
+    padding: clamp(28px, 3vw, 36px) 0;
     border-top: 2px solid var(--teal);
-    padding: clamp(28px, 3vw, 36px);
   }
   .profile-block .pb-role {
     font-family: var(--mono); font-size: 11px;
     letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--teal); margin: 0 0 6px;
+    color: var(--teal); margin: 0 0 8px;
   }
   .profile-block .pb-title {
-    font-size: clamp(17px, 1.5vw, 20px);
+    font-size: clamp(18px, 1.6vw, 22px);
     font-weight: 700; color: var(--navy);
-    margin: 0 0 20px; line-height: 1.2;
-  }
-  .profile-block .pb-meta {
-    display: grid; gap: 0;
-    border-top: 1px solid var(--gray-100);
-    margin-bottom: 20px;
+    margin: 0 0 24px; line-height: 1.2;
   }
   .profile-block .pb-row {
     display: flex; justify-content: space-between; align-items: baseline;
-    padding: 10px 0; border-bottom: 1px solid var(--gray-100); gap: 12px;
+    padding: 11px 0; border-top: 1px solid var(--gray-100); gap: 12px;
   }
+  .profile-block .pb-row:last-of-type { border-bottom: 1px solid var(--gray-100); }
   .profile-block .pb-row .k {
     font-family: var(--mono); font-size: 10px;
     letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); flex-shrink: 0;
@@ -121,23 +115,15 @@
   .profile-block .pb-row .v {
     font-size: 14px; color: var(--navy); font-weight: 500; text-align: right;
   }
-  .profile-block p {
-    font-size: 14px; color: var(--gray); line-height: 1.65; margin: 0 0 14px;
+  .profile-block .pb-spec {
+    font-family: var(--mono);
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--teal); margin: 20px 0 10px;
   }
-  .profile-block p:last-child { margin-bottom: 0; }
-  .profile-block h4 {
-    font-family: var(--mono); font-size: 10px;
-    letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--teal); margin: 20px 0 12px;
-  }
-  .profile-tags {
-    display: flex; flex-wrap: wrap; gap: 6px;
-  }
-  .profile-tags span {
-    font-family: var(--mono); font-size: 10px;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--navy); background: var(--gray-100);
-    padding: 4px 10px; border-radius: 2px;
+  .profile-block .pb-tags {
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gray); line-height: 1.9;
   }
 
   /* ─── Qualifications ─── */
@@ -166,6 +152,34 @@
     .qual-item:last-child { border-bottom: 0; }
   }
 
+  /* ─── Who we work with ─── */
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid var(--gray-100);
+    margin-bottom: clamp(40px, 5vw, 56px);
+  }
+  .client-item {
+    padding: clamp(20px, 2.5vw, 28px);
+    border-right: 1px solid var(--gray-100);
+    border-bottom: 1px solid var(--gray-100);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .client-item:nth-child(2n) { border-right: 0; }
+  .client-item:nth-last-child(-n+2) { border-bottom: 0; }
+  .client-item .ci-type {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal);
+  }
+  .client-item h4 { font-size: 15px; font-weight: 600; color: var(--navy); margin: 0; line-height: 1.3; }
+  .client-item p { font-size: 14px; color: var(--gray); line-height: 1.6; margin: 0; }
+  @media (max-width: 640px) {
+    .clients-grid { grid-template-columns: 1fr; }
+    .client-item { border-right: 0; border-bottom: 1px solid var(--gray-100); }
+    .client-item:last-child { border-bottom: 0; }
+  }
+
   /* ─── Network ─── */
   .network-block {
     background: var(--paper);
@@ -183,14 +197,17 @@
   }
   .network-block p:last-child { margin-bottom: 0; }
   .network-disciplines {
-    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;
+    display: flex; flex-wrap: wrap; gap: 0; margin-top: 16px; align-items: center;
   }
   .network-disciplines span {
     font-family: var(--mono); font-size: 11px;
     letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--teal); background: rgba(19,127,124,0.06);
-    border: 1px solid rgba(19,127,124,0.2);
-    padding: 5px 12px; border-radius: 2px;
+    color: var(--teal);
+  }
+  .network-disciplines span + span::before {
+    content: "·";
+    margin: 0 10px;
+    color: var(--gray-300);
   }
 
   /* ─── CTA ─── */
@@ -230,14 +247,10 @@
     <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
   </div>
   <div class="drawer-nav">
-    <a href="index.html" data-page="index"><span><span class="es">Inicio</span><span class="en">Home</span></span><span class="link-num">00</span></a>
-    <a href="index.html#about" data-page="index"><span><span class="es">Nosotros</span><span class="en">About</span></span><span class="link-num">01</span></a>
-    <a href="index.html#services" data-page="index"><span><span class="es">Servicios</span><span class="en">Services</span></span><span class="link-num">02</span></a>
-    <a href="index.html#sectors" data-page="index"><span><span class="es">Sectores</span><span class="en">Sectors</span></span><span class="link-num">03</span></a>
-    <div class="drawer-divider"></div>
-    <a href="projects.html" data-page="projects"><span><span class="es">Proyectos</span><span class="en">Projects</span></span><span class="link-num">→</span></a>
-    <a href="team.html" data-page="team"><span><span class="es">Equipo</span><span class="en">Team</span></span><span class="link-num">→</span></a>
-    <a href="contact.html" data-page="contact"><span><span class="es">Contacto</span><span class="en">Contact</span></span><span class="link-num">→</span></a>
+    <a href="index.html" data-page="index"><span><span class="es">Inicio</span><span class="en">Home</span></span><span class="link-num">01</span></a>
+    <a href="projects.html" data-page="projects"><span><span class="es">Proyectos</span><span class="en">Projects</span></span><span class="link-num">02</span></a>
+    <a href="team.html" data-page="team"><span><span class="es">Equipo</span><span class="en">Team</span></span><span class="link-num">03</span></a>
+    <a href="contact.html" data-page="contact"><span><span class="es">Contacto</span><span class="en">Contact</span></span><span class="link-num">04</span></a>
   </div>
   <div class="drawer-foot">
     <div class="df-label">Forte Project Engineering</div>
@@ -261,8 +274,8 @@
       <span class="en">Senior in capability. Direct in delivery.</span>
     </h1>
     <p class="page-lede">
-      <span class="es">Forte PE reúne ingeniería eléctrica senior con probada experiencia en gestión de proyectos de infraestructura a gran escala. Operamos con responsabilidad directa. sin intermediarios que diluyan el criterio técnico.</span>
-      <span class="en">Forte PE combines senior electrical engineering with proven large-scale infrastructure project management. We operate with direct accountability. no intermediaries that dilute technical judgement.</span>
+      <span class="es">Forte PE reúne ingeniería eléctrica senior con probada experiencia en gestión de proyectos de infraestructura a gran escala. Responsabilidad directa, sin intermediarios que diluyan el criterio técnico.</span>
+      <span class="en">Forte PE combines senior electrical engineering with proven large-scale infrastructure project management. Direct accountability, no intermediaries that dilute technical judgement.</span>
     </p>
   </div>
 </section>
@@ -284,21 +297,21 @@
     <div class="firm-grid">
       <div>
         <div class="cred-block">
-          <h3><span class="es">Capacidad técnica · Ingeniería eléctrica y ferroviaria</span><span class="en">Technical capability · Electrical &amp; railway engineering</span></h3>
+          <h3><span class="es">Ingeniería eléctrica y ferroviaria</span><span class="en">Electrical &amp; railway engineering</span></h3>
           <ul class="cred-list">
-            <li>+25 <span class="es">años en ingeniería eléctrica e infraestructura ferroviaria</span><span class="en">years in electrical engineering and railway infrastructure</span><span class="sub"><span class="es">Europa, América Latina y el Caribe</span><span class="en">Europe, Latin America, and the Caribbean</span></span></li>
+            <li>+25 <span class="es">años en ingeniería eléctrica e infraestructura ferroviaria</span><span class="en">years in electrical engineering and railway infrastructure</span><span class="sub"><span class="es">Europa y LATAM</span><span class="en">Europe and LATAM</span></span></li>
             <li><span class="es">Roles formales de gobernanza técnica: CEM, CRE, DPE, Senior Authorised Person</span><span class="en">Formal technical governance roles: CEM, CRE, DPE, Senior Authorised Person</span><span class="sub"><span class="es">Máxima autoridad técnica en programas de electrificación ferroviaria</span><span class="en">Top-level technical authority on railway electrification programmes</span></span></li>
-            <li><span class="es">Programas nacionales de electrificación ferroviaria bajo estándares Network Rail</span><span class="en">National railway electrification programmes under Network Rail standards</span><span class="sub">UK · Chile · LATAM</span></li>
+            <li><span class="es">Programas nacionales de electrificación ferroviaria bajo estándares Network Rail</span><span class="en">National railway electrification programmes under Network Rail standards</span><span class="sub">UK · LATAM</span></li>
             <li><span class="es">Sistemas de potencia MT, tracción eléctrica, SCADA, coordinación de protecciones y earthing</span><span class="en">MV power systems, electric traction, SCADA, protection coordination, and earthing</span></li>
             <li>Member IET (MIET) · <span class="es">Institución de Ingeniería y Tecnología, Reino Unido</span><span class="en">Institution of Engineering and Technology, United Kingdom</span></li>
           </ul>
         </div>
 
         <div class="cred-block">
-          <h3><span class="es">Capacidad · Gestión de proyectos e infraestructura</span><span class="en">Capability · Project &amp; infrastructure management</span></h3>
+          <h3><span class="es">Gestión de proyectos e infraestructura</span><span class="en">Project &amp; infrastructure management</span></h3>
           <ul class="cred-list">
-            <li>+17 <span class="es">años en gestión de proyectos de infraestructura y energía</span><span class="en">years in infrastructure and energy project management</span><span class="sub"><span class="es">Chile, LATAM, EE.UU., El Salvador</span><span class="en">Chile, LATAM, US, El Salvador</span></span></li>
-            <li>+1 GW <span class="es">de portafolio energético gestionado a nivel de owner</span><span class="en">of energy portfolio managed at owner level</span><span class="sub"><span class="es">Solar utility-scale, PMGD, PMG. entregables directos a CEO y financistas</span><span class="en">Utility-scale solar, PMGD, PMG. direct deliverables to CEOs and lenders</span></span></li>
+            <li>+17 <span class="es">años en gestión de proyectos de infraestructura y energía</span><span class="en">years in infrastructure and energy project management</span><span class="sub"><span class="es">LATAM · EE.UU.</span><span class="en">LATAM · US</span></span></li>
+            <li>+1 GW <span class="es">de portafolio energético gestionado a nivel de owner</span><span class="en">of energy portfolio managed at owner level</span><span class="sub"><span class="es">Solar utility-scale, PMGD, PMG</span><span class="en">Utility-scale solar, PMGD, PMG</span></span></li>
             <li><span class="es">60+ proyectos gestionados simultáneamente en etapas de desarrollo</span><span class="en">60+ projects managed simultaneously across development stages</span></li>
             <li><span class="es">Due diligence técnico para transacciones de activos e instituciones multilaterales</span><span class="en">Technical due diligence for asset transactions and multilateral institutions</span></li>
             <li><span class="es">Coordinación con ministerios, utilities, autoridades regulatorias y financistas institucionales</span><span class="en">Coordination with ministries, utilities, regulatory authorities, and institutional lenders</span></li>
@@ -306,45 +319,35 @@
         </div>
       </div>
 
-      <div>
-        <div class="profiles-pair" style="display:grid;grid-template-columns:1fr;gap:20px;">
+      <div class="profiles-pair">
 
-          <div class="profile-block">
-            <p class="pb-role"><span class="es">Fundador · Autoridad técnica</span><span class="en">Founder · Technical authority</span></p>
-            <p class="pb-title"><span class="es">Ingeniero eléctrico sénior</span><span class="en">Senior electrical engineer</span></p>
-            <div class="pb-meta">
-              <div class="pb-row"><span class="k"><span class="es">Experiencia</span><span class="en">Experience</span></span><span class="v">+25 <span class="es">años</span><span class="en">years</span></span></div>
-              <div class="pb-row"><span class="k"><span class="es">Base</span><span class="en">Base</span></span><span class="v">UK · Santiago</span></div>
-              <div class="pb-row"><span class="k"><span class="es">Membresía</span><span class="en">Membership</span></span><span class="v">MIET · IET UK</span></div>
-              <div class="pb-row"><span class="k"><span class="es">Idiomas</span><span class="en">Languages</span></span><span class="v">EN · ES</span></div>
-            </div>
-            <h4><span class="es">Especialización</span><span class="en">Specialisation</span></h4>
-            <div class="profile-tags">
-              <span>OLE</span><span>Traction power</span><span>MV systems</span><span>SCADA</span><span>CEM/CRE/DPE</span><span>Protection</span><span>Earthing</span><span>Owner's Eng.</span>
-            </div>
-          </div>
-
-          <div class="profile-block">
-            <p class="pb-role"><span class="es">Operaciones y desarrollo</span><span class="en">Operations &amp; development</span></p>
-            <p class="pb-title"><span class="es">Gestión de proyectos de infraestructura</span><span class="en">Infrastructure project management</span></p>
-            <div class="pb-meta">
-              <div class="pb-row"><span class="k"><span class="es">Experiencia</span><span class="en">Experience</span></span><span class="v">+17 <span class="es">años</span><span class="en">years</span></span></div>
-              <div class="pb-row"><span class="k"><span class="es">Base</span><span class="en">Base</span></span><span class="v">Santiago · Chile</span></div>
-              <div class="pb-row"><span class="k"><span class="es">Formación</span><span class="en">Education</span></span><span class="v"><span class="es">Arquitectura · PM · Finanzas</span><span class="en">Architecture · PM · Finance</span></span></div>
-              <div class="pb-row"><span class="k"><span class="es">Idiomas</span><span class="en">Languages</span></span><span class="v">ES · EN</span></div>
-            </div>
-            <h4><span class="es">Especialización</span><span class="en">Specialisation</span></h4>
-            <div class="profile-tags">
-              <span>Portfolio mgmt</span><span>Due diligence</span><span>Permitting</span><span>Institutional</span><span>Financing readiness</span><span>EPC coordination</span>
-            </div>
-          </div>
-
+        <div class="profile-block">
+          <p class="pb-role"><span class="es">Fundador · Autoridad técnica</span><span class="en">Founder · Technical authority</span></p>
+          <p class="pb-title"><span class="es">Ingeniero eléctrico sénior</span><span class="en">Senior electrical engineer</span></p>
+          <div class="pb-row"><span class="k"><span class="es">Experiencia</span><span class="en">Experience</span></span><span class="v">+25 <span class="es">años</span><span class="en">years</span></span></div>
+          <div class="pb-row"><span class="k"><span class="es">Base</span><span class="en">Base</span></span><span class="v">UK · Santiago</span></div>
+          <div class="pb-row"><span class="k"><span class="es">Membresía</span><span class="en">Membership</span></span><span class="v">MIET · IET UK</span></div>
+          <div class="pb-row"><span class="k"><span class="es">Idiomas</span><span class="en">Languages</span></span><span class="v">EN · ES</span></div>
+          <p class="pb-spec"><span class="es">Especialización</span><span class="en">Specialisation</span></p>
+          <p class="pb-tags">OLE · Traction power · MV systems · SCADA · CEM/CRE/DPE · Protection · Earthing · Owner's Eng.</p>
         </div>
+
+        <div class="profile-block">
+          <p class="pb-role"><span class="es">Operaciones y desarrollo</span><span class="en">Operations &amp; development</span></p>
+          <p class="pb-title"><span class="es">Gestión de proyectos de infraestructura</span><span class="en">Infrastructure project management</span></p>
+          <div class="pb-row"><span class="k"><span class="es">Experiencia</span><span class="en">Experience</span></span><span class="v">+17 <span class="es">años</span><span class="en">years</span></span></div>
+          <div class="pb-row"><span class="k"><span class="es">Base</span><span class="en">Base</span></span><span class="v">Santiago · Chile</span></div>
+          <div class="pb-row"><span class="k"><span class="es">Formación</span><span class="en">Education</span></span><span class="v"><span class="es">Arquitectura · PM · Finanzas</span><span class="en">Architecture · PM · Finance</span></span></div>
+          <div class="pb-row"><span class="k"><span class="es">Idiomas</span><span class="en">Languages</span></span><span class="v">ES · EN</span></div>
+          <p class="pb-spec"><span class="es">Especialización</span><span class="en">Specialisation</span></p>
+          <p class="pb-tags">Portfolio mgmt · Due diligence · Permitting · Institutional · Financing readiness · EPC coordination</p>
+        </div>
+
       </div>
     </div>
 
     <!-- Qualifications -->
-    <div class="sec-head" style="margin-top: 0; margin-bottom: clamp(24px,3vw,36px);">
+    <div class="sec-head" style="margin-bottom: clamp(24px,3vw,36px);">
       <p class="eyebrow"><span class="num">02</span><span class="es">Calificaciones</span><span class="en">Qualifications</span></p>
       <div>
         <h2 class="section-title" style="font-size: clamp(24px,3vw,40px);">
@@ -363,7 +366,7 @@
       <div class="qual-item">
         <span class="qi-label">CEM · CRE · DPE</span>
         <h4><span class="es">Gobernanza técnica ferroviaria</span><span class="en">Railway technical governance</span></h4>
-        <p><span class="es">Roles formales de máxima autoridad técnica en programas de electrificación ferroviaria: Contractors Engineering Manager, Contractors Responsible Engineer, Designated Project Engineer.</span><span class="en">Formal top-level technical authority roles in railway electrification programmes: Contractors Engineering Manager, Contractors Responsible Engineer, Designated Project Engineer.</span></p>
+        <p><span class="es">Roles formales de máxima autoridad técnica en programas de electrificación: Contractors Engineering Manager, Contractors Responsible Engineer, Designated Project Engineer.</span><span class="en">Formal top-level technical authority roles in railway electrification programmes: Contractors Engineering Manager, Contractors Responsible Engineer, Designated Project Engineer.</span></p>
       </div>
       <div class="qual-item">
         <span class="qi-label">PUC · UANDES · Chile</span>
@@ -372,9 +375,47 @@
       </div>
     </div>
 
+    <!-- Who we work with -->
+    <div class="sec-head" style="margin-bottom: clamp(24px,3vw,36px);">
+      <p class="eyebrow"><span class="num">03</span><span class="es">Con quiénes trabajamos</span><span class="en">Who we work with</span></p>
+      <div>
+        <h2 class="section-title" style="font-size: clamp(24px,3vw,40px);">
+          <span class="es">Owners, ministerios, financistas y operadores.</span>
+          <span class="en">Owners, ministries, lenders, and operators.</span>
+        </h2>
+        <p class="body-copy" style="margin-top:16px;">
+          <span class="es">Hemos trabajado con ministerios de energía, operadores ferroviarios, financistas multilaterales, fondos de inversión en infraestructura y promotores privados en Chile, Centroamérica y Europa.</span>
+          <span class="en">We have worked with energy ministries, railway operators, multilateral lenders, infrastructure investment funds, and private developers across Chile, Central America, and Europe.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="clients-grid">
+      <div class="client-item">
+        <span class="ci-type"><span class="es">Sector público</span><span class="en">Public sector</span></span>
+        <h4><span class="es">Ministerios y agencias</span><span class="en">Ministries &amp; agencies</span></h4>
+        <p><span class="es">Ministerios de energía, transporte y servicios públicos. Evaluación técnica, planificación estratégica y coordinación de programas.</span><span class="en">Energy, transport, and public utility ministries. Technical assessment, strategic planning, and programme coordination.</span></p>
+      </div>
+      <div class="client-item">
+        <span class="ci-type"><span class="es">Infraestructura</span><span class="en">Infrastructure</span></span>
+        <h4><span class="es">Operadores ferroviarios</span><span class="en">Rail operators</span></h4>
+        <p><span class="es">Operadores de sistemas ferroviarios suburbanos y de pasajeros. Owner's engineering, integración de sistemas y control técnico de ejecución.</span><span class="en">Suburban and passenger rail system operators. Owner's engineering, systems integration, and technical execution control.</span></p>
+      </div>
+      <div class="client-item">
+        <span class="ci-type"><span class="es">Financiamiento</span><span class="en">Finance</span></span>
+        <h4><span class="es">Financistas e instituciones multilaterales</span><span class="en">Lenders &amp; multilateral institutions</span></h4>
+        <p><span class="es">Fondos de inversión, bancos de desarrollo y financistas institucionales. Due diligence técnico, evaluación de riesgos y preparación para financiamiento.</span><span class="en">Investment funds, development banks, and institutional lenders. Technical due diligence, risk assessment, and financing readiness.</span></p>
+      </div>
+      <div class="client-item">
+        <span class="ci-type"><span class="es">Sector privado</span><span class="en">Private sector</span></span>
+        <h4><span class="es">Promotores y desarrolladores</span><span class="en">Developers &amp; project owners</span></h4>
+        <p><span class="es">Desarrolladores de energía renovable, data centers y proyectos de infraestructura privada. Evaluación técnica, coordinación y gestión de proyectos complejos.</span><span class="en">Renewable energy, data centre, and private infrastructure developers. Technical assessment, coordination, and complex project management.</span></p>
+      </div>
+    </div>
+
     <!-- Network -->
     <div class="sec-head" style="margin-bottom: clamp(24px,3vw,36px);">
-      <p class="eyebrow"><span class="num">03</span><span class="es">Red de especialistas</span><span class="en">Specialist network</span></p>
+      <p class="eyebrow"><span class="num">04</span><span class="es">Red de especialistas</span><span class="en">Specialist network</span></p>
       <div>
         <h2 class="section-title" style="font-size: clamp(24px,3vw,40px);">
           <span class="es">Boutique en estructura.<br/>Sin límite de escala.</span>
@@ -386,12 +427,12 @@
     <div class="network-block">
       <h3><span class="es">Cómo escalamos</span><span class="en">How we scale</span></h3>
       <p>
-        <span class="es">Forte PE opera como una firma boutique: responsabilidad directa, sin capas de gestión intermedias. Cuando la escala del proyecto o la amplitud de las disciplinas requeridas lo exige, articulamos equipos con ingenieros y especialistas técnicos de confianza en las áreas específicas que el proyecto necesita.</span>
+        <span class="es">Forte PE opera como una firma boutique: responsabilidad directa, sin capas de gestión intermedias. Cuando la escala del proyecto o la amplitud de las disciplinas lo exige, articulamos equipos con ingenieros y especialistas técnicos de confianza en las áreas específicas que el proyecto necesita.</span>
         <span class="en">Forte PE operates as a boutique firm: direct accountability, no intermediate management layers. When project scale or the breadth of required disciplines demands it, we assemble teams with trusted engineers and technical specialists across the specific areas the project requires.</span>
       </p>
       <p>
-        <span class="es">Esta red incluye especialistas con experiencia internacional en sistemas ferroviarios, energía, civil, ambiental y regulatorio. con quienes hemos trabajado directamente en proyectos anteriores o cuyas credenciales conocemos de primera mano.</span>
-        <span class="en">This network includes specialists with international experience across railway systems, energy, civil, environmental, and regulatory disciplines. with whom we have worked directly on prior projects or whose credentials we know first-hand.</span>
+        <span class="es">Esta red incluye especialistas con experiencia internacional en sistemas ferroviarios, energía, civil, ambiental y regulatorio, con quienes hemos trabajado directamente en proyectos anteriores o cuyas credenciales conocemos de primera mano.</span>
+        <span class="en">This network includes specialists with international experience across railway systems, energy, civil, environmental, and regulatory disciplines, with whom we have worked directly on prior projects or whose credentials we know first-hand.</span>
       </p>
       <div class="network-disciplines">
         <span><span class="es">Sistemas ferroviarios</span><span class="en">Railway systems</span></span>

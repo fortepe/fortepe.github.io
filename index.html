@@ -81,28 +81,6 @@
     text-transform: uppercase;
     z-index: 3;
   }
-  .hero-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--teal-500);
-    margin: 0 0 28px;
-  }
-  .hero-status .dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--teal-500);
-    box-shadow: 0 0 0 4px rgba(26,150,146,0.18);
-    animation: pulse 2.4s ease-in-out infinite;
-    flex-shrink: 0;
-  }
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 4px rgba(26,150,146,0.18); }
-    50%       { box-shadow: 0 0 0 8px rgba(26,150,146,0.05); }
-  }
   .hero h1 {
     font-size: clamp(36px, 4.2vw, 64px);
     line-height: 0.98;
@@ -157,7 +135,6 @@
     min-height: 460px;
     border-left: 2px solid var(--teal);
   }
-
   .hero-visual .corner {
     position: absolute;
     width: 16px; height: 16px;
@@ -170,12 +147,8 @@
   .hero-visual .corner.bl { bottom: 12px; left: 12px; border-width: 0 0 1px 1px; }
   .hero-visual .corner.br { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
   .hero-lines {
-    position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.13;
+    position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+    overflow: hidden; pointer-events: none; z-index: 1; opacity: 0.13;
   }
   .hero-lines svg { width: 100%; height: 100%; }
   @media (max-width: 980px) {
@@ -199,7 +172,6 @@
     padding: 28px 28px 26px;
     position: relative;
   }
-  .section.paper .stat-card { background: rgba(255,255,255,0.5); }
   .stat-card .stat-num {
     font-size: clamp(48px, 5vw, 72px);
     font-weight: 700;
@@ -260,168 +232,6 @@
     margin-top: 48px;
   }
 
-  /* ─── Working model ─── */
-  .model-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--gray-300);
-    border-bottom: 1px solid var(--gray-300);
-  }
-  .model-step {
-    padding: clamp(28px, 3vw, 40px) clamp(24px, 2.5vw, 32px);
-    border-right: 1px solid var(--gray-300);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    min-height: 260px;
-  }
-  .model-step:last-child { border-right: 0; }
-  .model-step.primary { background: var(--navy); color: #fff; }
-  .model-step.primary h3 { color: #fff; }
-  .model-step.primary p { color: rgba(224, 241, 240, 0.75); }
-  .model-step .step-num {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--teal);
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .model-step.primary .step-num { color: var(--teal-500); }
-  .model-step .step-num::after {
-    content: ""; flex: 1; height: 1px; background: currentColor; opacity: 0.3;
-  }
-  .model-step h3 {
-    font-size: clamp(22px, 2vw, 28px);
-    font-weight: 600;
-    letter-spacing: -0.015em;
-    line-height: 1.15;
-    margin: 0;
-  }
-  .model-step p {
-    color: var(--gray);
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 0;
-  }
-  @media (max-width: 880px) {
-    .model-grid { grid-template-columns: 1fr; }
-    .model-step { border-right: 0; border-bottom: 1px solid var(--gray-300); min-height: auto; }
-    .model-step:last-child { border-bottom: 0; }
-  }
-
-  /* ─── Sectors ─── */
-  .sectors-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .sector {
-    background: var(--white);
-    border-top: 2px solid var(--teal);
-    padding: 32px 28px 28px;
-    position: relative;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  .sector:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -28px rgba(11,24,32,0.25); }
-  .sector .sector-num {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gray);
-  }
-  .sector h3 {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: var(--navy);
-    margin: 0;
-    line-height: 1.2;
-  }
-  .sector p { color: var(--gray); font-size: 15px; line-height: 1.6; margin: 0; }
-  @media (max-width: 880px) { .sectors-grid { grid-template-columns: 1fr; } }
-
-  /* ─── Capability block ─── */
-  .capability {
-    margin-top: clamp(48px, 6vw, 80px);
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 0;
-    background: var(--white);
-    border: 1px solid var(--gray-100);
-    overflow: hidden;
-  }
-  .capability-text {
-    padding: clamp(36px, 4vw, 56px);
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  .capability-text h4 {
-    font-size: clamp(22px, 2vw, 28px);
-    font-weight: 600;
-    letter-spacing: -0.015em;
-    color: var(--navy);
-    line-height: 1.2;
-  }
-  .capability-text ul {
-    list-style: none;
-    margin: 0; padding: 0;
-    display: grid;
-    gap: 0;
-  }
-  .capability-text ul li {
-    padding: 14px 0;
-    border-top: 1px solid var(--gray-100);
-    color: var(--navy);
-    font-size: 15px;
-    line-height: 1.5;
-    display: grid;
-    grid-template-columns: 36px 1fr;
-    gap: 12px;
-    align-items: baseline;
-  }
-  .capability-text ul li:last-child { border-bottom: 1px solid var(--gray-100); }
-  .capability-text ul li::before {
-    content: attr(data-num);
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    color: var(--teal);
-    font-weight: 500;
-  }
-  .capability-text .interface-note {
-    color: var(--gray);
-    font-size: 14px;
-    line-height: 1.55;
-    margin: 0;
-    max-width: 42ch;
-  }
-  .capability-photo {
-    position: relative;
-    min-height: 420px;
-    background: var(--navy);
-  }
-  .capability-photo img {
-    position: absolute;
-    inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: center 20%;
-  }
-  @media (max-width: 880px) {
-    .capability { grid-template-columns: 1fr; }
-    .capability-photo { min-height: 320px; }
-  }
-
   /* ─── Services grid ─── */
   .services-grid {
     display: grid;
@@ -466,77 +276,6 @@
     .service-item { border-right: 0; }
     .service-item:nth-last-child(-n+3) { border-bottom: 1px solid var(--gray-100); }
     .service-item:last-child { border-bottom: 0; }
-  }
-
-  /* ─── Institutions band ─── */
-  .institutions-band {
-    background: var(--navy);
-    padding: clamp(56px, 7vw, 96px) 0;
-  }
-  .inst-inner {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 0 var(--pad);
-  }
-  .inst-statement {
-    font-size: clamp(18px, 1.6vw, 22px);
-    line-height: 1.5;
-    color: rgba(224,241,240,0.85);
-    max-width: 60ch;
-    margin: 28px 0 48px;
-  }
-  .inst-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .inst-item {
-    padding: 28px 24px;
-    border-right: 1px solid rgba(255,255,255,0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .inst-item:last-child { border-right: 0; }
-  .inst-item .inst-icon {
-    width: 32px; height: 32px;
-    border: 1px solid rgba(19,127,124,0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .inst-item .inst-icon svg { width: 16px; height: 16px; fill: none; stroke: var(--teal-500); stroke-width: 1.5; }
-  .inst-item .inst-type {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--teal-500);
-    margin: 0;
-  }
-  .inst-item h4 {
-    font-size: 15px;
-    font-weight: 600;
-    color: #fff;
-    margin: 0;
-    line-height: 1.3;
-  }
-  .inst-item p {
-    font-size: 13px;
-    color: rgba(224,241,240,0.55);
-    line-height: 1.55;
-    margin: 0;
-  }
-  @media (max-width: 880px) {
-    .inst-grid { grid-template-columns: repeat(2, 1fr); }
-    .inst-item:nth-child(2n) { border-right: 0; }
-    .inst-item:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,0.08); }
-  }
-  @media (max-width: 560px) {
-    .inst-grid { grid-template-columns: 1fr; }
-    .inst-item { border-right: 0; border-top: 1px solid rgba(255,255,255,0.08); }
-    .inst-item:first-child { border-top: 0; }
   }
 
   /* ─── Photo break ─── */
@@ -592,109 +331,45 @@
     border-left: 1px solid rgba(255,255,255,0.22);
   }
 
-  /* ─── Team capabilities ─── */
-  .capabilities-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(32px, 5vw, 72px);
-    margin-top: clamp(40px, 5vw, 56px);
+  /* ─── Contact band ─── */
+  .contact-band {
+    background: var(--navy);
+    padding: clamp(56px, 7vw, 96px) 0;
   }
-  .capabilities-col h4 {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin: 0 0 24px;
-  }
-  .cap-list { display: grid; gap: 12px; }
-  .cap-list .cap {
-    padding: 16px 20px;
-    border: 1px solid var(--gray-100);
-    background: var(--white);
-    font-size: 15px;
-    color: var(--navy);
-    font-weight: 500;
+  .contact-band-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--pad);
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    transition: border-color 0.18s ease;
+    gap: clamp(32px, 5vw, 80px);
+    flex-wrap: wrap;
   }
-  .cap-list .cap:hover { border-color: var(--teal); }
-  .cap-list .cap .ix {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    color: var(--gray);
-    flex-shrink: 0;
-  }
-  @media (max-width: 720px) { .capabilities-grid { grid-template-columns: 1fr; } }
-
-  /* ─── Network note ─── */
-  .network-note {
-    margin-top: clamp(40px, 5vw, 56px);
-    background: var(--paper);
-    border-left: 2px solid var(--teal);
-    padding: clamp(24px, 3vw, 36px) clamp(24px, 3vw, 36px);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 24px;
-    align-items: center;
-  }
-  .network-note p {
-    font-size: 16px;
-    color: var(--navy);
-    line-height: 1.6;
-    margin: 0;
-  }
-  .network-note p span.gray { color: var(--gray); font-size: 14px; display: block; margin-top: 6px; }
-  @media (max-width: 720px) { .network-note { grid-template-columns: 1fr; } }
-
-  /* ─── Contact ─── */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: clamp(40px, 5vw, 80px);
-    align-items: start;
-    margin-top: clamp(40px, 4vw, 56px);
-  }
-  .contact-grid .lede { color: rgba(224, 241, 240, 0.85); }
-  .contact-card-block {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.10);
-    padding: clamp(28px, 3vw, 36px);
-  }
-  .contact-card-block .label-mono { color: var(--teal-500); }
-  .contact-row {
-    display: flex; justify-content: space-between; align-items: baseline;
-    padding: 18px 0;
-    border-top: 1px solid rgba(255,255,255,0.10);
-  }
-  .contact-row:first-of-type { border-top: 0; padding-top: 8px; }
-  .contact-row .k {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(224, 241, 240, 0.55);
-  }
-  .contact-row .v {
-    font-size: 16px;
+  .contact-band h2 {
+    font-size: clamp(28px, 3.5vw, 52px);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
     color: #fff;
-    font-weight: 500;
-    text-align: right;
+    margin: 0 0 16px;
   }
-  .contact-row .v a { color: #fff; border-bottom: 1px solid var(--teal-500); padding-bottom: 1px; }
-  .contact-row .v a:hover { color: var(--teal-500); }
-  .cta-row {
-    margin-top: clamp(28px, 3vw, 40px);
+  .contact-band p {
+    font-size: clamp(15px, 1.2vw, 18px);
+    color: rgba(224, 241, 240, 0.72);
+    margin: 0;
+    max-width: 48ch;
+    line-height: 1.55;
+  }
+  .contact-band-cta {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    flex-shrink: 0;
   }
-  @media (max-width: 880px) { .contact-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 720px) {
+    .contact-band-inner { flex-direction: column; align-items: flex-start; }
+  }
 </style>
 </head>
 
@@ -724,7 +399,7 @@
     <img src="forte-reversed.svg" alt="Forte Project Engineering" width="120" height="40" />
     <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
   </div>
-    <div class="drawer-nav">
+  <div class="drawer-nav">
     <a href="index.html" data-page="index">
       <span><span class="es">Inicio</span><span class="en">Home</span></span>
       <span class="link-num">01</span>
@@ -742,7 +417,7 @@
       <span class="link-num">04</span>
     </a>
   </div>
-<div class="drawer-foot">
+  <div class="drawer-foot">
     <div class="df-label">Forte Project Engineering</div>
     <div class="df-val">
       Santiago · Chile<br/>
@@ -766,7 +441,6 @@
   </div>
   <div class="hero-inner">
     <div>
-
       <h1>
         <span class="es">Criterio técnico directo.<br/>Sin capas intermedias.</span>
         <span class="en">Direct technical authority.<br/>No intermediate layers.</span>
@@ -776,8 +450,8 @@
         </em>
       </h1>
       <p class="lede">
-        <span class="es">Trabajamos en proyectos ferroviarios, energéticos e infraestructura crítica en América Latina. Evaluación técnica, control de ejecución, coordinación institucional y revisión técnica.</span>
-        <span class="en">We work on rail, energy, and critical infrastructure projects across Latin America. Technical assessment, execution control, institutional coordination, and technical review.</span>
+        <span class="es">Trabajamos en proyectos ferroviarios, energéticos e infraestructura crítica en LATAM. Evaluación técnica, control de ejecución, coordinación institucional y revisión técnica.</span>
+        <span class="en">We work on rail, energy, and critical infrastructure projects across LATAM. Technical assessment, execution control, institutional coordination, and technical review.</span>
       </p>
       <div class="hero-tags">
         <span><span class="es">Ferroviario</span><span class="en">Rail</span></span>
@@ -813,8 +487,8 @@
       <div>
         <hr class="rule" />
         <p class="lede" style="margin-top: 28px;">
-          <span class="es">Forte PE es una firma boutique de asesoría técnica especializada en infraestructura. Combinamos más de 40 años de experiencia acumulada en ingeniería eléctrica, sistemas ferroviarios, energía y gestión de proyectos de infraestructura en América Latina, Europa y Norteamérica.</span>
-          <span class="en">Forte PE is a boutique technical advisory firm specialising in infrastructure. We bring together over 40 years of combined experience in electrical engineering, railway systems, energy, and infrastructure project management across Latin America, Europe, and North America.</span>
+          <span class="es">Forte PE es una firma boutique de asesoría técnica especializada en infraestructura. Combinamos más de 40 años de experiencia acumulada en ingeniería eléctrica, sistemas ferroviarios, energía y gestión de proyectos de infraestructura en LATAM, Europa y Norteamérica.</span>
+          <span class="en">Forte PE is a boutique technical advisory firm specialising in infrastructure. We bring together over 40 years of combined experience in electrical engineering, railway systems, energy, and infrastructure project management across LATAM, Europe, and North America.</span>
         </p>
         <p class="body-copy" style="margin-top: 24px;">
           <span class="es">Trabajamos directamente con owners, ministerios, financistas y agencias públicas, aportando criterio técnico y capacidad de gestión en las etapas donde más se necesitan. Sin estructuras de consultoría que diluyen la responsabilidad.</span>
@@ -824,6 +498,12 @@
           <span class="es">Cuando la escala lo requiere, articulamos equipos con especialistas técnicos de confianza en las disciplinas que el proyecto necesita.</span>
           <span class="en">When scale requires it, we assemble teams with trusted specialist professionals across the disciplines the project demands.</span>
         </p>
+        <div style="margin-top: 28px;">
+          <a class="btn btn-outline" href="team.html">
+            <span class="es">Credenciales del equipo</span><span class="en">Team credentials</span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
       </div>
       <div class="stat-stack">
         <div class="stat-card">
@@ -846,8 +526,8 @@
           <div class="stat-tag">03 · <span class="es">Cobertura</span><span class="en">Coverage</span></div>
           <div class="stat-num small">Chile · LATAM</div>
           <div class="stat-label">
-            <span class="es">Operación permanente en Santiago. Compromisos activos en Chile, Centroamérica y el Caribe. Experiencia previa en Europa y Norteamérica.</span>
-            <span class="en">Permanent operation in Santiago. Active engagements in Chile, Central America, and the Caribbean. Prior experience across Europe and North America.</span>
+            <span class="es">Operación permanente en Santiago. Compromisos activos en Chile y Centroamérica. Experiencia previa en Europa y Norteamérica.</span>
+            <span class="en">Permanent operation in Santiago. Active engagements in Chile and Central America. Prior experience across Europe and North America.</span>
           </div>
         </div>
       </div>
@@ -948,164 +628,28 @@
   </div>
 </section>
 
-<!-- ════════ TEAM / CAPABILITIES ════════ -->
-<section id="team" class="section bone anchor">
-  <div class="container">
-    <div class="sec-head">
-      <p class="eyebrow"><span class="num">04</span><span class="es">Equipo</span><span class="en">Team</span></p>
-      <div>
-        <h2 class="section-title">
-          <span class="es">Capacidad técnica y de gestión integrada.</span>
-          <span class="en">Technical and management capability, integrated.</span>
-        </h2>
-        <p class="body-copy" style="margin-top: 20px;">
-          <span class="es">La firma reúne ingeniería eléctrica senior con experiencia probada en gestión de proyectos de infraestructura a gran escala. Dos perfiles complementarios que operan como una sola capacidad de asesoría.</span>
-          <span class="en">The firm combines senior electrical engineering with proven experience managing large-scale infrastructure projects. Two complementary profiles operating as a single advisory capability.</span>
-        </p>
-      </div>
-    </div>
-
-    <div class="capabilities-grid">
-      <div class="capabilities-col">
-        <h4><span class="es">Capacidades técnicas · Ingeniería</span><span class="en">Technical capabilities · Engineering</span></h4>
-        <div class="cap-list">
-          <div class="cap"><span><span class="es">Electrificación ferroviaria y sistemas OLE</span><span class="en">Railway electrification &amp; OLE systems</span></span><span class="ix">T·01</span></div>
-          <div class="cap"><span><span class="es">Sistemas de potencia y tracción eléctrica</span><span class="en">Power systems &amp; electric traction</span></span><span class="ix">T·02</span></div>
-          <div class="cap"><span><span class="es">Integración de sistemas, SCADA y puesta en servicio</span><span class="en">Systems integration, SCADA &amp; commissioning</span></span><span class="ix">T·03</span></div>
-          <div class="cap"><span><span class="es">Energía y almacenamiento BESS</span><span class="en">Energy &amp; BESS storage</span></span><span class="ix">T·04</span></div>
-          <div class="cap"><span><span class="es">Gobernanza técnica CEM / CRE / DPE</span><span class="en">Engineering governance CEM / CRE / DPE</span></span><span class="ix">T·05</span></div>
-          <div class="cap"><span><span class="es">Evaluación eléctrica de sitio e infraestructura crítica</span><span class="en">Electrical site assessment &amp; critical infrastructure</span></span><span class="ix">T·06</span></div>
-        </div>
-      </div>
-      <div class="capabilities-col">
-        <h4><span class="es">Capacidades · Gestión y desarrollo</span><span class="en">Capabilities · Management &amp; development</span></h4>
-        <div class="cap-list">
-          <div class="cap"><span><span class="es">Gestión de portafolios y proyectos complejos</span><span class="en">Portfolio &amp; complex project management</span></span><span class="ix">M·01</span></div>
-          <div class="cap"><span><span class="es">Coordinación de permisos, utilities y autoridades</span><span class="en">Permitting, utilities &amp; authority coordination</span></span><span class="ix">M·02</span></div>
-          <div class="cap"><span><span class="es">Due diligence técnico y preparación para financiamiento</span><span class="en">Technical due diligence &amp; financing readiness</span></span><span class="ix">M·03</span></div>
-          <div class="cap"><span><span class="es">Coordinación con organismos multilaterales y públicos</span><span class="en">Multilateral &amp; public sector coordination</span></span><span class="ix">M·04</span></div>
-          <div class="cap"><span><span class="es">Estructuración de propuestas y contratos técnicos</span><span class="en">Technical proposal &amp; contract structuring</span></span><span class="ix">M·05</span></div>
-          <div class="cap"><span><span class="es">Posicionamiento estratégico e institucional</span><span class="en">Strategic &amp; institutional positioning</span></span><span class="ix">M·06</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="network-note">
-      <p>
-        <span class="es"><strong>Red de especialistas.</strong> Cuando la escala o la disciplina lo requieren, articulamos equipos con ingenieros y especialistas técnicos de confianza en áreas como sistemas ferroviarios, energía, civil, ambiental y regulatorio.</span>
-        <span class="en"><strong>Specialist network.</strong> When scale or discipline requires it, we assemble teams with trusted engineers and technical specialists across railway systems, energy, civil, environmental, and regulatory disciplines.</span>
-        <span class="gray">
-          <span class="es">Boutique en estructura. Senior en capacidad.</span>
-          <span class="en">Boutique in structure. Senior in capability.</span>
-        </span>
+<!-- ════════ CONTACT BAND ════════ -->
+<section class="contact-band" aria-label="Contact">
+  <div class="contact-band-inner">
+    <div>
+      <p class="eyebrow on-navy" style="margin-bottom: 20px;"><span class="num">03</span><span class="es">Contacto</span><span class="en">Contact</span></p>
+      <h2>
+        <span class="es">Hablemos<br/>de su proyecto.</span>
+        <span class="en">Let's talk<br/>about your project.</span>
+      </h2>
+      <p style="margin-top: 16px;">
+        <span class="es">Si su proyecto requiere claridad técnica para avanzar, estamos disponibles para revisar el contexto y definir los próximos pasos.</span>
+        <span class="en">If your project requires technical clarity to move forward, we are available to review the context and define next steps.</span>
       </p>
-      <a class="btn btn-outline" href="team.html">
-        <span class="es">Credenciales del equipo</span><span class="en">Team credentials</span>
+    </div>
+    <div class="contact-band-cta">
+      <a class="btn btn-primary" href="contact.html">
+        <span class="es">Escribir a Forte</span><span class="en">Contact Forte</span>
         <span class="arrow">→</span>
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- ════════ INSTITUTIONS ════════ -->
-<section class="institutions-band" aria-label="Instituciones con las que trabajamos">
-  <div class="inst-inner">
-    <p class="eyebrow on-navy"><span class="es">Con quiénes trabajamos</span><span class="en">Who we work with</span></p>
-    <p class="inst-statement">
-      <span class="es">Hemos trabajado con ministerios de energía, operadores ferroviarios, financistas multilaterales, fondos de inversión en infraestructura y promotores privados en Chile, Centroamérica, el Caribe y Europa.</span>
-      <span class="en">We have worked with energy ministries, railway operators, multilateral lenders, infrastructure investment funds, and private developers across Chile, Central America, the Caribbean, and Europe.</span>
-    </p>
-    <div class="inst-grid">
-      <div class="inst-item">
-        <div class="inst-icon">
-          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V9l7-6 7 6v12M9 21v-6h6v6"/></svg>
-        </div>
-        <p class="inst-type"><span class="es">Sector público</span><span class="en">Public sector</span></p>
-        <h4><span class="es">Ministerios y agencias</span><span class="en">Ministries &amp; agencies</span></h4>
-        <p><span class="es">Ministerios de energía, transporte y servicios públicos. Evaluación técnica, planificación estratégica y coordinación de programas.</span><span class="en">Energy, transport, and public utility ministries. Technical assessment, strategic planning, and programme coordination.</span></p>
-      </div>
-      <div class="inst-item">
-        <div class="inst-icon">
-          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        </div>
-        <p class="inst-type"><span class="es">Infraestructura</span><span class="en">Infrastructure</span></p>
-        <h4><span class="es">Operadores ferroviarios</span><span class="en">Rail operators</span></h4>
-        <p><span class="es">Operadores de sistemas ferroviarios suburbanos y de pasajeros. Owner's engineering, integración de sistemas y control técnico de ejecución.</span><span class="en">Suburban and passenger rail system operators. Owner's engineering, systems integration, and technical execution control.</span></p>
-      </div>
-      <div class="inst-item">
-        <div class="inst-icon">
-          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8v1m0 8v1M9 12H5m14 0h-4"/></svg>
-        </div>
-        <p class="inst-type"><span class="es">Financiamiento</span><span class="en">Finance</span></p>
-        <h4><span class="es">Financistas e instituciones multilaterales</span><span class="en">Lenders &amp; multilateral institutions</span></h4>
-        <p><span class="es">Fondos de inversión, bancos de desarrollo y financistas institucionales. Due diligence técnico, evaluación de riesgos y preparación para financiamiento.</span><span class="en">Investment funds, development banks, and institutional lenders. Technical due diligence, risk assessment, and financing readiness.</span></p>
-      </div>
-      <div class="inst-item">
-        <div class="inst-icon">
-          <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2M5 21H3M9 7h6M9 11h6M9 15h4"/></svg>
-        </div>
-        <p class="inst-type"><span class="es">Sector privado</span><span class="en">Private sector</span></p>
-        <h4><span class="es">Promotores y desarrolladores</span><span class="en">Developers &amp; project owners</span></h4>
-        <p><span class="es">Desarrolladores de energía renovable, data centers y proyectos de infraestructura privada. Evaluación técnica, coordinación y gestión de proyectos complejos.</span><span class="en">Renewable energy, data centre, and private infrastructure developers. Technical assessment, coordination, and complex project management.</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════ CONTACT ════════ -->
-<section id="contact" class="section navy anchor">
-  <div class="container">
-    <div class="sec-head">
-      <p class="eyebrow on-navy"><span class="num">05</span><span class="es">Contacto</span><span class="en">Contact</span></p>
-      <div>
-        <h2 class="section-title" style="color:#fff;">
-          <span class="es">Hablemos<br/>de su proyecto.</span>
-          <span class="en">Let's talk<br/>about your project.</span>
-        </h2>
-      </div>
-    </div>
-
-    <div class="contact-grid">
-      <div>
-        <p class="lede">
-          <span class="es">Si su proyecto requiere claridad técnica para avanzar: evaluación de factibilidad, revisión técnica, coordinación de ejecución o asesoría institucional, estamos disponibles para revisar el contexto y definir los próximos pasos.</span>
-          <span class="en">If your project requires technical clarity to move forward: feasibility assessment, independent review, execution coordination, or institutional advisory, we are available to review the context and define next steps.</span>
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="contact.html">
-            <span class="es">Escribir a Forte</span><span class="en">Contact Forte</span>
-            <span class="arrow">→</span>
-          </a>
-          <a class="btn btn-ghost" href="projects.html">
-            <span class="es">Ver proyectos</span><span class="en">View projects</span>
-          </a>
-        </div>
-      </div>
-      <div class="contact-card-block">
-        <p class="label-mono"><span class="es">Coordenadas</span><span class="en">Coordinates</span></p>
-        <div style="margin-top: 16px;">
-          <div class="contact-row">
-            <span class="k">Email</span>
-            <span class="v"><a href="mailto:info@fortepe.com">info@fortepe.com</a></span>
-          </div>
-          <div class="contact-row">
-            <span class="k"><span class="es">Oficina</span><span class="en">Office</span></span>
-            <span class="v">Callao 2911, Las Condes</span>
-          </div>
-          <div class="contact-row">
-            <span class="k"><span class="es">Ciudad</span><span class="en">City</span></span>
-            <span class="v">Santiago · Chile</span>
-          </div>
-          <div class="contact-row">
-            <span class="k"><span class="es">Cobertura</span><span class="en">Coverage</span></span>
-            <span class="v">Chile · LATAM</span>
-          </div>
-          <div class="contact-row">
-            <span class="k"><span class="es">Idiomas</span><span class="en">Languages</span></span>
-            <span class="v">ES · EN</span>
-          </div>
-        </div>
-      </div>
+      <a class="btn btn-ghost" href="projects.html">
+        <span class="es">Ver proyectos</span><span class="en">View projects</span>
+      </a>
     </div>
   </div>
 </section>
