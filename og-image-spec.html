@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=1200"/>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #12324A;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .bg-lines {
+    position: absolute; inset: 0; opacity: 0.12;
+  }
+  .content {
+    position: absolute; inset: 0;
+    padding: 64px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .logo-mark {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .logo-bar {
+    width: 32px; height: 3px; background: #137F7C;
+  }
+  .logo-text {
+    font-size: 13px; font-weight: 500; letter-spacing: 0.22em;
+    text-transform: uppercase; color: rgba(224,241,240,0.6);
+  }
+  .headline {
+    font-size: 58px; font-weight: 700; letter-spacing: -0.03em;
+    line-height: 1.0; color: #fff;
+    max-width: 700px;
+  }
+  .headline em {
+    font-style: normal; display: block;
+    font-size: 26px; font-weight: 400; letter-spacing: -0.01em;
+    color: rgba(224,241,240,0.65); margin-top: 16px;
+    line-height: 1.4;
+  }
+  .bottom-row {
+    display: flex; align-items: flex-end;
+    justify-content: space-between;
+  }
+  .tags {
+    display: flex; gap: 0;
+  }
+  .tags span {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: rgba(224,241,240,0.45);
+  }
+  .tags span + span::before {
+    content: " · "; color: #137F7C; margin: 0 8px;
+  }
+  .geo {
+    font-family: monospace;
+    font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: rgba(224,241,240,0.3);
+  }
+  .teal-bar {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px; background: #137F7C;
+  }
+</style>
+</head>
+<body>
+  <svg class="bg-lines" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#1A9692" stroke-width="1.5" fill="none">
+      <path d="M-50 630 Q 500 350 1250 100"/>
+      <path d="M-50 630 Q 500 420 1250 280"/>
+      <path d="M-50 630 Q 500 510 1250 460"/>
+    </g>
+  </svg>
+  <div class="content">
+    <div class="logo-mark">
+      <div class="logo-bar"></div>
+      <span class="logo-text">Forte Project Engineering</span>
+    </div>
+    <div>
+      <div class="headline">
+        Criterio técnico directo.
+        <em>Ferroviario · Energía · Infraestructura crítica</em>
+      </div>
+    </div>
+    <div class="bottom-row">
+      <div class="tags">
+        <span>Owner's Engineering</span>
+        <span>Technical Advisory</span>
+        <span>Project Delivery</span>
+      </div>
+      <span class="geo">Santiago · LATAM</span>
+    </div>
+  </div>
+  <div class="teal-bar"></div>
+</body>
+</html>

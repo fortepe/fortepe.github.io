@@ -1,0 +1,71 @@
+# ═══════════════════════════════════════════════════
+# Forte Project Engineering · .htaccess
+# ═══════════════════════════════════════════════════
+
+# ─── Force HTTPS ───
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ─── Force www → non-www (or flip if you prefer www) ───
+RewriteCond %{HTTP_HOST} ^www\.fortepe\.com [NC]
+RewriteRule ^(.*)$ https://fortepe.com/$1 [L,R=301]
+
+# ─── Clean URLs: /projects → /projects.html ───
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^.]+)$ $1.html [L]
+
+# ─── Security headers ───
+<IfModule mod_headers.c>
+  # Prevent clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # Prevent MIME sniffing
+  Header always set X-Content-Type-Options "nosniff"
+  # Basic XSS protection (legacy browsers)
+  Header always set X-XSS-Protection "1; mode=block"
+  # Referrer policy — send origin only on cross-origin requests
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Permissions policy — disable unused browser features
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  # Remove server signature
+  Header unset Server
+  Header unset X-Powered-By
+</IfModule>
+
+# ─── Cache control ───
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # HTML — short cache, always revalidate
+  ExpiresByType text/html                  "access plus 1 hour"
+  # CSS and JS — longer, versioned by filename in practice
+  ExpiresByType text/css                   "access plus 1 month"
+  ExpiresByType application/javascript     "access plus 1 month"
+  # Fonts
+  ExpiresByType font/woff2                 "access plus 1 year"
+  ExpiresByType font/woff                  "access plus 1 year"
+  # Images
+  ExpiresByType image/jpeg                 "access plus 6 months"
+  ExpiresByType image/png                  "access plus 6 months"
+  ExpiresByType image/svg+xml              "access plus 6 months"
+  ExpiresByType image/webp                 "access plus 6 months"
+  # Sitemap and robots — recheck monthly
+  ExpiresByType application/xml            "access plus 1 month"
+  ExpiresByType text/plain                 "access plus 1 month"
+</IfModule>
+
+# ─── Compression ───
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript
+  AddOutputFilterByType DEFLATE image/svg+xml application/xml text/plain
+</IfModule>
+
+# ─── Custom error pages (optional — create these if you want them) ───
+# ErrorDocument 404 /404.html
+
+# ─── Block access to source files and sensitive paths ───
+<FilesMatch "\.(htaccess|htpasswd|env|log|bak|sql|md)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>

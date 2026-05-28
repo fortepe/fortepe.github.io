@@ -99,12 +99,10 @@
     });
   }
 
-  // Mark active page link
-  if (drawer) {
-    var page = currentPage();
-    drawer.querySelectorAll('a[data-page]').forEach(function (a) {
-      if (a.getAttribute('data-page') === page) a.classList.add('active');
-    });
-  }
+  // Mark active page link — drawer + desktop nav
+  var page = currentPage();
+  document.querySelectorAll('a[data-page]').forEach(function (a) {
+    if (a.getAttribute('data-page') === page) a.classList.add('active');
+  });
 
 })();

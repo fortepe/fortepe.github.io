@@ -204,6 +204,29 @@ header.site-header {
   align-items: center;
   gap: 12px;
 }
+/* ─── Desktop nav links (≥ 960px) ─── */
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 0;
+}
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--navy);
+  padding: 8px 14px;
+  border-radius: 2px;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+.nav-links a:hover { color: var(--teal); }
+.nav-links a.active { color: var(--teal); }
+@media (min-width: 960px) {
+  .nav-links { display: flex; }
+}
+
 
 /* Language toggle */
 .lang-toggle {

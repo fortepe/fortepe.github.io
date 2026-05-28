@@ -1,8 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-  <loc>https://fortepe.com/</loc>
-  <lastmod>2026-04-24</lastmod>
-  <priority>1.0</priority>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://fortepe.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fortepe.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fortepe.com/"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://fortepe.com/projects.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fortepe.com/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fortepe.com/projects.html"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://fortepe.com/team.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fortepe.com/team.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fortepe.com/team.html"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://fortepe.com/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fortepe.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fortepe.com/contact.html"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
