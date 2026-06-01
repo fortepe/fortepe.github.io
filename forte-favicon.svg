@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <!-- Background -->
-  <rect width="64" height="64" rx="32" fill="#12324A"/>
+  <rect width="64" height="64" fill="#12324A"/>
   <!-- Mark scaled: original mark paths live in viewBox ~70 90 620 430, center of mark shape is around x=105-675, y=120-520 -->
   <!-- Scale to fit in ~48x48 centered in 64x64 -->
   <g transform="translate(32,32) scale(0.073) translate(-390,-305)">
