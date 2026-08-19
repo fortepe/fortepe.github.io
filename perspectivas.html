@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perspectivas · Forte Project Engineering</title>
+<meta name="description" content="Notas técnicas de Forte PE sobre las decisiones que definen proyectos de infraestructura: ferroviario, energía, BESS y data centers."
+  data-es="Notas técnicas de Forte PE sobre las decisiones que definen proyectos de infraestructura: ferroviario, energía, BESS y data centers."
+  data-en="Forte PE technical notes on the decisions that define infrastructure projects: rail, energy, BESS, and data centres.">
+<link rel="icon" type="image/svg+xml" href="forte-favicon.svg">
+<link rel="apple-touch-icon" href="forte-favicon.svg">
+<link rel="canonical" href="https://fortepe.com/perspectivas.html">
+<link rel="stylesheet" href="shared.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Perspectivas · Forte Project Engineering">
+<meta property="og:description" content="Notas técnicas de Forte PE sobre las decisiones que definen proyectos de infraestructura: ferroviario, energía, BESS y data centers.">
+<meta property="og:image" content="https://fortepe.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_CL">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:site_name" content="Forte Project Engineering">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div style="background: #F8F9FA; min-width: 320px; min-height: 100vh; display: flex; flex-direction: column;">
+
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 22px clamp(24px, 5vw, 72px); border-bottom: 1px solid #DADDE1; background: #F8F9FA; position: sticky; top: 0; z-index: 10;" data-screen-label="Header">
+    <a href="index.html" aria-label="Forte Project Engineering"><img src="forte-primary.svg" alt="Forte Project Engineering" style="height: 44px; width: auto; display: block;"></a>
+    <nav class="site-nav" aria-label="Main" style="display: flex; align-items: center; gap: clamp(18px, 2.5vw, 36px); font-size: 14px; font-weight: 600; letter-spacing: 0.01em;">
+      <a href="index.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Inicio</span><span class="en">Home</span></a>
+      <a href="projects.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Proyectos</span><span class="en">Projects</span></a>
+      <a href="team.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Firma</span><span class="en">The Firm</span></a>
+      <a href="perspectivas.html" style="color: #12324A; border-bottom: 2px solid #137F7C; padding-bottom: 3px;"><span class="es">Perspectivas</span><span class="en">Perspectives</span></a>
+      <a href="contact.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Contacto</span><span class="en">Contact</span></a>
+      <button id="langToggle" type="button" aria-label="Toggle language" class="lang-btn" style="font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #12324A; background: none; border: 1px solid #DADDE1; padding: 7px 14px; cursor: pointer;"><span class="es">EN</span><span class="en">ES</span></button>
+    </nav>
+  </header>
+
+  
+  <section style="max-width: 1280px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: clamp(56px, 8vw, 104px) clamp(24px, 5vw, 72px) clamp(64px, 8vw, 112px); flex: 1;" data-screen-label="Perspectivas · Lista">
+    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6F747A; margin-bottom: 22px;"><span class="es">Perspectivas</span><span class="en">Perspectives</span></div>
+    <h1 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(38px, 4.6vw, 68px); line-height: 1.02; letter-spacing: -0.025em; color: #12324A; margin: 0; max-width: 18ch; text-wrap: balance;">
+      <span class="es">Perspectivas.</span><span class="en">Perspectives.</span>
+    </h1>
+    <p style="font-size: clamp(17px, 1.5vw, 20px); line-height: 1.55; color: #6F747A; max-width: 58ch; margin: 26px 0 0;">
+      <span class="es">Notas técnicas de Forte PE sobre las decisiones que definen proyectos de infraestructura: ferroviario, energía, BESS y data centers.</span>
+      <span class="en">Forte PE technical notes on the decisions that define infrastructure projects: rail, energy, BESS, and data centres.</span>
+    </p>
+    <div class="rsp-side" style="border-top: 1px solid #DADDE1; margin-top: clamp(40px, 5vw, 64px); padding-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: minmax(160px, 0.35fr) minmax(400px, 1fr); gap: clamp(32px, 5vw, 80px);">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6F747A;"><span class="es">Notas técnicas</span><span class="en">Technical notes</span></div>
+      <div style="display: flex; flex-direction: column;">
+        <a href="nota-monitoreo-catenaria.html" style="display: block; padding: 0 0 clamp(32px, 4vw, 44px); color: inherit;" data-screen-label="Nota 01">
+          <div style="display: flex; align-items: baseline; gap: 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px;">
+            <span style="color: #137F7C;"><span class="es">Ferroviario</span><span class="en">Rail</span></span>
+            <span style="color: #6F747A; letter-spacing: 0.1em;"><span class="es">Agosto 2026</span><span class="en">August 2026</span></span>
+          </div>
+          <div style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.15; letter-spacing: -0.015em; color: #12324A; max-width: 30ch; text-wrap: balance;">
+            <span class="es">Monitoreo de condición en catenaria: la economía de saber antes</span>
+            <span class="en">Condition monitoring on overhead lines: the economics of knowing early</span>
+          </div>
+          <p style="font-size: 16px; line-height: 1.6; color: #6F747A; max-width: 62ch; margin: 14px 0 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+            <span class="es">En un sistema de catenaria, el costo de una falla casi nunca está en el componente dañado. Está en el tiempo que pasa entre el evento y su detección.</span>
+            <span class="en">In an overhead line system, the cost of a failure is almost never in the damaged component. It is in the time between the event and its detection.</span>
+          </p>
+        </a>
+        <a href="nota-prefactibilidad-pv-bess.html" style="display: block; padding: clamp(32px, 4vw, 44px) 0 0; border-top: 1px solid #DADDE1; color: inherit;" data-screen-label="Nota 02">
+          <div style="display: flex; align-items: baseline; gap: 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px;">
+            <span style="color: #137F7C;"><span class="es">Energía y BESS</span><span class="en">Energy and BESS</span></span>
+            <span style="color: #6F747A; letter-spacing: 0.1em;"><span class="es">Agosto 2026</span><span class="en">August 2026</span></span>
+          </div>
+          <div style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.15; letter-spacing: -0.015em; color: #12324A; max-width: 30ch; text-wrap: balance;">
+            <span class="es">Prefactibilidad PV+BESS: las preguntas que fijan el CAPEX</span>
+            <span class="en">PV+BESS pre-feasibility: the questions that set the CAPEX</span>
+          </div>
+          <p style="font-size: 16px; line-height: 1.6; color: #6F747A; max-width: 62ch; margin: 14px 0 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+            <span class="es">Las decisiones que más mueven el CAPEX se toman antes del diseño, no durante. La prefactibilidad existe para cerrar esas preguntas con evidencia.</span>
+            <span class="en">The decisions that move the CAPEX most are taken before the design, not during it. The pre-feasibility exists to close those questions with evidence.</span>
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #12324A; padding: clamp(36px, 4vw, 52px) clamp(24px, 5vw, 72px);" data-screen-label="Footer">
+    <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+      <img src="forte-reversed.svg" alt="Forte Project Engineering" style="height: 40px; width: auto; display: block;">
+      <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 13px; color: rgba(248,249,250,0.65);">
+        <span>Forte Engineering Chile SpA</span>
+        <span style="color: #137F7C;">·</span>
+        <span>Santiago, Chile</span>
+        <span style="color: #137F7C;">·</span>
+        <a href="mailto:info@fortepe.com" style="color: rgba(248,249,250,0.85);" class="hv-light">info@fortepe.com</a>
+        <span style="color: #137F7C;">·</span>
+        <span>© 2026</span>
+      </div>
+    </div>
+  </footer>
+</div>
+<script defer src="shared.js"></script>
+</body>
+</html>

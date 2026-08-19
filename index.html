@@ -1,29 +1,25 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forte Project Engineering · Asesoría técnica para infraestructura crítica</title>
-<meta name="description"
-  content="Forte Project Engineering. Asesoría técnica para proyectos ferroviarios, energéticos y de infraestructura crítica. Santiago, Chile · LATAM."
-  data-es="Forte Project Engineering. Asesoría técnica para proyectos ferroviarios, energéticos y de infraestructura crítica. Santiago, Chile · LATAM."
-  data-en="Forte Project Engineering. Technical advisory for rail, energy, and critical infrastructure projects. Santiago, Chile · LATAM." />
-
-<link rel="icon" type="image/svg+xml" href="forte-favicon.svg" />
-<link rel="apple-touch-icon" href="forte-favicon.svg" />
-<link rel="canonical" href="https://fortepe.com/" />
-<link rel="stylesheet" href="shared.css" />
-
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Forte Project Engineering · Asesoría técnica para infraestructura crítica" />
-<meta property="og:description" content="Asesoría técnica para las etapas donde las decisiones definen el resultado del proyecto." />
-<meta property="og:image" content="https://fortepe.com/og-image.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:locale" content="es_CL" />
-<meta property="og:locale:alternate" content="en_GB" />
-<meta property="og:site_name" content="Forte Project Engineering" />
-
+<meta name="description" content="Asesoría técnica independiente para infraestructura ferroviaria, energía, BESS y data centers en América Latina. Santiago, Chile."
+  data-es="Asesoría técnica independiente para infraestructura ferroviaria, energía, BESS y data centers en América Latina. Santiago, Chile."
+  data-en="Independent technical advisory for rail, energy, BESS, and data centre infrastructure across Latin America. Santiago, Chile.">
+<link rel="icon" type="image/svg+xml" href="forte-favicon.svg">
+<link rel="apple-touch-icon" href="forte-favicon.svg">
+<link rel="canonical" href="https://fortepe.com/">
+<link rel="stylesheet" href="shared.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Forte Project Engineering · Asesoría técnica para infraestructura crítica">
+<meta property="og:description" content="Asesoría técnica independiente para infraestructura ferroviaria, energía, BESS y data centers en América Latina. Santiago, Chile.">
+<meta property="og:image" content="https://fortepe.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_CL">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:site_name" content="Forte Project Engineering">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,646 +27,219 @@
   "name": "Forte Project Engineering",
   "url": "https://fortepe.com/",
   "logo": "https://fortepe.com/forte-primary.svg",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Callao 2911",
-    "addressLocality": "Las Condes",
-    "addressRegion": "Santiago",
-    "addressCountry": "CL"
-  },
+  "address": {"@type": "PostalAddress", "streetAddress": "Callao 2911", "addressLocality": "Las Condes", "addressRegion": "Santiago", "addressCountry": "CL"},
   "contactPoint": [{"@type": "ContactPoint", "email": "info@fortepe.com", "contactType": "general"}],
   "areaServed": ["CL","CO","BR","PE","BZ","AR","PA","CR","GT","SV"]
 }
 </script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap&font-display=swap" rel="stylesheet">
-
-<style>
-  /* ─── Hero ─── */
-  .hero {
-    background: var(--navy);
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-    min-height: calc(100vh - var(--header-h));
-    display: flex;
-    align-items: stretch;
-  }
-  .hero-inner {
-    max-width: var(--maxw);
-    width: 100%;
-    margin: 0 auto;
-    padding: clamp(48px, 6vw, 80px) var(--pad) clamp(64px, 6vw, 96px);
-    display: grid;
-    grid-template-columns: 1.05fr 1fr;
-    gap: clamp(32px, 5vw, 80px);
-    align-items: center;
-    position: relative;
-    z-index: 2;
-  }
-  .hero-coord {
-    position: absolute;
-    top: clamp(20px, 3vw, 32px);
-    right: var(--pad);
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    color: rgba(224, 241, 240, 0.45);
-    text-transform: uppercase;
-    z-index: 3;
-  }
-  .hero h1 {
-    font-size: clamp(36px, 4.2vw, 64px);
-    line-height: 0.98;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: #fff;
-    margin: 0 0 28px;
-    max-width: 14ch;
-  }
-  .hero h1 em {
-    font-style: normal;
-    display: block;
-    font-size: 0.62em;
-    line-height: 1.1;
-    margin-top: 18px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: var(--teal-50);
-  }
-  .hero .lede {
-    color: rgba(224, 241, 240, 0.78);
-    font-size: clamp(16px, 1.3vw, 19px);
-    max-width: 48ch;
-    margin: 0 0 32px;
-  }
-  .hero-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0;
-    margin-top: 4px;
-  }
-  .hero-tags span {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(224, 241, 240, 0.55);
-    display: inline-flex;
-    align-items: center;
-  }
-  .hero-tags span + span::before {
-    content: "·";
-    margin: 0 12px;
-    color: var(--teal);
-    font-size: 14px;
-    line-height: 1;
-  }
-  .hero-visual {
-    position: relative;
-    height: 70vh;
-    max-height: 720px;
-    min-height: 460px;
-    border-left: 2px solid var(--teal);
-  }
-  .hero-visual .corner {
-    position: absolute;
-    width: 16px; height: 16px;
-    border-color: var(--teal-500);
-    border-style: solid;
-    z-index: 2;
-  }
-  .hero-visual .corner.tl { top: 12px; left: 12px; border-width: 1px 0 0 1px; }
-  .hero-visual .corner.tr { top: 12px; right: 12px; border-width: 1px 1px 0 0; }
-  .hero-visual .corner.bl { bottom: 12px; left: 12px; border-width: 0 0 1px 1px; }
-  .hero-visual .corner.br { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
-  .hero-lines {
-    position: absolute; top: 0; bottom: 0; left: 0; right: 0;
-    overflow: hidden; pointer-events: none; z-index: 1; opacity: 0.13;
-  }
-  .hero-lines svg { width: 100%; height: 100%; }
-  @media (max-width: 980px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-visual { border-left: 0; border-top: 2px solid var(--teal); height: 56vh; min-height: 360px; }
-    .hero { min-height: auto; }
-  }
-
-  /* ─── About ─── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    gap: clamp(40px, 6vw, 96px);
-    align-items: start;
-  }
-  .stat-stack { display: grid; gap: 20px; }
-  .stat-card {
-    background: var(--white);
-    border: 1px solid var(--gray-100);
-    border-left: 2px solid var(--teal);
-    padding: 28px 28px 26px;
-    position: relative;
-  }
-  .stat-card .stat-num {
-    font-size: clamp(48px, 5vw, 72px);
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    color: var(--navy);
-  }
-  .stat-card .stat-num.small {
-    font-size: clamp(26px, 2.4vw, 34px);
-    font-weight: 600;
-    letter-spacing: -0.015em;
-  }
-  .stat-card .stat-label {
-    color: var(--gray);
-    font-size: 14px;
-    line-height: 1.55;
-    margin-top: 12px;
-    max-width: 38ch;
-  }
-  .stat-card .stat-tag {
-    position: absolute;
-    top: 22px; right: 22px;
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--teal);
-  }
-  @media (max-width: 880px) {
-    .about-grid { grid-template-columns: 1fr; gap: 32px; }
-  }
-
-  /* ─── Editorial quote ─── */
-  .editorial-band {
-    text-align: center;
-    padding: clamp(80px, 9vw, 140px) var(--pad);
-    background: var(--bone);
-    position: relative;
-  }
-  .editorial-band p {
-    font-size: clamp(28px, 3.6vw, 48px);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    color: var(--navy);
-    margin: 0;
-    max-width: 22ch;
-    margin-inline: auto;
-    font-weight: 400;
-  }
-  .editorial-band p.bold { font-weight: 700; margin-top: 8px; }
-  .editorial-band .rule { margin: 24px auto; }
-  .editorial-band .attribution {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-top: 48px;
-  }
-
-  /* ─── Services grid ─── */
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border: 1px solid var(--gray-100);
-    margin-top: clamp(40px, 5vw, 56px);
-  }
-  .service-item {
-    padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 28px);
-    border-right: 1px solid var(--gray-100);
-    border-bottom: 1px solid var(--gray-100);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .service-item:nth-child(3n) { border-right: 0; }
-  .service-item:nth-last-child(-n+3) { border-bottom: 0; }
-  .service-item .si-num {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--teal);
-  }
-  .service-item h3 {
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: var(--navy);
-    line-height: 1.25;
-    margin: 0;
-  }
-  .service-item p {
-    color: var(--gray);
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-  }
-  @media (max-width: 880px) {
-    .services-grid { grid-template-columns: 1fr; }
-    .service-item { border-right: 0; }
-    .service-item:nth-last-child(-n+3) { border-bottom: 1px solid var(--gray-100); }
-    .service-item:last-child { border-bottom: 0; }
-  }
-
-  /* ─── Photo break ─── */
-  .photo-break { position: relative; overflow: hidden; background: var(--navy); }
-  .photo-break .image { position: relative; overflow: hidden; line-height: 0; }
-  .photo-break .image img { display: block; width: 100%; height: auto; }
-  .photo-break .image .corner {
-    position: absolute;
-    width: 18px; height: 18px;
-    border-color: var(--teal-500);
-    border-style: solid;
-    z-index: 2;
-  }
-  .photo-break .image .corner.tl { top: 18px; left: 18px; border-width: 1px 0 0 1px; }
-  .photo-break .image .corner.tr { top: 18px; right: 18px; border-width: 1px 1px 0 0; }
-  .photo-break .image .corner.bl { bottom: 18px; left: 18px; border-width: 0 0 1px 1px; }
-  .photo-break .image .corner.br { bottom: 18px; right: 18px; border-width: 0 1px 1px 0; }
-  .photo-break .caption-strip { background: var(--navy); color: #fff; padding: 14px var(--pad); }
-  .photo-break .caption-inner {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: clamp(20px, 4vw, 48px);
-    flex-wrap: wrap;
-  }
-  .photo-break .caption-inner .mono-meta {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--teal-500);
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .photo-break .caption-inner h3 {
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: -0.005em;
-    line-height: 1.3;
-    color: #fff;
-    margin: 0;
-  }
-  .photo-break .caption-inner h3 em {
-    font-style: normal;
-    color: var(--teal-500);
-    font-weight: 500;
-    font-size: 0.92em;
-    margin-left: 10px;
-    padding-left: 12px;
-    border-left: 1px solid rgba(255,255,255,0.22);
-  }
-
-  /* ─── Contact band ─── */
-  .contact-band {
-    background: var(--navy);
-    padding: clamp(56px, 7vw, 96px) 0;
-  }
-  .contact-band-inner {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 0 var(--pad);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: clamp(32px, 5vw, 80px);
-    flex-wrap: wrap;
-  }
-  .contact-band h2 {
-    font-size: clamp(28px, 3.5vw, 52px);
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    line-height: 1.05;
-    color: #fff;
-    margin: 0 0 16px;
-  }
-  .contact-band p {
-    font-size: clamp(15px, 1.2vw, 18px);
-    color: rgba(224, 241, 240, 0.72);
-    margin: 0;
-    max-width: 48ch;
-    line-height: 1.55;
-  }
-  .contact-band-cta {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    flex-shrink: 0;
-  }
-  @media (max-width: 720px) {
-    .contact-band-inner { flex-direction: column; align-items: flex-start; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+<div style="background: #F8F9FA; min-width: 320px;">
 
-<!-- ════════ HEADER ════════ -->
-<header class="site-header">
-  <nav class="nav" aria-label="Main">
-    <a class="nav-logo" href="index.html" aria-label="Forte Project Engineering">
-      <img src="forte-primary.svg" alt="Forte Project Engineering" width="160" height="52" fetchpriority="high" />
-    </a>
-    <div class="nav-right">
-      <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">
-        <span class="es">EN</span><span class="en">ES</span>
-      </button>
-      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-      </button>
-    </div>
-  </nav>
-</header>
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 22px clamp(24px, 5vw, 72px); border-bottom: 1px solid #DADDE1; background: #F8F9FA; position: sticky; top: 0; z-index: 10;" data-screen-label="Header">
+    <a href="index.html" aria-label="Forte Project Engineering"><img src="forte-primary.svg" alt="Forte Project Engineering" style="height: 44px; width: auto; display: block;"></a>
+    <nav class="site-nav" aria-label="Main" style="display: flex; align-items: center; gap: clamp(18px, 2.5vw, 36px); font-size: 14px; font-weight: 600; letter-spacing: 0.01em;">
+      <a href="index.html" style="color: #12324A; border-bottom: 2px solid #137F7C; padding-bottom: 3px;"><span class="es">Inicio</span><span class="en">Home</span></a>
+      <a href="projects.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Proyectos</span><span class="en">Projects</span></a>
+      <a href="team.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Firma</span><span class="en">The Firm</span></a>
+      <a href="perspectivas.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Perspectivas</span><span class="en">Perspectives</span></a>
+      <a href="contact.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Contacto</span><span class="en">Contact</span></a>
+      <button id="langToggle" type="button" aria-label="Toggle language" class="lang-btn" style="font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #12324A; background: none; border: 1px solid #DADDE1; padding: 7px 14px; cursor: pointer;"><span class="es">EN</span><span class="en">ES</span></button>
+    </nav>
+  </header>
 
-<!-- ════════ DRAWER NAV ════════ -->
-<div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
-<nav class="drawer" id="drawer" aria-label="Site navigation">
-  <div class="drawer-head">
-    <img src="forte-reversed.svg" alt="Forte Project Engineering" width="120" height="40" />
-    <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
-  </div>
-  <div class="drawer-nav">
-    <a href="index.html" data-page="index">
-      <span><span class="es">Inicio</span><span class="en">Home</span></span>
-      <span class="link-num">01</span>
-    </a>
-    <a href="projects.html" data-page="projects">
-      <span><span class="es">Proyectos</span><span class="en">Projects</span></span>
-      <span class="link-num">02</span>
-    </a>
-    <a href="team.html" data-page="team">
-      <span><span class="es">Equipo</span><span class="en">Team</span></span>
-      <span class="link-num">03</span>
-    </a>
-    <a href="contact.html" data-page="contact">
-      <span><span class="es">Contacto</span><span class="en">Contact</span></span>
-      <span class="link-num">04</span>
-    </a>
-  </div>
-  <div class="drawer-foot">
-    <div class="df-label">Forte Project Engineering</div>
-    <div class="df-val">
-      Santiago · Chile<br/>
-      <a href="mailto:info@fortepe.com">info@fortepe.com</a>
-    </div>
-  </div>
-</nav>
-
-<!-- ════════ HERO ════════ -->
-<section class="hero anchor" id="top">
-  <div class="hero-coord">33°25′S · 70°34′W &nbsp;·&nbsp; Santiago de Chile</div>
-  <div class="hero-lines" aria-hidden="true">
-    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMaxYMid slice">
-      <g stroke="#1A9692" stroke-width="1.2" fill="none">
-        <path d="M-100 900 Q 700 500 1700 200" />
-        <path d="M-100 900 Q 700 600 1700 380" />
-        <path d="M-100 900 Q 700 700 1700 560" />
-        <path d="M-100 900 Q 700 800 1700 740" />
-      </g>
-    </svg>
-  </div>
-  <div class="hero-inner">
+  <section class="rsp-g2" style="max-width: 1280px; margin: 0 auto; padding: clamp(56px, 8vw, 112px) clamp(24px, 5vw, 72px) clamp(48px, 6vw, 88px); display: grid; grid-template-columns: minmax(400px, 1.05fr) minmax(320px, 0.95fr); gap: clamp(40px, 6vw, 96px); align-items: center;" data-screen-label="Hero">
     <div>
-      <h1>
-        <span class="es">Criterio técnico directo.<br/>Sin capas intermedias.</span>
-        <span class="en">Direct technical authority.<br/>No intermediate layers.</span>
-        <em>
-          <span class="es">Asesoría técnica para infraestructura ferroviaria, energía e infraestructura crítica en América Latina.</span>
-          <span class="en">Technical advisory for rail, energy, and critical infrastructure across Latin America.</span>
-        </em>
+      <h1 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(44px, 5.4vw, 78px); line-height: 1.0; letter-spacing: -0.025em; color: #12324A; margin: 0 0 28px; text-wrap: balance;">
+        <span class="es">Criterio técnico directo.</span><span class="en">Direct technical authority.</span>
       </h1>
-      <p class="lede">
-        <span class="es">Trabajamos en proyectos ferroviarios, energéticos e infraestructura crítica en LATAM. Evaluación técnica, control de ejecución, coordinación institucional y revisión técnica.</span>
-        <span class="en">We work on rail, energy, and critical infrastructure projects across LATAM. Technical assessment, execution control, institutional coordination, and technical review.</span>
+      <div style="width: 56px; height: 3px; background: #137F7C; margin: 0 0 28px;"></div>
+      <p style="font-size: clamp(17px, 1.4vw, 20px); line-height: 1.6; color: #1C1F23; max-width: 50ch; margin: 0 0 40px;">
+        <span class="es">Asesoría técnica independiente para infraestructura ferroviaria, energía, BESS y data centers en América Latina, en las etapas donde las decisiones definen el resultado.</span>
+        <span class="en">Independent technical advisory for rail, energy, BESS, and data centre infrastructure across Latin America, at the stages where decisions define the outcome.</span>
       </p>
-      <div class="hero-tags">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6F747A;">
         <span><span class="es">Ferroviario</span><span class="en">Rail</span></span>
-        <span><span class="es">Energía</span><span class="en">Energy</span></span>
+        <span style="color: #137F7C;">·</span>
+        <span><span class="es">Energía y BESS</span><span class="en">Energy &amp; BESS</span></span>
+        <span style="color: #137F7C;">·</span>
+        <span><span class="es">Data centers</span><span class="en">Data centres</span></span>
+        <span style="color: #137F7C;">·</span>
         <span><span class="es">Infraestructura crítica</span><span class="en">Critical infrastructure</span></span>
       </div>
     </div>
-    <div class="hero-visual">
-      <img src="ole-tensioning.jpg" alt="OLE catenary tensioning structures at a rail yard with train in background" fetchpriority="high" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;" />
-      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,50,74,0.15) 0%,rgba(18,50,74,0.35) 100%);pointer-events:none;"></div>
-      <span class="corner tl"></span>
-      <span class="corner tr"></span>
-      <span class="corner bl"></span>
-      <span class="corner br"></span>
+    <div style="position: relative;">
+      <img src="ole-tensioning.jpg" alt="Estructuras de tensado de catenaria en patio ferroviario" style="display: block; width: 100%; height: clamp(420px, 56vw, 620px); object-fit: cover; object-position: center 40%;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,50,74,0.08) 0%, rgba(18,50,74,0.28) 100%); pointer-events: none;"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ════════ ABOUT ════════ -->
-<section id="about" class="section anchor">
-  <div class="container">
-    <div class="sec-head">
-      <p class="eyebrow"><span class="num">01</span><span class="es">Nosotros</span><span class="en">About</span></p>
-      <div>
-        <h2 class="section-title">
-          <span class="es">Capacidad técnica senior.<br/>Sin capas intermedias.</span>
-          <span class="en">Senior technical capability.<br/>No intermediate layers.</span>
-        </h2>
+  <section style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 72px) clamp(64px, 8vw, 112px);" data-screen-label="Firma">
+    <div class="rsp-side" style="border-top: 1px solid #DADDE1; padding-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: minmax(160px, 0.35fr) minmax(400px, 1fr); gap: clamp(32px, 5vw, 80px);">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6F747A;"><span class="es">Firma</span><span class="en">Firm</span></div>
+      <div style="display: grid; gap: 22px; max-width: 62ch;">
+        <p style="font-size: clamp(19px, 1.7vw, 24px); line-height: 1.5; color: #12324A; font-weight: 600; margin: 0; text-wrap: pretty;">
+          <span class="es">Forte PE es una firma de asesoría técnica independiente para infraestructura: ingeniería eléctrica, sistemas ferroviarios, energía y gestión de proyectos, con operación permanente en Santiago y mandatos activos en Chile y Centroamérica.</span>
+          <span class="en">Forte PE is an independent technical advisory firm for infrastructure: electrical engineering, railway systems, energy, and project management, permanently based in Santiago with active mandates in Chile and Central America.</span>
+        </p>
+        <p style="font-size: 17px; line-height: 1.65; color: #1C1F23; margin: 0; text-wrap: pretty;">
+          <span class="es">Trabajamos directamente con owners, ministerios, financistas y agencias públicas, con criterio técnico de primera línea y responsabilidad directa, sin capas intermedias.</span>
+          <span class="en">We work directly with owners, ministries, lenders, and public agencies, bringing first-line technical judgement and direct accountability, with no intermediate layers.</span>
+        </p>
+        <p style="font-size: 17px; line-height: 1.65; color: #6F747A; margin: 0;">
+          <span class="es">Cuando la escala lo requiere, armamos el equipo que el proyecto necesita.</span>
+          <span class="en">When scale requires it, we assemble the team the project demands.</span>
+        </p>
       </div>
     </div>
+  </section>
 
-    <div class="about-grid">
-      <div>
-        <hr class="rule" />
-        <p class="lede" style="margin-top: 28px;">
-          <span class="es">Forte PE es una firma de asesoría técnica independiente especializada en infraestructura. Más de 40 años de experiencia acumulada en ingeniería eléctrica, sistemas ferroviarios, energía y gestión de proyectos de infraestructura en LATAM, Europa y Norteamérica.</span>
-          <span class="en">Forte PE is an independent technical advisory firm for infrastructure. Over 40 years of combined experience in electrical engineering, railway systems, energy, and infrastructure project management across LATAM, Europe, and North America.</span>
-        </p>
-        <p class="body-copy" style="margin-top: 24px;">
-          <span class="es">Trabajamos directamente con owners, ministerios, financistas y agencias públicas, aportando criterio técnico y capacidad de gestión en las etapas donde más se necesitan. Sin estructuras de consultoría que diluyen la responsabilidad.</span>
-          <span class="en">We work directly with owners, ministries, lenders, and public agencies, bringing technical judgement and project management capability to the stages where they are most needed. No consultancy layers that dilute accountability.</span>
-        </p>
-        <p class="body-copy">
-          <span class="es">Cuando la escala lo requiere, articulamos equipos con especialistas técnicos de confianza en las disciplinas que el proyecto necesita.</span>
-          <span class="en">When scale requires it, we assemble teams with trusted specialist professionals across the disciplines the project demands.</span>
-        </p>
-        <div style="margin-top: 28px;">
-          <a class="btn btn-outline" href="team.html">
-            <span class="es">Credenciales del equipo</span><span class="en">Team credentials</span>
-            <span class="arrow">→</span>
-          </a>
+  <section style="border-top: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; background: #F8F9FA;" data-screen-label="Métricas">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 6vw, 80px) clamp(24px, 5vw, 72px);">
+      <div class="rsp-g3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 64px);">
+        <div style="border-left: 1px solid #DADDE1; padding-left: clamp(20px, 2.5vw, 36px);">
+          <div style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -0.03em; line-height: 1; color: #12324A;">+1 GW</div>
+          <div style="font-size: 15px; line-height: 1.5; color: #6F747A; margin-top: 14px; max-width: 24ch;"><span class="es">gestionado a nivel de owner</span><span class="en">managed at owner level</span></div>
+        </div>
+        <div style="border-left: 1px solid #DADDE1; padding-left: clamp(20px, 2.5vw, 36px);">
+          <div style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -0.03em; line-height: 1; color: #12324A;">60+</div>
+          <div style="font-size: 15px; line-height: 1.5; color: #6F747A; margin-top: 14px; max-width: 26ch;"><span class="es">proyectos gestionados en etapas de desarrollo</span><span class="en">projects managed across development stages</span></div>
+        </div>
+        <div style="border-left: 1px solid #DADDE1; padding-left: clamp(20px, 2.5vw, 36px);">
+          <div style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -0.03em; line-height: 1; color: #12324A;">6</div>
+          <div style="font-size: 15px; line-height: 1.5; color: #6F747A; margin-top: 14px;"><span class="es">países</span><span class="en">countries</span></div>
         </div>
       </div>
-      <div class="stat-stack">
-        <div class="stat-card">
-          <div class="stat-tag">01 · <span class="es">Experiencia combinada</span><span class="en">Combined experience</span></div>
-          <div class="stat-num">+40</div>
-          <div class="stat-label">
-            <span class="es">años de experiencia acumulada en infraestructura, sistemas eléctricos y energía.</span>
-            <span class="en">years of combined experience in infrastructure, electrical systems, and energy.</span>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-tag">02 · <span class="es">Portafolio gestionado</span><span class="en">Portfolio managed</span></div>
-          <div class="stat-num small">+1 GW</div>
-          <div class="stat-label">
-            <span class="es">de proyectos de infraestructura energética gestionados a nivel de owner.</span>
-            <span class="en">of energy infrastructure projects managed at owner level.</span>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-tag">03 · <span class="es">Cobertura</span><span class="en">Coverage</span></div>
-          <div class="stat-num small">Chile · LATAM</div>
-          <div class="stat-label">
-            <span class="es">Operación permanente en Santiago. Compromisos activos en Chile y Centroamérica. Experiencia previa en Europa y Norteamérica.</span>
-            <span class="en">Permanent operation in Santiago. Active engagements in Chile and Central America. Prior experience across Europe and North America.</span>
-          </div>
-        </div>
+      <div style="margin-top: clamp(36px, 4vw, 56px); padding-top: 24px; border-top: 1px solid #DADDE1; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #12324A;">
+        <span class="es">Gobernanza técnica CEM · CRE · DPE bajo estándares Network Rail · MIET</span>
+        <span class="en">Technical governance CEM · CRE · DPE under Network Rail standards · MIET</span>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ════════ EDITORIAL QUOTE ════════ -->
-<section class="editorial-band" aria-label="Principio operativo">
-  <p>
-    <span class="es">Respondemos al proyecto.</span>
-    <span class="en">We answer to the project.</span>
-  </p>
-  <hr class="rule" style="margin-top: 24px; margin-bottom: 24px;" />
-  <p class="bold">
-    <span class="es">No al contrato.</span>
-    <span class="en">Not to the contract.</span>
-  </p>
-  <div class="attribution">Forte · <span class="es">Principio operativo</span><span class="en">Operating principle</span></div>
-</section>
-
-<!-- ════════ SERVICES ════════ -->
-<section id="services" class="section anchor">
-  <div class="container">
-    <div class="sec-head">
-      <p class="eyebrow"><span class="num">02</span><span class="es">Servicios</span><span class="en">Services</span></p>
+  <section style="max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(24px, 5vw, 72px);" data-screen-label="Servicios">
+    <div class="rsp-side" style="display: grid; grid-template-columns: minmax(160px, 0.35fr) minmax(400px, 1fr); gap: clamp(32px, 5vw, 80px); margin-bottom: clamp(40px, 5vw, 64px);">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6F747A;"><span class="es">Servicios</span><span class="en">Services</span></div>
       <div>
-        <h2 class="section-title">
-          <span class="es">Lo que hacemos.</span>
-          <span class="en">What we do.</span>
-        </h2>
-        <p class="body-copy" style="margin-top: 20px;">
+        <h2 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(30px, 3.2vw, 46px); letter-spacing: -0.02em; line-height: 1.05; color: #12324A; margin: 0 0 18px;"><span class="es">Lo que hacemos.</span><span class="en">What we do.</span></h2>
+        <p style="font-size: 17px; line-height: 1.65; color: #6F747A; max-width: 60ch; margin: 0; text-wrap: pretty;">
           <span class="es">Asesoría técnica a lo largo del ciclo de vida del proyecto, desde la evaluación temprana hasta el cierre técnico. El formato de cada compromiso se define según lo que el proyecto necesita.</span>
           <span class="en">Technical advisory across the full project lifecycle, from early-stage assessment through technical close-out. Each engagement format is defined by what the project requires.</span>
         </p>
       </div>
     </div>
-
-    <div class="services-grid">
-      <div class="service-item">
-        <span class="si-num">01</span>
-        <h3><span class="es">Evaluación técnica temprana</span><span class="en">Early-stage technical assessment</span></h3>
-        <p><span class="es">Validación de restricciones, supuestos de diseño, interfaces y viabilidad técnica antes de comprometer decisiones críticas del proyecto.</span><span class="en">Validation of constraints, design assumptions, interfaces, and technical feasibility before committing to critical project decisions.</span></p>
+    <div class="rsp-g3" style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #DADDE1; border-left: 1px solid #DADDE1;">
+      <div style="border-right: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; padding: clamp(28px, 3vw, 40px) clamp(22px, 2.5vw, 32px); display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #137F7C;">01</span>
+        <h3 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; line-height: 1.3; color: #12324A; margin: 0;"><span class="es">Evaluación técnica temprana</span><span class="en">Early-stage technical assessment</span></h3>
+        <p style="font-size: 15px; line-height: 1.6; color: #6F747A; margin: 0;">
+          <span class="es">Validación de restricciones, supuestos de diseño, interfaces y viabilidad técnica antes de comprometer decisiones críticas del proyecto. Incluye prefactibilidad de plantas PV y BESS y evaluación eléctrica de sitio para data centers.</span>
+          <span class="en">Validation of constraints, design assumptions, interfaces, and technical feasibility before committing to critical project decisions. Includes PV and BESS plant pre-feasibility and electrical site assessment for data centres.</span>
+        </p>
       </div>
-      <div class="service-item">
-        <span class="si-num">02</span>
-        <h3><span class="es">Ingeniería del Owner</span><span class="en">Owner's engineering</span></h3>
-        <p><span class="es">Representación técnica del owner en diseño, ejecución y puesta en servicio. Revisión de contratistas, gestión de interfaces y control de desviaciones.</span><span class="en">Technical representation of the owner through design, execution, and commissioning. Contractor review, interface management, and deviation control.</span></p>
+      <div style="border-right: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; padding: clamp(28px, 3vw, 40px) clamp(22px, 2.5vw, 32px); display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #137F7C;">02</span>
+        <h3 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; line-height: 1.3; color: #12324A; margin: 0;"><span class="es">Owner's Engineer</span><span class="en">Owner's engineering</span></h3>
+        <p style="font-size: 15px; line-height: 1.6; color: #6F747A; margin: 0;">
+          <span class="es">Representación técnica del owner en diseño, ejecución y puesta en servicio. Revisión de contratistas, gestión de interfaces y control de desviaciones.</span>
+          <span class="en">Technical representation of the owner through design, execution, and commissioning. Contractor review, interface management, and deviation control.</span>
+        </p>
       </div>
-      <div class="service-item">
-        <span class="si-num">03</span>
-        <h3><span class="es">Revisión técnica independiente</span><span class="en">Independent technical review</span></h3>
-        <p><span class="es">Revisión objetiva de propuestas, diseños, criterios técnicos y supuestos de contratistas. Para owners, financistas y agencias públicas que necesitan una segunda opinión técnica.</span><span class="en">Objective review of contractor proposals, designs, technical criteria, and assumptions. For owners, lenders, and public agencies requiring a second technical opinion.</span></p>
+      <div style="border-right: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; padding: clamp(28px, 3vw, 40px) clamp(22px, 2.5vw, 32px); display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #137F7C;">03</span>
+        <h3 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; line-height: 1.3; color: #12324A; margin: 0;"><span class="es">Revisión técnica independiente</span><span class="en">Independent technical review</span></h3>
+        <p style="font-size: 15px; line-height: 1.6; color: #6F747A; margin: 0;">
+          <span class="es">Revisión objetiva de propuestas, diseños, criterios técnicos y supuestos de contratistas. Para owners, financistas y agencias públicas que necesitan una segunda opinión técnica.</span>
+          <span class="en">Objective review of contractor proposals, designs, technical criteria, and assumptions. For owners, lenders, and public agencies requiring a second technical opinion.</span>
+        </p>
       </div>
-      <div class="service-item">
-        <span class="si-num">04</span>
-        <h3><span class="es">Coordinación de proyectos complejos</span><span class="en">Complex project coordination</span></h3>
-        <p><span class="es">Gestión de interfaces entre disciplinas, contratos y actores institucionales. Seguimiento de entregables, control de riesgos y continuidad entre diseño, terreno y operación.</span><span class="en">Interface management across disciplines, contracts, and institutional stakeholders. Deliverable tracking, risk control, and continuity between design, site, and operation.</span></p>
+      <div style="border-right: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; padding: clamp(28px, 3vw, 40px) clamp(22px, 2.5vw, 32px); display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #137F7C;">04</span>
+        <h3 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; line-height: 1.3; color: #12324A; margin: 0;"><span class="es">Coordinación de proyectos complejos</span><span class="en">Complex project coordination</span></h3>
+        <p style="font-size: 15px; line-height: 1.6; color: #6F747A; margin: 0;">
+          <span class="es">Gestión de interfaces entre disciplinas, contratos y actores institucionales. Seguimiento de entregables, control de riesgos y continuidad entre diseño, terreno y operación.</span>
+          <span class="en">Interface management across disciplines, contracts, and institutional stakeholders. Deliverable tracking, risk control, and continuity between design, site, and operation.</span>
+        </p>
       </div>
-      <div class="service-item">
-        <span class="si-num">05</span>
-        <h3><span class="es">Asesoría a prestamistas y due diligence</span><span class="en">Lender's advisory &amp; due diligence</span></h3>
-        <p><span class="es">Evaluación técnica para financistas e instituciones multilaterales. Revisión de factibilidad, riesgos técnicos, supuestos del contratista y condiciones de implementación.</span><span class="en">Technical evaluation for lenders and multilateral institutions. Feasibility review, technical risk assessment, contractor assumptions, and implementation conditions.</span></p>
+      <div style="border-right: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; padding: clamp(28px, 3vw, 40px) clamp(22px, 2.5vw, 32px); display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #137F7C;">05</span>
+        <h3 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; line-height: 1.3; color: #12324A; margin: 0;"><span class="es">Asesoría a prestamistas y due diligence</span><span class="en">Lender's advisory &amp; due diligence</span></h3>
+        <p style="font-size: 15px; line-height: 1.6; color: #6F747A; margin: 0;">
+          <span class="es">Evaluación técnica para financistas e instituciones multilaterales. Revisión de factibilidad, riesgos técnicos, supuestos del contratista y condiciones de implementación.</span>
+          <span class="en">Technical evaluation for lenders and multilateral institutions. Feasibility review, technical risk assessment, contractor assumptions, and implementation conditions.</span>
+        </p>
       </div>
-      <div class="service-item">
-        <span class="si-num">06</span>
-        <h3><span class="es">Asesoría institucional y estratégica</span><span class="en">Institutional &amp; strategic advisory</span></h3>
-        <p><span class="es">Apoyo técnico a ministerios, operadores y agencias públicas en planificación de proyectos, evaluación de programas y coordinación con organismos regulatorios y multilaterales.</span><span class="en">Technical support for ministries, operators, and public agencies in project planning, programme evaluation, and coordination with regulatory and multilateral bodies.</span></p>
+      <div style="border-right: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; padding: clamp(28px, 3vw, 40px) clamp(22px, 2.5vw, 32px); display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #137F7C;">06</span>
+        <h3 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; line-height: 1.3; color: #12324A; margin: 0;"><span class="es">Asesoría institucional y estratégica</span><span class="en">Institutional &amp; strategic advisory</span></h3>
+        <p style="font-size: 15px; line-height: 1.6; color: #6F747A; margin: 0;">
+          <span class="es">Apoyo técnico a ministerios, operadores y agencias públicas en planificación de proyectos, evaluación de programas y coordinación con organismos regulatorios y multilaterales.</span>
+          <span class="en">Technical support for ministries, operators, and public agencies in project planning, programme evaluation, and coordination with regulatory and multilateral bodies.</span>
+        </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ════════ FULL-BLEED PHOTO BREAK ════════ -->
-<section class="photo-break" aria-label="Project photography">
-  <div class="image">
-    <img src="break-panoramic.jpg" alt="Aerial view of solar array adjacent to an electrified railway corridor in South America" loading="lazy" decoding="async" width="1530" height="510" />
-    <span class="corner tl"></span>
-    <span class="corner tr"></span>
-    <span class="corner bl"></span>
-    <span class="corner br"></span>
-  </div>
-  <div class="caption-strip">
-    <div class="caption-inner">
-      <div class="mono-meta">
+  
+    <section style="background: #12324A;" data-screen-label="Fotografía">
+      <img src="break-panoramic.jpg" alt="Vista aérea de planta solar junto a corredor ferroviario electrificado" style="display: block; width: 100%; height: clamp(260px, 34vw, 480px); object-fit: cover;">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 16px clamp(24px, 5vw, 72px); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(248,249,250,0.75);">
         <span><span class="es">Sector · Energía · Ferroviario</span><span class="en">Sector · Energy · Rail</span></span>
         <span><span class="es">Chile · Sudamérica</span><span class="en">Chile · South America</span></span>
       </div>
-      <h3>
-        <span class="es">Dos sectores.<br/>Un mismo corredor.</span>
-        <span class="en">Two sectors.<br/>One corridor.</span>
-        <em>
-          <span class="es">Integración energética y ferroviaria en operación.</span>
-          <span class="en">Energy and rail integration in operation.</span>
-        </em>
-      </h3>
-    </div>
-  </div>
-</section>
+    </section>
+  
 
-<!-- ════════ CONTACT BAND ════════ -->
-<section class="contact-band" aria-label="Contact">
-  <div class="contact-band-inner">
-    <div>
-      <p class="eyebrow on-navy" style="margin-bottom: 20px;"><span class="num">03</span><span class="es">Contacto</span><span class="en">Contact</span></p>
-      <h2>
-        <span class="es">Hablemos<br/>de su proyecto.</span>
-        <span class="en">Let's talk<br/>about your project.</span>
+  <section style="background: #12324A; padding: clamp(80px, 10vw, 150px) clamp(24px, 5vw, 72px); text-align: center;" data-screen-label="Principio operativo">
+    <p style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(30px, 3.8vw, 54px); letter-spacing: -0.02em; line-height: 1.12; color: #F8F9FA; margin: 0; text-wrap: balance;">
+      <span class="es">Respondemos al proyecto.</span><span class="en">We answer to the project.</span>
+    </p>
+    <p style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(30px, 3.8vw, 54px); letter-spacing: -0.02em; line-height: 1.12; color: #F8F9FA; margin: 6px 0 0; text-wrap: balance;">
+      <span class="es">No al contrato.</span><span class="en">Not to the contract.</span>
+    </p>
+    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(248,249,250,0.72); margin-top: 48px;">
+      Forte · <span class="es">Principio operativo</span><span class="en">Operating principle</span>
+    </div>
+  </section>
+
+  <section style="max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(24px, 5vw, 72px); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: clamp(32px, 5vw, 72px);" data-screen-label="CTA">
+    <div style="max-width: 56ch;">
+      <h2 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(30px, 3.4vw, 48px); letter-spacing: -0.02em; line-height: 1.05; color: #12324A; margin: 0 0 18px;">
+        <span class="es">Hablemos de su proyecto.</span><span class="en">Let's talk about your project.</span>
       </h2>
-      <p style="margin-top: 16px;">
+      <p style="font-size: 17px; line-height: 1.65; color: #6F747A; margin: 0; text-wrap: pretty;">
         <span class="es">Si su proyecto requiere claridad técnica para avanzar, estamos disponibles para revisar el contexto y definir los próximos pasos.</span>
         <span class="en">If your project requires technical clarity to move forward, we are available to review the context and define next steps.</span>
       </p>
     </div>
-    <div class="contact-band-cta">
-      <a class="btn btn-primary" href="contact.html">
-        <span class="es">Escribir a Forte</span><span class="en">Contact Forte</span>
-        <span class="arrow">→</span>
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <a href="contact.html" style="display: inline-flex; align-items: center; gap: 10px; background: #12324A; color: #F8F9FA; font-size: 15px; font-weight: 700; padding: 15px 28px; letter-spacing: 0.02em;" class="hv-dark">
+        <span class="es">Escribir a Forte</span><span class="en">Contact Forte</span><span style="color: #137F7C;">→</span>
       </a>
-      <a class="btn btn-ghost" href="projects.html">
+      <a href="projects.html" style="display: inline-flex; align-items: center; border: 1px solid #DADDE1; color: #12324A; font-size: 15px; font-weight: 700; padding: 15px 28px; letter-spacing: 0.02em;" class="hv-outline">
         <span class="es">Ver proyectos</span><span class="en">View projects</span>
       </a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ════════ FOOTER ════════ -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="foot-left">
-      <img src="forte-reversed.svg" alt="Forte" width="140" height="46" loading="lazy" decoding="async" />
-      <span class="sep"></span>
-      <span><span class="es">Asesoría técnica · infraestructura crítica</span><span class="en">Technical advisory · critical infrastructure</span></span>
+  <footer style="background: #12324A; padding: clamp(36px, 4vw, 52px) clamp(24px, 5vw, 72px);" data-screen-label="Footer">
+    <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+      <img src="forte-reversed.svg" alt="Forte Project Engineering" style="height: 40px; width: auto; display: block;">
+      <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 13px; color: rgba(248,249,250,0.65);">
+        <span>Forte Engineering Chile SpA</span>
+        <span style="color: #137F7C;">·</span>
+        <span>Santiago, Chile</span>
+        <span style="color: #137F7C;">·</span>
+        <a href="mailto:info@fortepe.com" style="color: rgba(248,249,250,0.85);" class="hv-light">info@fortepe.com</a>
+        <span style="color: #137F7C;">·</span>
+        <span>© 2026</span>
+      </div>
     </div>
-    <div class="foot-right">
-      <span>Santiago · LATAM</span>
-      <span class="sep dot"></span>
-      <span>© <span id="year"></span> Forte Project Engineering</span>
-      <a class="to-top" href="#top" aria-label="Back to top">↑</a>
-    </div>
-  </div>
-</footer>
-
+  </footer>
+</div>
 <script defer src="shared.js"></script>
 </body>
 </html>

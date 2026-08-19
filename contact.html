@@ -1,329 +1,77 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contacto · Forte Project Engineering</title>
-<meta name="description"
-  content="Contacte a Forte Project Engineering para proyectos de infraestructura ferroviaria, energía e infraestructura crítica. Santiago, Chile." data-es="Contacte a Forte Project Engineering para proyectos de infraestructura ferroviaria, energía e infraestructura crítica. Santiago, Chile." data-en="Contact Forte Project Engineering for railway, energy, and critical infrastructure advisory. Santiago, Chile."
-  data-es="Contacte a Forte Project Engineering para proyectos de infraestructura ferroviaria, energía e infraestructura crítica. Santiago, Chile."
-  data-en="Contact Forte Project Engineering for railway, energy, and critical infrastructure projects. Santiago, Chile." />
-
-<link rel="icon" type="image/svg+xml" href="forte-favicon.svg" />
-<link rel="apple-touch-icon" href="forte-favicon.svg" />
-<link rel="canonical" href="https://fortepe.com/contact.html" />
-
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Contacto · Forte Project Engineering" />
-<meta property="og:site_name" content="Forte Project Engineering" />
-<meta property="og:image" content="https://fortepe.com/og-image.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-
+<meta name="description" content="Hablemos de su proyecto. Forte PE · Santiago, Chile · info@fortepe.com"
+  data-es="Hablemos de su proyecto. Forte PE · Santiago, Chile · info@fortepe.com"
+  data-en="Let's talk about your project. Forte PE · Santiago, Chile · info@fortepe.com">
+<link rel="icon" type="image/svg+xml" href="forte-favicon.svg">
+<link rel="apple-touch-icon" href="forte-favicon.svg">
+<link rel="canonical" href="https://fortepe.com/contact.html">
+<link rel="stylesheet" href="shared.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contacto · Forte Project Engineering">
+<meta property="og:description" content="Hablemos de su proyecto. Forte PE · Santiago, Chile · info@fortepe.com">
+<meta property="og:image" content="https://fortepe.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_CL">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:site_name" content="Forte Project Engineering">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap&font-display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css" />
-
-<style>
-  /* ─── Page header ─── */
-  .page-header {
-    background: var(--navy);
-    color: #fff;
-    padding: clamp(64px, 9vw, 120px) 0 clamp(56px, 7vw, 96px);
-    position: relative;
-    overflow: hidden;
-  }
-  .page-header-inner {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 0 var(--pad);
-    position: relative;
-    z-index: 2;
-  }
-  .page-header h1 {
-    font-size: clamp(36px, 5vw, 72px);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 0.98;
-    color: #fff;
-    margin: 24px 0 0;
-    max-width: 16ch;
-  }
-  .page-header .page-lede {
-    color: rgba(224,241,240,0.75);
-    font-size: clamp(16px, 1.3vw, 19px);
-    max-width: 52ch;
-    margin: 20px 0 0;
-    line-height: 1.55;
-  }
-  .page-header-lines {
-    position: absolute; inset: 0;
-    pointer-events: none; opacity: 0.10; z-index: 1;
-  }
-  .page-header-lines svg { width: 100%; height: 100%; }
-
-  /* ─── Contact layout ─── */
-  .contact-layout {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: clamp(48px, 6vw, 96px);
-    align-items: start;
-  }
-  @media (max-width: 860px) {
-    .contact-layout { grid-template-columns: 1fr; }
-  }
-
-  /* ─── Form ─── */
-  .contact-form { display: flex; flex-direction: column; gap: 20px; }
-  .form-group { display: flex; flex-direction: column; gap: 8px; }
-  .form-group label {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gray);
-  }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    font-family: var(--sans);
-    font-size: 15px;
-    color: var(--navy);
-    background: var(--white);
-    border: 1px solid var(--gray-300);
-    border-radius: 2px;
-    padding: 12px 16px;
-    transition: border-color 0.18s ease, box-shadow 0.18s ease;
-    outline: none;
-    width: 100%;
-    appearance: none;
-    -webkit-appearance: none;
-  }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    border-color: var(--teal);
-    box-shadow: 0 0 0 3px rgba(19,127,124,0.1);
-  }
-  .form-group textarea { min-height: 140px; resize: vertical; line-height: 1.6; }
-  .form-group select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236F747A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    padding-right: 36px;
-    cursor: pointer;
-  }
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
-
-  .form-submit {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 8px;
-  }
-  .form-note {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gray);
-    line-height: 1.6;
-  }
-  /* Override btn for form submit */
-  .btn-submit {
-    background: var(--navy);
-    color: #fff;
-    border-color: var(--navy);
-  }
-  .btn-submit:hover { background: var(--navy-700); border-color: var(--navy-700); }
-
-  /* ─── Info panel ─── */
-  .contact-info { display: flex; flex-direction: column; gap: 32px; }
-  .info-block h3 {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin: 0 0 16px;
-  }
-  .info-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 14px 0;
-    border-top: 1px solid var(--gray-100);
-    gap: 12px;
-  }
-  .info-row:last-child { border-bottom: 1px solid var(--gray-100); }
-  .info-row .k {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gray);
-    flex-shrink: 0;
-  }
-  .info-row .v {
-    font-size: 15px;
-    color: var(--navy);
-    font-weight: 500;
-    text-align: right;
-  }
-  .info-row .v a { color: var(--teal); }
-  .info-row .v a:hover { color: var(--navy); }
-
-  .response-note {
-    background: var(--paper);
-    border-left: 2px solid var(--teal);
-    padding: 20px 24px;
-  }
-  .response-note p {
-    font-size: 14px;
-    color: var(--gray);
-    margin: 0;
-    line-height: 1.65;
-  }
-
-  /* ─── Form validation ─── */
-  .form-group input.invalid,
-  .form-group select.invalid,
-  .form-group textarea.invalid {
-    border-color: #c0392b;
-    box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
-  }
-  .field-error {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #c0392b;
-    margin-top: 4px;
-    display: none;
-  }
-  .field-error.visible { display: block; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+<div style="background: #F8F9FA; min-width: 320px;">
 
-<!-- ════════ HEADER ════════ -->
-<header class="site-header">
-  <nav class="nav" aria-label="Main">
-    <a class="nav-logo" href="index.html" aria-label="Forte Project Engineering">
-      <img src="forte-primary.svg" alt="Forte Project Engineering" width="160" height="52" fetchpriority="high" />
-    </a>
-    <div class="nav-right">
-      <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">
-        <span class="es">EN</span><span class="en">ES</span>
-      </button>
-      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-      </button>
-    </div>
-  </nav>
-</header>
+  <header style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 22px clamp(24px, 5vw, 72px); border-bottom: 1px solid #DADDE1; background: #F8F9FA; position: sticky; top: 0; z-index: 10;" data-screen-label="Header">
+    <a href="index.html" aria-label="Forte Project Engineering"><img src="forte-primary.svg" alt="Forte Project Engineering" style="height: 44px; width: auto; display: block;"></a>
+    <nav class="site-nav" aria-label="Main" style="display: flex; align-items: center; gap: clamp(18px, 2.5vw, 36px); font-size: 14px; font-weight: 600; letter-spacing: 0.01em;">
+      <a href="index.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Inicio</span><span class="en">Home</span></a>
+      <a href="projects.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Proyectos</span><span class="en">Projects</span></a>
+      <a href="team.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Firma</span><span class="en">The Firm</span></a>
+      <a href="perspectivas.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Perspectivas</span><span class="en">Perspectives</span></a>
+      <a href="contact.html" style="color: #12324A; border-bottom: 2px solid #137F7C; padding-bottom: 3px;"><span class="es">Contacto</span><span class="en">Contact</span></a>
+      <button id="langToggle" type="button" aria-label="Toggle language" class="lang-btn" style="font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #12324A; background: none; border: 1px solid #DADDE1; padding: 7px 14px; cursor: pointer;"><span class="es">EN</span><span class="en">ES</span></button>
+    </nav>
+  </header>
 
-<!-- ════════ DRAWER NAV ════════ -->
-<div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
-<nav class="drawer" id="drawer" aria-label="Site navigation">
-  <div class="drawer-head">
-    <img src="forte-reversed.svg" alt="Forte Project Engineering" width="120" height="40" />
-    <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
-  </div>
-    <div class="drawer-nav">
-    <a href="index.html" data-page="index">
-      <span><span class="es">Inicio</span><span class="en">Home</span></span>
-      <span class="link-num">01</span>
-    </a>
-    <a href="projects.html" data-page="projects">
-      <span><span class="es">Proyectos</span><span class="en">Projects</span></span>
-      <span class="link-num">02</span>
-    </a>
-    <a href="team.html" data-page="team">
-      <span><span class="es">Equipo</span><span class="en">Team</span></span>
-      <span class="link-num">03</span>
-    </a>
-    <a href="contact.html" data-page="contact">
-      <span><span class="es">Contacto</span><span class="en">Contact</span></span>
-      <span class="link-num">04</span>
-    </a>
-  </div>
-<div class="drawer-foot">
-    <div class="df-label">Forte Project Engineering</div>
-    <div class="df-val">
-      Santiago · Chile<br/>
-      <a href="mailto:info@fortepe.com">info@fortepe.com</a>
-    </div>
-  </div>
-</nav>
-
-<!-- ════════ PAGE HEADER ════════ -->
-<section class="page-header">
-  <div class="page-header-lines" aria-hidden="true">
-    <svg viewBox="0 0 1600 500" preserveAspectRatio="xMaxYMid slice">
-      <g stroke="#1A9692" stroke-width="1.2" fill="none">
-        <path d="M-100 500 Q 700 280 1700 80" />
-        <path d="M-100 500 Q 700 340 1700 220" />
-        <path d="M-100 500 Q 700 420 1700 380" />
-      </g>
-    </svg>
-  </div>
-  <div class="page-header-inner">
-    <p class="eyebrow on-navy"><span class="es">Contacto</span><span class="en">Contact</span></p>
-    <h1>
-      <span class="es">Hablemos de su proyecto.</span>
-      <span class="en">Let's talk about your project.</span>
+  <section style="max-width: 1280px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) clamp(24px, 5vw, 72px) clamp(48px, 6vw, 80px);" data-screen-label="Encabezado">
+    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6F747A; margin-bottom: 22px;"><span class="es">Contacto</span><span class="en">Contact</span></div>
+    <h1 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(38px, 4.6vw, 68px); line-height: 1.02; letter-spacing: -0.025em; color: #12324A; margin: 0; max-width: 16ch; text-wrap: balance;">
+      <span class="es">Hablemos de su proyecto.</span><span class="en">Let's talk about your project.</span>
     </h1>
-    <p class="page-lede">
+    <p style="font-size: clamp(16px, 1.3vw, 19px); line-height: 1.6; color: #6F747A; max-width: 52ch; margin: 24px 0 0; text-wrap: pretty;">
       <span class="es">Si su proyecto requiere claridad técnica para avanzar, estamos disponibles para revisar el contexto, identificar riesgos y definir los próximos pasos.</span>
       <span class="en">If your project requires technical clarity to move forward, we are available to review the context, identify risks, and define the next steps.</span>
     </p>
-  </div>
-</section>
+  </section>
 
-<!-- ════════ CONTACT ════════ -->
-<section class="section">
-  <div class="container">
-    <div class="contact-layout">
-
-      <!-- Form -->
-      <!-- ─────────────────────────────────────────────────────
-           FORM: paste your Formspree form ID on the line below.
-           Get it free at formspree.io → New Form → copy the ID.
-           Replace YOUR_FORM_ID with it. That's the only change needed.
-           ───────────────────────────────────────────────────── -->
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/mgoqrnvn" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name"><span class="es">Nombre</span><span class="en">Name</span></label>
-            <input type="text" id="name" name="name" autocomplete="name" required
-              placeholder="" />
-            <span class="field-error" id="name-error" data-es="Campo requerido" data-en="Required field">Campo requerido</span>
+  <section style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 72px) clamp(64px, 8vw, 112px);" data-screen-label="Formulario">
+    <div class="rsp-g2" style="border-top: 1px solid #DADDE1; padding-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: minmax(400px, 1.1fr) minmax(300px, 0.9fr); gap: clamp(48px, 6vw, 96px); align-items: start;">
+      <form action="https://formspree.io/f/mgoqrnvn" method="POST" style="display: flex; flex-direction: column; gap: 22px;">
+        <div style="display: none;" aria-hidden="true"><label>Do not fill this field<input type="text" name="_gotcha" tabIndex="-1" autoComplete="off"></label></div>
+        <div class="rsp-g2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="name" style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6F747A;"><span class="es">Nombre</span><span class="en">Name</span></label>
+            <input type="text" id="name" name="name" autoComplete="name" required="required" style="font-family: 'Source Sans 3', sans-serif; font-size: 15px; color: #12324A; background: #F8F9FA; border: 1px solid #DADDE1; padding: 12px 16px; outline: none; width: 100%; box-sizing: border-box;" class="fc-teal">
           </div>
-          <div class="form-group">
-            <label for="org"><span class="es">Organización</span><span class="en">Organisation</span></label>
-            <input type="text" id="org" name="organisation" autocomplete="organization" />
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label for="org" style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6F747A;"><span class="es">Organización</span><span class="en">Organisation</span></label>
+            <input type="text" id="org" name="organisation" autoComplete="organization" style="font-family: 'Source Sans 3', sans-serif; font-size: 15px; color: #12324A; background: #F8F9FA; border: 1px solid #DADDE1; padding: 12px 16px; outline: none; width: 100%; box-sizing: border-box;" class="fc-teal">
           </div>
         </div>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" autocomplete="email" required />
-          <span class="field-error" id="email-error" data-es="Ingrese un email válido" data-en="Enter a valid email">Ingrese un email válido</span>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label for="email" style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6F747A;">Email</label>
+          <input type="email" id="email" name="email" autoComplete="email" required="required" style="font-family: 'Source Sans 3', sans-serif; font-size: 15px; color: #12324A; background: #F8F9FA; border: 1px solid #DADDE1; padding: 12px 16px; outline: none; width: 100%; box-sizing: border-box;" class="fc-teal">
         </div>
-
-        <div class="form-group">
-          <label for="sector"><span class="es">Motivo de contacto</span><span class="en">Reason for contact</span></label>
-          <select id="sector" name="sector">
-            <option value="" disabled selected data-es="" data-en=""></option>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label for="sector" style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6F747A;"><span class="es">Motivo de contacto</span><span class="en">Reason for contact</span></label>
+          <select id="sector" name="sector" style="font-family: 'Source Sans 3', sans-serif; font-size: 15px; color: #12324A; background: #F8F9FA; border: 1px solid #DADDE1; padding: 12px 16px; outline: none; width: 100%; box-sizing: border-box; cursor: pointer;" class="fc-teal">
+            <option value=""></option>
             <option value="rail" data-es="Proyecto ferroviario" data-en="Rail project">Proyecto ferroviario</option>
             <option value="energy" data-es="Proyecto de energía" data-en="Energy project">Proyecto de energía</option>
             <option value="critical" data-es="Infraestructura crítica" data-en="Critical infrastructure">Infraestructura crítica</option>
@@ -331,138 +79,60 @@
             <option value="other" data-es="Otro" data-en="Other">Otro</option>
           </select>
         </div>
-
-        <div class="form-group">
-          <label for="message"><span class="es">Contexto del proyecto</span><span class="en">Project context</span></label>
-          <textarea id="message" name="message" required></textarea>
-          <span class="field-error" id="message-error" data-es="Campo requerido" data-en="Required field">Campo requerido</span>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label for="message" style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6F747A;"><span class="es">Contexto del proyecto</span><span class="en">Project context</span></label>
+          <textarea id="message" name="message" required="required" style="font-family: 'Source Sans 3', sans-serif; font-size: 15px; line-height: 1.6; color: #12324A; background: #F8F9FA; border: 1px solid #DADDE1; padding: 12px 16px; outline: none; width: 100%; box-sizing: border-box; min-height: 150px; resize: vertical;" class="fc-teal"></textarea>
         </div>
-
-        <div style="display:none" aria-hidden="true"><label>Do not fill this field<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label></div>
-        <div class="form-submit">
-          <button type="submit" class="btn btn-submit">
-            <span class="es">Enviar</span><span class="en">Send</span>
-            <span class="arrow">→</span>
+        <div>
+          <button type="submit" style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Source Sans 3', sans-serif; background: #12324A; color: #F8F9FA; font-size: 15px; font-weight: 700; padding: 15px 28px; letter-spacing: 0.02em; border: 0; cursor: pointer;" class="hv-dark">
+            <span class="es">Enviar</span><span class="en">Send</span><span style="color: #137F7C;">→</span>
           </button>
-          
         </div>
       </form>
 
-      <!-- Info panel -->
-      <div class="contact-info">
-        <div class="info-block">
-          <h3><span class="es">Coordenadas</span><span class="en">Coordinates</span></h3>
-          <div class="info-row">
-            <span class="k">Email</span>
-            <span class="v"><a href="mailto:info@fortepe.com">info@fortepe.com</a></span>
+      <div data-screen-label="Coordenadas">
+        <h2 style="font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #137F7C; margin: 0 0 8px;"><span class="es">Coordenadas</span><span class="en">Coordinates</span></h2>
+        <div style="display: grid;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 15px 0; border-top: 1px solid #DADDE1;">
+            <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6F747A; flex-shrink: 0;">Email</span>
+            <a href="mailto:info@fortepe.com" style="font-size: 15px; font-weight: 600; color: #12324A; text-align: right;" class="hv-teal">info@fortepe.com</a>
           </div>
-          <div class="info-row">
-            <span class="k"><span class="es">Oficina</span><span class="en">Office</span></span>
-            <span class="v">Callao 2911, Las Condes</span>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 15px 0; border-top: 1px solid #DADDE1;">
+            <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6F747A; flex-shrink: 0;"><span class="es">Oficina</span><span class="en">Office</span></span>
+            <span style="font-size: 15px; font-weight: 600; color: #12324A; text-align: right;">Callao 2911, Las Condes</span>
           </div>
-          <div class="info-row">
-            <span class="k"><span class="es">Ciudad</span><span class="en">City</span></span>
-            <span class="v">Santiago · Chile</span>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 15px 0; border-top: 1px solid #DADDE1;">
+            <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6F747A; flex-shrink: 0;"><span class="es">Ciudad</span><span class="en">City</span></span>
+            <span style="font-size: 15px; font-weight: 600; color: #12324A; text-align: right;">Santiago · Chile</span>
           </div>
-          <div class="info-row">
-            <span class="k"><span class="es">Cobertura</span><span class="en">Coverage</span></span>
-            <span class="v">Chile · LATAM</span>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 15px 0; border-top: 1px solid #DADDE1;">
+            <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6F747A; flex-shrink: 0;"><span class="es">Cobertura</span><span class="en">Coverage</span></span>
+            <span style="font-size: 15px; font-weight: 600; color: #12324A; text-align: right;">Chile · LATAM</span>
           </div>
-          <div class="info-row">
-            <span class="k"><span class="es">Idiomas</span><span class="en">Languages</span></span>
-            <span class="v">ES · EN</span>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 15px 0; border-top: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1;">
+            <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6F747A; flex-shrink: 0;"><span class="es">Idiomas</span><span class="en">Languages</span></span>
+            <span style="font-size: 15px; font-weight: 600; color: #12324A; text-align: right;">ES · EN</span>
           </div>
         </div>
-
-
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ════════ FOOTER ════════ -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="foot-left">
-      <img src="forte-reversed.svg" alt="Forte" width="140" height="46" loading="lazy" decoding="async" />
-      <span class="sep"></span>
-      <span><span class="es">Asesoría técnica · infraestructura crítica</span><span class="en">Technical advisory · critical infrastructure</span></span>
+  <footer style="background: #12324A; padding: clamp(36px, 4vw, 52px) clamp(24px, 5vw, 72px);" data-screen-label="Footer">
+    <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+      <img src="forte-reversed.svg" alt="Forte Project Engineering" style="height: 40px; width: auto; display: block;">
+      <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 13px; color: rgba(248,249,250,0.65);">
+        <span>Forte Engineering Chile SpA</span>
+        <span style="color: #137F7C;">·</span>
+        <span>Santiago, Chile</span>
+        <span style="color: #137F7C;">·</span>
+        <a href="mailto:info@fortepe.com" style="color: rgba(248,249,250,0.85);" class="hv-light">info@fortepe.com</a>
+        <span style="color: #137F7C;">·</span>
+        <span>© 2026</span>
+      </div>
     </div>
-    <div class="foot-right">
-      <span>Santiago · LATAM</span>
-      <span class="sep dot"></span>
-      <span>© <span id="year"></span> Forte Project Engineering</span>
-      <a class="to-top" href="#" aria-label="Back to top">↑</a>
-    </div>
-  </div>
-</footer>
-
+  </footer>
+</div>
 <script defer src="shared.js"></script>
-<script>
-  // ─── Form validation ───────────────────────────────────────────────
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    var lang = document.documentElement.getAttribute('data-lang') || 'es';
-    var valid = true;
-
-    function validate(id, errorId, checkFn) {
-      var field = document.getElementById(id);
-      var error = document.getElementById(errorId);
-      if (!field || !error) return;
-      var ok = checkFn(field);
-      field.classList.toggle('invalid', !ok);
-      error.classList.toggle('visible', !ok);
-      if (error.dataset[lang]) error.textContent = error.dataset[lang];
-      if (!ok) valid = false;
-    }
-
-    validate('name', 'name-error', function(f) { return f.value.trim().length > 0; });
-    validate('email', 'email-error', function(f) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value.trim());
-    });
-    validate('message', 'message-error', function(f) { return f.value.trim().length > 0; });
-
-    if (!valid) {
-      e.preventDefault();
-      var first = document.querySelector('.invalid');
-      if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  });
-
-  // Clear error state on input
-  ['name','email','message'].forEach(function(id) {
-    var field = document.getElementById(id);
-    if (!field) return;
-    field.addEventListener('input', function() {
-      field.classList.remove('invalid');
-      var err = document.getElementById(id + '-error');
-      if (err) err.classList.remove('visible');
-    });
-  });
-
-  // ─── Select option language swap ───────────────────────────────────
-  function updateSelectOptions(lang) {
-    var options = document.querySelectorAll('#sector option');
-    options.forEach(function(opt) {
-      var text = opt.dataset[lang];
-      if (text !== undefined) opt.textContent = text;
-    });
-  }
-
-  // Run on load
-  updateSelectOptions(document.documentElement.getAttribute('data-lang') || 'es');
-
-  // Run on language toggle (observe data-lang attribute change)
-  var observer = new MutationObserver(function() {
-    var lang = document.documentElement.getAttribute('data-lang') || 'es';
-    updateSelectOptions(lang);
-    // Also update error messages
-    ['name-error','email-error','message-error'].forEach(function(id) {
-      var el = document.getElementById(id);
-      if (el && el.dataset[lang]) el.textContent = el.dataset[lang];
-    });
-  });
-  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang'] });
-</script>
 </body>
 </html>
