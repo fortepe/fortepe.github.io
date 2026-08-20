@@ -6,6 +6,7 @@
     'index': { es: 'Forte Project Engineering · Asesoría técnica para infraestructura crítica',
                en: 'Forte Project Engineering · Technical advisory for critical infrastructure' },
     'projects': { es: 'Proyectos · Forte Project Engineering', en: 'Projects · Forte Project Engineering' },
+    'firma': { es: 'Firma · Forte Project Engineering', en: 'The Firm · Forte Project Engineering' },
     'team': { es: 'Firma · Forte Project Engineering', en: 'The Firm · Forte Project Engineering' },
     'contact': { es: 'Contacto · Forte Project Engineering', en: 'Contact · Forte Project Engineering' },
     'perspectivas': { es: 'Perspectivas · Forte Project Engineering', en: 'Perspectives · Forte Project Engineering' },
