@@ -18,40 +18,122 @@
   * { box-sizing:border-box; }
   a { color:#12324A; text-decoration:none; }
   a:hover { color:#137F7C; }
+  .site-header__actions { display:flex;align-items:center;gap:26px; }
+  .mobile-only { display:none; }
   .about-context { grid-template-columns:minmax(240px,340px) minmax(0,1fr); }
   .about-context__photo { width:100%; max-width:340px; }
   .about-context__photo img { display:block; width:100%; height:100%; object-fit:contain; object-position:center; }
   @media (max-width: 760px) {
+    html, body { overflow-x:clip; }
+    .desktop-only { display:none; }
+    .mobile-only { display:inline; }
+    .site-header {
+      display:grid !important;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:10px 16px !important;
+      padding:12px 16px 0 !important;
+    }
+    .site-header__actions { display:contents; }
+    .site-logo { grid-column:1;grid-row:1;align-self:center;min-height:44px; }
+    .site-logo img { height:28px !important; }
+    .site-nav {
+      grid-column:1 / -1;
+      grid-row:2;
+      display:grid !important;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:0 !important;
+      width:100%;
+      border-top:1px solid rgba(18,50,74,0.1);
+    }
+    .site-nav button {
+      display:flex !important;
+      align-items:center;
+      justify-content:center;
+      min-width:0;
+      min-height:44px;
+      padding:0 2px !important;
+      font-size:10.5px !important;
+      letter-spacing:0.01em !important;
+      white-space:nowrap;
+    }
+    .lang-switch { grid-column:2;grid-row:1;justify-self:end; }
+    .lang-switch button { min-width:42px;min-height:44px; }
+    section[style*="max-width:1240px"] { padding-left:20px !important;padding-right:20px !important; }
+    .home-hero { height:auto !important;min-height:600px !important; }
+    .hero-copy { padding:32px 20px !important;gap:20px !important; }
+    .home-firm-grid,
+    .home-map-grid,
+    .projects-gallery,
+    .projects-engagements,
+    .projects-track,
+    .about-credentials,
+    .about-formats,
+    .about-clients,
+    .about-network,
+    .blog-grid,
+    .contact-layout,
+    .contact-form { grid-template-columns:1fr !important; }
+    .home-firm-grid,
+    .home-map-grid,
+    .projects-gallery,
+    .projects-track,
+    .about-credentials,
+    .about-clients,
+    .about-network,
+    .blog-grid,
+    .contact-layout { gap:32px !important; }
+    .home-governance { grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:18px !important; }
+    .home-services,
+    .home-work { grid-template-columns:1fr !important; }
+    .projects-engagements,
+    .about-formats { gap:1px !important; }
+    .contact-form { gap:22px !important; }
     .about-context { grid-template-columns:1fr; gap:36px; padding:56px 24px 24px !important; }
     .about-context__photo { width:min(100%,280px); justify-self:center; }
+  }
+  @media (max-width: 480px) {
+    .home-map-stats,
+    .home-governance { grid-template-columns:1fr !important; }
+    .contact-coordinate { grid-template-columns:1fr !important;gap:6px !important; }
+  }
+  @media (max-width: 760px) and (orientation: landscape) and (max-height: 480px) {
+    .site-header { grid-template-columns:auto minmax(0,1fr) auto;padding:8px 12px !important;gap:12px !important; }
+    .site-logo { grid-column:1;grid-row:1; }
+    .site-nav { grid-column:2;grid-row:1;border-top:0; }
+    .site-nav button { min-height:44px;font-size:9.5px !important; }
+    .lang-switch { grid-column:3;grid-row:1; }
+    .lang-switch button { min-width:36px;min-height:44px; }
+    .home-hero { min-height:420px !important; }
   }
 </style>
 </helmet>
 <div style="font-family:'IBM Plex Sans',system-ui,sans-serif;color:#12324A;background:#F4F2ED;-webkit-font-smoothing:antialiased">
 
-  <header style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:18px 40px;background:rgba(244,242,237,0.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(18,50,74,0.1)">
-    <button onClick="{{ goHome }}" style="display:flex;align-items:center;background:none;border-style:none;border-width:0;padding:0;cursor:pointer"><img src="./forte-primary.svg" alt="Forte Project Engineering" style="height:30px;width:auto;display:block" /></button>
-    <nav style="display:flex;align-items:center;gap:26px;font-size:13.5px;letter-spacing:0.02em">
+  <header class="site-header" style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:18px 40px;background:rgba(244,242,237,0.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(18,50,74,0.1)">
+    <button class="site-logo" onClick="{{ goHome }}" style="display:flex;align-items:center;background:none;border-style:none;border-width:0;padding:0;cursor:pointer"><img src="./forte-primary.svg" alt="Forte Project Engineering" style="height:30px;width:auto;display:block" /></button>
+    <div class="site-header__actions">
+    <nav class="site-nav" style="display:flex;align-items:center;gap:26px;font-size:13.5px;letter-spacing:0.02em">
       <button onClick="{{ goHome }}" style="{{ tabHome }}">{{ navHome }}</button>
       <button onClick="{{ goProjects }}" style="{{ tabProjects }}">{{ navProjects }}</button>
       <button onClick="{{ goAbout }}" style="{{ tabAbout }}">{{ navAbout }}</button>
-      <button onClick="{{ goBlog }}" style="{{ tabBlog }}">{{ navBlog }}</button>
+      <button onClick="{{ goBlog }}" style="{{ tabBlog }}"><span class="desktop-only">{{ navBlog }}</span><span class="mobile-only">{{ navBlogMobile }}</span></button>
       <button onClick="{{ goContact }}" style="{{ tabContact }}">{{ navContact }}</button>
-      <span style="display:flex;font-family:'IBM Plex Mono',monospace;font-size:11.5px;border:1px solid rgba(18,50,74,0.18)">
+    </nav>
+      <span class="lang-switch" style="display:flex;font-family:'IBM Plex Mono',monospace;font-size:11.5px;border:1px solid rgba(18,50,74,0.18)">
         <button onClick="{{ setEs }}" style="{{ esBtn }}">ES</button>
         <button onClick="{{ setEn }}" style="{{ enBtn }}">EN</button>
       </span>
-    </nav>
+    </div>
   </header>
 
   <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
   <div>
-    <section style="position:relative;height:min(78vh,720px);min-height:520px;overflow:hidden;background:#12324A">
+    <section class="home-hero" style="position:relative;height:min(78vh,720px);min-height:520px;overflow:hidden;background:#12324A">
       <div style="position:absolute;inset:0">
         <image-slot id="hero" src="./img/g-hero.jpg" shape="rect" fit="cover" placeholder="Corredor ferroviario electrificado"></image-slot>
       </div>
       <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(18,50,74,0.88) 0%,rgba(18,50,74,0.55) 55%,rgba(18,50,74,0.15) 100%);pointer-events:none"></div>
-      <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:26px;padding:40px;max-width:1000px;pointer-events:none">
+      <div class="hero-copy" style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:26px;padding:40px;max-width:1000px;pointer-events:none">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(244,242,237,0.7)">{{ heroKicker }}</div>
         <h1 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(40px,6vw,86px);line-height:0.98;letter-spacing:-0.02em;color:#F4F2ED;text-wrap:balance">{{ heroTitle }}</h1>
         <p style="margin:0;max-width:56ch;font-size:17px;line-height:1.5;color:rgba(244,242,237,0.82);text-wrap:pretty">{{ heroSub }}</p>
@@ -64,7 +146,7 @@
       </div>
     </section>
 
-    <section style="max-width:1240px;margin:0 auto;padding:80px 40px 72px;display:grid;grid-template-columns:minmax(160px,0.5fr) minmax(280px,1.5fr);gap:48px;align-items:start">
+    <section class="home-firm-grid" style="max-width:1240px;margin:0 auto;padding:80px 40px 72px;display:grid;grid-template-columns:minmax(160px,0.5fr) minmax(280px,1.5fr);gap:48px;align-items:start">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C;padding-top:6px">{{ firmKicker }}</div>
       <div style="display:flex;flex-direction:column;gap:24px;max-width:74ch">
         <p style="margin:0;font-size:19.5px;line-height:1.5;letter-spacing:-0.01em;text-wrap:pretty">{{ firm1 }}</p>
@@ -83,11 +165,11 @@
       </sc-for>
     </section>
 
-    <section style="max-width:1240px;margin:0 auto;padding:64px 40px 24px;display:grid;grid-template-columns:1.15fr 0.85fr;gap:64px;align-items:center">
+    <section class="home-map-grid" style="max-width:1240px;margin:0 auto;padding:64px 40px 24px;display:grid;grid-template-columns:1.15fr 0.85fr;gap:64px;align-items:center">
       <div style="display:flex;flex-direction:column;gap:18px">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C">{{ mapKicker }}</div>
         <h2 style="margin:0;max-width:26ch;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(26px,3vw,38px);line-height:1.08;letter-spacing:-0.018em;text-wrap:balance">{{ mapTitle }}</h2>
-        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin-top:14px">
+        <div class="home-map-stats" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin-top:14px">
           <div style="display:flex;flex-direction:column;gap:12px;padding-top:16px;border-top:1px solid rgba(18,50,74,0.22)">
             <div style="display:flex;align-items:center;gap:9px">
               <span style="width:9px;height:9px;border-radius:50%;background:#137F7C;display:block"></span>
@@ -109,7 +191,7 @@
 
     <section style="padding:40px 40px 72px;max-width:1240px;margin:0 auto">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C;margin-bottom:28px">{{ govKicker }}</div>
-      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px">
+      <div class="home-governance" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px">
         <sc-for list="{{ governance }}" as="g" hint-placeholder-count="4">
           <div style="display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:1px solid rgba(18,50,74,0.22)">
             <div style="font-family:Archivo,sans-serif;font-weight:500;font-size:17px;line-height:1.25;letter-spacing:-0.01em;text-wrap:pretty">{{ g.t }}</div>
@@ -124,7 +206,7 @@
         <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(30px,3.6vw,50px);letter-spacing:-0.02em;line-height:1.02">{{ svcTitle }}</h2>
         <p style="margin:0;max-width:38ch;font-size:15px;line-height:1.55;color:rgba(18,50,74,0.62)">{{ svcSub }}</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:rgba(18,50,74,0.12)">
+      <div class="home-services" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:rgba(18,50,74,0.12)">
         <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
           <div style="background:#F4F2ED;padding:30px 28px 34px;display:flex;flex-direction:column;gap:14px;min-height:180px" style-hover="background:#EDEAE3">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.12em;color:#137F7C">{{ s.n }}</div>
@@ -151,7 +233,7 @@
 
     <section style="padding:88px 40px;max-width:1240px;margin:0 auto">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(18,50,74,0.5);margin-bottom:28px">{{ workKicker }}</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+      <div class="home-work" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
         <div>
           <div style="position:relative;aspect-ratio:4/5;background:#E4E0D7">
             <image-slot id="work1" src="./img/f-trio-2b.jpg" shape="rect" fit="cover" placeholder="Cuadrilla en catenaria"></image-slot>
@@ -182,7 +264,7 @@
       <h1 style="margin:18px 0 0;max-width:24ch;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,5vw,68px);line-height:1;letter-spacing:-0.02em">{{ prjTitle }}</h1>
       <p style="margin:22px 0 0;max-width:52ch;font-size:16.5px;line-height:1.55;color:rgba(18,50,74,0.66);text-wrap:pretty">{{ prjSub }}</p>
     </section>
-    <section style="max-width:1240px;margin:0 auto;padding:0 40px 40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+    <section class="projects-gallery" style="max-width:1240px;margin:0 auto;padding:0 40px 40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
       <div>
         <div style="position:relative;aspect-ratio:3/2;background:#E4E0D7"><image-slot id="p1" src="./img/g-prj-rail2.jpg" shape="rect" fit="cover" placeholder="Estructura ferroviaria"></image-slot></div>
       </div>
@@ -196,7 +278,7 @@
     <section style="max-width:1240px;margin:0 auto;padding:24px 40px 40px">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C">{{ engKicker }}</div>
       <p style="margin:16px 0 0;max-width:72ch;font-size:15.5px;line-height:1.6;color:rgba(18,50,74,0.66);text-wrap:pretty">{{ engNote }}</p>
-      <div style="margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(18,50,74,0.12)">
+      <div class="projects-engagements" style="margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(18,50,74,0.12)">
         <sc-for list="{{ engagements }}" as="e" hint-placeholder-count="4">
           <div style="background:#F4F2ED;padding:32px 30px 36px;display:flex;flex-direction:column;gap:14px">
             <div style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">
@@ -214,7 +296,7 @@
     <section style="max-width:1240px;margin:0 auto;padding:56px 40px 96px">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C">{{ trackKicker }}</div>
       <p style="margin:16px 0 0;max-width:72ch;font-size:15.5px;line-height:1.6;color:rgba(18,50,74,0.66);text-wrap:pretty">{{ trackNote }}</p>
-      <div style="margin-top:36px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px">
+      <div class="projects-track" style="margin-top:36px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px">
         <sc-for list="{{ track }}" as="t" hint-placeholder-count="6">
           <div style="display:flex;flex-direction:column;gap:12px;padding-top:18px;border-top:1px solid rgba(18,50,74,0.22)">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ t.meta }}</div>
@@ -243,7 +325,7 @@
 
     <section style="max-width:1240px;margin:0 auto;padding:48px 40px 24px">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C;margin-bottom:32px">{{ credKicker }}</div>
-      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px">
+      <div class="about-credentials" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px">
         <div>
           <h3 style="margin:0 0 20px;font-family:Archivo,sans-serif;font-weight:500;font-size:21px;letter-spacing:-0.01em">{{ credRailTitle }}</h3>
           <sc-for list="{{ credRail }}" as="c" hint-placeholder-count="4">
@@ -269,7 +351,7 @@
       <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C">{{ fmtKicker }}</div>
       <h2 style="margin:18px 0 12px;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(28px,3.2vw,44px);letter-spacing:-0.02em;line-height:1.05">{{ fmtTitle }}</h2>
       <p style="margin:0 0 36px;max-width:56ch;font-size:16px;line-height:1.55;color:rgba(18,50,74,0.66);text-wrap:pretty">{{ fmtSub }}</p>
-      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(18,50,74,0.12)">
+      <div class="about-formats" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(18,50,74,0.12)">
         <sc-for list="{{ formats }}" as="f" hint-placeholder-count="4">
           <div style="background:#F4F2ED;padding:28px 24px 32px;display:flex;flex-direction:column;gap:12px">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.12em;color:#137F7C">{{ f.n }}</div>
@@ -292,7 +374,7 @@
           <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C">{{ cliKicker }}</div>
           <p style="margin:0;max-width:52ch;font-size:19px;line-height:1.5;letter-spacing:-0.01em;text-wrap:pretty">{{ cliLead }}</p>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 40px">
+        <div class="about-clients" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 40px">
           <sc-for list="{{ clients }}" as="c" hint-placeholder-count="4">
             <div style="display:flex;flex-direction:column;gap:10px;padding-top:16px;border-top:1px solid rgba(18,50,74,0.22)">
               <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ c.meta }}</div>
@@ -305,7 +387,7 @@
     </section>
 
     <section style="max-width:1240px;margin:0 auto;padding:64px 40px 96px">
-      <div style="display:grid;grid-template-columns:minmax(260px,1fr) minmax(260px,1fr);gap:48px;padding-top:32px;border-top:1px solid rgba(18,50,74,0.22)">
+      <div class="about-network" style="display:grid;grid-template-columns:minmax(260px,1fr) minmax(260px,1fr);gap:48px;padding-top:32px;border-top:1px solid rgba(18,50,74,0.22)">
         <div>
           <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C;margin-bottom:16px">{{ netKicker }}</div>
           <p style="margin:0;font-size:18px;line-height:1.5;letter-spacing:-0.01em;text-wrap:pretty">{{ netBody }}</p>
@@ -325,7 +407,7 @@
       <h1 style="margin:0;max-width:24ch;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,5vw,68px);line-height:1;letter-spacing:-0.02em">{{ blTitle }}</h1>
       <p style="margin:22px 0 0;max-width:58ch;font-size:16.5px;line-height:1.55;color:rgba(18,50,74,0.68);text-wrap:pretty">{{ blSub }}</p>
     </section>
-    <section style="max-width:1240px;margin:0 auto;padding:0 40px 96px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px">
+    <section class="blog-grid" style="max-width:1240px;margin:0 auto;padding:0 40px 96px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px">
       <sc-for list="{{ posts }}" as="p" hint-placeholder-count="2">
         <div style="display:flex;flex-direction:column;gap:0">
           <div style="position:relative;aspect-ratio:16/10;background:#E4E0D7">
@@ -350,8 +432,8 @@
       <p style="margin:22px 0 0;max-width:56ch;font-size:16.5px;line-height:1.55;color:rgba(18,50,74,0.66);text-wrap:pretty">{{ ctSub }}</p>
     </section>
 
-    <section style="max-width:1240px;margin:0 auto;padding:24px 40px 96px;display:grid;grid-template-columns:1.35fr 0.65fr;gap:72px;align-items:start">
-      <form onSubmit="{{ onSubmit }}" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 28px">
+    <section class="contact-layout" style="max-width:1240px;margin:0 auto;padding:24px 40px 96px;display:grid;grid-template-columns:1.35fr 0.65fr;gap:72px;align-items:start">
+      <form class="contact-form" onSubmit="{{ onSubmit }}" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 28px">
         <label style="display:flex;flex-direction:column;gap:8px">
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ ctName }}</span>
           <input type="text" name="nombre" style="font:inherit;font-size:16px;color:#12324A;background:none;border-style:none none solid;border-width:0 0 1px;border-color:rgba(18,50,74,0.3);padding:8px 0;outline:none" style-focus="border-color:#137F7C" />
@@ -385,27 +467,27 @@
       <div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C;margin-bottom:18px">{{ ctCoordsLabel }}</div>
         <div style="display:flex;flex-direction:column;gap:0">
-          <div style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
+          <div class="contact-coordinate" style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ ctEmailLabel }}</div>
             <a href="mailto:info@fortepe.com" style="font-family:Archivo,sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.01em">info@fortepe.com</a>
           </div>
-          <div style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
+          <div class="contact-coordinate" style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ ctPhoneLabel }}</div>
             <a href="tel:+56233803442" style="font-family:Archivo,sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.01em">+56 2 3380 3442</a>
           </div>
-          <div style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
+          <div class="contact-coordinate" style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ ctOfficeLabel }}</div>
             <div style="font-size:16.5px;line-height:1.5">Callao 2911, Las Condes</div>
           </div>
-          <div style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
+          <div class="contact-coordinate" style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ ctCityLabel }}</div>
             <div style="font-size:16.5px;line-height:1.5">Santiago · Chile</div>
           </div>
-          <div style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
+          <div class="contact-coordinate" style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ ctCoverLabel }}</div>
             <div style="font-size:16.5px;line-height:1.5">LATAM</div>
           </div>
-          <div style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);border-bottom:1px solid rgba(18,50,74,0.16);align-items:baseline">
+          <div class="contact-coordinate" style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);border-bottom:1px solid rgba(18,50,74,0.16);align-items:baseline">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ ctLangLabel }}</div>
             <div style="font-size:16.5px;line-height:1.5">ES · EN</div>
           </div>
@@ -443,7 +525,7 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
 const COPY = {
   es: {
-    navHome: "Inicio", navProjects: "Proyectos", navAbout: "Nosotros", navBlog: "Publicaciones", navContact: "Contacto",
+    navHome: "Inicio", navProjects: "Proyectos", navAbout: "Nosotros", navBlog: "Publicaciones", navBlogMobile: "Notas", navContact: "Contacto",
     heroKicker: "Asesoría técnica independiente · Santiago, Chile",
     heroTitle: "Criterio técnico directo.",
     heroSub: "Asesoría técnica independiente para infraestructura ferroviaria, energía, BESS y data centers en América Latina, en las etapas donde las decisiones definen el resultado.",
@@ -570,7 +652,7 @@ const COPY = {
     ctOfficeLabel: "Oficina", ctCityLabel: "Ciudad", ctCoverLabel: "Cobertura", ctLangLabel: "Idiomas"
   },
   en: {
-    navHome: "Home", navProjects: "Projects", navAbout: "About", navBlog: "Publications", navContact: "Contact",
+    navHome: "Home", navProjects: "Projects", navAbout: "About", navBlog: "Publications", navBlogMobile: "Notes", navContact: "Contact",
     heroKicker: "Independent technical advisory · Santiago, Chile",
     heroTitle: "Direct technical authority.",
     heroSub: "Independent technical advisory for rail, energy, BESS, and data centre infrastructure across Latin America, at the stages where decisions define the outcome.",
