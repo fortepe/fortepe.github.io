@@ -18,6 +18,12 @@
   * { box-sizing:border-box; }
   a { color:#12324A; text-decoration:none; }
   a:hover { color:#137F7C; }
+  .about-context { grid-template-columns:minmax(240px,340px) minmax(0,1fr); }
+  .about-context__photo { width:100%; max-width:340px; }
+  @media (max-width: 760px) {
+    .about-context { grid-template-columns:1fr; gap:36px; padding:56px 24px 24px !important; }
+    .about-context__photo { width:min(100%,280px); justify-self:center; }
+  }
 </style>
 </helmet>
 <div style="font-family:'IBM Plex Sans',system-ui,sans-serif;color:#12324A;background:#F4F2ED;-webkit-font-smoothing:antialiased">
@@ -273,8 +279,8 @@
       </div>
     </section>
 
-    <section style="max-width:1240px;margin:0 auto;padding:72px 40px 24px;display:grid;grid-template-columns:0.62fr 1.38fr;gap:56px;align-items:start">
-      <figure style="margin:0;display:flex;flex-direction:column;gap:14px">
+    <section class="about-context" style="max-width:1240px;margin:0 auto;padding:72px 40px 24px;display:grid;gap:56px;align-items:start">
+      <figure class="about-context__photo" style="margin:0;display:flex;flex-direction:column;gap:14px">
         <div style="position:relative;aspect-ratio:2176/3392;background:#E4E0D7">
           <image-slot id="ab-inst" src="./img/g-flags2.jpg" shape="rect" fit="cover" placeholder="Contexto institucional"></image-slot>
         </div>
