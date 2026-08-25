@@ -20,7 +20,7 @@
   a:hover { color:#137F7C; }
   .about-context { grid-template-columns:minmax(240px,340px) minmax(0,1fr); }
   .about-context__photo { width:100%; max-width:340px; }
-  .about-context__photo img { display:block; width:100%; height:100%; object-fit:cover; }
+  .about-context__photo img { display:block; width:100%; height:100%; object-fit:contain; object-position:center; }
   @media (max-width: 760px) {
     .about-context { grid-template-columns:1fr; gap:36px; padding:56px 24px 24px !important; }
     .about-context__photo { width:min(100%,280px); justify-self:center; }
@@ -282,8 +282,8 @@
 
     <section class="about-context" style="max-width:1240px;margin:0 auto;padding:72px 40px 24px;display:grid;gap:56px;align-items:start">
       <figure class="about-context__photo" style="margin:0;display:flex;flex-direction:column;gap:14px">
-        <div style="position:relative;aspect-ratio:2176/3392;background:#E4E0D7">
-          <img src="./img/g-flags2.jpg" alt="Banderas institucionales de Belize y Forte" />
+        <div style="position:relative;aspect-ratio:1004/1566;background:#E4E0D7;overflow:hidden">
+          <img src="./img/g-flags2-retouched.png" alt="Banderas institucionales de Belize y Forte" />
         </div>
         <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;letter-spacing:0.1em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ cliCaption }}</figcaption>
       </figure>
@@ -540,7 +540,7 @@ const COPY = {
       { n: "04", title: "Dossier para procesos formales", line: "Credenciales completas del equipo, historial de proyectos y referencias para evaluación, licitación o due diligence, bajo solicitud." }
     ],
     cliKicker: "Con quiénes trabajamos",
-    cliCaption: "Misión técnica · Ministerio de energía · Centroamérica · 2025–2026",
+    cliCaption: "Misión técnica · MPUEL — Ministerio de Utilidades Públicas, Energía y Logística · Belice · 2025–2026",
     cliLead: "Trabajamos con ministerios de energía, operadores ferroviarios, financistas multilaterales, fondos de inversión en infraestructura y promotores privados en Sudamérica, Centroamérica y Europa.",
     clients: [
       { meta: "Sector público", title: "Ministerios y agencias", line: "Ministerios de energía, transporte y servicios públicos. Evaluación técnica, planificación estratégica y coordinación de programas." },
@@ -667,7 +667,7 @@ const COPY = {
       { n: "04", title: "Dossier for formal processes", line: "Full team credentials, project history, and references for evaluation, tender, or due diligence, on request." }
     ],
     cliKicker: "Who we work with",
-    cliCaption: "Technical mission · Energy ministry · Central America · 2025–2026",
+    cliCaption: "Technical mission · MPUEL — Ministry of Public Utilities, Energy and Logistics · Belize · 2025–2026",
     cliLead: "We work with energy ministries, rail operators, multilateral lenders, infrastructure investment funds, and private developers across South America, Central America, and Europe.",
     clients: [
       { meta: "Public sector", title: "Ministries and agencies", line: "Ministries of energy, transport, and public services. Technical assessment, strategic planning, and programme coordination." },
