@@ -1,245 +1,726 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forte Project Engineering · Asesoría técnica para infraestructura crítica</title>
-<meta name="description" content="Asesoría técnica independiente para infraestructura ferroviaria, energía, BESS y data centers en América Latina. Santiago, Chile."
-  data-es="Asesoría técnica independiente para infraestructura ferroviaria, energía, BESS y data centers en América Latina. Santiago, Chile."
-  data-en="Independent technical advisory for rail, energy, BESS, and data centre infrastructure across Latin America. Santiago, Chile.">
-<link rel="icon" type="image/svg+xml" href="forte-favicon.svg">
-<link rel="apple-touch-icon" href="forte-favicon.svg">
-<link rel="canonical" href="https://fortepe.com/">
-<link rel="stylesheet" href="shared.css">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Forte Project Engineering · Asesoría técnica para infraestructura crítica">
-<meta property="og:description" content="Asesoría técnica independiente para infraestructura ferroviaria, energía, BESS y data centers en América Latina. Santiago, Chile.">
-<meta property="og:image" content="https://fortepe.com/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="es_CL">
-<meta property="og:locale:alternate" content="en_GB">
-<meta property="og:site_name" content="Forte Project Engineering">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Forte Project Engineering",
-  "url": "https://fortepe.com/",
-  "logo": "https://fortepe.com/forte-primary.svg",
-  "address": {"@type": "PostalAddress", "streetAddress": "Callao 2911", "addressLocality": "Las Condes", "addressRegion": "Santiago", "addressCountry": "CL"},
-  "contactPoint": [{"@type": "ContactPoint", "email": "info@fortepe.com", "contactType": "general"}],
-  "areaServed": ["CL","CO","BR","PE","BZ","AR","PA","CR","GT","SV"]
-}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-<div style="background: #F8F9FA; min-width: 320px;">
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin:0; padding:0; background:#F4F2ED; }
+  * { box-sizing:border-box; }
+  a { color:#12324A; text-decoration:none; }
+  a:hover { color:#137F7C; }
+</style>
+</helmet>
+<div style="font-family:'IBM Plex Sans',system-ui,sans-serif;color:#12324A;background:#F4F2ED;-webkit-font-smoothing:antialiased">
 
-  <header style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 22px clamp(24px, 5vw, 72px); border-bottom: 1px solid #DADDE1; background: #F8F9FA; position: sticky; top: 0; z-index: 10;" data-screen-label="Header">
-    <a href="index.html" aria-label="Forte Project Engineering"><img src="forte-primary.svg" alt="Forte Project Engineering" style="height: 44px; width: auto; display: block;"></a>
-    <nav class="site-nav" aria-label="Main" style="display: flex; align-items: center; gap: clamp(18px, 2.5vw, 36px); font-size: 14px; font-weight: 600; letter-spacing: 0.01em;">
-      <a href="index.html" style="color: #12324A; border-bottom: 2px solid #137F7C; padding-bottom: 3px;"><span class="es">Inicio</span><span class="en">Home</span></a>
-      <a href="projects.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Proyectos</span><span class="en">Projects</span></a>
-      <a href="firma.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Firma</span><span class="en">The Firm</span></a>
-      <a href="perspectivas.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Perspectivas</span><span class="en">Perspectives</span></a>
-      <a href="contact.html" style="color: #6F747A; padding-bottom: 3px;" class="hv-ink"><span class="es">Contacto</span><span class="en">Contact</span></a>
-      <button id="langToggle" type="button" aria-label="Toggle language" class="lang-btn" style="font-family: 'Source Sans 3', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #12324A; background: none; border: 1px solid #DADDE1; padding: 7px 14px; cursor: pointer;"><span class="es">EN</span><span class="en">ES</span></button>
+  <header style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:18px 40px;background:rgba(244,242,237,0.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(18,50,74,0.1)">
+    <button onClick="{{ goHome }}" style="display:flex;align-items:center;background:none;border-style:none;border-width:0;padding:0;cursor:pointer"><img src="./forte-primary.svg" alt="Forte Project Engineering" style="height:30px;width:auto;display:block" /></button>
+    <nav style="display:flex;align-items:center;gap:26px;font-size:13.5px;letter-spacing:0.02em">
+      <button onClick="{{ goHome }}" style="{{ tabHome }}">{{ navHome }}</button>
+      <button onClick="{{ goProjects }}" style="{{ tabProjects }}">{{ navProjects }}</button>
+      <button onClick="{{ goAbout }}" style="{{ tabAbout }}">{{ navAbout }}</button>
+      <button onClick="{{ goBlog }}" style="{{ tabBlog }}">{{ navBlog }}</button>
+      <button onClick="{{ goContact }}" style="{{ tabContact }}">{{ navContact }}</button>
+      <span style="display:flex;font-family:'IBM Plex Mono',monospace;font-size:11.5px;border:1px solid rgba(18,50,74,0.18)">
+        <button onClick="{{ setEs }}" style="{{ esBtn }}">ES</button>
+        <button onClick="{{ setEn }}" style="{{ enBtn }}">EN</button>
+      </span>
     </nav>
   </header>
 
-  <section class="rsp-g2" style="max-width: 1280px; margin: 0 auto; padding: clamp(56px, 8vw, 112px) clamp(24px, 5vw, 72px) clamp(48px, 6vw, 88px); display: grid; grid-template-columns: minmax(400px, 1.05fr) minmax(320px, 0.95fr); gap: clamp(40px, 6vw, 96px); align-items: center;" data-screen-label="Hero">
-    <div>
-      <h1 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(44px, 5.4vw, 78px); line-height: 1.0; letter-spacing: -0.025em; color: #12324A; margin: 0 0 28px; text-wrap: balance;">
-        <span class="es">Criterio técnico directo.</span><span class="en">Direct technical authority.</span>
-      </h1>
-      <div style="width: 56px; height: 3px; background: #137F7C; margin: 0 0 28px;"></div>
-      <p style="font-size: clamp(17px, 1.4vw, 20px); line-height: 1.6; color: #1C1F23; max-width: 50ch; margin: 0 0 40px;">
-        <span class="es">Asesoría técnica independiente para infraestructura ferroviaria, energía, BESS y data centers en América Latina, en las etapas donde las decisiones definen el resultado.</span>
-        <span class="en">Independent technical advisory for rail, energy, BESS, and data centre infrastructure across Latin America, at the stages where decisions define the outcome.</span>
-      </p>
-      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6F747A;">
-        <span><span class="es">Ferroviario</span><span class="en">Rail</span></span>
-        <span style="color: #137F7C;">·</span>
-        <span><span class="es">Energía y BESS</span><span class="en">Energy &amp; BESS</span></span>
-        <span style="color: #137F7C;">·</span>
-        <span><span class="es">Data centers</span><span class="en">Data centres</span></span>
-        <span style="color: #137F7C;">·</span>
-        <span><span class="es">Infraestructura crítica</span><span class="en">Critical infrastructure</span></span>
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section style="position:relative;height:min(78vh,720px);min-height:520px;overflow:hidden;background:#12324A">
+      <div style="position:absolute;inset:0">
+        <image-slot id="hero" src="./img/g-hero.jpg" shape="rect" fit="cover" placeholder="Corredor ferroviario electrificado"></image-slot>
       </div>
-    </div>
-    <div style="position: relative;">
-      <img src="ole-tensioning.jpg" alt="Estructuras de tensado de catenaria en patio ferroviario" style="display: block; width: 100%; height: clamp(420px, 56vw, 620px); object-fit: cover; object-position: center 40%;">
-      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,50,74,0.08) 0%, rgba(18,50,74,0.28) 100%); pointer-events: none;"></div>
-    </div>
-  </section>
-
-  <section style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 72px) clamp(64px, 8vw, 112px);" data-screen-label="Firma">
-    <div class="rsp-side" style="border-top: 1px solid #DADDE1; padding-top: clamp(40px, 5vw, 64px); display: grid; grid-template-columns: minmax(160px, 0.35fr) minmax(400px, 1fr); gap: clamp(32px, 5vw, 80px);">
-      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6F747A;"><span class="es">Firma</span><span class="en">Firm</span></div>
-      <div style="display: grid; gap: 22px; max-width: 62ch;">
-        <p style="font-size: clamp(19px, 1.7vw, 24px); line-height: 1.5; color: #12324A; font-weight: 600; margin: 0; text-wrap: pretty;">
-          <span class="es">Forte PE es una firma de asesoría técnica independiente para infraestructura: ingeniería eléctrica, sistemas ferroviarios, energía y gestión de proyectos, con operación permanente en Santiago y mandatos activos en Chile y Centroamérica.</span>
-          <span class="en">Forte PE is an independent technical advisory firm for infrastructure: electrical engineering, railway systems, energy, and project management, permanently based in Santiago with active mandates in Chile and Central America.</span>
-        </p>
-        <p style="font-size: 17px; line-height: 1.65; color: #1C1F23; margin: 0; text-wrap: pretty;">
-          <span class="es">Trabajamos directamente con owners, ministerios, financistas y agencias públicas, con criterio técnico de primera línea y responsabilidad directa, sin capas intermedias.</span>
-          <span class="en">We work directly with owners, ministries, lenders, and public agencies, bringing first-line technical judgement and direct accountability, with no intermediate layers.</span>
-        </p>
-        <p style="font-size: 17px; line-height: 1.65; color: #6F747A; margin: 0;">
-          <span class="es">Cuando la escala lo requiere, armamos el equipo que el proyecto necesita.</span>
-          <span class="en">When scale requires it, we assemble the team the project demands.</span>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section style="border-top: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; background: #F8F9FA;" data-screen-label="Métricas">
-    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 6vw, 80px) clamp(24px, 5vw, 72px);">
-      <div class="rsp-g3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 64px);">
-        <div style="border-left: 1px solid #DADDE1; padding-left: clamp(20px, 2.5vw, 36px);">
-          <div style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -0.03em; line-height: 1; color: #12324A;">+1 GW</div>
-          <div style="font-size: 15px; line-height: 1.5; color: #6F747A; margin-top: 14px; max-width: 24ch;"><span class="es">gestionado a nivel de owner</span><span class="en">managed at owner level</span></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(18,50,74,0.88) 0%,rgba(18,50,74,0.55) 55%,rgba(18,50,74,0.15) 100%);pointer-events:none"></div>
+      <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:26px;padding:40px;max-width:1000px;pointer-events:none">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(244,242,237,0.7)">{{ heroKicker }}</div>
+        <h1 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(40px,6vw,86px);line-height:0.98;letter-spacing:-0.02em;color:#F4F2ED;text-wrap:balance">{{ heroTitle }}</h1>
+        <p style="margin:0;max-width:56ch;font-size:17px;line-height:1.5;color:rgba(244,242,237,0.82);text-wrap:pretty">{{ heroSub }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,242,237,0.75)">
+          <span style="padding:6px 12px;border:1px solid rgba(244,242,237,0.28)">{{ tagRail }}</span>
+          <span style="padding:6px 12px;border:1px solid rgba(244,242,237,0.28)">{{ tagEnergy }}</span>
+          <span style="padding:6px 12px;border:1px solid rgba(244,242,237,0.28)">{{ tagData }}</span>
+          <span style="padding:6px 12px;border:1px solid rgba(244,242,237,0.28)">{{ tagCritical }}</span>
         </div>
-        <div style="border-left: 1px solid #DADDE1; padding-left: clamp(20px, 2.5vw, 36px);">
-          <div style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -0.03em; line-height: 1; color: #12324A;">60+</div>
-          <div style="font-size: 15px; line-height: 1.5; color: #6F747A; margin-top: 14px; max-width: 26ch;"><span class="es">proyectos gestionados en etapas de desarrollo</span><span class="en">projects managed across development stages</span></div>
-        </div>
-        <div style="border-left: 1px solid #DADDE1; padding-left: clamp(20px, 2.5vw, 36px);">
-          <div style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(40px, 4.5vw, 64px); letter-spacing: -0.03em; line-height: 1; color: #12324A;">6</div>
-          <div style="font-size: 15px; line-height: 1.5; color: #6F747A; margin-top: 14px;"><span class="es">países</span><span class="en">countries</span></div>
-        </div>
-      </div>
-      <div style="margin-top: clamp(36px, 4vw, 56px); padding-top: 24px; border-top: 1px solid #DADDE1; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #12324A;">
-        <span class="es">Gobernanza técnica CEM · CRE · DPE bajo estándares Network Rail · MIET</span>
-        <span class="en">Technical governance CEM · CRE · DPE under Network Rail standards · MIET</span>
-      </div>
-    </div>
-  </section>
-
-  <section style="max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(24px, 5vw, 72px);" data-screen-label="Servicios">
-    <div class="rsp-side" style="display: grid; grid-template-columns: minmax(160px, 0.35fr) minmax(400px, 1fr); gap: clamp(32px, 5vw, 80px); margin-bottom: clamp(40px, 5vw, 64px);">
-      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6F747A;"><span class="es">Servicios</span><span class="en">Services</span></div>
-      <div>
-        <h2 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(30px, 3.2vw, 46px); letter-spacing: -0.02em; line-height: 1.05; color: #12324A; margin: 0 0 18px;"><span class="es">Lo que hacemos.</span><span class="en">What we do.</span></h2>
-        <p style="font-size: 17px; line-height: 1.65; color: #6F747A; max-width: 60ch; margin: 0; text-wrap: pretty;">
-          <span class="es">Asesoría técnica a lo largo del ciclo de vida del proyecto, desde la evaluación temprana hasta el cierre técnico. El formato de cada compromiso se define según lo que el proyecto necesita.</span>
-          <span class="en">Technical advisory across the full project lifecycle, from early-stage assessment through technical close-out. Each engagement format is defined by what the project requires.</span>
-        </p>
-      </div>
-    </div>
-    <div class="rsp-g3" style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #DADDE1; border-left: 1px solid #DADDE1;">
-      <div style="border-right: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; padding: clamp(28px, 3vw, 40px) clamp(22px, 2.5vw, 32px); display: flex; flex-direction: column; gap: 12px;">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #137F7C;">01</span>
-        <h3 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; line-height: 1.3; color: #12324A; margin: 0;"><span class="es">Evaluación técnica temprana</span><span class="en">Early-stage technical assessment</span></h3>
-        <p style="font-size: 15px; line-height: 1.6; color: #6F747A; margin: 0;">
-          <span class="es">Validación de restricciones, supuestos de diseño, interfaces y viabilidad técnica antes de comprometer decisiones críticas del proyecto. Incluye prefactibilidad de plantas PV y BESS y evaluación eléctrica de sitio para data centers.</span>
-          <span class="en">Validation of constraints, design assumptions, interfaces, and technical feasibility before committing to critical project decisions. Includes PV and BESS plant pre-feasibility and electrical site assessment for data centres.</span>
-        </p>
-      </div>
-      <div style="border-right: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; padding: clamp(28px, 3vw, 40px) clamp(22px, 2.5vw, 32px); display: flex; flex-direction: column; gap: 12px;">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #137F7C;">02</span>
-        <h3 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; line-height: 1.3; color: #12324A; margin: 0;"><span class="es">Owner's Engineer</span><span class="en">Owner's engineering</span></h3>
-        <p style="font-size: 15px; line-height: 1.6; color: #6F747A; margin: 0;">
-          <span class="es">Representación técnica del owner en diseño, ejecución y puesta en servicio. Revisión de contratistas, gestión de interfaces y control de desviaciones.</span>
-          <span class="en">Technical representation of the owner through design, execution, and commissioning. Contractor review, interface management, and deviation control.</span>
-        </p>
-      </div>
-      <div style="border-right: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; padding: clamp(28px, 3vw, 40px) clamp(22px, 2.5vw, 32px); display: flex; flex-direction: column; gap: 12px;">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #137F7C;">03</span>
-        <h3 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; line-height: 1.3; color: #12324A; margin: 0;"><span class="es">Revisión técnica independiente</span><span class="en">Independent technical review</span></h3>
-        <p style="font-size: 15px; line-height: 1.6; color: #6F747A; margin: 0;">
-          <span class="es">Revisión objetiva de propuestas, diseños, criterios técnicos y supuestos de contratistas. Para owners, financistas y agencias públicas que necesitan una segunda opinión técnica.</span>
-          <span class="en">Objective review of contractor proposals, designs, technical criteria, and assumptions. For owners, lenders, and public agencies requiring a second technical opinion.</span>
-        </p>
-      </div>
-      <div style="border-right: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; padding: clamp(28px, 3vw, 40px) clamp(22px, 2.5vw, 32px); display: flex; flex-direction: column; gap: 12px;">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #137F7C;">04</span>
-        <h3 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; line-height: 1.3; color: #12324A; margin: 0;"><span class="es">Coordinación de proyectos complejos</span><span class="en">Complex project coordination</span></h3>
-        <p style="font-size: 15px; line-height: 1.6; color: #6F747A; margin: 0;">
-          <span class="es">Gestión de interfaces entre disciplinas, contratos y actores institucionales. Seguimiento de entregables, control de riesgos y continuidad entre diseño, terreno y operación.</span>
-          <span class="en">Interface management across disciplines, contracts, and institutional stakeholders. Deliverable tracking, risk control, and continuity between design, site, and operation.</span>
-        </p>
-      </div>
-      <div style="border-right: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; padding: clamp(28px, 3vw, 40px) clamp(22px, 2.5vw, 32px); display: flex; flex-direction: column; gap: 12px;">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #137F7C;">05</span>
-        <h3 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; line-height: 1.3; color: #12324A; margin: 0;"><span class="es">Asesoría a prestamistas y due diligence</span><span class="en">Lender's advisory &amp; due diligence</span></h3>
-        <p style="font-size: 15px; line-height: 1.6; color: #6F747A; margin: 0;">
-          <span class="es">Evaluación técnica para financistas e instituciones multilaterales. Revisión de factibilidad, riesgos técnicos, supuestos del contratista y condiciones de implementación.</span>
-          <span class="en">Technical evaluation for lenders and multilateral institutions. Feasibility review, technical risk assessment, contractor assumptions, and implementation conditions.</span>
-        </p>
-      </div>
-      <div style="border-right: 1px solid #DADDE1; border-bottom: 1px solid #DADDE1; padding: clamp(28px, 3vw, 40px) clamp(22px, 2.5vw, 32px); display: flex; flex-direction: column; gap: 12px;">
-        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: #137F7C;">06</span>
-        <h3 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; line-height: 1.3; color: #12324A; margin: 0;"><span class="es">Asesoría institucional y estratégica</span><span class="en">Institutional &amp; strategic advisory</span></h3>
-        <p style="font-size: 15px; line-height: 1.6; color: #6F747A; margin: 0;">
-          <span class="es">Apoyo técnico a ministerios, operadores y agencias públicas en planificación de proyectos, evaluación de programas y coordinación con organismos regulatorios y multilaterales.</span>
-          <span class="en">Technical support for ministries, operators, and public agencies in project planning, programme evaluation, and coordination with regulatory and multilateral bodies.</span>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  
-    <section style="background: #12324A;" data-screen-label="Fotografía">
-      <img src="break-panoramic.jpg" alt="Vista aérea de planta solar junto a corredor ferroviario electrificado" style="display: block; width: 100%; height: clamp(260px, 34vw, 480px); object-fit: cover;">
-      <div style="max-width: 1280px; margin: 0 auto; padding: 16px clamp(24px, 5vw, 72px); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(248,249,250,0.75);">
-        <span><span class="es">Sector · Energía · Ferroviario</span><span class="en">Sector · Energy · Rail</span></span>
-        <span><span class="es">Chile · Sudamérica</span><span class="en">Chile · South America</span></span>
       </div>
     </section>
-  
 
-  <section style="background: #12324A; padding: clamp(80px, 10vw, 150px) clamp(24px, 5vw, 72px); text-align: center;" data-screen-label="Principio operativo">
-    <p style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(30px, 3.8vw, 54px); letter-spacing: -0.02em; line-height: 1.12; color: #F8F9FA; margin: 0; text-wrap: balance;">
-      <span class="es">Respondemos al proyecto.</span><span class="en">We answer to the project.</span>
-    </p>
-    <p style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(30px, 3.8vw, 54px); letter-spacing: -0.02em; line-height: 1.12; color: #F8F9FA; margin: 6px 0 0; text-wrap: balance;">
-      <span class="es">No al contrato.</span><span class="en">Not to the contract.</span>
-    </p>
-    <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(248,249,250,0.72); margin-top: 48px;">
-      Forte · <span class="es">Principio operativo</span><span class="en">Operating principle</span>
-    </div>
-  </section>
-
-  <section style="max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) clamp(24px, 5vw, 72px); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: clamp(32px, 5vw, 72px);" data-screen-label="CTA">
-    <div style="max-width: 56ch;">
-      <h2 style="font-family: 'Libre Franklin', sans-serif; font-weight: 700; font-size: clamp(30px, 3.4vw, 48px); letter-spacing: -0.02em; line-height: 1.05; color: #12324A; margin: 0 0 18px;">
-        <span class="es">Hablemos de su proyecto.</span><span class="en">Let's talk about your project.</span>
-      </h2>
-      <p style="font-size: 17px; line-height: 1.65; color: #6F747A; margin: 0; text-wrap: pretty;">
-        <span class="es">Si su proyecto requiere claridad técnica para avanzar, estamos disponibles para revisar el contexto y definir los próximos pasos.</span>
-        <span class="en">If your project requires technical clarity to move forward, we are available to review the context and define next steps.</span>
-      </p>
-    </div>
-    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-      <a href="contact.html" style="display: inline-flex; align-items: center; gap: 10px; background: #12324A; color: #F8F9FA; font-size: 15px; font-weight: 700; padding: 15px 28px; letter-spacing: 0.02em;" class="hv-dark">
-        <span class="es">Escribir a Forte</span><span class="en">Contact Forte</span><span style="color: #137F7C;">→</span>
-      </a>
-      <a href="projects.html" style="display: inline-flex; align-items: center; border: 1px solid #DADDE1; color: #12324A; font-size: 15px; font-weight: 700; padding: 15px 28px; letter-spacing: 0.02em;" class="hv-outline">
-        <span class="es">Ver proyectos</span><span class="en">View projects</span>
-      </a>
-    </div>
-  </section>
-
-  <footer style="background: #12324A; padding: clamp(36px, 4vw, 52px) clamp(24px, 5vw, 72px);" data-screen-label="Footer">
-    <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
-      <img src="forte-reversed.svg" alt="Forte Project Engineering" style="height: 40px; width: auto; display: block;">
-      <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 13px; color: rgba(248,249,250,0.65);">
-        <span>Forte Engineering Chile SpA</span>
-        <span style="color: #137F7C;">·</span>
-        <span>Santiago, Chile</span>
-        <span style="color: #137F7C;">·</span>
-        <a href="mailto:info@fortepe.com" style="color: rgba(248,249,250,0.85);" class="hv-light">info@fortepe.com</a>
-        <span style="color: #137F7C;">·</span>
-        <span>© 2026</span>
+    <section style="max-width:1240px;margin:0 auto;padding:80px 40px 72px;display:grid;grid-template-columns:minmax(160px,0.5fr) minmax(280px,1.5fr);gap:48px;align-items:start">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C;padding-top:6px">{{ firmKicker }}</div>
+      <div style="display:flex;flex-direction:column;gap:24px;max-width:74ch">
+        <p style="margin:0;font-size:19.5px;line-height:1.5;letter-spacing:-0.01em;text-wrap:pretty">{{ firm1 }}</p>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;color:rgba(18,50,74,0.72);text-wrap:pretty">{{ firm2 }}</p>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;color:rgba(18,50,74,0.72);text-wrap:pretty">{{ firm3 }}</p>
       </div>
+    </section>
+
+    <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border-bottom:1px solid rgba(18,50,74,0.1);border-top:1px solid rgba(18,50,74,0.1)">
+      <sc-for list="{{ axes }}" as="a" hint-placeholder-count="4">
+        <div style="padding:34px 36px 38px;border-right:1px solid rgba(18,50,74,0.1);display:grid;grid-template-rows:18px 56px 1fr;gap:16px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#137F7C;white-space:nowrap">{{ a.sector }}</div>
+          <div style="font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(22px,2.1vw,30px);letter-spacing:-0.02em;line-height:1.05">{{ a.value }}</div>
+          <div style="font-size:13.5px;line-height:1.5;color:rgba(18,50,74,0.62);text-wrap:pretty">{{ a.sub }}</div>
+        </div>
+      </sc-for>
+    </section>
+
+    <section style="max-width:1240px;margin:0 auto;padding:64px 40px 24px;display:grid;grid-template-columns:1.15fr 0.85fr;gap:64px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C">{{ mapKicker }}</div>
+        <h2 style="margin:0;max-width:26ch;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(26px,3vw,38px);line-height:1.08;letter-spacing:-0.018em;text-wrap:balance">{{ mapTitle }}</h2>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin-top:14px">
+          <div style="display:flex;flex-direction:column;gap:12px;padding-top:16px;border-top:1px solid rgba(18,50,74,0.22)">
+            <div style="display:flex;align-items:center;gap:9px">
+              <span style="width:9px;height:9px;border-radius:50%;background:#137F7C;display:block"></span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.6)">{{ mapActiveLabel }}</span>
+            </div>
+            <div style="font-family:Archivo,sans-serif;font-weight:500;font-size:17px;line-height:1.4;letter-spacing:-0.01em">{{ mapActiveList }}</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;padding-top:16px;border-top:1px solid rgba(18,50,74,0.22)">
+            <div style="display:flex;align-items:center;gap:9px">
+              <span style="width:9px;height:9px;border-radius:50%;border:1.6px solid #137F7C;display:block"></span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.6)">{{ mapRecordLabel }}</span>
+            </div>
+            <div style="font-family:Archivo,sans-serif;font-weight:500;font-size:17px;line-height:1.4;letter-spacing:-0.01em">{{ mapRecordList }}</div>
+          </div>
+        </div>
+      </div>
+      <x-import component-from-global-scope="forte-map" from="./forte-map.js" lang="{{ lang }}" hint-size="100%,440px"></x-import>
+    </section>
+
+    <section style="padding:40px 40px 72px;max-width:1240px;margin:0 auto">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C;margin-bottom:28px">{{ govKicker }}</div>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px">
+        <sc-for list="{{ governance }}" as="g" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:1px solid rgba(18,50,74,0.22)">
+            <div style="font-family:Archivo,sans-serif;font-weight:500;font-size:17px;line-height:1.25;letter-spacing:-0.01em;text-wrap:pretty">{{ g.t }}</div>
+            <div style="font-size:13.5px;line-height:1.45;color:rgba(18,50,74,0.6)">{{ g.s }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="padding:88px 40px;max-width:1240px;margin:0 auto">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:48px">
+        <h2 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(30px,3.6vw,50px);letter-spacing:-0.02em;line-height:1.02">{{ svcTitle }}</h2>
+        <p style="margin:0;max-width:38ch;font-size:15px;line-height:1.55;color:rgba(18,50,74,0.62)">{{ svcSub }}</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:rgba(18,50,74,0.12)">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+          <div style="background:#F4F2ED;padding:30px 28px 34px;display:flex;flex-direction:column;gap:14px;min-height:180px" style-hover="background:#EDEAE3">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.12em;color:#137F7C">{{ s.n }}</div>
+            <h3 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:21px;line-height:1.15;letter-spacing:-0.01em">{{ s.title }}</h3>
+            <p style="margin:0;font-size:14.5px;line-height:1.55;color:rgba(18,50,74,0.7);text-wrap:pretty">{{ s.line }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="position:relative;height:min(62vh,560px);min-height:400px;overflow:hidden;background:#12324A">
+      <div style="position:absolute;inset:0">
+        <image-slot id="band" src="./img/g-band.jpg" shape="rect" fit="cover" placeholder="Planta híbrida junto a corredor ferroviario"></image-slot>
+      </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,50,74,0.25),rgba(18,50,74,0.72));pointer-events:none"></div>
+      <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:18px;padding:40px;pointer-events:none">
+        <div style="font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(30px,4.6vw,64px);line-height:1.02;letter-spacing:-0.02em;color:#F4F2ED">{{ principle1 }}<br />{{ principle2 }}</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(244,242,237,0.65)">{{ principleKicker }}</div>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,242,237,0.5)">
+          <span>{{ bandSector }}</span><span>{{ bandGeo }}</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:88px 40px;max-width:1240px;margin:0 auto">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(18,50,74,0.5);margin-bottom:28px">{{ workKicker }}</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+        <div>
+          <div style="position:relative;aspect-ratio:4/5;background:#E4E0D7">
+            <image-slot id="work1" src="./img/f-trio-2b.jpg" shape="rect" fit="cover" placeholder="Cuadrilla en catenaria"></image-slot>
+          </div>
+          <div style="margin-top:14px;font-size:14.5px;color:rgba(18,50,74,0.7)">{{ work1 }}</div>
+        </div>
+        <div>
+          <div style="position:relative;aspect-ratio:4/5;background:#E4E0D7">
+            <image-slot id="work2" src="./img/g-t-sub.jpg" shape="rect" fit="cover" placeholder="Subestación"></image-slot>
+          </div>
+          <div style="margin-top:14px;font-size:14.5px;color:rgba(18,50,74,0.7)">{{ work2 }}</div>
+        </div>
+        <div>
+          <div style="position:relative;aspect-ratio:4/5;background:#E4E0D7">
+            <image-slot id="work3" src="./img/g-t-dc.jpg" shape="rect" fit="cover" placeholder="Data center"></image-slot>
+          </div>
+          <div style="margin-top:14px;font-size:14.5px;color:rgba(18,50,74,0.7)">{{ work3 }}</div>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isProjects }}">
+  <div>
+    <section style="padding:72px 40px 44px;max-width:1240px;margin:0 auto">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ navProjects }}</div>
+      <h1 style="margin:18px 0 0;max-width:24ch;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,5vw,68px);line-height:1;letter-spacing:-0.02em">{{ prjTitle }}</h1>
+      <p style="margin:22px 0 0;max-width:52ch;font-size:16.5px;line-height:1.55;color:rgba(18,50,74,0.66);text-wrap:pretty">{{ prjSub }}</p>
+    </section>
+    <section style="max-width:1240px;margin:0 auto;padding:0 40px 40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+      <div>
+        <div style="position:relative;aspect-ratio:3/2;background:#E4E0D7"><image-slot id="p1" src="./img/g-prj-rail2.jpg" shape="rect" fit="cover" placeholder="Estructura ferroviaria"></image-slot></div>
+      </div>
+      <div>
+        <div style="position:relative;aspect-ratio:3/2;background:#E4E0D7"><image-slot id="p2" src="./img/g-prj-yard2.jpg" shape="rect" fit="cover" placeholder="Patio de vagones"></image-slot></div>
+      </div>
+      <div>
+        <div style="position:relative;aspect-ratio:3/2;background:#E4E0D7"><image-slot id="p3" src="./img/g-prj-dc2.jpg" shape="rect" fit="cover" placeholder="Data center"></image-slot></div>
+      </div>
+    </section>
+    <section style="max-width:1240px;margin:0 auto;padding:24px 40px 40px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C">{{ engKicker }}</div>
+      <p style="margin:16px 0 0;max-width:72ch;font-size:15.5px;line-height:1.6;color:rgba(18,50,74,0.66);text-wrap:pretty">{{ engNote }}</p>
+      <div style="margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(18,50,74,0.12)">
+        <sc-for list="{{ engagements }}" as="e" hint-placeholder-count="4">
+          <div style="background:#F4F2ED;padding:32px 30px 36px;display:flex;flex-direction:column;gap:14px">
+            <div style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">
+              <span>{{ e.meta }}</span><span style="white-space:nowrap;text-align:right">{{ e.years }}</span>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#137F7C">{{ e.role }}</div>
+            <h3 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:24px;line-height:1.15;letter-spacing:-0.015em;text-wrap:balance">{{ e.title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.55;color:rgba(18,50,74,0.7);text-wrap:pretty">{{ e.body }}</p>
+            <div style="margin-top:auto;padding-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ e.tags }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="max-width:1240px;margin:0 auto;padding:56px 40px 96px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C">{{ trackKicker }}</div>
+      <p style="margin:16px 0 0;max-width:72ch;font-size:15.5px;line-height:1.6;color:rgba(18,50,74,0.66);text-wrap:pretty">{{ trackNote }}</p>
+      <div style="margin-top:36px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px">
+        <sc-for list="{{ track }}" as="t" hint-placeholder-count="6">
+          <div style="display:flex;flex-direction:column;gap:12px;padding-top:18px;border-top:1px solid rgba(18,50,74,0.22)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ t.meta }}</div>
+            <h3 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:20px;line-height:1.2;letter-spacing:-0.01em;text-wrap:pretty">{{ t.title }}</h3>
+            <p style="margin:0;font-size:14.5px;line-height:1.55;color:rgba(18,50,74,0.7);text-wrap:pretty">{{ t.body }}</p>
+            <div style="margin-top:auto;padding-top:12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#137F7C">{{ t.tags }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isAbout }}">
+  <div>
+    <section style="padding:72px 40px 56px;max-width:1240px;margin:0 auto">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ navAbout }}</div>
+      <h1 style="margin:18px 0 0;max-width:22ch;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,5vw,68px);line-height:1;letter-spacing:-0.02em">{{ abTitle }}</h1>
+    </section>
+    <section style="position:relative;height:min(48vh,440px);min-height:300px;overflow:hidden;background:#12324A">
+      <div style="position:absolute;inset:0"><image-slot id="about" src="./img/g-ab-hdr2.jpg" shape="rect" fit="cover" placeholder="Corredor ferroviario"></image-slot></div>
+    </section>
+    <section style="max-width:1240px;margin:0 auto;padding:72px 40px 24px">
+      <p style="margin:0;max-width:64ch;font-size:20px;line-height:1.5;letter-spacing:-0.01em;text-wrap:pretty">{{ abLead }}</p>
+    </section>
+
+    <section style="max-width:1240px;margin:0 auto;padding:48px 40px 24px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C;margin-bottom:32px">{{ credKicker }}</div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px">
+        <div>
+          <h3 style="margin:0 0 20px;font-family:Archivo,sans-serif;font-weight:500;font-size:21px;letter-spacing:-0.01em">{{ credRailTitle }}</h3>
+          <sc-for list="{{ credRail }}" as="c" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;gap:5px;padding:16px 0;border-top:1px solid rgba(18,50,74,0.14)">
+              <div style="font-size:16px;line-height:1.45;text-wrap:pretty">{{ c.t }}</div>
+              <div style="font-size:14px;line-height:1.45;color:rgba(18,50,74,0.6)">{{ c.s }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div>
+          <h3 style="margin:0 0 20px;font-family:Archivo,sans-serif;font-weight:500;font-size:21px;letter-spacing:-0.01em">{{ credEnergyTitle }}</h3>
+          <sc-for list="{{ credEnergy }}" as="c" hint-placeholder-count="5">
+            <div style="display:flex;flex-direction:column;gap:5px;padding:16px 0;border-top:1px solid rgba(18,50,74,0.14)">
+              <div style="font-size:16px;line-height:1.45;text-wrap:pretty">{{ c.t }}</div>
+              <div style="font-size:14px;line-height:1.45;color:rgba(18,50,74,0.6)">{{ c.s }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1240px;margin:0 auto;padding:64px 40px 24px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C">{{ fmtKicker }}</div>
+      <h2 style="margin:18px 0 12px;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(28px,3.2vw,44px);letter-spacing:-0.02em;line-height:1.05">{{ fmtTitle }}</h2>
+      <p style="margin:0 0 36px;max-width:56ch;font-size:16px;line-height:1.55;color:rgba(18,50,74,0.66);text-wrap:pretty">{{ fmtSub }}</p>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(18,50,74,0.12)">
+        <sc-for list="{{ formats }}" as="f" hint-placeholder-count="4">
+          <div style="background:#F4F2ED;padding:28px 24px 32px;display:flex;flex-direction:column;gap:12px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.12em;color:#137F7C">{{ f.n }}</div>
+            <h3 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:19px;line-height:1.2;letter-spacing:-0.01em;text-wrap:pretty">{{ f.title }}</h3>
+            <p style="margin:0;font-size:14.5px;line-height:1.55;color:rgba(18,50,74,0.7);text-wrap:pretty">{{ f.line }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="max-width:1240px;margin:0 auto;padding:72px 40px 24px;display:grid;grid-template-columns:0.62fr 1.38fr;gap:56px;align-items:start">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px">
+        <div style="position:relative;aspect-ratio:2176/3392;background:#E4E0D7">
+          <image-slot id="ab-inst" src="./img/g-flags2.jpg" shape="rect" fit="cover" placeholder="Contexto institucional"></image-slot>
+        </div>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;letter-spacing:0.1em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ cliCaption }}</figcaption>
+      </figure>
+      <div style="display:flex;flex-direction:column;gap:36px">
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C">{{ cliKicker }}</div>
+          <p style="margin:0;max-width:52ch;font-size:19px;line-height:1.5;letter-spacing:-0.01em;text-wrap:pretty">{{ cliLead }}</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 40px">
+          <sc-for list="{{ clients }}" as="c" hint-placeholder-count="4">
+            <div style="display:flex;flex-direction:column;gap:10px;padding-top:16px;border-top:1px solid rgba(18,50,74,0.22)">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ c.meta }}</div>
+              <h3 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:19px;line-height:1.2;letter-spacing:-0.01em">{{ c.title }}</h3>
+              <p style="margin:0;font-size:14.5px;line-height:1.55;color:rgba(18,50,74,0.7);text-wrap:pretty">{{ c.line }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1240px;margin:0 auto;padding:64px 40px 96px">
+      <div style="display:grid;grid-template-columns:minmax(260px,1fr) minmax(260px,1fr);gap:48px;padding-top:32px;border-top:1px solid rgba(18,50,74,0.22)">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C;margin-bottom:16px">{{ netKicker }}</div>
+          <p style="margin:0;font-size:18px;line-height:1.5;letter-spacing:-0.01em;text-wrap:pretty">{{ netBody }}</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:22px;align-items:flex-start">
+          <p style="margin:0;font-size:15.5px;line-height:1.6;color:rgba(18,50,74,0.7);text-wrap:pretty">{{ dossierBody }}</p>
+          <a href="mailto:info@fortepe.com" style="padding:15px 26px;background:#137F7C;color:#F4F2ED;font-size:14.5px" style-hover="background:#17948F;color:#F4F2ED">{{ dossierCta }}</a>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isBlog }}">
+  <div>
+    <section style="padding:72px 40px 48px;max-width:1240px;margin:0 auto">
+      <h1 style="margin:0;max-width:24ch;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,5vw,68px);line-height:1;letter-spacing:-0.02em">{{ blTitle }}</h1>
+      <p style="margin:22px 0 0;max-width:58ch;font-size:16.5px;line-height:1.55;color:rgba(18,50,74,0.68);text-wrap:pretty">{{ blSub }}</p>
+    </section>
+    <section style="max-width:1240px;margin:0 auto;padding:0 40px 96px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px">
+      <sc-for list="{{ posts }}" as="p" hint-placeholder-count="2">
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="position:relative;aspect-ratio:16/10;background:#E4E0D7">
+            <image-slot id="post-{{ $index }}" src="{{ p.img }}" shape="rect" fit="cover" placeholder="Imagen de la nota"></image-slot>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:20px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase">
+            <span style="color:#137F7C">{{ p.tag }}</span><span style="color:rgba(18,50,74,0.5)">{{ p.date }}</span>
+          </div>
+          <h3 style="margin:12px 0 0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(24px,2.6vw,32px);line-height:1.15;letter-spacing:-0.015em;text-wrap:balance">{{ p.title }}</h3>
+          <p style="margin:14px 0 0;font-size:16px;line-height:1.55;color:rgba(18,50,74,0.7);text-wrap:pretty">{{ p.lead }}</p>
+        </div>
+      </sc-for>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isContact }}">
+  <div>
+    <section style="max-width:1240px;margin:0 auto;padding:72px 40px 40px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ navContact }}</div>
+      <h1 style="margin:18px 0 0;max-width:20ch;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,4.6vw,60px);line-height:1.02;letter-spacing:-0.02em">{{ ctTitle }}</h1>
+      <p style="margin:22px 0 0;max-width:56ch;font-size:16.5px;line-height:1.55;color:rgba(18,50,74,0.66);text-wrap:pretty">{{ ctSub }}</p>
+    </section>
+
+    <section style="max-width:1240px;margin:0 auto;padding:24px 40px 96px;display:grid;grid-template-columns:1.35fr 0.65fr;gap:72px;align-items:start">
+      <form onSubmit="{{ onSubmit }}" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 28px">
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ ctName }}</span>
+          <input type="text" name="nombre" style="font:inherit;font-size:16px;color:#12324A;background:none;border-style:none none solid;border-width:0 0 1px;border-color:rgba(18,50,74,0.3);padding:8px 0;outline:none" style-focus="border-color:#137F7C" />
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ ctOrg }}</span>
+          <input type="text" name="organizacion" style="font:inherit;font-size:16px;color:#12324A;background:none;border-style:none none solid;border-width:0 0 1px;border-color:rgba(18,50,74,0.3);padding:8px 0;outline:none" style-focus="border-color:#137F7C" />
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ ctEmailLabel }}</span>
+          <input type="email" name="email" style="font:inherit;font-size:16px;color:#12324A;background:none;border-style:none none solid;border-width:0 0 1px;border-color:rgba(18,50,74,0.3);padding:8px 0;outline:none" style-focus="border-color:#137F7C" />
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ ctReason }}</span>
+          <select name="motivo" style="font:inherit;font-size:16px;color:#12324A;background:none;border-style:none none solid;border-width:0 0 1px;border-color:rgba(18,50,74,0.3);padding:8px 0;outline:none;border-radius:0" style-focus="border-color:#137F7C">
+            <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="5">
+              <option value="{{ r }}">{{ r }}</option>
+            </sc-for>
+          </select>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:8px;grid-column:1 / -1">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ ctContext }}</span>
+          <textarea name="contexto" rows="5" style="font:inherit;font-size:16px;color:#12324A;background:none;border-style:none none solid;border-width:0 0 1px;border-color:rgba(18,50,74,0.3);padding:8px 0;outline:none;resize:vertical" style-focus="border-color:#137F7C"></textarea>
+        </label>
+        <div style="grid-column:1 / -1;display:flex;align-items:center;gap:20px;margin-top:6px">
+          <button type="submit" style="padding:16px 30px;background:#137F7C;color:#F4F2ED;border-style:none;border-width:0;font:inherit;font-size:14.5px;letter-spacing:0.02em;cursor:pointer" style-hover="background:#17948F">{{ ctSend }}</button>
+          <span style="font-size:14px;color:#137F7C">{{ sentNote }}</span>
+        </div>
+      </form>
+
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#137F7C;margin-bottom:18px">{{ ctCoordsLabel }}</div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ ctEmailLabel }}</div>
+            <a href="mailto:info@fortepe.com" style="font-family:Archivo,sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.01em">info@fortepe.com</a>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ ctPhoneLabel }}</div>
+            <a href="tel:+56233803442" style="font-family:Archivo,sans-serif;font-weight:500;font-size:22px;letter-spacing:-0.01em">+56 2 3380 3442</a>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ ctOfficeLabel }}</div>
+            <div style="font-size:16.5px;line-height:1.5">Callao 2911, Las Condes</div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ ctCityLabel }}</div>
+            <div style="font-size:16.5px;line-height:1.5">Santiago · Chile</div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);align-items:baseline">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ ctCoverLabel }}</div>
+            <div style="font-size:16.5px;line-height:1.5">LATAM</div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(90px,0.4fr) 1fr;gap:24px;padding:18px 0;border-top:1px solid rgba(18,50,74,0.16);border-bottom:1px solid rgba(18,50,74,0.16);align-items:baseline">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.5)">{{ ctLangLabel }}</div>
+            <div style="font-size:16.5px;line-height:1.5">ES · EN</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ showCta }}" hint-placeholder-val="{{ true }}">
+  <section style="background:#12324A;color:#F4F2ED;padding:96px 40px">
+    <div style="max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:40px">
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <h2 style="margin:0;max-width:22ch;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(32px,4.4vw,60px);line-height:1.02;letter-spacing:-0.02em">{{ ctaTitle }}</h2>
+        <p style="margin:0;max-width:46ch;font-size:16.5px;line-height:1.6;color:rgba(244,242,237,0.75);text-wrap:pretty">{{ ctaBody }}</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px">
+        <a href="mailto:info@fortepe.com" style="padding:16px 28px;background:#137F7C;color:#F4F2ED;font-size:14.5px;letter-spacing:0.02em" style-hover="background:#17948F;color:#F4F2ED">{{ ctaPrimary }}</a>
+        <button onClick="{{ goProjects }}" style="padding:16px 28px;border:1px solid rgba(244,242,237,0.35);background:none;color:#F4F2ED;font:inherit;font-size:14.5px;cursor:pointer" style-hover="border-color:#F4F2ED">{{ ctaSecondary }}</button>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <footer style="background:#12324A;color:rgba(244,242,237,0.55);padding:0 40px 44px">
+    <div style="max-width:1240px;margin:0 auto;padding-top:28px;border-top:1px solid rgba(244,242,237,0.14);display:flex;flex-wrap:wrap;align-items:center;gap:24px;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.06em">
+      <img src="./forte-reversed.svg" alt="Forte Project Engineering" style="height:26px;width:auto;display:block;opacity:0.9" />
+      <span>Forte Engineering Chile SpA · Santiago, Chile</span>
+      <span>info@fortepe.com · © 2026</span>
     </div>
   </footer>
 </div>
-<script defer src="shared.js"></script>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+const COPY = {
+  es: {
+    navHome: "Inicio", navProjects: "Proyectos", navAbout: "Nosotros", navBlog: "Publicaciones", navContact: "Contacto",
+    heroKicker: "Asesoría técnica independiente · Santiago, Chile",
+    heroTitle: "Criterio técnico directo.",
+    heroSub: "Asesoría técnica independiente para infraestructura ferroviaria, energía, BESS y data centers en América Latina, en las etapas donde las decisiones definen el resultado.",
+    tagRail: "Ferroviario", tagEnergy: "Energía y BESS", tagData: "Data centers", tagCritical: "Infraestructura crítica",
+    firmKicker: "Nosotros",
+    firm1: "Forte PE es una firma de asesoría técnica independiente para infraestructura: ingeniería eléctrica, sistemas ferroviarios, energía y gestión de proyectos, con operación permanente en Santiago y mandatos activos en Sudamérica y Centroamérica.",
+    firm2: "Trabajamos directamente con mandantes, ministerios, financistas y agencias públicas, con criterio técnico de primera línea y responsabilidad directa, sin capas intermedias.",
+    firm3: "Nuestro equipo senior conduce cada mandato de principio a fin, y se amplía con una red establecida de especialistas cuando la escala o las disciplinas del proyecto lo exigen.",
+    statGw: "gestionado a nivel de mandante", statProjects: "proyectos gestionados en etapas de desarrollo", statCountries: "países",
+    axes: [
+      { sector: "Ferroviario", value: "CEM · CRE · DPE", sub: "Gobernanza técnica en programas de electrificación, bajo estándares Network Rail." },
+      { sector: "Energía y BESS", value: "+1 GW", sub: "Portafolio gestionado a nivel de mandante." },
+      { sector: "Data centers", value: "Evaluación de sitio", sub: "Capacidad de red, restricciones de suministro y viabilidad de conexión." },
+      { sector: "Eje eléctrico", value: "MT · Tracción · SCADA", sub: "Coordinación de protecciones y earthing en los tres sectores." }
+    ],
+    mapKicker: "Cobertura",
+    mapTitle: "Operación permanente en Santiago, presencia en América y Europa.",
+    mapActiveLabel: "Mandatos activos", mapActiveList: "Sudamérica · Centroamérica",
+    mapRecordLabel: "Trayectoria del equipo", mapRecordList: "Norteamérica · Caribe · Europa",
+    govKicker: "Gobernanza técnica ferroviaria",
+    governance: [
+      { t: "Roles formales de gobernanza: CEM, CRE, DPE, Senior Authorised Person.", s: "Máxima autoridad técnica en programas de electrificación ferroviaria." },
+      { t: "Programas nacionales de electrificación bajo estándares Network Rail.", s: "Europa · América Latina" },
+      { t: "Potencia MT, tracción eléctrica, SCADA, protecciones y earthing.", s: "Diseño, revisión y puesta en servicio de sistemas." },
+      { t: "Member IET (MIET).", s: "Institución de Ingeniería y Tecnología." }
+    ],
+    svcTitle: "Lo que hacemos.",
+    svcSub: "Ingeniería y asesoría técnica a lo largo del ciclo de vida del proyecto, desde la evaluación temprana hasta el cierre técnico. El formato de cada compromiso se define según lo que el proyecto necesita.",
+    services: [
+      { n: "01", title: "Evaluación técnica temprana", line: "Validación de restricciones, supuestos de diseño, interfaces y viabilidad técnica antes de comprometer decisiones críticas del proyecto. Incluye prefactibilidad de plantas PV y BESS y evaluación eléctrica de sitio para data centers." },
+      { n: "02", title: "Ingeniería y representación del mandante", line: "Owner's Engineer: desarrollo de criterios de diseño, especificaciones técnicas, estudios y memorias, y representación del mandante en diseño, ejecución y puesta en servicio. Gestión de interfaces y control de desviaciones." },
+      { n: "03", title: "Revisión técnica independiente", line: "Segunda opinión formal sobre un diseño en el que no participamos: propuestas, criterios y supuestos de contratistas. Para mandantes, financistas y agencias públicas que necesitan un juicio sin conflicto de interés." },
+      { n: "04", title: "Coordinación de proyectos complejos", line: "Gestión de interfaces entre disciplinas, contratos y actores institucionales. Seguimiento de entregables, control de riesgos y continuidad entre diseño, terreno y operación." },
+      { n: "05", title: "Due diligence para financiamiento e inversión", line: "Evaluación técnica para bancos, inversionistas e instituciones multilaterales. Revisión de factibilidad, riesgos técnicos, supuestos del contratista y condiciones de implementación." },
+      { n: "06", title: "Asesoría institucional y estratégica", line: "Apoyo técnico a ministerios, operadores y agencias públicas en planificación de proyectos, evaluación de programas y coordinación con organismos regulatorios y multilaterales." }
+    ],
+    principle1: "Respondemos al proyecto.", principle2: "No al contrato.",
+    principleKicker: "Forte · Principio operativo",
+    bandSector: "Sector · Energía · Ferroviario", bandGeo: "Sudamérica · Centroamérica",
+    govLine: "Gobernanza técnica CEM · CRE · DPE bajo estándares Network Rail · MIET",
+    ctaBody: "Si su proyecto requiere claridad técnica para avanzar, estamos disponibles para revisar el contexto y definir los próximos pasos.",
+    workKicker: "Dónde trabajamos",
+    work1: "Control técnico OLE en condiciones de vía activa.",
+    work2: "Revisión de conexión y equipamiento de subestación.",
+    work3: "Evaluación eléctrica de sitio para data centers.",
+    ctaTitle: "Hablemos de su proyecto.",
+    ctaPrimary: "Escribir a Forte →", ctaSecondary: "Ver proyectos",
+
+    prjTitle: "Compromisos activos y trayectoria.",
+    prjSub: "Proyectos actuales de Forte PE junto al historial técnico y de gestión del equipo, desarrollado en mandatos institucionales previos en Sudamérica, Centroamérica, Norteamérica y Europa.",
+    engKicker: "Compromisos Forte PE",
+    engNote: "Los compromisos activos se presentan con sector, geografía y alcance técnico. La información del cliente se mantiene bajo acuerdo de confidencialidad salvo indicación expresa.",
+    engagements: [
+      { meta: "Energía · Sector público · Centroamérica", years: "2025–2026", role: "Asesor técnico institucional", title: "Asesoría técnica a ministerio nacional de energía", body: "Evaluación de infraestructura eléctrica, revisión de línea base sectorial, talleres de planificación estratégica y coordinación de entregables técnicos. Misiones de terreno con equipos de gobierno e interfaz institucional directa.", tags: "Asesoría técnica · Planificación energética · Sector público · Multilateral" },
+      { meta: "Ferroviario · Sudamérica", years: "2023–2025", role: "Owner's Engineer", title: "Control técnico OLE en corredor ferroviario suburbano", body: "Control técnico del sistema OLE durante la fase de ejecución. Revisión de diseño, validación de criterios, gestión de interfaces con distribuidoras y coordinación técnica con el operador en condiciones de vía activa.", tags: "OLE · Owner's Engineer · SCADA · Vía activa" },
+      { meta: "Energía · Centroamérica", years: "2024", role: "Evaluación técnica independiente", title: "Evaluación técnica de sistema BESS", body: "Evaluación de criterios de diseño, supuestos de integración a red y condiciones de implementación para un proyecto de almacenamiento de energía en baterías conectado a la red de distribución.", tags: "BESS · Evaluación técnica · Grid connection" },
+      { meta: "Infraestructura crítica · Sudamérica", years: "2025–2026", role: "Evaluación eléctrica de sitio", title: "Evaluación eléctrica de sitio para infraestructura de data center", body: "Análisis de capacidad de red, restricciones de suministro, interfaces con utilities y viabilidad técnica de conexión para una instalación de data center de alta densidad en área metropolitana.", tags: "Evaluación eléctrica · Capacidad de red · Data centre" }
+    ],
+    trackKicker: "Historial del equipo · Mandatos institucionales previos",
+    trackNote: "La experiencia acumulada del equipo fue desarrollada en mandatos institucionales previos. Se presenta por sector y rol, sin identificar empleadores anteriores.",
+    track: [
+      { meta: "Ferroviario · Europa", title: "Electrificación ferroviaria y sistemas de potencia", body: "Programas de electrificación de corredores nacionales bajo estándares Network Rail. Roles formales de CEM, CRE y DPE: gobernanza técnica, validación de diseño, coordinación de protecciones y energización por fases.", tags: "OLE · CEM/CRE/DPE · Traction power · SCADA · MIET" },
+      { meta: "Energía · Sudamérica", title: "Desarrollo y gestión de portafolios energéticos", body: "Liderazgo de portafolios de más de 800 MWp en proyectos PMGD, PMG y utility-scale. Coordinación de equipos multidisciplinarios y due diligence para financistas institucionales.", tags: "Solar · PMGD/PMG · Due diligence · RTB · Financiamiento" },
+      { meta: "Energía · Norteamérica · Caribe", title: "Coordinación técnica y permisos en proyectos solares", body: "Gestión de paquetes de interconexión, documentación eléctrica y permisos para proyectos solares comerciales en Norteamérica y el Caribe. Alta tasa de aprobación sin rediseños requeridos.", tags: "Solar · Interconnection · SLD · Permisos" },
+      { meta: "Ferroviario · Depósitos · Europa", title: "Redes de distribución privada en depósitos ferroviarios", body: "Aseguramiento técnico independiente para diseño, instalación y energización de redes de distribución de media tensión en depósitos de mantenimiento ferroviario en operación. Validación de arquitectura de red, protecciones y earthing.", tags: "MV distribution · Protection · Earthing · Depósito activo" },
+      { meta: "Infraestructura · Multilateral", title: "Asesoría institucional y estratégica al sector público", body: "Coordinación de entregables técnicos y talleres de planificación para organismos del sector público en Centroamérica. Gestión de relaciones institucionales y coordinación con organismos regulatorios y multilaterales.", tags: "Sector público · Multilateral · Planificación" },
+      { meta: "Energía · Inversión · LATAM", title: "Due diligence técnico en transacciones de activos energéticos", body: "Liderazgo de due diligence técnico para la venta de portafolios de hasta 62 MWp. Resolución de hallazgos críticos legales, eléctricos y ambientales requeridos por financistas institucionales e inversores privados.", tags: "Due diligence · M&A · Inversión · RTB" }
+    ],
+
+    abTitle: "Senior en capacidad. Directo en entrega.",
+    abLead: "Forte PE reúne ingeniería eléctrica senior, gestión de infraestructura energética y desarrollo de proyectos en una sola capacidad de asesoría.",
+    credKicker: "Credenciales",
+    credRailTitle: "Gobernanza técnica ferroviaria",
+    credRail: [
+      { t: "Roles formales de gobernanza técnica: CEM, CRE, DPE, Senior Authorised Person.", s: "Máxima autoridad técnica en programas de electrificación ferroviaria." },
+      { t: "Programas nacionales de electrificación ferroviaria bajo estándares Network Rail.", s: "Europa · LATAM" },
+      { t: "Sistemas de potencia MT, tracción eléctrica, SCADA, coordinación de protecciones y earthing.", s: "" },
+      { t: "Member IET (MIET) · Institución de Ingeniería y Tecnología.", s: "" }
+    ],
+    credEnergyTitle: "Energía e infraestructura",
+    credEnergy: [
+      { t: "+1 GW de portafolio energético gestionado a nivel de mandante.", s: "Solar utility-scale, PMGD, PMG · Sudamérica" },
+      { t: "60+ proyectos gestionados en etapas de desarrollo.", s: "" },
+      { t: "Due diligence técnico para transacciones de activos e instituciones multilaterales.", s: "" },
+      { t: "Coordinación de paquetes de interconexión, documentación eléctrica y permisos.", s: "Norteamérica · Caribe · Sudamérica" },
+      { t: "Coordinación con ministerios, utilities, autoridades regulatorias y financistas institucionales.", s: "" }
+    ],
+    fmtKicker: "Formatos", fmtTitle: "Cómo trabajamos.",
+    fmtSub: "Cuatro formatos de compromiso, según la etapa y la decisión que el proyecto enfrenta.",
+    formats: [
+      { n: "01", title: "Asesoría continua", line: "Criterio técnico disponible de forma permanente para decisiones de desarrollo, contratación y ejecución." },
+      { n: "02", title: "Mandato por proyecto", line: "Alcance, entregables y plazos definidos para una fase o un proyecto completo, desde la evaluación temprana hasta el cierre técnico." },
+      { n: "03", title: "Revisión técnica puntual", line: "Segunda opinión independiente sobre un diseño, una propuesta o un supuesto crítico, con informe y sesión de revisión." },
+      { n: "04", title: "Dossier para procesos formales", line: "Credenciales completas del equipo, historial de proyectos y referencias para evaluación, licitación o due diligence, bajo solicitud." }
+    ],
+    cliKicker: "Con quiénes trabajamos",
+    cliCaption: "Misión técnica · Ministerio de energía · Centroamérica · 2025–2026",
+    cliLead: "Trabajamos con ministerios de energía, operadores ferroviarios, financistas multilaterales, fondos de inversión en infraestructura y promotores privados en Sudamérica, Centroamérica y Europa.",
+    clients: [
+      { meta: "Sector público", title: "Ministerios y agencias", line: "Ministerios de energía, transporte y servicios públicos. Evaluación técnica, planificación estratégica y coordinación de programas." },
+      { meta: "Infraestructura", title: "Operadores ferroviarios", line: "Operadores de sistemas ferroviarios suburbanos y de pasajeros. Owner's engineering, integración de sistemas y control técnico de ejecución." },
+      { meta: "Financiamiento", title: "Financistas e instituciones multilaterales", line: "Fondos de inversión, bancos de desarrollo y financistas institucionales. Due diligence técnico, evaluación de riesgos y preparación para financiamiento." },
+      { meta: "Sector privado", title: "Promotores y desarrolladores", line: "Desarrolladores de energía renovable, data centers y proyectos de infraestructura privada. Evaluación técnica, coordinación y gestión de proyectos complejos." }
+    ],
+    netKicker: "Red de especialistas",
+    netBody: "El equipo senior de Forte PE conduce el mandato y, cuando la escala o la amplitud de disciplinas lo exige, se amplía con nuestra red establecida de especialistas en sistemas ferroviarios, energía, civil, medioambiente y regulación.",
+    dossierBody: "Para procesos de evaluación, licitación o due diligence, enviamos un dossier completo con credenciales del equipo, historial de proyectos y referencias relevantes.",
+    dossierCta: "Solicitar dossier →",
+
+    blTitle: "Publicaciones.",
+    blSub: "Notas técnicas de Forte PE sobre las decisiones que definen proyectos de infraestructura: ferroviario, energía, BESS y data centers.",
+    posts: [
+      { img: "./img/g-post-ole4.jpg", tag: "Notas técnicas · Ferroviario", date: "Agosto 2026", title: "Monitoreo de condición en catenaria: la economía de saber antes", lead: "En un sistema de catenaria, el costo de una falla casi nunca está en el componente dañado. Está en el tiempo que pasa entre el evento y su detección." },
+      { img: "./img/g-post-pv.jpg", tag: "Energía y BESS", date: "Agosto 2026", title: "Lo que fija el costo de un PV+BESS se decide antes del diseño", lead: "Punto de conexión, capacidad disponible y condiciones de la red mueven el costo más que cualquier decisión posterior de ingeniería. Cuando se revisan tarde, el rediseño ya está pagado." }
+    ],
+
+    ctTitle: "Conversemos.",
+    ctSub: "Si su proyecto requiere claridad técnica para avanzar, estamos disponibles para revisar el contexto, identificar riesgos y definir los próximos pasos.",
+    ctName: "Nombre", ctOrg: "Organización", ctReason: "Motivo de contacto",
+    ctContext: "Contexto del proyecto", ctSend: "Enviar →",
+    reasons: ["Proyecto ferroviario", "Proyecto de energía", "Infraestructura crítica", "Solicitar dossier corporativo", "Otro"],
+    sentThanks: "Gracias. Responderemos con un ingeniero.",
+    ctCoordsLabel: "Coordenadas", ctEmailLabel: "Email", ctPhoneLabel: "Teléfono",
+    ctOfficeLabel: "Oficina", ctCityLabel: "Ciudad", ctCoverLabel: "Cobertura", ctLangLabel: "Idiomas"
+  },
+  en: {
+    navHome: "Home", navProjects: "Projects", navAbout: "About", navBlog: "Publications", navContact: "Contact",
+    heroKicker: "Independent technical advisory · Santiago, Chile",
+    heroTitle: "Direct technical authority.",
+    heroSub: "Independent technical advisory for rail, energy, BESS, and data centre infrastructure across Latin America, at the stages where decisions define the outcome.",
+    tagRail: "Rail", tagEnergy: "Energy & BESS", tagData: "Data centres", tagCritical: "Critical infrastructure",
+    firmKicker: "About",
+    firm1: "Forte PE is an independent technical advisory firm for infrastructure: electrical engineering, railway systems, energy, and project management, permanently based in Santiago with active mandates in South America and Central America.",
+    firm2: "We work directly with owners, ministries, lenders, and public agencies, bringing first-line technical judgement and direct accountability, with no intermediate layers.",
+    firm3: "Our senior team leads every mandate end to end, extending through an established specialist network when the project's scale or disciplines require it.",
+    statGw: "managed at owner level", statProjects: "projects managed across development stages", statCountries: "countries",
+    axes: [
+      { sector: "Rail", value: "CEM · CRE · DPE", sub: "Technical governance on electrification programmes, to Network Rail standards." },
+      { sector: "Energy & BESS", value: "+1 GW", sub: "Portfolio managed at owner level." },
+      { sector: "Data centres", value: "Site assessment", sub: "Grid capacity, supply constraints, and connection feasibility." },
+      { sector: "Electrical axis", value: "MV · Traction · SCADA", sub: "Protection coordination and earthing across all three sectors." }
+    ],
+    mapKicker: "Coverage",
+    mapTitle: "Permanently based in Santiago, present across the Americas and Europe.",
+    mapActiveLabel: "Active mandates", mapActiveList: "South America · Central America",
+    mapRecordLabel: "Team track record", mapRecordList: "North America · Caribbean · Europe",
+    govKicker: "Rail technical governance",
+    governance: [
+      { t: "Formal governance roles: CEM, CRE, DPE, Senior Authorised Person.", s: "Highest technical authority on rail electrification programmes." },
+      { t: "National electrification programmes to Network Rail standards.", s: "Europe · Latin America" },
+      { t: "MV power, electric traction, SCADA, protection and earthing.", s: "Design, review, and commissioning of systems." },
+      { t: "Member IET (MIET).", s: "Institution of Engineering and Technology." }
+    ],
+    svcTitle: "What we do.",
+    svcSub: "Technical advisory across the full project lifecycle, from early-stage assessment through technical close-out. Each engagement format is defined by what the project requires.",
+    services: [
+      { n: "01", title: "Early-stage technical assessment", line: "Validation of constraints, design assumptions, interfaces, and technical feasibility before committing to critical project decisions. Includes PV and BESS plant pre-feasibility and electrical site assessment for data centres." },
+      { n: "02", title: "Engineering and owner representation", line: "Owner's Engineer: development of design criteria, technical specifications, studies, and reports, plus representation of the owner through design, execution, and commissioning. Interface management and deviation control." },
+      { n: "03", title: "Independent technical review", line: "A formal second opinion on a design we did not produce: contractor proposals, criteria, and assumptions. For owners, lenders, and public agencies requiring judgement free of conflict of interest." },
+      { n: "04", title: "Complex project coordination", line: "Interface management across disciplines, contracts, and institutional stakeholders. Deliverable tracking, risk control, and continuity between design, site, and operation." },
+      { n: "05", title: "Due diligence for financing and investment", line: "Technical evaluation for banks, investors, and multilateral institutions. Feasibility review, technical risk assessment, contractor assumptions, and implementation conditions." },
+      { n: "06", title: "Institutional & strategic advisory", line: "Technical support for ministries, operators, and public agencies in project planning, programme evaluation, and coordination with regulatory and multilateral bodies." }
+    ],
+    principle1: "We answer to the project.", principle2: "Not to the contract.",
+    principleKicker: "Forte · Operating principle",
+    bandSector: "Sector · Energy · Rail", bandGeo: "South America · Central America",
+    govLine: "Technical governance CEM · CRE · DPE under Network Rail standards · MIET",
+    ctaBody: "If your project requires technical clarity to move forward, we are available to review the context and define next steps.",
+    workKicker: "Where we work",
+    work1: "OLE technical control under live-track conditions.",
+    work2: "Grid connection and substation equipment review.",
+    work3: "Electrical site assessment for data centres.",
+    ctaTitle: "Let's talk about your project.",
+    ctaPrimary: "Contact Forte →", ctaSecondary: "View projects",
+
+    prjTitle: "Active engagements and track record.",
+    prjSub: "Forte PE's current projects alongside the team's technical and management track record, developed under previous institutional mandates in South America, Central America, North America, and Europe.",
+    engKicker: "Forte PE engagements",
+    engNote: "Active engagements are presented with sector, geography, and technical scope. Client information remains under confidentiality agreement unless expressly stated.",
+    engagements: [
+      { meta: "Energy · Public sector · Central America", years: "2025–2026", role: "Institutional technical advisor", title: "Technical advisory to a national energy ministry", body: "Electrical infrastructure assessment, sector baseline review, strategic planning workshops, and coordination of technical deliverables. Field missions with government teams and direct institutional interface.", tags: "Technical advisory · Energy planning · Public sector · Multilateral" },
+      { meta: "Rail · South America", years: "2023–2025", role: "Owner's Engineer", title: "OLE technical control on a suburban rail corridor", body: "Technical control of the OLE system through execution. Design review, criteria validation, interface management with distribution utilities, and technical coordination with the operator under live-track conditions.", tags: "OLE · Owner's Engineer · SCADA · Live track" },
+      { meta: "Energy · Central America", years: "2024", role: "Independent technical assessment", title: "Technical assessment of a BESS system", body: "Assessment of design criteria, grid integration assumptions, and implementation conditions for a battery energy storage project connected to the distribution network.", tags: "BESS · Technical assessment · Grid connection" },
+      { meta: "Critical infrastructure · South America", years: "2025–2026", role: "Electrical site assessment", title: "Electrical site assessment for data centre infrastructure", body: "Grid capacity analysis, supply constraints, utility interfaces, and technical connection feasibility for a high-density data centre facility in a metropolitan area.", tags: "Electrical assessment · Grid capacity · Data centre" }
+    ],
+    trackKicker: "Team track record · Previous institutional mandates",
+    trackNote: "The team's accumulated experience was developed under previous institutional mandates. It is presented by sector and role, without identifying former employers.",
+    track: [
+      { meta: "Rail · Europe", title: "Rail electrification and power systems", body: "National corridor electrification programmes to Network Rail standards. Formal CEM, CRE, and DPE roles: technical governance, design validation, protection coordination, and phased energisation.", tags: "OLE · CEM/CRE/DPE · Traction power · SCADA · MIET" },
+      { meta: "Energy · South America", title: "Energy portfolio development and management", body: "Leadership of portfolios exceeding 800 MWp across PMGD, PMG, and utility-scale projects. Coordination of multidisciplinary teams and due diligence for institutional lenders.", tags: "Solar · PMGD/PMG · Due diligence · RTB · Financing" },
+      { meta: "Energy · North America · Caribbean", title: "Technical coordination and permitting on solar projects", body: "Management of interconnection packages, electrical documentation, and permitting for commercial solar projects in North America and the Caribbean. High approval rate with no redesigns required.", tags: "Solar · Interconnection · SLD · Permitting" },
+      { meta: "Rail · Depots · Europe", title: "Private distribution networks in rail depots", body: "Independent technical assurance for design, installation, and energisation of medium-voltage distribution networks in operational rail maintenance depots. Validation of network architecture, protection, and earthing.", tags: "MV distribution · Protection · Earthing · Live depot" },
+      { meta: "Infrastructure · Multilateral", title: "Institutional and strategic advisory to the public sector", body: "Coordination of technical deliverables and planning workshops for public sector bodies in Central America. Management of institutional relations and coordination with regulatory and multilateral bodies.", tags: "Public sector · Multilateral · Planning" },
+      { meta: "Energy · Investment · LATAM", title: "Technical due diligence on energy asset transactions", body: "Leadership of technical due diligence for the sale of portfolios up to 62 MWp. Resolution of critical legal, electrical, and environmental findings required by institutional lenders and private investors.", tags: "Due diligence · M&A · Investment · RTB" }
+    ],
+
+    abTitle: "Senior in capability. Direct in delivery.",
+    abLead: "Forte PE brings together senior electrical engineering, energy infrastructure management, and project development in a single advisory capability.",
+    credKicker: "Credentials",
+    credRailTitle: "Rail technical governance",
+    credRail: [
+      { t: "Formal technical governance roles: CEM, CRE, DPE, Senior Authorised Person.", s: "Highest technical authority on rail electrification programmes." },
+      { t: "National rail electrification programmes to Network Rail standards.", s: "Europe · LATAM" },
+      { t: "MV power systems, electric traction, SCADA, protection coordination, and earthing.", s: "" },
+      { t: "Member IET (MIET) · Institution of Engineering and Technology.", s: "" }
+    ],
+    credEnergyTitle: "Energy and infrastructure",
+    credEnergy: [
+      { t: "+1 GW of energy portfolio managed at owner level.", s: "Utility-scale solar, PMGD, PMG · South America" },
+      { t: "60+ projects managed across development stages.", s: "" },
+      { t: "Technical due diligence for asset transactions and multilateral institutions.", s: "" },
+      { t: "Coordination of interconnection packages, electrical documentation, and permitting.", s: "North America · Caribbean · South America" },
+      { t: "Coordination with ministries, utilities, regulatory authorities, and institutional lenders.", s: "" }
+    ],
+    fmtKicker: "Formats", fmtTitle: "How we work.",
+    fmtSub: "Four engagement formats, according to the stage and the decision the project faces.",
+    formats: [
+      { n: "01", title: "Ongoing advisory", line: "Technical judgement permanently available for development, contracting, and execution decisions." },
+      { n: "02", title: "Project mandate", line: "Defined scope, deliverables, and timelines for a phase or a complete project, from early assessment through technical close-out." },
+      { n: "03", title: "Targeted technical review", line: "An independent second opinion on a design, a proposal, or a critical assumption, with report and review session." },
+      { n: "04", title: "Dossier for formal processes", line: "Full team credentials, project history, and references for evaluation, tender, or due diligence, on request." }
+    ],
+    cliKicker: "Who we work with",
+    cliCaption: "Technical mission · Energy ministry · Central America · 2025–2026",
+    cliLead: "We work with energy ministries, rail operators, multilateral lenders, infrastructure investment funds, and private developers across South America, Central America, and Europe.",
+    clients: [
+      { meta: "Public sector", title: "Ministries and agencies", line: "Ministries of energy, transport, and public services. Technical assessment, strategic planning, and programme coordination." },
+      { meta: "Infrastructure", title: "Rail operators", line: "Operators of suburban and passenger rail systems. Owner's engineering, systems integration, and technical control of execution." },
+      { meta: "Financing", title: "Lenders and multilateral institutions", line: "Investment funds, development banks, and institutional lenders. Technical due diligence, risk assessment, and financing readiness." },
+      { meta: "Private sector", title: "Sponsors and developers", line: "Developers of renewable energy, data centres, and private infrastructure projects. Technical assessment, coordination, and management of complex projects." }
+    ],
+    netKicker: "Specialist network",
+    netBody: "Forte PE's senior team leads the mandate and, when scale or the breadth of disciplines requires it, extends through our established network of specialists in railway systems, energy, civil, environment, and regulation.",
+    dossierBody: "For evaluation, tender, or due diligence processes, we send a complete dossier with team credentials, project history, and relevant references.",
+    dossierCta: "Request dossier →",
+
+    blTitle: "Publications.",
+    blSub: "Technical notes from Forte PE on the decisions that define infrastructure projects: rail, energy, BESS, and data centres.",
+    posts: [
+      { img: "./img/g-post-ole4.jpg", tag: "Technical notes · Rail", date: "August 2026", title: "Condition monitoring on overhead line: the economics of knowing early", lead: "In an overhead line system, the cost of a failure is almost never in the damaged component. It is in the time between the event and its detection." },
+      { img: "./img/g-post-pv.jpg", tag: "Energy & BESS", date: "August 2026", title: "What sets the cost of a PV+BESS project is decided before design", lead: "Connection point, available capacity, and network conditions move cost more than any later engineering decision. Reviewed late, the redesign is already paid for." }
+    ],
+
+    ctTitle: "Let's talk.",
+    ctSub: "If your project requires technical clarity to move forward, we are available to review the context, identify risks, and define the next steps.",
+    ctName: "Name", ctOrg: "Organisation", ctReason: "Reason for contact",
+    ctContext: "Project context", ctSend: "Send →",
+    reasons: ["Rail project", "Energy project", "Critical infrastructure", "Request corporate dossier", "Other"],
+    sentThanks: "Thank you. An engineer will reply.",
+    ctCoordsLabel: "Coordinates", ctEmailLabel: "Email", ctPhoneLabel: "Phone",
+    ctOfficeLabel: "Office", ctCityLabel: "City", ctCoverLabel: "Coverage", ctLangLabel: "Languages"
+  }
+};
+
+class Component extends DCLogic {
+  state = { lang: "es", page: "home", sent: false };
+  go(page) { return () => { this.setState({ page }); window.scrollTo(0, 0); }; }
+  tab(active) {
+    return "background:none;border-width:0 0 1px;border-style:none none solid;padding:0 0 2px;cursor:pointer;font:inherit;font-size:13.5px;letter-spacing:0.02em;" +
+      (active ? "color:#12324A;border-color:transparent transparent #137F7C" : "color:rgba(18,50,74,0.62);border-color:transparent");
+  }
+  langBtn(active) {
+    return "padding:6px 10px;border-style:none;border-width:0;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.08em;" +
+      (active ? "background:#12324A;color:#F4F2ED" : "background:transparent;color:rgba(18,50,74,0.6)");
+  }
+  renderVals() {
+    const p = this.state.page, t = COPY[this.state.lang];
+    return Object.assign({}, t, {
+      isHome: p === "home", isProjects: p === "projects", isAbout: p === "about",
+      isBlog: p === "blog", isContact: p === "contact", lang: this.state.lang,
+      showCta: p !== "contact",
+      onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      sentNote: this.state.sent ? t.sentThanks : "",
+      goHome: this.go("home"), goProjects: this.go("projects"), goAbout: this.go("about"),
+      goBlog: this.go("blog"), goContact: this.go("contact"),
+      tabHome: this.tab(p === "home"), tabProjects: this.tab(p === "projects"),
+      tabAbout: this.tab(p === "about"), tabBlog: this.tab(p === "blog"),
+      tabContact: this.tab(p === "contact"),
+      setEs: () => this.setState({ lang: "es" }), setEn: () => this.setState({ lang: "en" }),
+      esBtn: this.langBtn(this.state.lang === "es"), enBtn: this.langBtn(this.state.lang === "en")
+    });
+  }
+}
+
+</script>
 </body>
 </html>
