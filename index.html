@@ -124,7 +124,7 @@
       <button onClick="{{ goHome }}" style="{{ tabHome }}">{{ navHome }}</button>
       <button onClick="{{ goProjects }}" style="{{ tabProjects }}">{{ navProjects }}</button>
       <button onClick="{{ goAbout }}" style="{{ tabAbout }}">{{ navAbout }}</button>
-      <button onClick="{{ goBlog }}" style="{{ tabBlog }}"><span class="desktop-only">{{ navBlog }}</span><span class="mobile-only">{{ navBlogMobile }}</span></button>
+      <button onClick="{{ goBlog }}" style="{{ tabBlog }}">{{ navBlog }}</button>
       <button onClick="{{ goContact }}" style="{{ tabContact }}">{{ navContact }}</button>
     </nav>
       <span class="lang-switch" style="display:flex;font-family:'IBM Plex Mono',monospace;font-size:11.5px;border:1px solid rgba(18,50,74,0.18)">
@@ -411,9 +411,12 @@
 
   <sc-if value="{{ isBlog }}">
   <div>
-    <section style="padding:72px 40px 48px;max-width:1240px;margin:0 auto">
-      <h1 style="margin:0;max-width:24ch;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,5vw,68px);line-height:1;letter-spacing:-0.02em">{{ blTitle }}</h1>
-      <p style="margin:22px 0 0;max-width:58ch;font-size:16.5px;line-height:1.55;color:rgba(18,50,74,0.68);text-wrap:pretty">{{ blSub }}</p>
+    <section style="padding:72px 40px 56px;max-width:1240px;margin:0 auto">
+      <h1 style="margin:0;max-width:22ch;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(34px,5vw,68px);line-height:1;letter-spacing:-0.02em">{{ blTitle }}</h1>
+      <div style="display:flex;flex-direction:column;gap:16px;margin-top:26px;max-width:60ch">
+        <p style="margin:0;font-size:17px;line-height:1.55;color:rgba(18,50,74,0.8);text-wrap:pretty">{{ blSub1 }}</p>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:rgba(18,50,74,0.62);text-wrap:pretty">{{ blSub2 }}</p>
+      </div>
     </section>
     <section class="blog-grid" style="max-width:1240px;margin:0 auto;padding:0 40px 96px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px">
       <sc-for list="{{ posts }}" as="p" hint-placeholder-count="2">
@@ -426,6 +429,7 @@
           </div>
           <h3 style="margin:12px 0 0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(24px,2.6vw,32px);line-height:1.15;letter-spacing:-0.015em;text-wrap:balance" style-hover="color:#137F7C">{{ p.title }}</h3>
           <p style="margin:14px 0 0;font-size:16px;line-height:1.55;color:rgba(18,50,74,0.7);text-wrap:pretty">{{ p.lead }}</p>
+          <span style="margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#137F7C">{{ p.readCta }}</span>
         </div>
       </sc-for>
     </section>
@@ -443,11 +447,19 @@
         <span style="color:rgba(18,50,74,0.5)">{{ selectedPost.date }}</span>
       </div>
       <article style="max-width:68ch">
-        <h1 style="margin:0 0 32px;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(30px,3.6vw,48px);line-height:1.1;letter-spacing:-0.02em;text-wrap:balance">{{ selectedPost.title }}</h1>
+        <h1 style="margin:0 0 20px;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(30px,3.6vw,48px);line-height:1.1;letter-spacing:-0.02em;text-wrap:balance">{{ selectedPost.title }}</h1>
+        <p style="margin:0 0 28px;font-size:19px;line-height:1.5;letter-spacing:-0.005em;color:rgba(18,50,74,0.72);text-wrap:pretty">{{ selectedPost.lead }}</p>
+        <div style="display:flex;align-items:center;gap:10px;margin:0 0 40px;padding-bottom:24px;border-bottom:1px solid rgba(18,50,74,0.14);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(18,50,74,0.55)">
+          <span>{{ selectedPost.author }}</span><span>·</span><span>{{ selectedPost.authorRole }}</span>
+        </div>
         <div style="display:flex;flex-direction:column;gap:22px;font-size:17px;line-height:1.7;color:#1C1F23">
           <sc-for list="{{ selectedPost.body }}" as="para" hint-placeholder-count="5">
             <p style="margin:0">{{ para }}</p>
           </sc-for>
+        </div>
+        <div onClick="{{ relatedPost.open }}" style="margin-top:56px;padding-top:28px;border-top:1px solid rgba(18,50,74,0.16);display:flex;flex-direction:column;gap:10px;cursor:pointer">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#137F7C">{{ relatedLabel }}</span>
+          <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:20px;letter-spacing:-0.01em" style-hover="color:#137F7C">{{ relatedPost.title }}</span>
         </div>
       </article>
     </section>
@@ -531,12 +543,12 @@
   <section style="background:#12324A;color:#F4F2ED;padding:96px 40px">
     <div style="max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:40px">
       <div style="display:flex;flex-direction:column;gap:22px">
-        <h2 style="margin:0;max-width:22ch;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(32px,4.4vw,60px);line-height:1.02;letter-spacing:-0.02em">{{ ctaTitle }}</h2>
-        <p style="margin:0;max-width:46ch;font-size:16.5px;line-height:1.6;color:rgba(244,242,237,0.75);text-wrap:pretty">{{ ctaBody }}</p>
+        <h2 style="margin:0;max-width:22ch;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(32px,4.4vw,60px);line-height:1.02;letter-spacing:-0.02em">{{ ctaTitleFinal }}</h2>
+        <p style="margin:0;max-width:46ch;font-size:16.5px;line-height:1.6;color:rgba(244,242,237,0.75);text-wrap:pretty">{{ ctaBodyFinal }}</p>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:14px">
-        <a href="mailto:info@fortepe.com" style="padding:16px 28px;background:#137F7C;color:#F4F2ED;font-size:14.5px;letter-spacing:0.02em" style-hover="background:#17948F;color:#F4F2ED">{{ ctaPrimary }}</a>
-        <button onClick="{{ goProjects }}" style="padding:16px 28px;border:1px solid rgba(244,242,237,0.35);background:none;color:#F4F2ED;font:inherit;font-size:14.5px;cursor:pointer" style-hover="border-color:#F4F2ED">{{ ctaSecondary }}</button>
+        <a href="mailto:info@fortepe.com" style="padding:16px 28px;background:#137F7C;color:#F4F2ED;font-size:14.5px;letter-spacing:0.02em" style-hover="background:#17948F;color:#F4F2ED">{{ ctaPrimaryFinal }}</a>
+        <button onClick="{{ goProjects }}" style="padding:16px 28px;border:1px solid rgba(244,242,237,0.35);background:none;color:#F4F2ED;font:inherit;font-size:14.5px;cursor:pointer" style-hover="border-color:#F4F2ED">{{ ctaSecondaryFinal }}</button>
       </div>
     </div>
   </section>
@@ -555,7 +567,7 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
 const COPY = {
   es: {
-    navHome: "Inicio", navProjects: "Proyectos", navAbout: "Nosotros", navBlog: "Publicaciones", navBlogMobile: "Notas", navContact: "Contacto",
+    navHome: "Inicio", navProjects: "Proyectos", navAbout: "Nosotros", navBlog: "Perspectivas", navContact: "Contacto",
     heroKicker: "Asesoría técnica independiente · Santiago, Chile",
     heroTitle: "Criterio técnico directo.",
     heroSub: "Asesoría técnica independiente para infraestructura ferroviaria, energía, BESS y data centers en América Latina, en las etapas donde las decisiones definen el resultado.",
@@ -665,11 +677,17 @@ const COPY = {
     dossierBody: "Para procesos de evaluación, licitación o due diligence, enviamos un dossier completo con credenciales del equipo, historial de proyectos y referencias relevantes.",
     dossierCta: "Solicitar dossier →",
 
-    blTitle: "Publicaciones.",
-    blSub: "Notas técnicas de Forte PE sobre las decisiones que definen proyectos de infraestructura: ferroviario, energía, BESS y data centers.",
-    postBack: "← Publicaciones",
+    blTitle: "Perspectivas técnicas.",
+    blSub1: "Notas de Forte para mandantes, operadores y equipos de proyecto sobre las decisiones que condicionan el desempeño, el riesgo y el costo de la infraestructura.",
+    blSub2: "A partir de nuestra experiencia en proyectos ferroviarios, energía, BESS y centros de datos, analizamos qué conviene resolver temprano, qué riesgos suelen subestimarse y qué información permite tomar mejores decisiones.",
+    postBack: "← Perspectivas",
+    postReadCta: "Leer nota →",
+    relatedLabel: "Nota relacionada",
+    ctaBlogTitle: "¿Está evaluando una decisión crítica de infraestructura?",
+    ctaBlogBody: "Forte puede ayudarle a estructurar el problema, identificar los riesgos relevantes y definir los próximos pasos con claridad técnica e independencia.",
+    ctaBlogPrimary: "Conversar con Forte →", ctaBlogSecondary: "Ver proyectos",
     posts: [
-      { img: "./img/g-post-ole4.jpg", tag: "Notas técnicas · Ferroviario", date: "Agosto 2026", title: "Monitoreo de condición en catenaria: la economía de saber antes", lead: "En un sistema de catenaria, el costo de una falla casi nunca está en el componente dañado. Está en el tiempo que pasa entre el evento y su detección.",
+      { img: "./img/g-post-ole4.jpg", tag: "Nota técnica · Ferroviario", date: "Agosto 2026", title: "Monitoreo de condición en catenaria: la economía de saber antes", lead: "En un sistema de catenaria, el costo de una falla casi nunca está en el componente dañado. Está en el tiempo que pasa entre el evento y su detección.", author: "Equipo Forte PE", authorRole: "Ingeniería ferroviaria",
         body: [
           "En un sistema de catenaria, el costo de una falla casi nunca está en el componente dañado. Está en el tiempo que pasa entre el evento y su detección, y en todo lo que ese tiempo arrastra: servicios suspendidos, pasajeros transferidos a buses, cuadrillas movilizadas sin diagnóstico y una ventana de operación que se pierde completa.",
           "La inspección tradicional es periódica y, por diseño, reactiva. Entre una ronda y la siguiente, la infraestructura queda sin observación. Cuando el evento es gradual, desgaste o pérdida progresiva de tensión, el intervalo esconde el deterioro. Cuando es súbito, rotura, vandalismo o robo de conductor, el sistema suele enterarse con el primer tren afectado, que es la forma más cara de enterarse.",
@@ -678,7 +696,7 @@ const COPY = {
           "Qué debe exigir un owner a cualquier solución de monitoreo, antes de discutir tecnología: autonomía energética real en vía, sin depender de suministro trackside; redundancia de comunicaciones, porque el evento que importa suele ocurrir donde la cobertura es peor; datos que se traduzcan en decisiones operacionales y no en tableros decorativos; y un despliegue por etapas, sobre una sección priorizada, que confirme parámetros antes de comprometer la red completa.",
           "La pregunta correcta no es cuánto cuesta el monitoreo. Es cuánto cuesta cada hora entre el evento y la primera decisión informada. En corredores con servicios de pasajeros, esa cuenta se responde sola."
         ] },
-      { img: "./img/g-post-pv.jpg", tag: "Energía y BESS", date: "Agosto 2026", title: "Lo que fija el costo de un PV+BESS se decide antes del diseño", lead: "Punto de conexión, capacidad disponible y condiciones de la red mueven el costo más que cualquier decisión posterior de ingeniería. Cuando se revisan tarde, el rediseño ya está pagado.",
+      { img: "./img/g-post-pv.jpg", tag: "Nota técnica · Energía y BESS", date: "Agosto 2026", title: "Lo que fija el costo de un PV+BESS se decide antes del diseño", lead: "Punto de conexión, capacidad disponible y condiciones de la red mueven el costo más que cualquier decisión posterior de ingeniería. Cuando se revisan tarde, el rediseño ya está pagado.", author: "Equipo Forte PE", authorRole: "Energía y BESS",
         body: [
           "En un proyecto híbrido de generación fotovoltaica y almacenamiento, las decisiones que más mueven el CAPEX se toman antes del diseño, no durante. La prefactibilidad existe para cerrar esas preguntas con evidencia. Cuando se la trata como un trámite, o como un diseño en miniatura, el costo de lo que quedó abierto aparece después, multiplicado.",
           "La primera pregunta es de geometría: dónde se genera y dónde se almacena o consume. La distancia entre el campo solar y el punto de almacenamiento o carga se paga en línea, en servidumbres y en pérdidas; el terreno más barato rara vez es el más cercano. Comparar polígonos candidatos con el trazado y la línea incluidos en la cuenta, y no solo con el valor del suelo, suele cambiar la respuesta.",
@@ -699,7 +717,7 @@ const COPY = {
     ctOfficeLabel: "Oficina", ctCityLabel: "Ciudad", ctCoverLabel: "Cobertura", ctLangLabel: "Idiomas"
   },
   en: {
-    navHome: "Home", navProjects: "Projects", navAbout: "About", navBlog: "Publications", navBlogMobile: "Notes", navContact: "Contact",
+    navHome: "Home", navProjects: "Projects", navAbout: "About", navBlog: "Insights", navContact: "Contact",
     heroKicker: "Independent technical advisory · Santiago, Chile",
     heroTitle: "Direct technical authority.",
     heroSub: "Independent technical advisory for rail, energy, BESS, and data centre infrastructure across Latin America, at the stages where decisions define the outcome.",
@@ -809,11 +827,17 @@ const COPY = {
     dossierBody: "For evaluation, tender, or due diligence processes, we send a complete dossier with team credentials, project history, and relevant references.",
     dossierCta: "Request dossier →",
 
-    blTitle: "Publications.",
-    blSub: "Technical notes from Forte PE on the decisions that define infrastructure projects: rail, energy, BESS, and data centres.",
-    postBack: "← Publications",
+    blTitle: "Technical insights.",
+    blSub1: "Notes from Forte for project owners, operators, and delivery teams on the decisions that shape infrastructure performance, risk, and cost.",
+    blSub2: "Drawing on our experience in rail, energy, BESS, and data centre projects, we examine what should be resolved early, which risks are often underestimated, and what information enables better decisions.",
+    postBack: "← Insights",
+    postReadCta: "Read note →",
+    relatedLabel: "Related note",
+    ctaBlogTitle: "Are you evaluating a critical infrastructure decision?",
+    ctaBlogBody: "Forte can help structure the problem, identify the relevant risks, and define the next steps with technical clarity and independence.",
+    ctaBlogPrimary: "Talk to Forte →", ctaBlogSecondary: "View projects",
     posts: [
-      { img: "./img/g-post-ole4.jpg", tag: "Technical notes · Rail", date: "August 2026", title: "Condition monitoring on overhead line: the economics of knowing early", lead: "In an overhead line system, the cost of a failure is almost never in the damaged component. It is in the time between the event and its detection.",
+      { img: "./img/g-post-ole4.jpg", tag: "Technical note · Rail", date: "August 2026", title: "Condition monitoring on overhead line: the economics of knowing early", lead: "In an overhead line system, the cost of a failure is almost never in the damaged component. It is in the time between the event and its detection.", author: "Forte PE Team", authorRole: "Rail engineering",
         body: [
           "In an overhead line system, the cost of a failure is almost never in the damaged component. It is in the time between the event and its detection, and in everything that time drags along: suspended services, passengers transferred to buses, crews mobilised without a diagnosis, and an operating window lost in full.",
           "Traditional inspection is periodic and, by design, reactive. Between one round and the next, the infrastructure goes unobserved. When the event is gradual, wear or progressive loss of tension, the interval hides the deterioration. When it is sudden, breakage, vandalism, or conductor theft, the system usually finds out with the first affected train, which is the most expensive way to find out.",
@@ -822,7 +846,7 @@ const COPY = {
           "What an owner should demand from any monitoring solution, before discussing technology: real energy autonomy on the track, with no dependence on trackside supply; communications redundancy, because the event that matters tends to happen where coverage is worst; data that translates into operational decisions rather than decorative dashboards; and a staged deployment, on a prioritised section, that confirms parameters before committing the full network.",
           "The right question is not what the monitoring costs. It is what every hour between the event and the first informed decision costs. On corridors with passenger services, that calculation answers itself."
         ] },
-      { img: "./img/g-post-pv.jpg", tag: "Energy & BESS", date: "August 2026", title: "What sets the cost of a PV+BESS project is decided before design", lead: "Connection point, available capacity, and network conditions move cost more than any later engineering decision. Reviewed late, the redesign is already paid for.",
+      { img: "./img/g-post-pv.jpg", tag: "Technical note · Energy & BESS", date: "August 2026", title: "What sets the cost of a PV+BESS project is decided before design", lead: "Connection point, available capacity, and network conditions move cost more than any later engineering decision. Reviewed late, the redesign is already paid for.", author: "Forte PE Team", authorRole: "Energy & BESS",
         body: [
           "In a hybrid photovoltaic and storage project, the decisions that move the CAPEX most are taken before the design, not during it. The pre-feasibility exists to close those questions with evidence. When it is treated as a formality, or as a miniature design, the cost of what was left open shows up later, multiplied.",
           "The first question is geometric: where the energy is generated and where it is stored or consumed. The distance between the solar field and the storage or load point is paid in line, in easements, and in losses; the cheapest land is rarely the closest. Comparing candidate sites with the routing and the line included in the calculation, not just the land value, tends to change the answer.",
@@ -855,9 +879,10 @@ class Component extends DCLogic {
     const h = window.location.hash.replace(/^#\/?/, "");
     const parts = h.split("/");
     const valid = ["home", "projects", "about", "blog", "post", "contact"];
-    let lang = this.state.lang, page = parts[0], idx;
-    if (parts[0] === "en" || parts[0] === "es") { lang = parts[0]; page = parts[1]; idx = parts[2]; }
+    let lang = this.state.lang, slug = parts[0], idx;
+    if (parts[0] === "en" || parts[0] === "es") { lang = parts[0]; slug = parts[1]; idx = parts[2]; }
     else { idx = parts[1]; }
+    const page = this.slugToPage(slug);
     const next = {};
     if (lang === "en" || lang === "es") next.lang = lang;
     if (page === "post" && idx !== undefined && !isNaN(parseInt(idx, 10))) {
@@ -867,13 +892,25 @@ class Component extends DCLogic {
     }
     if (Object.keys(next).length) this.setState(next);
   }
+  slugToPage(slug) {
+    if (slug === "perspectivas" || slug === "insights") return "blog";
+    if (slug === "nota" || slug === "note") return "post";
+    return slug;
+  }
+  slugFor(page, lang) {
+    const l = lang || this.state.lang;
+    if (page === "blog") return l === "es" ? "perspectivas" : "insights";
+    if (page === "post") return l === "es" ? "nota" : "note";
+    return page;
+  }
   setHash(page, idx) {
-    const h = "/" + this.state.lang + "/" + page + (idx != null ? "/" + idx : "");
+    const h = "/" + this.state.lang + "/" + this.slugFor(page) + (idx != null ? "/" + idx : "");
     if (window.location.hash !== "#" + h) window.location.hash = "#" + h;
   }
   setHashLang(lang) {
-    const h = window.location.hash.replace(/^#\/(en|es)/, "#/" + lang) || ("#/" + lang + "/home");
-    window.location.hash = h;
+    const idx = this.state.postIndex;
+    const h = "/" + lang + "/" + this.slugFor(this.state.page, lang) + (idx != null ? "/" + idx : "");
+    window.location.hash = "#" + h;
   }
   go(page) { return () => { this.setHash(page); this.setState({ page }); window.scrollTo(0, 0); }; }
   openPost(i) { return () => { this.setHash("post", i); this.setState({ page: "post", postIndex: i }); window.scrollTo(0, 0); }; }
@@ -888,12 +925,19 @@ class Component extends DCLogic {
   renderVals() {
     const p = this.state.page, t = COPY[this.state.lang];
     const selectedPost = this.state.postIndex != null ? t.posts[this.state.postIndex] : null;
-    const posts = t.posts.map((post, i) => Object.assign({}, post, { open: this.openPost(i) }));
+    const posts = t.posts.map((post, i) => Object.assign({}, post, { open: this.openPost(i), readCta: t.postReadCta }));
+    const isBlogish = p === "blog" || p === "post";
+    const relatedIndex = this.state.postIndex != null ? (this.state.postIndex + 1) % t.posts.length : null;
+    const relatedPost = relatedIndex != null ? Object.assign({}, t.posts[relatedIndex], { open: this.openPost(relatedIndex) }) : null;
     return Object.assign({}, t, {
       isHome: p === "home", isProjects: p === "projects", isAbout: p === "about",
       isBlog: p === "blog", isContact: p === "contact", isPost: p === "post", lang: this.state.lang,
       showCta: p !== "contact",
-      posts, selectedPost,
+      posts, selectedPost, relatedPost, relatedLabel: t.relatedLabel,
+      ctaTitleFinal: isBlogish ? t.ctaBlogTitle : t.ctaTitle,
+      ctaBodyFinal: isBlogish ? t.ctaBlogBody : t.ctaBody,
+      ctaPrimaryFinal: isBlogish ? t.ctaBlogPrimary : t.ctaPrimary,
+      ctaSecondaryFinal: isBlogish ? t.ctaBlogSecondary : t.ctaSecondary,
       onSubmit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
       sentNote: this.state.sent ? t.sentThanks : "",
       goHome: this.go("home"), goProjects: this.go("projects"), goAbout: this.go("about"),
