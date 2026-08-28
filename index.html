@@ -118,14 +118,14 @@
 <div style="font-family:'IBM Plex Sans',system-ui,sans-serif;color:#12324A;background:#F4F2ED;-webkit-font-smoothing:antialiased">
 
   <header class="site-header" style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:18px 40px;background:rgba(244,242,237,0.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(18,50,74,0.1)">
-    <button class="site-logo" onClick="{{ goHome }}" style="display:flex;align-items:center;background:none;border-style:none;border-width:0;padding:0;cursor:pointer"><img src="./forte-primary.svg" alt="Forte Project Engineering" style="height:30px;width:auto;display:block" /></button>
+    <a class="site-logo" href="{{ hrefHome }}" onClick="{{ goHome }}" style="display:flex;align-items:center"><img src="./forte-primary.svg" alt="Forte Project Engineering" style="height:30px;width:auto;display:block" /></a>
     <div class="site-header__actions">
     <nav class="site-nav" style="display:flex;align-items:center;gap:26px;font-size:13.5px;letter-spacing:0.02em">
-      <button onClick="{{ goHome }}" style="{{ tabHome }}">{{ navHome }}</button>
-      <button onClick="{{ goProjects }}" style="{{ tabProjects }}">{{ navProjects }}</button>
-      <button onClick="{{ goAbout }}" style="{{ tabAbout }}">{{ navAbout }}</button>
-      <button onClick="{{ goBlog }}" style="{{ tabBlog }}">{{ navBlog }}</button>
-      <button onClick="{{ goContact }}" style="{{ tabContact }}">{{ navContact }}</button>
+      <a href="{{ hrefHome }}" onClick="{{ goHome }}" style="{{ tabHome }}">{{ navHome }}</a>
+      <a href="{{ hrefProjects }}" onClick="{{ goProjects }}" style="{{ tabProjects }}">{{ navProjects }}</a>
+      <a href="{{ hrefAbout }}" onClick="{{ goAbout }}" style="{{ tabAbout }}">{{ navAbout }}</a>
+      <a href="{{ hrefBlog }}" onClick="{{ goBlog }}" style="{{ tabBlog }}">{{ navBlog }}</a>
+      <a href="{{ hrefContact }}" onClick="{{ goContact }}" style="{{ tabContact }}">{{ navContact }}</a>
     </nav>
       <span class="lang-switch" style="display:flex;font-family:'IBM Plex Mono',monospace;font-size:11.5px;border:1px solid rgba(18,50,74,0.18)">
         <button onClick="{{ setEs }}" style="{{ esBtn }}">ES</button>
@@ -420,7 +420,7 @@
     </section>
     <section class="blog-grid" style="max-width:1240px;margin:0 auto;padding:0 40px 96px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px">
       <sc-for list="{{ posts }}" as="p" hint-placeholder-count="2">
-        <div onClick="{{ p.open }}" style="display:flex;flex-direction:column;gap:0;cursor:pointer">
+        <a href="{{ p.href }}" onClick="{{ p.open }}" style="display:flex;flex-direction:column;gap:0;cursor:pointer;color:inherit">
           <div style="position:relative;aspect-ratio:16/10;background:#E4E0D7">
             <image-slot id="post-{{ $index }}" src="{{ p.img }}" shape="rect" fit="cover" placeholder="Imagen de la nota"></image-slot>
           </div>
@@ -430,7 +430,7 @@
           <h3 style="margin:12px 0 0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(24px,2.6vw,32px);line-height:1.15;letter-spacing:-0.015em;text-wrap:balance" style-hover="color:#137F7C">{{ p.title }}</h3>
           <p style="margin:14px 0 0;font-size:16px;line-height:1.55;color:rgba(18,50,74,0.7);text-wrap:pretty">{{ p.lead }}</p>
           <span style="margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#137F7C">{{ p.readCta }}</span>
-        </div>
+        </a>
       </sc-for>
     </section>
   </div>
@@ -439,7 +439,7 @@
   <sc-if value="{{ isPost }}">
   <div>
     <section style="max-width:1240px;margin:0 auto;padding:72px 40px 24px">
-      <button onClick="{{ goBlog }}" style="background:none;border-style:none;border-width:0;padding:0;cursor:pointer;font:inherit;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)" style-hover="color:#137F7C">{{ postBack }}</button>
+      <a href="{{ hrefBlog }}" onClick="{{ goBlog }}" style="background:none;border-style:none;border-width:0;padding:0;cursor:pointer;font:inherit;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)" style-hover="color:#137F7C">{{ postBack }}</a>
     </section>
     <section class="post-detail" style="max-width:1240px;margin:0 auto;padding:24px 40px 96px;display:grid;grid-template-columns:minmax(160px,0.3fr) minmax(400px,1fr);gap:56px">
       <div style="display:flex;flex-direction:column;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase">
@@ -457,10 +457,10 @@
             <p style="margin:0">{{ para }}</p>
           </sc-for>
         </div>
-        <div onClick="{{ relatedPost.open }}" style="margin-top:56px;padding-top:28px;border-top:1px solid rgba(18,50,74,0.16);display:flex;flex-direction:column;gap:10px;cursor:pointer">
+        <a href="{{ relatedPost.href }}" onClick="{{ relatedPost.open }}" style="margin-top:56px;padding-top:28px;border-top:1px solid rgba(18,50,74,0.16);display:flex;flex-direction:column;gap:10px;cursor:pointer;color:inherit">
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#137F7C">{{ relatedLabel }}</span>
           <span style="font-family:Archivo,sans-serif;font-weight:500;font-size:20px;letter-spacing:-0.01em" style-hover="color:#137F7C">{{ relatedPost.title }}</span>
-        </div>
+        </a>
       </article>
     </section>
   </div>
@@ -548,7 +548,7 @@
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:14px">
         <a href="mailto:info@fortepe.com" style="padding:16px 28px;background:#137F7C;color:#F4F2ED;font-size:14.5px;letter-spacing:0.02em" style-hover="background:#17948F;color:#F4F2ED">{{ ctaPrimaryFinal }}</a>
-        <button onClick="{{ goProjects }}" style="padding:16px 28px;border:1px solid rgba(244,242,237,0.35);background:none;color:#F4F2ED;font:inherit;font-size:14.5px;cursor:pointer" style-hover="border-color:#F4F2ED">{{ ctaSecondaryFinal }}</button>
+        <a href="{{ hrefProjects }}" onClick="{{ goProjects }}" style="padding:16px 28px;border:1px solid rgba(244,242,237,0.35);background:none;color:#F4F2ED;font:inherit;font-size:14.5px;cursor:pointer" style-hover="border-color:#F4F2ED">{{ ctaSecondaryFinal }}</a>
       </div>
     </div>
   </section>
@@ -868,12 +868,107 @@ const COPY = {
   }
 };
 
+const PAGE_SEO = {
+  es: {
+    home: { title: "Forte PE | Asesoría técnica independiente en infraestructura", desc: "Asesoría técnica independiente para proyectos ferroviarios, energía, BESS, centros de datos e infraestructura crítica en América Latina." },
+    projects: { title: "Proyectos y experiencia técnica | Forte PE", desc: "Mandatos activos y experiencia del equipo Forte en ingeniería ferroviaria, energía, BESS, centros de datos, due diligence y asesoría institucional." },
+    about: { title: "Firma, experiencia y forma de trabajo | Forte PE", desc: "Conozca la experiencia senior, credenciales, formatos de trabajo y red de especialistas de Forte Project Engineering." },
+    blog: { title: "Perspectivas técnicas | Forte PE", desc: "Notas de Forte sobre las decisiones que condicionan el desempeño, el riesgo y el costo de proyectos ferroviarios, energía, BESS y centros de datos." },
+    contact: { title: "Contacto | Forte PE", desc: "Contacte a Forte Project Engineering para conversar sobre proyectos ferroviarios, energía, BESS, centros de datos o infraestructura crítica." }
+  },
+  en: {
+    home: { title: "Forte PE | Independent technical advisory for infrastructure", desc: "Independent technical advisory for rail, energy, BESS, data centre, and critical infrastructure projects across South and Central America." },
+    projects: { title: "Projects and technical track record | Forte PE", desc: "Forte's active mandates and team track record in rail, energy, BESS, data centres, technical due diligence, and institutional advisory." },
+    about: { title: "Firm, experience, and delivery model | Forte PE", desc: "Learn about Forte Project Engineering's senior experience, credentials, engagement formats, and established specialist network." },
+    blog: { title: "Technical insights | Forte PE", desc: "Technical notes from Forte on the decisions that shape performance, risk, and cost in rail, energy, BESS, and data centre projects." },
+    contact: { title: "Contact | Forte PE", desc: "Contact Forte Project Engineering to discuss rail, energy, BESS, data centre, or critical infrastructure projects." }
+  }
+};
+const OG_IMAGES = { home: "./img/g-hero.jpg", projects: "./img/g-prj-rail2.jpg", about: "./img/g-ab-hdr2.jpg", blog: "./img/g-post-ole4.jpg", contact: "./img/g-band.jpg" };
+
 class Component extends DCLogic {
   state = { lang: "es", page: "home", sent: false, postIndex: null };
   componentDidMount() {
     if (!window.location.hash) window.location.hash = "#/es/home";
+    this._defaultTitle = document.title;
+    const dEl = document.querySelector('meta[name="description"]');
+    this._defaultDesc = dEl ? dEl.getAttribute("content") : "";
     this.applyHash();
     window.addEventListener("hashchange", () => this.applyHash());
+  }
+  updateSeo(s) {
+    s = s || this.state;
+    try {
+      const t = COPY[s.lang];
+      document.documentElement.lang = s.lang;
+      const page = s.page;
+      const base = PAGE_SEO[s.lang][page] || PAGE_SEO[s.lang].home;
+      let title = base.title, desc = base.desc, ogImage = OG_IMAGES[page] || OG_IMAGES.home, ogType = "website";
+      const ldjson = [];
+      if (page === "post" && s.postIndex != null) {
+        const post = t.posts[s.postIndex];
+        title = post.title + " | Forte PE";
+        desc = post.lead;
+        ogImage = post.img;
+        ogType = "article";
+        ldjson.push({ "@context": "https://schema.org", "@type": "Article", headline: post.title, description: post.lead, image: new URL(post.img, window.location.href).toString(), author: { "@type": "Organization", name: "Forte Project Engineering" }, inLanguage: s.lang });
+      }
+      if (page === "home") {
+        ldjson.push({ "@context": "https://schema.org", "@type": "WebSite", name: "Forte Project Engineering", alternateName: "Forte PE", url: window.location.origin + "/" });
+        ldjson.push({ "@context": "https://schema.org", "@type": "Organization", name: "Forte Project Engineering", alternateName: "Forte PE", legalName: "Forte Engineering Chile SpA", url: window.location.origin + "/", logo: new URL("./forte-primary.svg", window.location.href).toString(), email: "info@fortepe.com", telephone: "+56 2 3380 3442", address: { "@type": "PostalAddress", streetAddress: "Callao 2911, Las Condes", addressLocality: "Santiago", addressCountry: "CL" } });
+      }
+      const origin = window.location.origin + window.location.pathname;
+      const pageUrl = (pg, lg) => origin + "#/" + lg + "/" + this.slugFor(pg, lg);
+      if (page !== "home") {
+        const items = [{ "@type": "ListItem", position: 1, name: s.lang === "es" ? "Inicio" : "Home", item: pageUrl("home", s.lang) }];
+        if (page === "post" && s.postIndex != null) {
+          items.push({ "@type": "ListItem", position: 2, name: t.blTitle.replace(/\.$/, ""), item: pageUrl("blog", s.lang) });
+          items.push({ "@type": "ListItem", position: 3, name: t.posts[s.postIndex].title });
+        } else {
+          const labels = { projects: t.navProjects, about: t.navAbout, blog: t.navBlog, contact: t.navContact };
+          items.push({ "@type": "ListItem", position: 2, name: labels[page] });
+        }
+        ldjson.push({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: items });
+      }
+      document.title = title;
+      const setMeta = (selector, create, content) => {
+        let el = document.querySelector(selector);
+        if (!el) { el = create(); document.head.appendChild(el); }
+        el.setAttribute("content", content);
+      };
+      const metaName = (name) => () => { const e = document.createElement("meta"); e.setAttribute("name", name); return e; };
+      const metaProp = (prop) => () => { const e = document.createElement("meta"); e.setAttribute("property", prop); return e; };
+      setMeta('meta[name="description"]', metaName("description"), desc);
+      setMeta('meta[property="og:site_name"]', metaProp("og:site_name"), "Forte Project Engineering");
+      setMeta('meta[property="og:title"]', metaProp("og:title"), title);
+      setMeta('meta[property="og:description"]', metaProp("og:description"), desc);
+      setMeta('meta[property="og:type"]', metaProp("og:type"), ogType);
+      setMeta('meta[property="og:locale"]', metaProp("og:locale"), s.lang === "es" ? "es_CL" : "en_US");
+      const absImage = new URL(ogImage, window.location.href).toString();
+      setMeta('meta[property="og:image"]', metaProp("og:image"), absImage);
+      setMeta('meta[name="twitter:card"]', metaName("twitter:card"), "summary_large_image");
+      setMeta('meta[name="twitter:title"]', metaName("twitter:title"), title);
+      setMeta('meta[name="twitter:description"]', metaName("twitter:description"), desc);
+      setMeta('meta[name="twitter:image"]', metaName("twitter:image"), absImage);
+      const setLink = (rel, href, hreflang) => {
+        const sel = hreflang ? 'link[rel="' + rel + '"][hreflang="' + hreflang + '"]' : 'link[rel="' + rel + '"]:not([hreflang])';
+        let el = document.querySelector(sel);
+        if (!el) { el = document.createElement("link"); el.setAttribute("rel", rel); if (hreflang) el.setAttribute("hreflang", hreflang); document.head.appendChild(el); }
+        el.setAttribute("href", href);
+      };
+      const canonicalUrl = origin + window.location.hash;
+      setLink("canonical", canonicalUrl);
+      setMeta('meta[property="og:url"]', metaProp("og:url"), canonicalUrl);
+      const otherLang = s.lang === "es" ? "en" : "es";
+      const idxPart = s.postIndex != null ? "/" + s.postIndex : "";
+      setLink("alternate", origin + "#/" + s.lang + "/" + this.slugFor(page, s.lang) + idxPart, s.lang);
+      setLink("alternate", origin + "#/" + otherLang + "/" + this.slugFor(page, otherLang) + idxPart, otherLang);
+      let ldEl = document.getElementById("__seo-ldjson");
+      if (ldjson.length) {
+        if (!ldEl) { ldEl = document.createElement("script"); ldEl.type = "application/ld+json"; ldEl.id = "__seo-ldjson"; document.head.appendChild(ldEl); }
+        ldEl.textContent = JSON.stringify(ldjson);
+      } else if (ldEl) { ldEl.remove(); }
+    } catch (e) { /* SEO metadata is non-critical; never let it break the page */ }
   }
   applyHash() {
     const h = window.location.hash.replace(/^#\/?/, "");
@@ -891,6 +986,11 @@ class Component extends DCLogic {
       next.page = page; next.postIndex = null;
     }
     if (Object.keys(next).length) this.setState(next);
+    this.updateSeo({
+      lang: next.lang !== undefined ? next.lang : this.state.lang,
+      page: next.page !== undefined ? next.page : this.state.page,
+      postIndex: next.postIndex !== undefined ? next.postIndex : this.state.postIndex
+    });
   }
   slugToPage(slug) {
     if (slug === "perspectivas" || slug === "insights") return "blog";
@@ -906,6 +1006,9 @@ class Component extends DCLogic {
   setHash(page, idx) {
     const h = "/" + this.state.lang + "/" + this.slugFor(page) + (idx != null ? "/" + idx : "");
     if (window.location.hash !== "#" + h) window.location.hash = "#" + h;
+  }
+  hrefFor(page, idx) {
+    return "#/" + this.state.lang + "/" + this.slugFor(page) + (idx != null ? "/" + idx : "");
   }
   setHashLang(lang) {
     const idx = this.state.postIndex;
@@ -925,10 +1028,10 @@ class Component extends DCLogic {
   renderVals() {
     const p = this.state.page, t = COPY[this.state.lang];
     const selectedPost = this.state.postIndex != null ? t.posts[this.state.postIndex] : null;
-    const posts = t.posts.map((post, i) => Object.assign({}, post, { open: this.openPost(i), readCta: t.postReadCta }));
+    const posts = t.posts.map((post, i) => Object.assign({}, post, { open: this.openPost(i), readCta: t.postReadCta, href: this.hrefFor("post", i) }));
     const isBlogish = p === "blog" || p === "post";
     const relatedIndex = this.state.postIndex != null ? (this.state.postIndex + 1) % t.posts.length : null;
-    const relatedPost = relatedIndex != null ? Object.assign({}, t.posts[relatedIndex], { open: this.openPost(relatedIndex) }) : null;
+    const relatedPost = relatedIndex != null ? Object.assign({}, t.posts[relatedIndex], { open: this.openPost(relatedIndex), href: this.hrefFor("post", relatedIndex) }) : null;
     return Object.assign({}, t, {
       isHome: p === "home", isProjects: p === "projects", isAbout: p === "about",
       isBlog: p === "blog", isContact: p === "contact", isPost: p === "post", lang: this.state.lang,
@@ -942,6 +1045,8 @@ class Component extends DCLogic {
       sentNote: this.state.sent ? t.sentThanks : "",
       goHome: this.go("home"), goProjects: this.go("projects"), goAbout: this.go("about"),
       goBlog: this.go("blog"), goContact: this.go("contact"),
+      hrefHome: this.hrefFor("home"), hrefProjects: this.hrefFor("projects"), hrefAbout: this.hrefFor("about"),
+      hrefBlog: this.hrefFor("blog"), hrefContact: this.hrefFor("contact"),
       tabHome: this.tab(p === "home"), tabProjects: this.tab(p === "projects"),
       tabAbout: this.tab(p === "about"), tabBlog: this.tab(p === "blog" || p === "post"),
       tabContact: this.tab(p === "contact"),
