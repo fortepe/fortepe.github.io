@@ -840,8 +840,37 @@ const COPY = {
 
 class Component extends DCLogic {
   state = { lang: "es", page: "home", sent: false, postIndex: null };
-  go(page) { return () => { this.setState({ page }); window.scrollTo(0, 0); }; }
-  openPost(i) { return () => { this.setState({ page: "post", postIndex: i }); window.scrollTo(0, 0); }; }
+  componentDidMount() {
+    if (!window.location.hash) window.location.hash = "#/es/home";
+    this.applyHash();
+    window.addEventListener("hashchange", () => this.applyHash());
+  }
+  applyHash() {
+    const h = window.location.hash.replace(/^#\/?/, "");
+    const parts = h.split("/");
+    const valid = ["home", "projects", "about", "blog", "post", "contact"];
+    let lang = this.state.lang, page = parts[0], idx;
+    if (parts[0] === "en" || parts[0] === "es") { lang = parts[0]; page = parts[1]; idx = parts[2]; }
+    else { idx = parts[1]; }
+    const next = {};
+    if (lang === "en" || lang === "es") next.lang = lang;
+    if (page === "post" && idx !== undefined && !isNaN(parseInt(idx, 10))) {
+      next.page = "post"; next.postIndex = parseInt(idx, 10);
+    } else if (valid.includes(page)) {
+      next.page = page; next.postIndex = null;
+    }
+    if (Object.keys(next).length) this.setState(next);
+  }
+  setHash(page, idx) {
+    const h = "/" + this.state.lang + "/" + page + (idx != null ? "/" + idx : "");
+    if (window.location.hash !== "#" + h) window.location.hash = "#" + h;
+  }
+  setHashLang(lang) {
+    const h = window.location.hash.replace(/^#\/(en|es)/, "#/" + lang) || ("#/" + lang + "/home");
+    window.location.hash = h;
+  }
+  go(page) { return () => { this.setHash(page); this.setState({ page }); window.scrollTo(0, 0); }; }
+  openPost(i) { return () => { this.setHash("post", i); this.setState({ page: "post", postIndex: i }); window.scrollTo(0, 0); }; }
   tab(active) {
     return "background:none;border-width:0 0 1px;border-style:none none solid;padding:0 0 2px;cursor:pointer;font:inherit;font-size:13.5px;letter-spacing:0.02em;" +
       (active ? "color:#12324A;border-color:transparent transparent #137F7C" : "color:rgba(18,50,74,0.62);border-color:transparent");
@@ -866,7 +895,8 @@ class Component extends DCLogic {
       tabHome: this.tab(p === "home"), tabProjects: this.tab(p === "projects"),
       tabAbout: this.tab(p === "about"), tabBlog: this.tab(p === "blog" || p === "post"),
       tabContact: this.tab(p === "contact"),
-      setEs: () => this.setState({ lang: "es" }), setEn: () => this.setState({ lang: "en" }),
+      setEs: () => { this.setState({ lang: "es" }); this.setHashLang("es"); },
+      setEn: () => { this.setState({ lang: "en" }); this.setHashLang("en"); },
       esBtn: this.langBtn(this.state.lang === "es"), enBtn: this.langBtn(this.state.lang === "en")
     });
   }
