@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
 <script src="./image-slot.js"></script>
 <style>
-  html, body { margin:0; padding:0; background:#F4F2ED; }
+  html, body { margin:0; padding:0; background:#F4F2ED; font-family:Archivo,sans-serif; }
   * { box-sizing:border-box; }
   a { color:#12324A; text-decoration:none; }
   a:hover { color:#137F7C; }
@@ -135,7 +135,7 @@
         <image-slot id="hero" src="./img/g-hero.jpg" shape="rect" fit="cover" placeholder="Corredor ferroviario electrificado"></image-slot>
       </div>
       <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(18,50,74,0.88) 0%,rgba(18,50,74,0.55) 55%,rgba(18,50,74,0.15) 100%);pointer-events:none"></div>
-      <div class="hero-copy" style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:26px;padding:40px;max-width:1000px;pointer-events:none">
+      <div class="hero-copy" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:26px;padding:40px;max-width:1000px;pointer-events:none">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(244,242,237,0.7)">{{ heroKicker }}</div>
         <h1 style="margin:0;font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(40px,6vw,86px);line-height:0.98;letter-spacing:-0.02em;color:#F4F2ED;text-wrap:balance">{{ heroTitle }}</h1>
         <p style="margin:0;max-width:56ch;font-size:17px;line-height:1.5;color:rgba(244,242,237,0.82);text-wrap:pretty">{{ heroSub }}</p>
