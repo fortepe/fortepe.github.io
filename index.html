@@ -476,7 +476,7 @@
       <p style="margin:22px 0 0;max-width:56ch;font-size:16.5px;line-height:1.55;color:rgba(18,50,74,0.66);text-wrap:pretty">{{ ctSub }}</p>
     </section>
 
-    <section class="contact-layout" style="max-width:1240px;margin:0 auto;padding:24px 40px 96px;display:grid;grid-template-columns:1.35fr 0.65fr;gap:72px;align-items:start">
+    <section class="contact-layout" style="max-width:1240px;margin:0 auto;padding:24px 40px 96px;display:grid;grid-template-columns:1.35fr 0.65fr;gap:72px;align-items:center">
       <form class="contact-form" onSubmit="{{ onSubmit }}" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 28px">
         <label style="display:flex;flex-direction:column;gap:8px">
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ ctName }}</span>
@@ -492,7 +492,7 @@
         </label>
         <label style="display:flex;flex-direction:column;gap:8px">
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">{{ ctReason }}</span>
-          <select name="motivo" style="font:inherit;font-size:16px;color:#12324A;background:none;border-style:none none solid;border-width:0 0 1px;border-color:rgba(18,50,74,0.3);padding:8px 0;outline:none;border-radius:0" style-focus="border-color:#137F7C">
+          <select name="motivo" style="font:inherit;font-size:16px;color:#12324A;background:url('data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2214%22 height=%229%22 viewBox=%220 0 14 9%22%3E&lt;path d=%22M1 1l6 6 6-6%22 stroke=%22%2312324A%22 stroke-width=%221.4%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E&lt;/svg%3E') right center no-repeat;appearance:none;-webkit-appearance:none;-moz-appearance:none;border-style:none none solid;border-width:0 0 1px;border-color:rgba(18,50,74,0.3);padding:8px 22px 8px 0;outline:none;border-radius:0;cursor:pointer" style-focus="border-color:#137F7C">
             <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="5">
               <option value="{{ r }}">{{ r }}</option>
             </sc-for>
@@ -713,7 +713,7 @@ const COPY = {
     ctSub: "Si su proyecto requiere claridad técnica para avanzar, estamos disponibles para revisar el contexto, identificar riesgos y definir los próximos pasos.",
     ctName: "Nombre", ctOrg: "Organización", ctReason: "Motivo de contacto",
     ctContext: "Contexto del proyecto", ctSend: "Enviar →",
-    reasons: ["Proyecto ferroviario", "Proyecto de energía", "Infraestructura crítica", "Solicitar dossier corporativo", "Otro"],
+    reasons: ["Consulta general / nuevo proyecto", "Revisión técnica o segunda opinión", "Due diligence (financiamiento o inversión)", "Solicitar dossier corporativo", "Otro"],
     sentThanks: "Gracias. Responderemos con un ingeniero.",
     ctCoordsLabel: "Coordenadas", ctEmailLabel: "Email", ctPhoneLabel: "Teléfono",
     ctOfficeLabel: "Oficina", ctCityLabel: "Ciudad", ctCoverLabel: "Cobertura", ctLangLabel: "Idiomas"
@@ -863,7 +863,7 @@ const COPY = {
     ctSub: "If your project requires technical clarity to move forward, we are available to review the context, identify risks, and define the next steps.",
     ctName: "Name", ctOrg: "Organisation", ctReason: "Reason for contact",
     ctContext: "Project context", ctSend: "Send →",
-    reasons: ["Rail project", "Energy project", "Critical infrastructure", "Request corporate dossier", "Other"],
+    reasons: ["General inquiry / new project", "Technical review or second opinion", "Due diligence (financing or investment)", "Request corporate dossier", "Other"],
     sentThanks: "Thank you. An engineer will reply.",
     ctCoordsLabel: "Coordinates", ctEmailLabel: "Email", ctPhoneLabel: "Phone",
     ctOfficeLabel: "Office", ctCityLabel: "City", ctCoverLabel: "Coverage", ctLangLabel: "Languages"
