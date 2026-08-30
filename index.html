@@ -71,7 +71,6 @@
     .hero-copy { padding:32px 20px !important;gap:20px !important; }
     .home-firm-grid,
     .home-map-grid,
-    .projects-gallery,
     .projects-engagements,
     .projects-track,
     .about-credentials,
@@ -84,7 +83,6 @@
     .contact-form { grid-template-columns:1fr !important; }
     .home-firm-grid,
     .home-map-grid,
-    .projects-gallery,
     .projects-track,
     .about-credentials,
     .about-clients,
@@ -93,19 +91,21 @@
     .post-detail,
     .contact-layout { gap:32px !important; }
     .home-governance { grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:18px !important; }
-    .home-services,
-    .home-work { grid-template-columns:1fr !important; }
+    .home-services { grid-template-columns:1fr !important; }
+    .home-work,
+    .projects-gallery { grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:14px !important; }
     .projects-engagements,
     .about-formats { gap:1px !important; }
     .contact-form { gap:22px !important; }
     .about-context { grid-template-columns:1fr; gap:36px; padding:56px 24px 24px !important; }
     .about-context__photo { width:min(100%,280px); justify-self:center; }
-    .home-axes > div { grid-template-rows:18px auto auto !important;gap:10px !important;border-right:0 !important;border-bottom:1px solid rgba(18,50,74,0.1) !important;padding:24px 4px 26px !important; }
+    .home-axes > div { grid-template-rows:18px auto auto !important;gap:10px !important;border-right:0 !important;border-bottom:1px solid rgba(18,50,74,0.1) !important;padding:24px 20px 26px !important; }
     .home-band { height:auto !important;min-height:0 !important; }
     .home-band__content { padding:64px 24px !important;gap:14px !important; }
     .home-band__tags { gap:6px 14px !important;font-size:10px !important; }
     .eng-meta-row { grid-template-columns:1fr !important;gap:4px !important; }
     .eng-meta-row span:last-child { text-align:left !important; }
+    .eng-card { padding:26px 20px 30px !important; }
   }
   @media (max-width: 480px) {
     .home-map-stats,
@@ -296,7 +296,7 @@
       <p style="margin:16px 0 0;max-width:72ch;font-size:15.5px;line-height:1.6;color:rgba(18,50,74,0.66);text-wrap:pretty">{{ engNote }}</p>
       <div class="projects-engagements" style="margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(18,50,74,0.12)">
         <sc-for list="{{ engagements }}" as="e" hint-placeholder-count="4">
-          <div style="background:#F4F2ED;padding:32px 30px 36px;display:flex;flex-direction:column;gap:14px">
+          <div class="eng-card" style="background:#F4F2ED;padding:32px 30px 36px;display:flex;flex-direction:column;gap:14px">
             <div class="eng-meta-row" style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">
               <span>{{ e.meta }}</span><span style="white-space:nowrap;text-align:right">{{ e.years }}</span>
             </div>
