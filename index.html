@@ -100,6 +100,12 @@
     .contact-form { gap:22px !important; }
     .about-context { grid-template-columns:1fr; gap:36px; padding:56px 24px 24px !important; }
     .about-context__photo { width:min(100%,280px); justify-self:center; }
+    .home-axes > div { grid-template-rows:18px auto auto !important;gap:10px !important;border-right:0 !important;border-bottom:1px solid rgba(18,50,74,0.1) !important;padding:24px 4px 26px !important; }
+    .home-band { height:auto !important;min-height:0 !important; }
+    .home-band__content { padding:64px 24px !important;gap:14px !important; }
+    .home-band__tags { gap:6px 14px !important;font-size:10px !important; }
+    .eng-meta-row { grid-template-columns:1fr !important;gap:4px !important; }
+    .eng-meta-row span:last-child { text-align:left !important; }
   }
   @media (max-width: 480px) {
     .home-map-stats,
@@ -165,7 +171,7 @@
       </div>
     </section>
 
-    <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border-bottom:1px solid rgba(18,50,74,0.1);border-top:1px solid rgba(18,50,74,0.1)">
+    <section class="home-axes" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border-bottom:1px solid rgba(18,50,74,0.1);border-top:1px solid rgba(18,50,74,0.1)">
       <sc-for list="{{ axes }}" as="a" hint-placeholder-count="4">
         <div style="padding:34px 36px 38px;border-right:1px solid rgba(18,50,74,0.1);display:grid;grid-template-rows:18px 56px 1fr;gap:16px">
           <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:#137F7C;white-space:nowrap">{{ a.sector }}</div>
@@ -227,15 +233,15 @@
       </div>
     </section>
 
-    <section style="position:relative;height:min(62vh,560px);min-height:400px;overflow:hidden;background:#12324A">
+    <section class="home-band" style="position:relative;height:min(62vh,560px);min-height:400px;overflow:hidden;background:#12324A">
       <div style="position:absolute;inset:0">
         <image-slot id="band" src="./img/g-band.jpg" shape="rect" fit="cover" placeholder="Planta híbrida junto a corredor ferroviario"></image-slot>
       </div>
       <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,50,74,0.25),rgba(18,50,74,0.72));pointer-events:none"></div>
-      <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:18px;padding:40px;pointer-events:none">
+      <div class="home-band__content" style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:18px;padding:40px;pointer-events:none">
         <div style="font-family:Archivo,sans-serif;font-weight:500;font-size:clamp(30px,4.6vw,64px);line-height:1.02;letter-spacing:-0.02em;color:#F4F2ED">{{ principle1 }}<br />{{ principle2 }}</div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(244,242,237,0.65)">{{ principleKicker }}</div>
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,242,237,0.5)">
+        <div class="home-band__tags" style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,242,237,0.5)">
           <span>{{ bandSector }}</span><span>{{ bandGeo }}</span>
         </div>
       </div>
@@ -291,7 +297,7 @@
       <div class="projects-engagements" style="margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(18,50,74,0.12)">
         <sc-for list="{{ engagements }}" as="e" hint-placeholder-count="4">
           <div style="background:#F4F2ED;padding:32px 30px 36px;display:flex;flex-direction:column;gap:14px">
-            <div style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">
+            <div class="eng-meta-row" style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(18,50,74,0.55)">
               <span>{{ e.meta }}</span><span style="white-space:nowrap;text-align:right">{{ e.years }}</span>
             </div>
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#137F7C">{{ e.role }}</div>
